@@ -1,0 +1,607 @@
+% =======================================================================
+% File         : _ulhpc_layout.sty
+% Title        :
+% Author       : Sebastien Varrette <Sebastien.Varrette@uni.lu>
+% Creation     : 20 Oct 2009
+% Time-stamp:    <Ven 2014-01-10 15:37 svarrette>
+% $Id$
+% 
+% Copyright (c) 2014 Sebastien Varrette (see LICENCE)
+% 
+% Licence: Creative Commons Attribution-Noncommercial-Share Alike 2.0 France
+% 
+% You are free:
+% - to Share:  to copy, distribute and transmit the work
+% - to Remix: to adapt the work
+% 
+% Under the following conditions:
+% - Attribution : You must attribute the work in the manner specified by the
+% author or licensor (but  not in any way that suggests that
+% they endorse you or your use of the work).
+% - Noncommercial:  You may not use this work for commercial purposes.
+% - Share Alike: If you alter, transform, or build upon this work, you may
+% distribute the resulting work only under the same or similar
+% license to this one.
+% 
+% With the understanding that:
+% - Waiver: Any of the above conditions can be waived if you get permission
+% from the copyright holder.
+% - Other Rights: In no way are any of the following rights affected by the
+% license:
+% * Your fair dealing or fair use rights;
+% * Apart from the remix rights granted under this license,
+% the author's moral rights;
+% * Rights other persons may have either in the work itself
+% or in how the work is used, such as publicity or privacy
+% rights.
+% - Notice:  For any reuse or distribution, you must make clear to others the
+% license terms of this work. The best way to do this is with a
+% link to this web page.
+% =======================================================================
+
+% Partially inspired from the nice work done by Jan Larsen for DTU in Nov 2003 and my
+% template for the CSC activity reports.
+
+
+\usepackage{etex}
+\usepackage{amsmath,amssymb}
+\usepackage[amsmath,hyperref,thmmarks]{ntheorem}
+%\usepackage[amsmath,thmmarks]{ntheorem}
+
+% better fonts in pdf-versions
+\usepackage[T1]{fontenc}
+\usepackage{ae,aecompl}
+\usepackage{acronym}
+\usepackage{xspace}
+\usepackage{float}
+\usepackage{tikz}
+\usepackage{makecell}
+\usetikzlibrary{decorations.pathmorphing}
+
+
+% Force recalculation of the current page node whenever the overlay option is used.
+% If you page is centered on your stock paper it is only necessary to calculate
+% the current page rectangle once.
+%\pgfkeys{/tikz/overlay/.add code={}{\setpagenode}}
+
+\usepackage[a4paper]{geometry}
+\usepackage[english]{babel}
+
+\usepackage[latin1]{inputenc}
+
+\usepackage{verbatim}
+\usepackage{fancyhdr}          % Fancy header
+\usepackage[official]{eurosym} % Euro symbol
+
+\usepackage{longtable}
+\usepackage{multirow}
+\usepackage{rotating}     % sideways environment
+\usepackage{lscape}       % landscape
+%\usepackage{psfrag} % laprint
+\usepackage{pstricks}     % basic pstricks support
+%\usepackage{curves}       % curves in picture environment
+\usepackage{bibtopic}   % for multiple bibliography file
+
+\usepackage{xcolor}
+\usepackage[usenames]{colortbl}
+
+\definecolor{lightgray}{gray}{0.9}
+\definecolor{bcode}{rgb}{0.91,0.91,0.91}  % color for code extract
+\definecolor{lightblue}{rgb}{0.45,0.76,0.98}  % color for
+\definecolor{lightgray}{rgb}{.9, .9, .9}
+\definecolor{lightgreen}{rgb}{.7, 1, .7}
+\definecolor{darkgray}{rgb}{.4, .4, .4}
+\definecolor{purple}{rgb}{0.65, 0.12, 0.82}
+\definecolor{beamerblue}{rgb}{0.2,0.2,0.7}
+\definecolor{textblue}{rgb}{0.16,0.32,0.85}   
+\definecolor{ulgray}{RGB}{92,92,92}   
+
+\usepackage{xtab}
+
+\usepackage[small,hang,bf,up]{caption}
+%\usepackage[round,sort&compress]{natbib} % references. optional options
+
+\usepackage{url}           % for list of references
+
+\usepackage{graphicx}
+
+\graphicspath{{images/}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Code Listings
+% See ftp://ftp.tex.ac.uk/tex-archive/macros/latex/contrib/listings/listings.pdf
+%%%%%%%%%%%%%%
+\usepackage{listings}
+\lstset{numbers=left,numberstyle=\tiny,stepnumber=3,firstnumber=1,language=C++,basicstyle=\small,columns=flexible,backgroundcolor=\color{bcode},showstringspaces=false,emph={uint8_t,uint16_t,uint32_t,size_t,sig_atomic_t,time_t,clock_t,sigset_t,restrict},emphstyle=\bfseries,escapeinside={/*@}{@*/}}
+
+% define some basic styles for lstlisting
+\lstdefinestyle{config}{tabsize=2,numbers=none,basicstyle=\footnotesize,stringstyle=\texttt}
+\lstdefinestyle{codescriptsize}{ tabsize=2,stepnumber=5,caption=\lstname,captionpos=b,aboveskip=12pt,tabsize=2,numbers=left,numberstyle=\tiny,basicstyle=\scriptsize,stringstyle=\texttt,backgroundcolor=\color{lightgray}}
+\lstdefinestyle{codetiny}{stepnumber=5,caption=\lstname,captionpos=b,aboveskip=12pt,tabsize=2,numbers=left,numberstyle=\tiny,basicstyle=\tiny,stringstyle=\texttt,backgroundcolor=\color{lightgray}}
+\lstdefinestyle{output}{stepnumber=5,tabsize=2,numbers=none,breaklines=true,basicstyle=\scriptsize,stringstyle=\texttt}
+
+\lstdefinestyle{verif}{captionpos=b,numbers=none,backgroundcolor=\color{lightgray},columns=flexible,basicstyle=\scriptsize}
+
+\lstdefinestyle{codespdl}{stepnumber=5,caption=\lstname,captionpos=b,aboveskip=12pt,tabsize=2,numbers=left,numberstyle=\tiny,basicstyle=\scriptsize,stringstyle=\texttt,backgroundcolor=\color{lightgray},morekeywords={role,secret,compromised,secret,const,Function,inversekeys,usertype,protocol,var,Nonce,untrusted}}
+
+
+
+\usepackage{subfig}
+
+%    LEVEL    : An entry is produced only if LEVEL < or = value of 
+%              'tocdepth' counter.  Note, \chapter is level 0, \section
+%               is level 1, etc.
+\setcounter{tocdepth}{2} 
+\setcounter{secnumdepth}{3} 
+
+
+% change margin locally to insert wide figures
+% \def\quote{\list{}{\rightmargin\leftmargin}\item[]}
+% \let\endquote=\endlist
+% \def\changemargin#1#2{\list{}{\rightmargin#2\leftmargin#1}\item[]}
+% \let\endchangemargin=\endlist
+
+\def\netversion{yes}
+\ifx\reportlinks\netversion
+\usepackage{ifpdf}
+    \ifpdf
+    \usepackage[plainpages=false,pdftex]{hyperref} %these
+    % options may be necessary for pdflatex
+    \else
+    \usepackage[plainpages=false]{hyperref}
+    \usepackage{breakurl}
+    \fi
+    \hypersetup{pdftitle={\ReportTitle},
+                pdfauthor={\ReportAuthorForHyperref},
+                pdfsubject={\reportsubject}, 
+                pdfkeywords={\reportkeywords},
+                colorlinks,
+                linkcolor=red,
+                citecolor=blue,
+                breaklinks,
+                linktocpage,
+                bookmarksopen,
+                bookmarksopenlevel=1,
+                bookmarksnumbered}
+\fi
+
+
+
+
+
+
+% do NOT modify
+\def\frenchlang{fr}
+\def\printversion{Final}
+\def\Owner{Sebastien Varrette} % name of copyright for this template
+
+\def\theInstitute{
+  \begin{tabular}{l}
+      % {\large
+      % \begin{tabular}{l}
+      %     \InstituteAddress
+      % \end{tabular}
+      % }
+      %   \\
+      \begin{tabular}{ll}
+          \multicolumn{2}{l}{\textbf{Address:}}\\
+          \quad &
+          {\large
+            \begin{tabular}{l}
+                \InstituteAddress
+            \end{tabular}
+          }
+          \\
+          \\
+          \multicolumn{2}{l}{\textbf{Administrative Contact:}} \\
+          & ~\InstituteAdministrativeContact\\
+          & ~Email: \href{mailto:\InstituteMail}{\InstituteMail}\\
+      \end{tabular}
+  \end{tabular}
+}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+% Versionning with day and time %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+% months
+\def\ftoday{\number\day\space
+  \ifcase\month\or
+  january\or february\or march\or april\or may\or june\or
+  july\or august\or september\or october\or november\or december\fi
+  \space\number\year}
+% \isodayandtime to get current date and time
+\begingroup
+\count0=\time \divide\count0by60 % Hour
+\count2=\count0 \multiply\count2by-60 \advance\count2by\time% Min
+\def\2#1{\ifnum#1<10 0\fi\the#1}
+\xdef\isodayandtime{\the\year-\2\month-\2\day\space\2{\count0}:%sec
+  \2{\count2}}
+\endgroup
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+% Setup headings and title pages for chapters %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+
+%%% page geometry
+
+% \setlength{\parskip}{0.5\baselineskip}
+% \setlength{\parindent}{0pt}
+
+
+
+%%% Headings
+
+\pagestyle{fancyplain}
+\addtolength{\headheight}{1.8pt}
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+\renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}}
+\lhead[\fancyplain{}{\sffamily\bfseries\thepage}]%
+{\fancyplain{}{\sffamily\bfseries\rightmark}}
+\rhead[\fancyplain{}{\sffamily\bfseries\leftmark}]%
+{\fancyplain{}{\sffamily\bfseries\thepage}}
+\cfoot{}
+
+%%% Chapters
+
+\ifx\reportlanguage\frenchlang
+\renewcommand{\chaptername}{C h a p i t r e }
+\renewcommand{\appendixname}{A n n e x e s }
+\else
+\renewcommand{\chaptername}{C h a p t e r }
+\renewcommand{\appendixname}{A p p e n d i x }
+\fi
+
+
+\def\@makechapterhead#1{%
+  \vspace*{50\p@}%
+  {\parindent \z@ \raggedright \normalfont
+    \ifnum \c@secnumdepth >\m@ne
+    \if@mainmatter
+    \large\scshape \@chapapp \space\space \Huge\upshape\thechapter
+    \par\nobreak
+    \vskip 20\p@
+    \fi
+    \fi
+    \interlinepenalty\@M
+    \flushleft\parbox{\textwidth}{\raggedleft \sffamily\Huge\bfseries  #1}
+    \par\nobreak
+    \vskip 15pt
+    \hrule height 0.4pt
+    \vskip 80\p@
+  }}
+
+\def\@makeschapterhead#1{%
+  \vspace*{50\p@}%
+  {\parindent \z@ \raggedright \normalfont
+    \interlinepenalty\@M
+    % \flushleft\parbox{\textwidth}{\raggedleft \sffamily\Huge\bfseries  #1}
+    \sffamily\huge\bfseries  #1
+
+    \par\nobreak
+    \vskip 15pt
+    \hrule height 0.4pt
+    \vskip 80\p@
+  }}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+% Define additional theorem environments       %
+% (remark,definition,example,proof)            %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+% theorem and definition
+\theoremstyle{plain}
+\theoremheaderfont{\normalfont\bfseries}
+\theorembodyfont{\itshape}
+\theoremsymbol{\ensuremath{\diamondsuit}}
+\theoremseparator{:}
+\ifx\reportlanguage\frenchlang
+\newtheorem{theorem}{Th\'{e}or\`{e}me}[chapter]
+\else
+\newtheorem{theorem}{Theorem}[chapter]
+\fi
+
+\theoremstyle{plain}
+\theorembodyfont{\upshape}
+\theoremsymbol{\ensuremath{\diamondsuit}}
+\theoremseparator{}
+\theoremindent0.5cm
+\ifx\reportlanguage\frenchlang
+\newtheorem{example}{Exemple}[chapter]
+\else
+\newtheorem{example}{Example}[chapter]
+\fi
+
+
+\theoremstyle{plain}
+\theoremsymbol{\ensuremath{\diamond}}
+\theoremseparator{:}
+\theoremindent0cm
+\ifx\reportlanguage\frenchlang
+\newtheorem{definition}{D\'{e}finition}[chapter]
+\else
+\newtheorem{definition}{Definition}[chapter]
+\fi
+
+
+\theoremstyle{nonumberplain}
+\theoremheaderfont{\sc}
+\theorembodyfont{\upshape}
+\theoremseparator{}
+\theoremsymbol{\rule{1ex}{1ex}}
+\theoremindent0cm
+\ifx\reportlanguage\frenchlang
+\newtheorem{proof}{Preuve}[chapter]
+\else
+\newtheorem{proof}{Proof}[chapter]
+\fi
+
+\theoremstyle{plain}
+\theoremheaderfont{\normalfont}
+\theorembodyfont{\upshape}
+\theoremsymbol{}
+\theoremseparator{}
+\theoremindent0.5cm
+\ifx\reportlanguage\drenchlang
+\newtheorem{remark}{Remarque}[chapter]
+\else
+\newtheorem{remark}{Remark}[chapter]
+\fi
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+% Setup front- and back matter and info-pages about the project %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+\newcommand{\makefrontpage}
+{\begin{titlepage}%
+      \newgeometry{left=0.5cm,right=0.5cm,top=1cm,bottom=1cm}
+      
+      \begin{tikzpicture}[remember picture,overlay]
+          \coordinate (topleft)     at (current page.north west);
+          % \coordinate (left)        at (current page text area.north west)
+          \coordinate (topright)    at (current page.north east);
+          % \coordinate (right)       at (current page text area.north east)
+          \coordinate (bottomright) at (current page.south east);
+          \coordinate (bottomleft)  at (current page.south west);
+          \coordinate (origin)      at (0,0);
+          % X-axis components
+          \coordinate (center)      at (0.5\paperwidth,0);
+          \coordinate (logoplace)   at (0.2\paperwidth,0);
+          \coordinate (textplace)   at (0.25\paperwidth,0);
+          % Y-axis components
+          \coordinate (authorplace) at (0,-0.25\paperheight);
+          \coordinate (sky)         at (0,-.81\paperheight);
+          \coordinate (midsky)      at (0,-.813\paperheight);
+          \coordinate (subsky)      at (0,-.83\paperheight);
+
+          % Background colors
+          \draw [fill={rgb:red,92;green,92;blue,92}] (topleft) rectangle (sky -| topright);
+          \fill [black!15] (subsky -| topleft) rectangle (bottomright);
+
+          % Logos
+          \node (logo_ul)[fill=white, rounded corners, anchor=south] at (logoplace |- midsky) {~~~\includegraphics[scale=0.4]{logo_UL.pdf}~~~};
+          \node (logo_hpc)[rounded corners,anchor=north west] at (origin) {\includegraphics{logo_ULHPC_100x100.png}};
+
+          % Title
+          \node (title)[fill=white, rounded corners, anchor=north west,inner sep=2em, align=left, text width=0.6\textwidth] at (textplace) {
+            \Huge {\textcolor{ulgray}{\textsf{\textbf{\ReportTitle}}}}\\[0.5em]
+            \LARGE{\textcolor{ulgray}{\textsf{\textbf{\Subtitle \hfill \DatePublished}}}}\\[1em]
+            % \hfill\LARGE{\textcolor{ulgray}{\textsf{\textbf{\DatePublished}}}}\\[1em]
+            % \textcolor{ulgray}{\textsf{\emph{by} \ReportAuthor}}
+          };
+          \node (authors) [anchor=north west,align=right, text width=0.6\textwidth] at (authorplace -| textplace)  {
+            \textcolor{white}{\textsf{\emph{by} \ReportAuthor}}
+          };
+          \node (address) [anchor=north west,align=left, inner sep=2em, text width=0.3\textwidth] at (center |- subsky) {
+            {\sffamily
+              \textcolor{ulgray}{\InstituteAddress}\\
+            }
+          };
+          \node (links) [anchor=north,align=center, inner sep=4em, text width=0.3\textwidth] at (logoplace |- subsky) {
+            {\sffamily\LARGE
+              \textcolor{ulgray}{\texttt{\InstituteURL}}\\
+            }
+          };
+
+      \end{tikzpicture}
+
+
+
+      \restoregeometry
+  \end{titlepage}%
+  \setcounter{footnote}{0}
+  % 
+  \newpage\thispagestyle{empty}
+}
+
+\newcommand{\makefrontpageempty}
+{\begin{titlepage}%
+      \setcounter{page}{3}%circumvent warning from hyperref about duplicate
+      % pagenumbering
+      \begin{pspicture}(0cm,0cm)(15cm,20.5cm)
+          % \psgrid
+
+          \rput[tl](0.75,17.2){
+            \begin{minipage}[t]{14cm}
+                \textit{\textsf{\Large{
+                      \begingroup
+                      \tabcolsep -2mm
+                      \begin{tabular}{l}
+                          \ReportAuthor
+                      \end{tabular}
+                      \endgroup }}}
+
+                \vspace*{3.8cm}
+
+                \begin{flushleft}
+                    \Huge{\textsf{\textbf{\ReportTitle}} }
+                \end{flushleft}
+
+                \vspace*{0.5cm}
+
+                \begin{flushleft}
+                    \LARGE{\textsf{\textbf{\Subtitle\hfill\DatePublished}}}
+                \end{flushleft}
+
+
+                \vspace*{6cm}
+
+                \begin{flushleft}
+                    \large{
+                      \textbf{Keywords:} \\
+                      \textsf{\reportkeywords.}}
+                \end{flushleft}
+
+
+            \end{minipage}}
+      \end{pspicture}
+  \end{titlepage}%
+  \setcounter{footnote}{0}%
+  \newpage\thispagestyle{empty}
+}
+
+\newcommand{\infopage}
+{\begin{titlepage}%
+      \setcounter{page}{5}%circumvent warning from hyperref about duplicate
+      % pagenumbering
+      \begin{pspicture}(0cm,0cm)(15cm,22cm)
+          \rput[tl](-0.5,20.5){
+            \begin{minipage}[t]{14cm}
+                \textsf{\ReportTitle ,\Subtitle, \DatePublished}
+                \vspace*{16cm}
+
+                % \ifx\reportlanguage\frenchlang
+                % \textsf{\textbf{Ce rapport a \'et\'e r\'edig\'e par}}
+                % \else
+                % \textsf{\textbf{This report was prepared by}}
+                % \fi
+                % \textsf{
+                % \begin{tabular}[t]{l}
+                %     \ReportAuthor
+                % \end{tabular}}
+
+                % \vspace*{6cm}
+
+
+
+                \ifx\reportlanguage\frenchlang
+                \textsf{
+                  \begin{tabular}{ l l l}
+                      \hline\\
+                      Editeurs:            &\quad &   \Editorsname \\
+                      Date de parution:    &      &   \DatePublished  \\
+                      Cat\'{e}gory:        &      &   \Category       \\
+                      Version du document: &      &   \reportversion\ v\Version        \\
+                      &      &   Date de compilation: \isodayandtime \\
+                      Commentaires:        &      &
+                      \begin{minipage}[t]{10cm}
+                          La mise en page de ce document a \'et\'e r\ealis\ee avec \LaTeX\
+                          sur la base du template$^\copyright$\ cr\'e\'e par \Owner.
+                      \end{minipage} \\
+                  \end{tabular}}
+                \else
+                \textsf{
+                  \begin{tabular}{ l l l}
+                      \hline\\
+                      Editors:          &\quad &   \Editorsname \\
+                      Release date:     &      &   \DatePublished  \\
+                      Category:         &      &   \Category       \\
+                      Document Version: &      &   \reportversion\ v\Version        \\
+                      &      &   Compiled time: \isodayandtime \\
+                      Comments:         &      &
+                      \begin{minipage}[t]{10cm}
+                          This report has been written using \LaTeX\ on the basis of the
+                          template$^\copyright$\ designed by \Owner.\\
+                          \LaTeX\ sources of this report are available on \href{\ReportSrcURL}{GitHub}.
+                      \end{minipage} \\
+                  \end{tabular}}
+                \fi
+            \end{minipage}}
+
+          \rput[tl](-.5,19){
+            \begin{minipage}[t]{14cm}
+                \textsf{
+                  \theInstitute\\
+                  \\[4em]
+                  \begin{tikzpicture}
+                      \node (logo_ul)[fill=lightgray, rounded corners, text width=\textwidth, align=center]  {~~~\includegraphics[scale=0.4]{logo_UL.pdf}~~~};%                      \draw [fill=ulgray, rounded corners] {\href{\InstituteURL}{\InstituteURL}};
+                  \end{tikzpicture}
+                  {\Huge
+                    \begin{center}
+                        \href{\InstituteURL}{\InstituteURL}
+                    \end{center}
+                  }
+                }
+            \end{minipage}
+          }
+
+
+      \end{pspicture}
+      \newpage\thispagestyle{empty}
+  \end{titlepage}%
+  \setcounter{footnote}{0}%
+  % \newpage\thispagestyle{empty}
+  % \newpage\thispagestyle{empty}
+}
+
+
+\newcommand{\emptypage}
+{\begin{titlepage}%
+      \begin{pspicture}(0cm,0cm)(15cm,22cm)
+      \end{pspicture}
+  \end{titlepage}%
+  \setcounter{footnote}{0}%
+}
+
+
+\newcommand{\makebackpage}{
+  % disable header for the backmatter
+  \pagestyle{empty}
+
+  % insert empty page
+  \begin{pspicture}(0cm,0cm)(15cm,22cm)
+  \end{pspicture}
+
+  % print backmatter
+  \begin{pspicture}(0cm,0cm)(15cm,20.5cm)
+
+      \rput[t1](7,2.4){
+       \textsf{
+          \begin{minipage}[t]{12cm}
+              \begin{tikzpicture}
+                  \node (logo_ul)[fill=lightgray, rounded corners, text width=\textwidth, align=center]  {\LARGE \textbf{\href{\InstituteURL}{\InstituteURL}}};
+              \end{tikzpicture}
+              %{\LARGE \textbf{\href{\InstituteURL}{\InstituteURL}}}\\
+              ~\\
+              {\large
+                \begin{tabular}{l}
+                    \InstituteAddress
+                \end{tabular}
+              }
+              \begin{tabular}{ll}
+                  \\
+                  \textbf{Administrative Contact:} \\
+                  \quad \InstituteAdministrativeContact\\
+                  \quad Email: \href{mailto:\InstituteMail}{\InstituteMail}\\
+                  \\
+                  \\
+                  \ISBNNUMBER \\
+              \end{tabular}
+          \end{minipage}}
+      }
+  \end{pspicture}
+  
+}
+
+\bibliographystyle{unsrt}
+
+\newcommand*{\coverpages}{\makefrontpage \makefrontpageempty \infopage}
+% 
+% END - Setup front- and back matter and info-pages about the project
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "master"
+%%% End:
