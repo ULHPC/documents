@@ -1,3 +1,6 @@
+/src*
+activity_report*.pdf
+.Trash/*
 *.rel
 *.acn
 *.acr
