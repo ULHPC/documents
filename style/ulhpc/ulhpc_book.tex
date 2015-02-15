@@ -1,6 +1,6 @@
 %=============================================================================
 % File:  ulhpc_book.tex --  Example of usage of the ulhpc_book style           
-% Time-stamp: <Ven 2015-02-13 17:55 svarrette>
+% Time-stamp: <Dim 2015-02-15 11:34 svarrette>
 %
 % Copyright (c) 2015 Sebastien Varrette <Sebastien.Varrette@uni.lu>
 %               
@@ -13,32 +13,33 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Input info. for cover, titlepages, pdf properties, version etc. %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\def\reportsubject{}            % only for pdf properties - doesn't appear on
-                                % printed versions 
-\def\ISBNNUMBER{}               % type \ISBNNUMBER{ISBN: xxx} if this report has one
-\def\DatePublished{2015}        % date of publication
-\def\Category{1 (public)}       % project class chosen on the basis of the
-                                % following table: 
-%  +---------------------------------------------+------------------------------+
-%  |            Category                         |     Text                     |
-%  +---------------------------------------------+------------------------------+
-%  |1. The report is accessible for public       | 1 (Public)                   |
-%  +---------------------------------------------+------------------------------+
-%  |2. The report is confidential and may        | 2 (confidential)             |
-%  |   not be distributed.                       |                              |
-%  +---------------------------------------------+------------------------------+
-%  |3. The report may only be distributed after  |                              |
-%  |   written permission from the Author        | 3 (after written permission) |
-%  +---------------------------------------------+------------------------------+
+\def\reportsubject{}      % only for pdf properties - doesn't appear on
+                          % printed versions 
+\def\ISBNNUMBER{}         % type \ISBNNUMBER{ISBN: xxx} if available
+\def\DatePublished{2015}  % date of publication
+\def\Category{1 (public)} % project class chosen on the basis of the
+                          % following table: 
+%  +-----------------------------------------+--------------------+
+%  |            Category                     |     Text           |
+%  +-----------------------------------------+--------------------+
+%  |1. The report is accessible for public   | 1 (Public)         |
+%  +-----------------------------------------+--------------------+
+%  |2. The report is confidential and may    | 2 (confidential)   |
+%  |   not be distributed.                   |                    |
+%  +-----------------------------------------+--------------------+
+%  |3. The report may only be distributed    | 3 (after written   |
+%  | after written permission from the Author|    permission)     |
+%  +-----------------------------------------+--------------------+
 
-\def\ReportAuthor{S\'ebastien Varrette, PhD}  % Ex: \ReportAuthor{MyAuthor1\\MyAuthor2}
-                                % multiple authors separated by "\\" (in this
-                                % case, adjust the \vspace in
-                                % ulhpc_book.sty as necessary  
+\def\ReportAuthor{S\'ebastien Varrette, PhD}  
+                             % Ex: \ReportAuthor{MyAuthor1\\MyAuthor2}
+                             % multiple authors separated by "\\" (in this
+                             % case, adjust the \vspace in
+                             % ulhpc_book.sty as necessary  
 \def\ReportAuthorForHyperref{S\'ebastien Varrette, PhD}  % Ex:
-                                % \ReportAuthorForHyperref{MyAuthor1,MyAuthor2}
-                                % list of authors for pdf properties. Multiple
-                                % authors separated by "," 
+                             % \ReportAuthorForHyperref{MyAuthor1,MyAuthor2}
+                             % list of authors for pdf properties. Multiple
+                             % authors separated by "," 
 \def\ReportTitle{Your Title} % Report title
 \def\Subtitle{Subtitle} % Subtitle - if any
 
@@ -53,13 +54,13 @@
 }
 
 \def\Version{0.1} % Version -- use the following command to
-                                   % activate svn property Rev:
-                                   % svn propset svn:keywords "Id Rev" *.tex
+                  % activate svn property Rev:
+                  % svn propset svn:keywords "Id Rev" *.tex
 
-\def\reportversion{Final}  % TODO: choose this for final version (official set
-                           % of title pages)  
-%\def\reportversion{Draft} % TODO: choose this for draft version (simple title
-                           % page and no info page
+\def\reportversion{Final}  % TODO: choose this for final version (official 
+                           % set of title pages)  
+%\def\reportversion{Draft} % TODO: choose this for draft version (simple 
+                           % title page and no info page
 
 %\def\reportlinks{no}      % TODO: choose this for paper  version 
 \def\reportlinks{yes}      % TODO: choose this for online version 
@@ -87,9 +88,6 @@
 \def\Editorsname{
 \href{http://csc.uni.lu/sebastien.varrette}{S\'{e}bastien Varrette, PhD}
 }
-
-
-
 
 \usepackage{ulhpc_book}
 
@@ -155,6 +153,25 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%
 \mainmatter
 
+\chapter{How to use the \texttt{ulhpc\_book} style}
+
+You need first to clone (directly or as a git submodule) the \texttt{ULHPC/documents} repository on \href{https://github.com/ULHPC/documents}{Github}. 
+
+Then in addition to the addition of the \LaTeX\ style file \texttt{ulhpc\_book.sty} at the root of your document, you'll need: 
+
+\begin{itemize}
+  \item a copy of the logos files (in PDF format) \texttt{logo\_UL.pdf} and \texttt{logo\_ULHPC.pdf} in a know path;
+  \item to initiate a certain number of variables / macros used in the style \textbf{prior to} the call to 
+\end{itemize}
+
+\lstinputlisting[language=TeX,firstline=13,lastline=90]{ulhpc_book.tex}
+
+After these variables, you can call the package as always by 
+
+\lstinputlisting[language=TeX,firstline=92,lastline=92]{ulhpc_book.tex}
+
+Don't forget your acknowledgements~\cite{VBCG_HPCS14}.
+
 % \input{_introduction}
 % \input{_overview}
 
@@ -174,7 +191,7 @@
 \chapter*{Acronyms}
 % \input{_acronyms}
 
-%\bibliography{biblio,biblio-varrette}
+\bibliography{biblio}
 
 %%%%%%%%%%%%%%%
 % BACK MATTER %
@@ -194,5 +211,5 @@
 % mode: latex
 % mode: flyspell
 % mode: visual-line
-% TeX-master: ""
+% TeX-master: "ulhpc_book"
 % End:
