@@ -1,6 +1,6 @@
 %=============================================================================
 % File:  ulhpc_book.tex --  Example of usage of the ulhpc_book style           
-% Time-stamp: <Dim 2015-02-15 11:34 svarrette>
+% Time-stamp: <Dim 2015-02-15 11:49 svarrette>
 %
 % Copyright (c) 2015 Sebastien Varrette <Sebastien.Varrette@uni.lu>
 %               
@@ -170,7 +170,18 @@ After these variables, you can call the package as always by
 
 \lstinputlisting[language=TeX,firstline=92,lastline=92]{ulhpc_book.tex}
 
-Don't forget your acknowledgements~\cite{VBCG_HPCS14}.
+\chapter{Acknowledgements}
+
+In general, don't forget the  acknowledgements to the UL HPC platform~\cite{VBCG_HPCS14} as requested in the \href{https://hpc.uni.lu/users/AUP.html}{Acceptable Use Policy (AUP)}: 
+
+\begin{verbatim}
+Acknowledgment: Experiments presented in this paper were carried out 
+using the HPC facilities of University of Luxembourg~\cite{VBCG_HPCS14} 
+{\small -- see \url{http://hpc.uni.lu}}.
+\end{verbatim}
+
+Cite the reference paper of the platform~\cite{VBCG_HPCS14} if you can. Finally (and that's probably more important), remember to attach the paper to the ULHPC in \href{http://publications.uni.lu/}{ORBi.lu} as described in \href{https://hpc.uni.lu/about/publis.html#acknowledgement-banner-and-orbilu-instructions}{these instructions}.
+
 
 % \input{_introduction}
 % \input{_overview}
@@ -188,7 +199,7 @@ Don't forget your acknowledgements~\cite{VBCG_HPCS14}.
 
 \newpage
 \appendix
-\chapter*{Acronyms}
+%\chapter*{Acronyms}
 % \input{_acronyms}
 
 \bibliography{biblio}
