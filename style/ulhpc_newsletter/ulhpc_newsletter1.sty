@@ -2,7 +2,7 @@
 % File:  ulhpc_newsletter1.sty --  LaTeX style configuration for the document
 % Author(s): Sebastien Varrette <Sebastien.Varrette@uni.lu>
 % Creation:  16 Feb 2015
-% Time-stamp: <Tue 2015-02-17 00:53 svarrette>
+% Time-stamp: <Tue 2015-02-17 16:58 svarrette>
 % 
 % Copyright (c) 2015 Sebastien Varrette <Sebastien.Varrette@uni.lu> (see LICENCE)
 % 
@@ -132,6 +132,8 @@
   Luxembourg\\
   \textbf{T.} +352 46 66 44 6600
 }
+\def\Licence{CC BY-NC-SA 4.0}
+\def\LicenceURL{http://creativecommons.org/licenses/by-nc-sa/4.0/}
 \def\Editorsname{S. Varrette and Prof. P. Bouvry}
 \def\NewsletterURL{http://hpc.uni.lu/newsletter}
 
@@ -151,7 +153,7 @@
   urlcolor=ulblue,
   citecolor=ulblue,
   breaklinks,
-  linktocpage,
+  linktocpage=true,
   bookmarksopen,
   bookmarksopenlevel=1,
   bookmarksnumbered}
@@ -193,7 +195,7 @@
     \coordinate (up)   at   (current page text area.north west);
     \coordinate (down) at   (current page text area.south west);
     \coordinate (editors) at ($(current page text area.north west)+(-0.5,-0.2)$);
-    \coordinate (toc)     at ($(editors)+(-0.2,-1.2)$);
+    \coordinate (toc)     at ($(editors)+(-0.2,-1.5)$);
     
 
     \draw [thick,color={ulgray}] ($(up)+(-0.5,0)$) -- ($(down)+(-0.5,0)$);  
@@ -217,18 +219,30 @@
     \node (toc_header)[font=\sffamily\color{ulblue},fill=lightgray,rounded rectangle west arc=none,anchor=east, inner sep=1em,text width=4.4cm] at (toc) {
       \fontsize{15}{50}\selectfont \textbf{In this issue...}
     };
-    \node (toc_header)[font=\sffamily\color{ulgray},anchor=east, text width=4.4cm,below=0.5 of toc_header] {
-      %\InThisIssue
-      %\printcontents[sections]{}{1}{}
-    };
+    % \node (toc)[font=\sffamily\color{ulgray},anchor=east, text width=4.4cm,below=0.5 of toc_header] {
+    %   %\InThisIssue
+    %   %\printcontents[sections]{}{1}{}
+    % };
 
 
     \node (logo_ul)[rounded corners, anchor=south,xshift=-3.25cm] at (current page text area.south west) {
       \includegraphics[width=3cm]{logo_UL.pdf}
     };
+    \node (qrcode)[font=\color{ulgray},anchor=south,above=of logo_ul]  { 
+      \qrcode[version=3]{\NewsletterURL}
+    };
 
 
   \end{tikzpicture}%
+}
+
+\renewcommand\contentsname{}
+\newcommand\ulhpctoc{
+  \begin{tikzpicture}[remember picture,overlay]
+    \node (toc)[font=\sffamily\color{ulblue},anchor=west, text width=5cm] at ($(current page.north west)+(0.1,-7.5)$) {
+      \tableofcontents
+    };
+  \end{tikzpicture}
 }
 
 \newcommand\Footer{%
@@ -239,7 +253,15 @@
     ([yshift=-40pt,xshift=-3cm]current page.south|-current page text area.south) --
     ([xshift=-5cm,yshift=-10pt]current page.south|-current page text area.south) --
     ([yshift=-10pt]current page.south west|-current page text area.south west) -- cycle;
-    \node[yshift=0.75cm,font=\ttfamily\bfseries\color{white}] at (current page.south) {\fontsize{20}{24}\selectfont hpc.uni.lu};
+
+    \node[yshift=0.75cm,font=\ttfamily\bfseries\color{white}, anchor=east] at (current page.south east) {
+      \fontsize{20}{24}\selectfont \href{\InstituteURL}{\color{white}{\InstituteURL}}~~~ 
+    };
+
+    \node (licence) [yshift=0.25cm, font=\sffamily\bfseries\color{white}, anchor=west] at (current page.south west) {
+      \href{\LicenceURL}{\includegraphics[height=0.5cm]{logo_licence.png}}
+      \tiny \LaTeX\ template by S. Varrette
+    };
   \end{tikzpicture}%
 }
 
