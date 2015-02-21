@@ -2,7 +2,7 @@
 % File:  ulhpc_newsletter1.sty --  LaTeX style configuration for the document
 % Author(s): Sebastien Varrette <Sebastien.Varrette@uni.lu>
 % Creation:  16 Feb 2015
-% Time-stamp: <Sun 2015-02-22 00:36 svarrette>
+% Time-stamp: <Sun 2015-02-22 00:46 svarrette>
 % 
 % Copyright (c) 2015 Sebastien Varrette <Sebastien.Varrette@uni.lu> (see LICENCE)
 % 
@@ -47,6 +47,7 @@
 \providecommand{\Frequency}{}                     % Frequency ( monthly, quarterly, etc.) 
 \providecommand{\Number}{1}                       % Issue number for the newsletter
 \providecommand{\InstituteURL}{http://hpc.uni.lu} % Reference web site
+\providecommand{\Editorsname}{S. Varrette and Prof. P. Bouvry}
 \providecommand{\ReportSrcURL}{https://github.com/ULHPC/documents}
 \providecommand{\InstituteAddress}{%
   University of Luxembourg          \\
@@ -59,7 +60,6 @@
 \providecommand{\LicenceURL}{http://creativecommons.org/licenses/by-nc-sa/4.0/}
 \providecommand{\Github}{ULHPC}  % Github account
 \providecommand{\Twitter}{ULHPC} % Twitter account
-\providecommand{\Editorsname}{S. Varrette and Prof. P. Bouvry}
 \providecommand{\NewsletterURL}{http://hpc.uni.lu/newsletter}
 
 %%%% Current version of the proposal
@@ -273,12 +273,16 @@
     \node (left_title)[font=\sffamily\color{ulblue},fill=lightgray,rounded rectangle west arc=none,anchor=north, inner sep=1em,text width=4.4cm] at ($(editors)+(0.2,-2)$) {
       \fontsize{15}{50}\selectfont \textbf{#1}
     };
-    \node [font=\sffamily\color{ulblue},anchor=west, text width=5cm,below=-2cm of left_title]  {
+    \node [font=\sffamily\color{ulblue},anchor=west, text width=5cm,below=0.3cm of left_title]  {
       #2
     };
    \end{tikzpicture}
    \vspace{-2em}
 }
+\newcommand\ulhpctoc{
+  \leftinfo{In this issue...}{\vspace*{-2cm}\tableofcontents}
+}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Welcome box
@@ -289,6 +293,9 @@
   \begin{tcolorbox}[colback=lightgray,colframe=ulblue,title=#1]
     \faRSS\ 
 }{%\end{welcome}
+  \begin{flushright}
+    \textbf{\emph{\Editorsname}}
+  \end{flushright}
   \end{tcolorbox}
 }
 
