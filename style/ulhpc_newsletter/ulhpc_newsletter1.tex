@@ -2,16 +2,23 @@
 % File:  ulhpc_newsletter1.tex --  Example of usage of the style            
 % Author(s): Sebastien Varrette <Sebastien.Varrette@uni.lu>
 % Creation:  16 Feb 2015
-% Time-stamp: <Tue 2015-02-17 16:12 svarrette>
+% Time-stamp: <Sat 2015-02-21 13:31 svarrette>
 %=============================================================================
 \documentclass{article}
+
+\usepackage{graphicx}
+\graphicspath{{images/}}
 
 \usepackage{ulhpc_newsletter1}
 
 
 \begin{document}
 
-\ulhpctoc
+%\ulhpctoc
+
+\leftinfo{In this issue...}{\tableofcontents}
+
+
 
 \section{Section 1}
 \lipsum[1-2]

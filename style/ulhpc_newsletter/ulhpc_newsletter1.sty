@@ -2,7 +2,7 @@
 % File:  ulhpc_newsletter1.sty --  LaTeX style configuration for the document
 % Author(s): Sebastien Varrette <Sebastien.Varrette@uni.lu>
 % Creation:  16 Feb 2015
-% Time-stamp: <Tue 2015-02-17 16:58 svarrette>
+% Time-stamp: <Sat 2015-02-21 13:42 svarrette>
 % 
 % Copyright (c) 2015 Sebastien Varrette <Sebastien.Varrette@uni.lu> (see LICENCE)
 % 
@@ -39,7 +39,9 @@
 
 \usepackage[hmargin=2cm,bmargin=3cm,tmargin=5cm,lmargin=6cm,centering]{geometry}
 
+\usepackage{fontawesome} % see http://ftp.oleane.net/pub/CTAN/fonts/fontawesome/fontawesome.pdf for the list of available icons
 \usepackage[explicit]{titlesec}
+\usepackage{titletoc}
 \usepackage{tikzpagenodes}
 \usetikzlibrary{calc}
 \usetikzlibrary{positioning}
@@ -49,6 +51,7 @@
 \usepackage{lipsum}
 \usepackage{atbegshi}
 \usepackage{qrcode}
+\usepackage{etoolbox} % better ifthen
 
 \usepackage[usenames]{colortbl}
 
@@ -110,14 +113,35 @@
 }%
 }
 
-\titleformat{\subsection}{\normalfont\large\sffamily}{}{0cm}{\textcolor{ulblue}{#1}}
-\titlespacing*{\subsection}{0cm}{3.5ex plus 1ex minus .2ex}{2.3ex plus .2ex}
-\titlespacing*{name=\subsection,numberless}{0cm}{3.5ex plus 1ex minus .2ex}{2.3ex plus .2ex}
-\renewcommand*{\thesubsection}{\arabic{subsection}}
+% Format the section
 \titleformat{\section}{\LARGE\sffamily}{}{0cm}{\textcolor{ulblue}{#1}}
 \titlespacing*{\section}{0cm}{3.5ex plus 1ex minus .2ex}{2.3ex plus .2ex}
 \titlespacing*{name=\section,numberless}{0cm}{3.5ex plus 1ex minus .2ex}{2.3ex plus .2ex}
 \renewcommand*{\thesection}{\arabic{section}}
+
+
+\titleformat{\subsection}{\normalfont\large\sffamily}{}{0cm}{\textcolor{ulblue}{#1}}
+\titlespacing*{\subsection}{0cm}{3.5ex plus 1ex minus .2ex}{2.3ex plus .2ex}
+\titlespacing*{name=\subsection,numberless}{0cm}{3.5ex plus 1ex minus .2ex}{2.3ex plus .2ex}
+\renewcommand*{\thesubsection}{\arabic{subsection}}
+
+\titlecontents{section}% <section-type>
+  [5pt]% <left>
+  {\addvspace{0.5em}}% <above-code>
+  {\bfseries} %\bfseries\chaptername\ \thecontentslabel\quad}% <numbered-entry-format>
+  {}% <numberless-entry-format>
+  {\bfseries\hfill\contentspage}% <filler-page-format>
+
+\titlecontents{subsection}% <section-type>
+  [15pt]% <left>
+  {\addvspace{0.25em}}% <above-code>
+  {} %\bfseries\chaptername\ \thecontentslabel\quad}% <numbered-entry-format>
+  {}% <numberless-entry-format>
+  {\bfseries\hfill\contentspage}% <filler-page-format>
+
+
+
+%\titlecontents{\section}{numberless}
 
 %%%%%%%%%%%%
 \def\title{UL HPC Newsletter}
@@ -134,6 +158,8 @@
 }
 \def\Licence{CC BY-NC-SA 4.0}
 \def\LicenceURL{http://creativecommons.org/licenses/by-nc-sa/4.0/}
+\def\Github{ULHPC}  % Github account
+\def\Twitter{ULHPC} % Twitter account
 \def\Editorsname{S. Varrette and Prof. P. Bouvry}
 \def\NewsletterURL{http://hpc.uni.lu/newsletter}
 
@@ -216,34 +242,53 @@
     };
 
     % TOC
-    \node (toc_header)[font=\sffamily\color{ulblue},fill=lightgray,rounded rectangle west arc=none,anchor=east, inner sep=1em,text width=4.4cm] at (toc) {
-      \fontsize{15}{50}\selectfont \textbf{In this issue...}
-    };
+    % \node (toc_header)[font=\sffamily\color{ulblue},fill=lightgray,rounded rectangle west arc=none,anchor=east, inner sep=1em,text width=4.4cm] at (toc) {
+    %   \fontsize{15}{50}\selectfont \textbf{In this issue...}
+    % };
     % \node (toc)[font=\sffamily\color{ulgray},anchor=east, text width=4.4cm,below=0.5 of toc_header] {
     %   %\InThisIssue
     %   %\printcontents[sections]{}{1}{}
     % };
 
-
     \node (logo_ul)[rounded corners, anchor=south,xshift=-3.25cm] at (current page text area.south west) {
       \includegraphics[width=3cm]{logo_UL.pdf}
     };
-    \node (qrcode)[font=\color{ulgray},anchor=south,above=of logo_ul]  { 
-      \qrcode[version=3]{\NewsletterURL}
-    };
-
 
   \end{tikzpicture}%
 }
 
-\renewcommand\contentsname{}
-\newcommand\ulhpctoc{
+
+% Place a new info on the left
+% \begin{leftinfo}[title]
+%  ...
+% \end{leftinfo}
+
+\newcommand{\leftinfo}[2]{%begin{leftinfo}
   \begin{tikzpicture}[remember picture,overlay]
-    \node (toc)[font=\sffamily\color{ulblue},anchor=west, text width=5cm] at ($(current page.north west)+(0.1,-7.5)$) {
-      \tableofcontents
+    % \coordinate (editors) at ($(current page text area.north west)+(-0.5,-0.2)$);
+    % \coordinate (toc)     at ($(editors)+(-0.2,-1.5)$);
+
+    \node (left_title)[font=\sffamily\color{ulblue},fill=lightgray,rounded rectangle west arc=none,anchor=east, inner sep=1em,text width=4.4cm] at ($(current page text area.north west)+(-0.7,-1.7)$) {
+      \fontsize{15}{50}\selectfont \textbf{#1}
     };
-  \end{tikzpicture}
+    % \node (left_title)[font=\sffamily\color{ulblue},fill=lightgray,rounded rectangle west arc=none,anchor=east, inner sep=1em,text width=4.4cm] at ($(current page.north west)+(0.1,-7.5)$) {
+    %     \fontsize{15}{50}\selectfont \textbf{#1}
+    %   };
+    %}
+    \node [font=\sffamily\color{ulblue},anchor=west, text width=5cm,below=-1.5cm of left_title]  {
+      #2
+    };
+   \end{tikzpicture}
 }
+
+\renewcommand\contentsname{}
+% \newcommand\ulhpctoc{
+%   \begin{tikzpicture}[remember picture,overlay]
+%     \node (toc)[font=\sffamily\color{ulblue},anchor=west, text width=5cm] at ($(current page.north west)+(0.1,-7.5)$) {
+%       \tableofcontents
+%     };
+%   \end{tikzpicture}
+% }
 
 \newcommand\Footer{%
   \begin{tikzpicture}[remember picture,overlay]
@@ -255,13 +300,22 @@
     ([yshift=-10pt]current page.south west|-current page text area.south west) -- cycle;
 
     \node[yshift=0.75cm,font=\ttfamily\bfseries\color{white}, anchor=east] at (current page.south east) {
-      \fontsize{20}{24}\selectfont \href{\InstituteURL}{\color{white}{\InstituteURL}}~~~ 
+      \fontsize{20}{24}\selectfont \faSignin~\href{\InstituteURL}{\color{white}{\InstituteURL}}~~~ 
     };
 
-    \node (licence) [yshift=0.25cm, font=\sffamily\bfseries\color{white}, anchor=west] at (current page.south west) {
+    \node (licence_logo) [yshift=0.25cm, anchor=west] at (current page.south west) {
       \href{\LicenceURL}{\includegraphics[height=0.5cm]{logo_licence.png}}
-      \tiny \LaTeX\ template by S. Varrette
     };
+    \node (licence) [yshift=-0.1cm,font=\sffamily\bfseries\color{white}, anchor=west, right=-0.1 of licence_logo] { 
+      \tiny \LaTeX\ template by \href{mailto=Sebastien.Varrette@uni.lu}{\color{white}\underline{S. Varrette}}
+    };
+
+    \node (social) [xshift=2.5cm,anchor=west, above=0.4cm of licence_logo]  {
+      \fontsize{25}{24}\selectfont 
+      \href{http://twitter.com/\Twitter}{\color{white}\faTwitter}
+      \href{http://github.com/\Github}{\color{white}\faGithub}
+    };
+
   \end{tikzpicture}%
 }
 
