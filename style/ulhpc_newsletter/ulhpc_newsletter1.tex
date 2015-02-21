@@ -2,32 +2,41 @@
 % File:  ulhpc_newsletter1.tex --  Example of usage of the style            
 % Author(s): Sebastien Varrette <Sebastien.Varrette@uni.lu>
 % Creation:  16 Feb 2015
-% Time-stamp: <Sat 2015-02-21 13:31 svarrette>
+% Time-stamp: <Sun 2015-02-22 00:38 svarrette>
 %=============================================================================
 \documentclass{article}
 
 \usepackage{graphicx}
 \graphicspath{{images/}}
 
+
 \usepackage{ulhpc_newsletter1}
 
 
 \begin{document}
 
-%\ulhpctoc
-
+% Format: \leftinfo{<title>}{<body>}
 \leftinfo{In this issue...}{\tableofcontents}
+
+% Format: \begin{welcome}[<title>]{<author>} ... \end{welcome}
+\begin{welcome}
+  \lipsum[1]
+  
+  ~\hfill\emph{\textbf{S. Varrette}}
+\end{welcome}
 
 
 
 \section{Section 1}
-\lipsum[1-2]
+\lipsum[2]
 
 \section{Section 2}
 \subsection{subsection a}
-\lipsum[3-4]
+\lipsum[3]
 \subsection{subsection b}
-\lipsum[5-15]
+\lipsum[4]
+
+\leftinfo{2014 Key numbers}{4 Clusters, }
 
 
 \end{document}

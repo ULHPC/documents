@@ -2,7 +2,7 @@
 % File:  ulhpc_newsletter1.sty --  LaTeX style configuration for the document
 % Author(s): Sebastien Varrette <Sebastien.Varrette@uni.lu>
 % Creation:  16 Feb 2015
-% Time-stamp: <Sat 2015-02-21 13:42 svarrette>
+% Time-stamp: <Sun 2015-02-22 00:36 svarrette>
 % 
 % Copyright (c) 2015 Sebastien Varrette <Sebastien.Varrette@uni.lu> (see LICENCE)
 % 
@@ -37,11 +37,43 @@
 % link to this web page.
 % =============================================================================
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Configuration for the style %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\providecommand{\Newstitle}{UL HPC Newsletter}    % Title of the newsletter
+\providecommand{\ReleaseDate}{February 2015}      % Release date for newsletter
+\providecommand{\Frequency}{}                     % Frequency ( monthly, quarterly, etc.) 
+\providecommand{\Number}{1}                       % Issue number for the newsletter
+\providecommand{\InstituteURL}{http://hpc.uni.lu} % Reference web site
+\providecommand{\ReportSrcURL}{https://github.com/ULHPC/documents}
+\providecommand{\InstituteAddress}{%
+  University of Luxembourg          \\
+  6, rue Richard Coudenhove-Kalergi \\
+  L-1359 Luxembourg \\
+  Luxembourg\\
+  \textbf{T.} +352 46 66 44 6600
+}
+\providecommand{\Licence}{CC BY-NC-SA 4.0}
+\providecommand{\LicenceURL}{http://creativecommons.org/licenses/by-nc-sa/4.0/}
+\providecommand{\Github}{ULHPC}  % Github account
+\providecommand{\Twitter}{ULHPC} % Twitter account
+\providecommand{\Editorsname}{S. Varrette and Prof. P. Bouvry}
+\providecommand{\NewsletterURL}{http://hpc.uni.lu/newsletter}
+
+%%%% Current version of the proposal
+\IfFileExists{VERSION}{
+  \providecommand{\docversion}{\input{VERSION}}
+}{
+  \providecommand{\docversion}{0.2}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Let's go now ;) 
+
 \usepackage[hmargin=2cm,bmargin=3cm,tmargin=5cm,lmargin=6cm,centering]{geometry}
 
 \usepackage{fontawesome} % see http://ftp.oleane.net/pub/CTAN/fonts/fontawesome/fontawesome.pdf for the list of available icons
-\usepackage[explicit]{titlesec}
-\usepackage{titletoc}
 \usepackage{tikzpagenodes}
 \usetikzlibrary{calc}
 \usetikzlibrary{positioning}
@@ -50,11 +82,13 @@
 \usepackage{multicol}
 \usepackage{lipsum}
 \usepackage{atbegshi}
-\usepackage{qrcode}
 \usepackage{etoolbox} % better ifthen
+\usepackage{tcolorbox}
 
+%%%%%%%%%%
+% Colors %
+%%%%%%%%%%
 \usepackage[usenames]{colortbl}
-
 \definecolor{lightgray}{gray}{0.9}
 \definecolor{bcode}{rgb}{0.91,0.91,0.91}  % color for code extract
 \definecolor{lightblue}{rgb}{0.45,0.76,0.98}  % color for
@@ -68,9 +102,9 @@
 %\definecolor{ulblue}{red!70!green}
 \definecolor{ulblue}{rgb}{0.0, 0.48, 0.65}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Versionning with day and time
-%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Versionning with day and time %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % months
 \def\ftoday{\number\day\space
  \ifcase\month\or
@@ -84,11 +118,15 @@
 \def\2#1{\ifnum#1<10 0\fi\the#1}
 \xdef\isodayandtime{\the\year-\2\month-\2\day\space\2{\count0}:%sec
 \2{\count2}}
+\xdef\isoday{\the\year-\2\month-\2\day}
 \endgroup
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Adapt section / subsection 
-%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Adapt section / subsection %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[explicit]{titlesec}
+\usepackage{titletoc}
+
 \newcommand\titlebar{%
 \tikz[baseline,trim left=0.5cm,trim right=2.5cm] {%
     \node [
@@ -98,9 +136,8 @@
     };
    \path[fill=red!70!blue] (a.east) circle (.5ex);
    \draw[color=red!70!blue, thick,rounded corners=1ex] (a.east) |- (\textwidth+3cm,-0.75ex);
+ }
 }
-}
-
 \newcommand\subtitlebar{%
 \tikz[baseline,trim left=1cm,trim right=3.05cm] {%
     \node[
@@ -110,7 +147,7 @@
     };
    \path[fill=red!70!blue] (b.east) circle (.5ex);
    \draw[color=red!70!blue, thick,rounded corners=1ex] (b.east) |- (\textwidth+2cm,-0.75ex);
-}%
+ }%
 }
 
 % Format the section
@@ -119,12 +156,13 @@
 \titlespacing*{name=\section,numberless}{0cm}{3.5ex plus 1ex minus .2ex}{2.3ex plus .2ex}
 \renewcommand*{\thesection}{\arabic{section}}
 
-
+% Format the subsection
 \titleformat{\subsection}{\normalfont\large\sffamily}{}{0cm}{\textcolor{ulblue}{#1}}
 \titlespacing*{\subsection}{0cm}{3.5ex plus 1ex minus .2ex}{2.3ex plus .2ex}
 \titlespacing*{name=\subsection,numberless}{0cm}{3.5ex plus 1ex minus .2ex}{2.3ex plus .2ex}
 \renewcommand*{\thesubsection}{\arabic{subsection}}
 
+% Adapt also the TOC 
 \titlecontents{section}% <section-type>
   [5pt]% <left>
   {\addvspace{0.5em}}% <above-code>
@@ -139,52 +177,30 @@
   {}% <numberless-entry-format>
   {\bfseries\hfill\contentspage}% <filler-page-format>
 
+% No title to the toc
+\renewcommand\contentsname{}
 
-
-%\titlecontents{\section}{numberless}
-
-%%%%%%%%%%%%
-\def\title{UL HPC Newsletter}
-\def\ReleaseDate{February 2015}
-\def\Number{1}
-\def\InstituteURL{http://hpc.uni.lu}
-\def\ReportSrcURL{https://github.com/ULHPC/documents}
-\def\InstituteAddress{%
-  University of Luxembourg          \\
-  6, rue Richard Coudenhove-Kalergi \\
-  L-1359 Luxembourg \\
-  Luxembourg\\
-  \textbf{T.} +352 46 66 44 6600
-}
-\def\Licence{CC BY-NC-SA 4.0}
-\def\LicenceURL{http://creativecommons.org/licenses/by-nc-sa/4.0/}
-\def\Github{ULHPC}  % Github account
-\def\Twitter{ULHPC} % Twitter account
-\def\Editorsname{S. Varrette and Prof. P. Bouvry}
-\def\NewsletterURL{http://hpc.uni.lu/newsletter}
-
-%%%% Current version of the proposal
-\IfFileExists{VERSION}{
-  \def\docversion{\input{VERSION}}
-}{
-  \def\docversion{0.2}
-}
-
-
+%%%%%%%%%%%%%%%%%%%%%%%%%
+% hyperref and QR codes %
+%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage[plainpages=false]{hyperref}
-\usepackage{breakurl}
+%\usepackage{breakurl}
 \hypersetup{
   colorlinks=true,
   linkcolor=ulblue,
   urlcolor=ulblue,
   citecolor=ulblue,
-  breaklinks,
   linktocpage=true,
   bookmarksopen,
   bookmarksopenlevel=1,
   bookmarksnumbered}
 
+\usepackage{qrcode}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Document components (in TikZ) %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%__________________
 \newcommand\Header{%
   \begin{tikzpicture}[remember picture,overlay]
     \fill[ulgray]
@@ -198,7 +214,7 @@
     \node (logo_hpc)[xshift=0.8cm,yshift=-0.2cm,rounded corners,anchor=north west] at (current page.north west) {\includegraphics[width=4cm]{logo_ULHPC.pdf}};
     
     \node (header) [font=\sffamily\bfseries\color{white},anchor=east,xshift=-1.5cm,yshift=-1.5cm] at (current page.north east) {
-      \fontsize{35}{60}\selectfont \title
+      \fontsize{35}{60}\selectfont \Newstitle
     };
     
     \node (date) [font=\sffamily\bfseries\color{ulgray},anchor=east,yshift=1cm] at (current page text area.north east) {
@@ -209,46 +225,35 @@
     \node (qrcode)[font=\color{ulgray},anchor=south] at ($(current page text area.north east)+(1,0.3)$) { 
       \qrcode[version=3,height=1cm]{\NewsletterURL}
     };
-
- 
-    
   \end{tikzpicture}%
 }
-
-
+%_________________
 \newcommand\Left{%
   \begin{tikzpicture}[remember picture,overlay]
     \coordinate (up)   at   (current page text area.north west);
     \coordinate (down) at   (current page text area.south west);
-    \coordinate (editors) at ($(current page text area.north west)+(-0.5,-0.2)$);
-    \coordinate (toc)     at ($(editors)+(-0.2,-1.5)$);
+    \coordinate (editors) at ($(current page.north west)+(2.5,-4.75)$);
     
 
     \draw [thick,color={ulgray}] ($(up)+(-0.5,0)$) -- ($(down)+(-0.5,0)$);  
     
     %fill=lightgray, rounded corners
-    \node (docinfo)[font=\sffamily\color{ulgray},anchor=east, text width=5cm] at (editors) {
+    \node (docinfo)[font=\sffamily\color{ulgray},anchor=north, text width=5cm] at (editors) {
       \tiny
-      \begin{tabular}{rp{3cm}}
+      \begin{tabular}{rp{3.5cm}}
         %\hline\\
         \textbf{Editors:}      & \Editorsname \\
-        \textbf{Authors:}      & The UL HPC Management Team\\
-        \textbf{Release date:} & \ReleaseDate  \\
+        \textbf{Authors:}      & \textbf{The UL HPC Management Team} \emph{aka}: \\
+                               & $\hookrightarrow$ S. Varrette (manager), \\
+                               & $\hookrightarrow$ H. Cartiaux, V. Plugaru \hfill (Kirchberg) \\
+                               & $\hookrightarrow$ J-F. Le Fill\^atre, S. Diehl \hfill (LCSB)\\
+        \textbf{Date:}      & \isoday \\ %\ReleaseDate  \\
         \textbf{Version:}      & v\docversion        \\
         %Compiled time:         & \isodayandtime \\
         %\hline
         \end{tabular}
         %      \textcolor{ulgray}{\textbf{Editors:} \Editors}
     };
-
-    % TOC
-    % \node (toc_header)[font=\sffamily\color{ulblue},fill=lightgray,rounded rectangle west arc=none,anchor=east, inner sep=1em,text width=4.4cm] at (toc) {
-    %   \fontsize{15}{50}\selectfont \textbf{In this issue...}
-    % };
-    % \node (toc)[font=\sffamily\color{ulgray},anchor=east, text width=4.4cm,below=0.5 of toc_header] {
-    %   %\InThisIssue
-    %   %\printcontents[sections]{}{1}{}
-    % };
 
     \node (logo_ul)[rounded corners, anchor=south,xshift=-3.25cm] at (current page text area.south west) {
       \includegraphics[width=3cm]{logo_UL.pdf}
@@ -257,31 +262,37 @@
   \end{tikzpicture}%
 }
 
-
-% Place a new info on the left
-% \begin{leftinfo}[title]
-%  ...
-% \end{leftinfo}
-
-\newcommand{\leftinfo}[2]{%begin{leftinfo}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% New command to facilitate the placement of content in the left panel
+% Format: \leftinfo{<title>}{<body>}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\leftinfo}[2]{
   \begin{tikzpicture}[remember picture,overlay]
-    % \coordinate (editors) at ($(current page text area.north west)+(-0.5,-0.2)$);
-    % \coordinate (toc)     at ($(editors)+(-0.2,-1.5)$);
+    \coordinate (editors) at ($(current page.north west)+(2.5,-4.75)$); % See above
 
-    \node (left_title)[font=\sffamily\color{ulblue},fill=lightgray,rounded rectangle west arc=none,anchor=east, inner sep=1em,text width=4.4cm] at ($(current page text area.north west)+(-0.7,-1.7)$) {
+    \node (left_title)[font=\sffamily\color{ulblue},fill=lightgray,rounded rectangle west arc=none,anchor=north, inner sep=1em,text width=4.4cm] at ($(editors)+(0.2,-2)$) {
       \fontsize{15}{50}\selectfont \textbf{#1}
     };
-    % \node (left_title)[font=\sffamily\color{ulblue},fill=lightgray,rounded rectangle west arc=none,anchor=east, inner sep=1em,text width=4.4cm] at ($(current page.north west)+(0.1,-7.5)$) {
-    %     \fontsize{15}{50}\selectfont \textbf{#1}
-    %   };
-    %}
-    \node [font=\sffamily\color{ulblue},anchor=west, text width=5cm,below=-1.5cm of left_title]  {
+    \node [font=\sffamily\color{ulblue},anchor=west, text width=5cm,below=-2cm of left_title]  {
       #2
     };
    \end{tikzpicture}
+   \vspace{-2em}
 }
 
-\renewcommand\contentsname{}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Welcome box
+% Format: \begin{welcome}[<title>] ... \end{wencome}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newenvironment{welcome}[1][Welcome to issue \Number\ of the \Newstitle.]
+{%\begin{welcome}
+  \begin{tcolorbox}[colback=lightgray,colframe=ulblue,title=#1]
+    \faRSS\ 
+}{%\end{welcome}
+  \end{tcolorbox}
+}
+
+
 % \newcommand\ulhpctoc{
 %   \begin{tikzpicture}[remember picture,overlay]
 %     \node (toc)[font=\sffamily\color{ulblue},anchor=west, text width=5cm] at ($(current page.north west)+(0.1,-7.5)$) {
@@ -290,6 +301,7 @@
 %   \end{tikzpicture}
 % }
 
+%__________________
 \newcommand\Footer{%
   \begin{tikzpicture}[remember picture,overlay]
     \fill[ulgray]
@@ -322,14 +334,6 @@
 \pagestyle{empty}
 \AtBeginShipout{\Header\Left\Footer}
 \AtBeginShipoutFirst{\Header\Left\Footer}
-
-% \begin{document}
-% \begin{multicols}{3}
-%   \lipsum[1-15]
-% \end{multicols}
-% \end{document}
-
-
 
 % ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 % eof
