@@ -1,0 +1,2 @@
+LATEX = $(shell which lualatex)
+
