@@ -3,7 +3,7 @@
 
 Copyright (c) 2015 [Sebastien Varrette](mailto:Sebastien.Varrette@uni.lu)
 
-        Time-stamp: <Sun 2015-02-22 21:00 svarrette>
+        Time-stamp: <Sun 2015-02-22 21:10 svarrette>
 
 -------------------
 ->![UL HPC](https://github.com/ULHPC/documents/blob/master/logos/logo_ULHPC.png)<-
@@ -90,8 +90,7 @@ See the head of `ulhpc_newsletter1.sty` for details
 | `\Github`           | Github account                                  | ULHPC                                             |
 | `\Twitter`          | Twitter account                                 | ULHPC                                             |
 | `\NewsletterURL`    | Online URL for this newsletter                  | http://hpc.uni.lu/newsletters                     |
-| `\docversion`       | Document version -- by default the content of   | 0.2                                               |
-|                     | . the `VERSION` file                            |                                                   |
+| `\docversion`       | Document version -- `VERSION` file content      | s0.2                                               |
 
 ## Licence
 
