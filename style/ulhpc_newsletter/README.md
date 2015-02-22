@@ -3,10 +3,10 @@
 
 Copyright (c) 2015 [Sebastien Varrette](mailto:Sebastien.Varrette@uni.lu)
 
-        Time-stamp: <Sun 2015-02-22 21:10 svarrette>
+        Time-stamp: <Sun 2015-02-22 21:13 svarrette>
 
 -------------------
-->![UL HPC](https://github.com/ULHPC/documents/blob/master/logos/logo_ULHPC.png)<-
+->![UL HPC](https://github.com/ULHPC/documents/raw/master/logos/by_size/logo_ULHPC_150_150.png)<-
 
 # UL HPC Newsletter LaTeX style
 
@@ -90,7 +90,7 @@ See the head of `ulhpc_newsletter1.sty` for details
 | `\Github`           | Github account                                  | ULHPC                                             |
 | `\Twitter`          | Twitter account                                 | ULHPC                                             |
 | `\NewsletterURL`    | Online URL for this newsletter                  | http://hpc.uni.lu/newsletters                     |
-| `\docversion`       | Document version -- `VERSION` file content      | s0.2                                               |
+| `\docversion`       | Document version -- `VERSION` file content      | 0.2                                               |
 
 ## Licence
 
@@ -112,4 +112,4 @@ __Under the following conditions:__
 
 For more details, see the [LICENSE](LICENSE) file.
 
-->[![CC BY-NC-SA 4.0](https://github.com/ULHPC/documents/blob/master/logos/licences/cc-by-nc-sa.png) =100x20)](https://creativecommons.org/licenses/by-nc-sa/4.0/)<-
+->[![CC BY-NC-SA 4.0](https://raw.githubusercontent.com/ULHPC/documents/master/logos/licences/cc-by-nc-sa.png =100x20)](https://creativecommons.org/licenses/by-nc-sa/4.0/)<-
