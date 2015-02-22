@@ -2,7 +2,7 @@
 % File:  ulhpc_newsletter1.tex --  Example of usage of the style            
 % Author(s): Sebastien Varrette <Sebastien.Varrette@uni.lu>
 % Creation:  16 Feb 2015
-% Time-stamp: <Sun 2015-02-22 00:44 svarrette>
+% Time-stamp: <Sun 2015-02-22 16:39 svarrette>
 %=============================================================================
 \documentclass{article}
 
@@ -18,23 +18,59 @@
 % Format: \leftinfo{<title>}{<body>}
 \ulhpctoc
 
-% Format: \begin{welcome}[<title>]{<author>} ... \end{welcome}
+% Format: \begin{welcome}[<title>] ... \end{welcome}
 \begin{welcome}
   \lipsum[1]
 \end{welcome}
 
+%=======================================================
+\section{\faCommentAlt\ UL HPC Highlights}
+%=======================================================
 
+Similar to an executive summary of (incoming/passed)
+milestones (half page)
 
-\section{Section 1}
-\lipsum[2]
+%=======================================================
+\section{\faBullhorn\ What's new?}
+%=======================================================
 
-\section{Section 2}
-\subsection{subsection a}
-\lipsum[3]
-\subsection{subsection b}
-\lipsum[4]
+New features: services/improvements we've introduced, new software
+available, etc.
 
-\leftinfo{2014 Key numbers}{4 Clusters, }
+%=======================================================
+\section{\faBarChart\ Latest Statistics}
+%=======================================================
+
+Platform overview (pretty graphs): for the passing \$period (maybe also
+with last year history): \#jobs , data transferred,  new users/projects,
+etc., also reminder of existing services (gitlab, gforge, owncloud, etc.)
+
+%=======================================================
+\section{\faShare\ Outcomes}
+%=======================================================
+
+Outcomes: projects/groups using the clusters, new articles published
+referencing the platform, etc.
+
+%=======================================================
+\section{\faUser\ User Focus}
+%=======================================================
+
+User stories: 1-2 paragraphs from (1-2) 'big' users, describing what
+they're doing
+
+%=======================================================
+\section{\faCalendar\ Upcoming Events}
+%=======================================================
+Upcoming events: new tutorials, software we'll introduce in the next
+\$period, upcoming HPC schools etc.
+
+%=======================================================
+\section{\faBeer\ Last but not least}
+%=======================================================
+\leftinfo{Another highlight}{For this page... }
+
+\lipsum[2-8]
 
 
 \end{document}

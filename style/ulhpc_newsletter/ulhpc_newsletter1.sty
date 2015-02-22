@@ -2,7 +2,7 @@
 % File:  ulhpc_newsletter1.sty --  LaTeX style configuration for the document
 % Author(s): Sebastien Varrette <Sebastien.Varrette@uni.lu>
 % Creation:  16 Feb 2015
-% Time-stamp: <Sun 2015-02-22 00:46 svarrette>
+% Time-stamp: <Sun 2015-02-22 17:01 svarrette>
 % 
 % Copyright (c) 2015 Sebastien Varrette <Sebastien.Varrette@uni.lu> (see LICENCE)
 % 
@@ -151,9 +151,9 @@
 }
 
 % Format the section
-\titleformat{\section}{\LARGE\sffamily}{}{0cm}{\textcolor{ulblue}{#1}}
-\titlespacing*{\section}{0cm}{3.5ex plus 1ex minus .2ex}{2.3ex plus .2ex}
-\titlespacing*{name=\section,numberless}{0cm}{3.5ex plus 1ex minus .2ex}{2.3ex plus .2ex}
+\titleformat{\section}{\LARGE\sffamily}{}{0cm}{\textcolor{ulblue}{#1\hrule}}
+\titlespacing*{\section}{0cm}{2.5ex}{0ex}
+\titlespacing*{name=\section,numberless}{0cm}{2.5ex}{0ex}
 \renewcommand*{\thesection}{\arabic{section}}
 
 % Format the subsection
@@ -178,7 +178,10 @@
   {\bfseries\hfill\contentspage}% <filler-page-format>
 
 % No title to the toc
-\renewcommand\contentsname{}
+%\renewcommand\contentsname{}
+\renewcommand\tableofcontents{%
+    \@starttoc{toc}%
+}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%
 % hyperref and QR codes %
@@ -225,6 +228,12 @@
     \node (qrcode)[font=\color{ulgray},anchor=south] at ($(current page text area.north east)+(1,0.3)$) { 
       \qrcode[version=3,height=1cm]{\NewsletterURL}
     };
+    
+    \node (page) [yshift=-0.4cm,font=\ttfamily\bfseries\color{white}, anchor=east] at (current page.north east) { };
+    %   \thepage~
+    % };
+
+
   \end{tikzpicture}%
 }
 %_________________
@@ -271,7 +280,8 @@
     \coordinate (editors) at ($(current page.north west)+(2.5,-4.75)$); % See above
 
     \node (left_title)[font=\sffamily\color{ulblue},fill=lightgray,rounded rectangle west arc=none,anchor=north, inner sep=1em,text width=4.4cm] at ($(editors)+(0.2,-2)$) {
-      \fontsize{15}{50}\selectfont \textbf{#1}
+      \Large \textbf{#1}
+      %\fontsize{15}{50}\selectfont \textbf{#1}
     };
     \node [font=\sffamily\color{ulblue},anchor=west, text width=5cm,below=0.3cm of left_title]  {
       #2
@@ -280,7 +290,7 @@
    \vspace{-2em}
 }
 \newcommand\ulhpctoc{
-  \leftinfo{In this issue...}{\vspace*{-2cm}\tableofcontents}
+  \leftinfo{In this issue...}{\vspace*{-0.25cm}\tableofcontents}
 }
 
 
@@ -318,29 +328,40 @@
     ([xshift=-5cm,yshift=-10pt]current page.south|-current page text area.south) --
     ([yshift=-10pt]current page.south west|-current page text area.south west) -- cycle;
 
-    \node[yshift=0.75cm,font=\ttfamily\bfseries\color{white}, anchor=east] at (current page.south east) {
-      \fontsize{20}{24}\selectfont \faSignin~\href{\InstituteURL}{\color{white}{\InstituteURL}}~~~ 
-    };
-
     \node (licence_logo) [yshift=0.25cm, anchor=west] at (current page.south west) {
       \href{\LicenceURL}{\includegraphics[height=0.5cm]{logo_licence.png}}
     };
     \node (licence) [yshift=-0.1cm,font=\sffamily\bfseries\color{white}, anchor=west, right=-0.1 of licence_logo] { 
       \tiny \LaTeX\ template by \href{mailto=Sebastien.Varrette@uni.lu}{\color{white}\underline{S. Varrette}}
     };
+    
 
-    \node (social) [xshift=2.5cm,anchor=west, above=0.4cm of licence_logo]  {
-      \fontsize{25}{24}\selectfont 
+
+    \node (social) [xshift=2.2cm,anchor=west, above=0.4cm of licence_logo]  {
+      \fontsize{22}{24}\selectfont 
       \href{http://twitter.com/\Twitter}{\color{white}\faTwitter}
-      \href{http://github.com/\Github}{\color{white}\faGithub}
+      \href{http://github.com/\Github}{\color{white}\faGithubSign}
+      \href{mailto:hpc-sysadmins@uni.lu}{\color{white}\faEnvelope}
+      %\href{mailto:hpc-users@uni.lu}{\color{white}\faGroup}
+      %\href{https://hpc.uni.lu/users/getting_started.html}{\color{white}\faQuestion}
     };
+
+    \node (url) [yshift=0.75cm,font=\ttfamily\bfseries\color{white}, anchor=east] at (current page.south east) {
+      \fontsize{17}{24}\selectfont \href{\InstituteURL}{\color{white}{\faSignin\ \InstituteURL}}~~~ 
+    };
+    
+    % \node (page) [yshift=0.25cm,font=\ttfamily\bfseries\color{ulblue}, anchor=east] at (current page.south east) {
+    %   \thepage~~
+    % };
+
 
   \end{tikzpicture}%
 }
 
-\pagestyle{empty}
+%\pagestyle{empty}
+\AtBeginShipoutFirst{\Header\Left\Footer} % first page
 \AtBeginShipout{\Header\Left\Footer}
-\AtBeginShipoutFirst{\Header\Left\Footer}
+
 
 % ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 % eof
