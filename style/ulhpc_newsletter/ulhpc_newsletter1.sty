@@ -2,7 +2,7 @@
 % File:  ulhpc_newsletter1.sty --  LaTeX style configuration for the document
 % Author(s): Sebastien Varrette <Sebastien.Varrette@uni.lu>
 % Creation:  16 Feb 2015
-% Time-stamp: <Sun 2015-02-22 17:01 svarrette>
+% Time-stamp: <Sun 2015-02-22 17:51 svarrette>
 % 
 % Copyright (c) 2015 Sebastien Varrette <Sebastien.Varrette@uni.lu> (see LICENCE)
 % 
@@ -70,6 +70,7 @@
 }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Let's go now ;) 
+%\renewcommand\familydefault{\sfdefault}
 
 \usepackage[hmargin=2cm,bmargin=3cm,tmargin=5cm,lmargin=6cm,centering]{geometry}
 
@@ -84,6 +85,8 @@
 \usepackage{atbegshi}
 \usepackage{etoolbox} % better ifthen
 \usepackage{tcolorbox}
+
+\AtBeginShipoutInit
 
 %%%%%%%%%%
 % Colors %
@@ -120,6 +123,23 @@
 \2{\count2}}
 \xdef\isoday{\the\year-\2\month-\2\day}
 \endgroup
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+% Code Listings
+% See ftp://ftp.tex.ac.uk/tex-archive/macros/latex/contrib/listings/listings.pdf
+%%%%%%%%%%%%%% 
+\usepackage{listings}
+\lstset{numbers=left,numberstyle=\tiny,stepnumber=10,firstnumber=1,language=Tex,basicstyle=\footnotesize,columns=fixed,backgroundcolor=\color{bcode},showstringspaces=false,emph={uint8_t,uint16_t,uint32_t,size_t,sig_atomic_t,time_t,clock_t,sigset_t,restrict},emphstyle=\bfseries,escapeinside={/*@}{@*/}}
+
+% define some basic styles for lstlisting
+\lstdefinestyle{config}{tabsize=2,numbers=none,basicstyle=\footnotesize,stringstyle=\texttt}
+\lstdefinestyle{codescriptsize}{ tabsize=2,stepnumber=5,caption=\lstname,captionpos=b,aboveskip=12pt,tabsize=2,numbers=left,numberstyle=\tiny,basicstyle=\scriptsize,stringstyle=\texttt,backgroundcolor=\color{lightgray}}
+\lstdefinestyle{codetiny}{stepnumber=5,caption=\lstname,captionpos=b,aboveskip=12pt,tabsize=2,numbers=left,numberstyle=\tiny,basicstyle=\tiny,stringstyle=\texttt,backgroundcolor=\color{lightgray}}
+\lstdefinestyle{output}{stepnumber=5,tabsize=2,numbers=none,breaklines=true,basicstyle=\scriptsize,stringstyle=\texttt}
+
+\lstdefinestyle{verif}{captionpos=b,numbers=none,backgroundcolor=\color{lightgray},columns=flexible,basicstyle=\scriptsize}
+
+\lstdefinestyle{codespdl}{stepnumber=5,caption=\lstname,captionpos=b,aboveskip=12pt,tabsize=2,numbers=left,numberstyle=\tiny,basicstyle=\scriptsize,stringstyle=\texttt,backgroundcolor=\color{lightgray},morekeywords={role,secret,compromised,secret,const,Function,inversekeys,usertype,protocol,var,Nonce,untrusted}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Adapt section / subsection %
@@ -232,8 +252,6 @@
     \node (page) [yshift=-0.4cm,font=\ttfamily\bfseries\color{white}, anchor=east] at (current page.north east) { };
     %   \thepage~
     % };
-
-
   \end{tikzpicture}%
 }
 %_________________
@@ -359,8 +377,7 @@
 }
 
 %\pagestyle{empty}
-\AtBeginShipoutFirst{\Header\Left\Footer} % first page
-\AtBeginShipout{\Header\Left\Footer}
+\AtBeginShipout{\AtBeginShipoutAddToBox{\Header\Left\Footer}}
 
 
 % ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
