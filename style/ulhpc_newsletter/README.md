@@ -3,7 +3,7 @@
 
 Copyright (c) 2015 [Sebastien Varrette](mailto:Sebastien.Varrette@uni.lu)
 
-        Time-stamp: <Sun 2015-02-22 20:59 svarrette>
+        Time-stamp: <Sun 2015-02-22 21:00 svarrette>
 
 -------------------
 ->![UL HPC](https://github.com/ULHPC/documents/blob/master/logos/logo_ULHPC.png)<-
@@ -113,4 +113,4 @@ __Under the following conditions:__
 
 For more details, see the [LICENSE](LICENSE) file.
 
-->[![CC BY-NC-SA 4.0](https://github.com/ULHPC/documents/blob/master/logos/logo_licence.png =100x20)](https://creativecommons.org/licenses/by-nc-sa/4.0/)<-
+->[![CC BY-NC-SA 4.0](https://github.com/ULHPC/documents/blob/master/logos/licences/cc-by-nc-sa.png) =100x20)](https://creativecommons.org/licenses/by-nc-sa/4.0/)<-
