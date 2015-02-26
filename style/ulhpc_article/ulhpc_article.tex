@@ -1,0 +1,71 @@
+%=============================================================================
+% File:  ulhpc_article.tex --  Example of usage of the style
+% Time-stamp: <Jeu 2015-02-26 23:44 svarrette>
+%=============================================================================
+\documentclass{article}
+
+\usepackage{graphicx}
+\graphicspath{{logos/}}
+
+\def\AuthorPrefix{Management Team}
+\def\frontabstract{
+  This document reviews the planned strategy for the development and the extension of the current High Performance Computing (HPC) facility within the University of Luxembourg (UL) . 
+  An overview of the current situation is provided together with the mission statement guiding the delivery of HPC services at the level of the University and public research centers. 
+  The ambition is also to become a Center of Excellence in High Performance Computing able to accelerate scientific discovery and innovation at the country level. 
+}
+
+\usepackage{ulhpc_article}
+
+\title{UL Strategy for High Performance Computing (HPC)}
+\def\subtitle{Executive Summary}
+\author{%
+  Prof. Pascal Bouvry and\\
+  Dr. S\'ebastien Varrette
+}
+
+% \date{
+%   February 2015
+% }
+
+
+
+\begin{document}
+
+%\maketitle
+\coverpages
+
+% \begin{abstract}
+%   This document reviews the planned strategy for the development and the extension of the current High Performance Computing (HPC) facility within the University of Luxembourg (UL) . 
+%   An overview of the current situation is provided together with the mission statement guiding the delivery of HPC services at the level of the University and public research centers. 
+%   The ambition is also to become a Center of Excellence in High Performance Computing able to accelerate scientific discovery and innovation at the country level. 
+% \end{abstract}
+
+
+%\chapter{Chapter 1}
+
+\section{Section 1}
+
+\lipsum[1]
+
+\subsection{subsections}
+
+\lipsum[2]
+
+\section{Section 2}
+
+\lipsum[2-8]
+
+
+\end{document}
+
+
+
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+% eof
+%
+% Local Variables:
+% mode: latex
+% mode: flyspell
+% mode: visual-line
+% TeX-master: "ulhpc_article"
+% End:
