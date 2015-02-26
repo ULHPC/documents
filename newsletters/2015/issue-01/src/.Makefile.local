@@ -1,2 +1,5 @@
 LATEX = $(shell which lualatex)
 
+
+_%.tex: %.md
+    pandoc

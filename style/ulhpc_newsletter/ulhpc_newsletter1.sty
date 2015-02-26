@@ -2,7 +2,7 @@
 % File:  ulhpc_newsletter1.sty --  LaTeX style configuration for the document
 % Author(s): Sebastien Varrette <Sebastien.Varrette@uni.lu>
 % Creation:  16 Feb 2015
-% Time-stamp: <Sun 2015-02-22 19:17 svarrette>
+% Time-stamp: <Lun 2015-02-23 11:48 svarrette>
 % 
 % Copyright (c) 2015 Sebastien Varrette <Sebastien.Varrette@uni.lu> (see LICENCE)
 % 
@@ -74,6 +74,7 @@
 
 \usepackage[hmargin=2cm,bmargin=3cm,tmargin=5cm,lmargin=6cm,centering]{geometry}
 
+\usepackage{xspace}
 \usepackage{fontawesome} % see http://ftp.oleane.net/pub/CTAN/fonts/fontawesome/fontawesome.pdf for the list of available icons
 \usepackage{tikzpagenodes}
 \usetikzlibrary{calc}
@@ -265,15 +266,15 @@
     \draw [thick,color={ulgray}] ($(up)+(-0.5,0)$) -- ($(down)+(-0.5,0)$);  
     
     %fill=lightgray, rounded corners
-    \node (docinfo)[font=\sffamily\color{ulgray},anchor=north, text width=5cm] at (editors) {
+    \node (docinfo)[font=\sffamily\color{ulgray},anchor=north, text width=5.1cm] at (editors) {
       \tiny
-      \begin{tabular}{rp{3.5cm}}
+      \begin{tabular}{rp{4cm}}
         %\hline\\
         \textbf{Editors:}      & \Editorsname \\
         \textbf{Authors:}      & \textbf{The UL HPC Management Team} \emph{aka}: \\
-                               & $\hookrightarrow$ S. Varrette (manager), \\
-                               & $\hookrightarrow$ H. Cartiaux, V. Plugaru \hfill (Kirchberg) \\
-                               & $\hookrightarrow$ J-F. Le Fill\^atre, S. Diehl \hfill (LCSB)\\
+                               & $\hookrightarrow$ S. Varrette                  \hfill (Manager)\\
+                               & $\hookrightarrow$ H. Cartiaux, V. Plugaru      \hfill (FSTC)\\
+                               & $\hookrightarrow$ S. Diehl, J-F. Le Fill\^atre \hfill (LCSB)\\
         \textbf{Date:}      & \isoday \\ %\ReleaseDate  \\
         \textbf{Version:}      & v\docversion        \\
         %Compiled time:         & \isodayandtime \\
@@ -378,6 +379,11 @@
 
 %\pagestyle{empty}
 \AtBeginShipout{\AtBeginShipoutAddToBox{\Header\Left\Footer}}
+%\AtBeginShipoutFirst{\AtBeginShipoutAddToBox{\Header\Left\Footer}}
+
+
+% Some useful definitions
+\newcommand\ulhpc{\href{http://hpc.uni.lu}{UL HPC}\xspace}
 
 
 % ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
