@@ -2,7 +2,7 @@
 % File:  ulhpc_article.sty --  LaTeX style configuration for article / reports
 % Author(s): Sebastien Varrette <Sebastien.Varrette@uni.lu>
 % Creation:  16 Feb 2015
-% Time-stamp: <Jeu 2015-02-26 23:53 svarrette>
+% Time-stamp: <Ven 2015-02-27 02:08 svarrette>
 % 
 % Copyright (c) 2015 Sebastien Varrette <Sebastien.Varrette@uni.lu> (see LICENCE)
 % 
@@ -94,6 +94,7 @@
 \usepackage{multicol}
 \usepackage{lipsum}
 \usepackage{tcolorbox}
+\usepackage{xspace}
 
 \usepackage{atbegshi}
 \AtBeginShipoutInit
@@ -181,7 +182,7 @@
 \renewcommand*{\thesection}{\arabic{section}}
 
 % Format the subsection
-\titleformat{\subsection}{\normalfont\Large\sffamily}{}{0cm}{\textcolor{ulblue}{\underline{#1}}}
+\titleformat{\subsection}{\normalfont\Large\sffamily}{}{0cm}{\textcolor{ulblue}{\emph{#1}}}
 \titlespacing*{\subsection}{0cm}{3.5ex plus 1ex minus .2ex}{2.3ex plus .2ex}
 \titlespacing*{name=\subsection,numberless}{0cm}{3.5ex plus 1ex minus .2ex}{2.3ex plus .2ex}
 \renewcommand*{\thesubsection}{\arabic{subsection}}
@@ -192,14 +193,19 @@
 % Fancy header %
 %%%%%%%%%%%%%%%% 
 
-%\usepackage{fancyhdr}
-% % \setlength\headheight{ 1.5  cm}
+\usepackage{fancyhdr}
+\setlength\headheight{ 2 cm}
+%\fancyhf{} 
 
-% \lhead{\sffamily\emph{\textcolor{headgray}{\@title}}}
-% \rhead{\includegraphics[height=1cm]{logo_ULHPC.pdf}}
-% \pagestyle{fancyplain}
+\rhead{}\lhead{}\chead{}\lfoot{}\rfoot{}\cfoot{}
 
 
+% \rhead{\sffamily\emph{\textcolor{headgray}{\@title}}}
+% \lhead{\includegraphics[height=1cm]{logo_ULHPC.pdf}}
+% \chead{}\lfoot{}\rfoot{}\cfoot{}
+\pagestyle{fancyplain}
+
+%\usepackage{showframe}
 
 % \lhead[\rm\thepage]{\fancyplain{}{\sl{\rightmark}}}
 % \rhead[\fancyplain{}{\sl{\leftmark}}]{\rm\thepage}
@@ -259,9 +265,9 @@
       \coordinate (textplace)   at (0.25\paperwidth,0);
       % Y-axis components
       \coordinate (authorplace) at (0,-0.25\paperheight);
-      \coordinate (sky)         at (0,-.81\paperheight);
-      \coordinate (midsky)      at (0,-.813\paperheight);
-      \coordinate (subsky)      at (0,-.83\paperheight);
+      \coordinate (sky)         at (0,-.78\paperheight);
+      \coordinate (midsky)      at (0,-.79\paperheight);
+      \coordinate (subsky)      at (0,-.8\paperheight);
 
       % Background colors
       \draw [fill={rgb:red,92;green,92;blue,92}] (topleft) rectangle (sky -| topright);
@@ -289,10 +295,10 @@
         % \end{tcolorbox}
         \hfill\@date\\[1cm]
         \begin{center}
-          \begin{tabular}{rp{4cm}}
+          \begin{tabular}{rp{5cm}}
             \textbf{\AuthorPrefix}: &
-                                      \begin{minipage}[t]{4cm}
-                                        \@author %\emph{\ReportAuthors}
+                                      \begin{minipage}[t]{5cm}
+                                        \emph{\@author} %\emph{\ReportAuthors}
                                       \end{minipage}
           \end{tabular}
         \end{center}
@@ -301,7 +307,7 @@
         % \hfill \DatePublished
       };
 
-      \node (abstract) [font=\sffamily\color{white}, anchor=north, below=2cmof title, text width=0.6\textwidth ] {
+      \node (abstract) [font=\sffamily\color{white}, anchor=north, below=of title, text width=0.6\textwidth ] {
         \ifx\frontabstract\blank%
         \else%
         % \centering\rule{0.5\textwidth}{.4pt}\\
@@ -310,7 +316,7 @@
         \fi
       };
 
-      \node (social) [xshift=2cm, yshift=2.25cm, anchor=west] at (current page.south west)  {
+      \node (social) [xshift=2cm, yshift=2.8cm, anchor=west] at (current page.south west)  {
         % \fontsize{22}{24}\selectfont
         \Huge
         \href{http://twitter.com/\Twitter}{\color{white}\faTwitter}
@@ -339,19 +345,71 @@
 
 \newcommand{\Footer}{%
   \begin{tikzpicture}[remember picture,overlay]
-    \fill [black!15] ((0,.9\paperheight);) rectangle (current page.south east);
+    \fill [black!15] ($(current page.south west)+(0,2cm)$) rectangle (current page.south east);
+    \node (logo_ul)[fill=white, rounded corners, anchor=south, xshift=1cm, yshift=2.5cm] at (current page.south west) {
+%(current page marginpar area.south east) {
+      \includegraphics[scale=0.2]{logo_UL.pdf}
+    };
+    \node (social) [xshift=2cm, yshift=1cm, anchor=west] at (current page.south west)  {
+        % \fontsize{22}{24}\selectfont
+        \LARGE
+        \href{http://twitter.com/\Twitter}{\color{white}\faTwitter}
+        \href{http://github.com/\Github}  {\color{white}\faGithubSign}
+        \href{mailto:\Mail}               {\color{white}\faEnvelope}
+        \href{\InstituteURL}              {\color{white}{\faSignin}}
+      };
+      \node (url) [font=\ttfamily\bfseries\color{white}, anchor=east, xshift=-1cm, yshift=1cm] at (current page.south east) {
+        \Large \href{\InstituteURL}{\color{white}\InstituteURL}
+      };
+      \node (page) [font=\sffamily\color{ulgray}] at (current page footer area.south east) {
+        \thepage
+      };
+    
+
   \end{tikzpicture}
 }
 
+\newcommand{\Header}{%
+  \begin{tikzpicture}[remember picture,overlay]
+    %\fill [black!15] ($(current page.north west)+(0,-3cm)$) rectangle (current page.north east);
+    \node (logo_hpc)[anchor=south] at (current page header area.south east) {
+      \includegraphics[height=2cm]{logo_ULHPC.pdf}
+    };
+    \node (headtitle) [font=\sffamily\color{headgray}, anchor=south west] at (current page header area.south west) {
+      \emph{\@title -- \subtitle}
+    };
+
+    % \node (social) [xshift=2cm, yshift=1cm, anchor=west] at (current page.south west)  {
+    %     % \fontsize{22}{24}\selectfont
+    %     \LARGE
+    %     \href{http://twitter.com/\Twitter}{\color{white}\faTwitter}
+    %     \href{http://github.com/\Github}  {\color{white}\faGithubSign}
+    %     \href{mailto:\Mail}               {\color{white}\faEnvelope}
+    %     \href{\InstituteURL}              {\color{white}{\faSignin}}
+    %   };
+    %   \node (url) [font=\ttfamily\bfseries\color{white}, anchor=east, xshift=-1cm, yshift=1cm] at (current page.south east) {
+    %     \Large \href{\InstituteURL}{\color{white}\InstituteURL}
+    %   };
+
+    
+
+  \end{tikzpicture}
+}
+
+
+\newgeometry{bottom=4cm,left=2cm,right=2cm}%,top=1cm,bottom=1cm}
+
 % \pagestyle{empty}
-\AtBeginShipout{\AtBeginShipoutAddToBox{\Footer}}
+\AtBeginShipout{\AtBeginShipoutAddToBox{\Header\Footer}}
 
 % \AtBeginShipout{\AtBeginShipoutAddToBox{\Header\Left\Footer}}
 % \AtBeginShipout{\AtBeginShipoutAddToBox{\makefrontpage}}
 
 
-\newcommand*{\coverpages}{\makefrontpage} % \infopage}
-\newcommand{\ULHPC}{\href{http://hpc.uni.lu}{UL HPC\xspace}}
+\newcommand*{\coverpages}{\makefrontpage} %\newpage\vspace*{-0.8em}} % \infopage}
+\newcommand\ulhpc{\href{http://hpc.uni.lu}{UL HPC}\xspace}
+\newcommand\UL{\href{http://www.uni.lu}{UL}\xspace}
+
 
 
 % ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
