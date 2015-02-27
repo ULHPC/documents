@@ -2,7 +2,7 @@
 % File:  ulhpc_article.sty --  LaTeX style configuration for article / reports
 % Author(s): Sebastien Varrette <Sebastien.Varrette@uni.lu>
 % Creation:  16 Feb 2015
-% Time-stamp: <Ven 2015-02-27 02:13 svarrette>
+% Time-stamp: <Ven 2015-02-27 02:23 svarrette>
 % 
 % Copyright (c) 2015 Sebastien Varrette <Sebastien.Varrette@uni.lu> (see LICENCE)
 % 
@@ -376,22 +376,9 @@
       \includegraphics[height=2cm]{logo_ULHPC.pdf}
     };
     \node (headtitle) [font=\sffamily\color{headgray}, anchor=south west] at (current page header area.south west) {
-      \emph{\@title -- \subtitle}
-    };
-
-    % \node (social) [xshift=2cm, yshift=1cm, anchor=west] at (current page.south west)  {
-    %     % \fontsize{22}{24}\selectfont
-    %     \LARGE
-    %     \href{http://twitter.com/\Twitter}{\color{white}\faTwitter}
-    %     \href{http://github.com/\Github}  {\color{white}\faGithubSign}
-    %     \href{mailto:\Mail}               {\color{white}\faEnvelope}
-    %     \href{\InstituteURL}              {\color{white}{\faSignin}}
-    %   };
-    %   \node (url) [font=\ttfamily\bfseries\color{white}, anchor=east, xshift=-1cm, yshift=1cm] at (current page.south east) {
-    %     \Large \href{\InstituteURL}{\color{white}\InstituteURL}
-    %   };
-
-    
+      \quad\underline{\emph{\@title\ -- {\small \subtitle}}}\\
+      
+  };
 
   \end{tikzpicture}
 }
