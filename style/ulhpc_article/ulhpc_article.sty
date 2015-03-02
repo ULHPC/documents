@@ -2,7 +2,7 @@
 % File:  ulhpc_article.sty --  LaTeX style configuration for article / reports
 % Author(s): Sebastien Varrette <Sebastien.Varrette@uni.lu>
 % Creation:  16 Feb 2015
-% Time-stamp: <Lun 2015-03-02 17:50 svarrette>
+% Time-stamp: <Lun 2015-03-02 17:58 svarrette>
 % 
 % Copyright (c) 2015 Sebastien Varrette <Sebastien.Varrette@uni.lu> (see LICENCE)
 % 
@@ -334,7 +334,7 @@
         \fi
       };
 
-      \node (social) [xshift=2cm, yshift=2.8cm, anchor=west] at (current page.south west)  {
+      \node (social) [xshift=2cm, yshift=2.5cm, anchor=west] at (current page.south west)  {
         % \fontsize{22}{24}\selectfont
         \Huge
         \href{http://twitter.com/\Twitter}{\color{white}\faTwitter}
@@ -361,6 +361,7 @@
   \clearpage%\thispagestyle{empty}
 }
 
+%_______________________
 \newcommand{\Footer}{%
   \begin{tikzpicture}[remember picture,overlay]
     \fill [black!15] ($(current page.south west)+(0,2cm)$) rectangle (current page.south east);
@@ -387,6 +388,7 @@
   \end{tikzpicture}
 }
 
+%_______________________
 \newcommand{\Header}{%
   \begin{tikzpicture}[remember picture,overlay]
     %\fill [black!15] ($(current page.north west)+(0,-3cm)$) rectangle (current page.north east);
@@ -394,8 +396,13 @@
       \includegraphics[height=2cm]{logo_ULHPC.pdf}
     };
     \node (headtitle) [font=\sffamily\color{headgray}, anchor=south west] at (current page header area.south west) {
-      \quad\underline{\emph{\@title\ -- {\small \subtitle}}}\\
-      
+      \quad\underline{\emph{\@title\ -- {\small \subtitle}}}
+      \ifdef{\draft}{%
+        ~\hfill\footnotesize\emph{DRAFT} --
+      }{}
+      \ifdefempty{\showversion}{%
+        v\docversion
+      }{}
   };
 
   \end{tikzpicture}
