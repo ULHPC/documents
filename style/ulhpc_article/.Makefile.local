@@ -1,2 +1,3 @@
 LATEX = $(shell which lualatex)
+VERSIONFILE = VERSION.txt
 
