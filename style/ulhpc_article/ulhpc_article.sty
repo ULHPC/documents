@@ -2,7 +2,7 @@
 % File:  ulhpc_article.sty --  LaTeX style configuration for article / reports
 % Author(s): Sebastien Varrette <Sebastien.Varrette@uni.lu>
 % Creation:  16 Feb 2015
-% Time-stamp: <Ven 2015-02-27 02:23 svarrette>
+% Time-stamp: <Lun 2015-03-02 17:50 svarrette>
 % 
 % Copyright (c) 2015 Sebastien Varrette <Sebastien.Varrette@uni.lu> (see LICENCE)
 % 
@@ -40,18 +40,18 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 % Configuration for the style %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
-
-\providecommand{\subtitle}{The subtitle}          % Subtitle - if any
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\providecommand{\subtitle}{The subtitle} % Subtitle - if any
 \providecommand{\AuthorPrefix}{by}
-\providecommand{\ReportKeywords}{%
+\providecommand{\keywords}{%
   University of Luxembourg,
   High Performance Computing,
   UL,
   HPC,
   \LaTeX
 }
-\providecommand{\frontabstract}{}
+\providecommand{\frontabstract}{}    % the abstract to place on the front page
+\providecommand{\showversion}{}          % leave blank content to show the version
 \providecommand{\Editorsname}{Dr. S. Varrette and Prof. P. Bouvry} % Editors
 \providecommand{\Mail}{hpc-sysadmins@uni.lu}
 \providecommand{\ReportSrcURL}{https://github.com/ULHPC/documents}    % [Git] URL for the document LaTeX sources
@@ -70,8 +70,9 @@
 \providecommand{\NewsletterURL}{http://hpc.uni.lu/newsletters}
 
 %%%% Current version of the proposal
-\IfFileExists{VERSION}{
-  \providecommand{\docversion}{\input{VERSION}}
+\def\versionfile{VERSION.txt}
+\IfFileExists{\versionfile}{
+  \providecommand{\docversion}{\input{\versionfile}}
 }{
   \providecommand{\docversion}{0.2}
 }
@@ -92,9 +93,18 @@
 \usetikzlibrary{shapes.misc,arrows}
 \usepackage{lmodern}
 \usepackage{multicol}
+\usepackage{multirow}
 \usepackage{lipsum}
+\usepackage{etoolbox}
 \usepackage{tcolorbox}
 \usepackage{xspace}
+% TODOs 
+\usepackage{todonotes}
+\presetkeys{todonotes}{inline}{}
+
+\usepackage[nodayofweek]{datetime}
+\usepackage{titling} % keep \thedate, \theauthor, \thetitle
+ 
 
 \usepackage{atbegshi}
 \AtBeginShipoutInit
@@ -187,8 +197,6 @@
 \titlespacing*{name=\subsection,numberless}{0cm}{3.5ex plus 1ex minus .2ex}{2.3ex plus .2ex}
 \renewcommand*{\thesubsection}{\arabic{subsection}}
 
-
-
 %%%%%%%%%%%%%%%% 
 % Fancy header %
 %%%%%%%%%%%%%%%% 
@@ -265,9 +273,9 @@
       \coordinate (textplace)   at (0.25\paperwidth,0);
       % Y-axis components
       \coordinate (authorplace) at (0,-0.25\paperheight);
-      \coordinate (sky)         at (0,-.78\paperheight);
-      \coordinate (midsky)      at (0,-.79\paperheight);
-      \coordinate (subsky)      at (0,-.8\paperheight);
+      \coordinate (sky)         at (0,-.80\paperheight);
+      \coordinate (midsky)      at (0,-.81\paperheight);
+      \coordinate (subsky)      at (0,-.82\paperheight);
 
       % Background colors
       \draw [fill={rgb:red,92;green,92;blue,92}] (topleft) rectangle (sky -| topright);
@@ -280,6 +288,16 @@
       % rounded corners, fill=white,
       \node (logo_hpc)[xshift=-1cm, yshift=-1cm,rounded corners,anchor=north east] at (current page.north east) {
         \includegraphics[width=4cm]{logo_ULHPC.pdf}
+      };
+      \node (draft) [font=\sffamily\color{lightgray}, anchor=north west] at (current page text area.north west) {
+        \ifdef{\draft}{%
+        \footnotesize\emph{DRAFT -- Compiled on \isodayandtime}
+        }{}
+      };
+      \node (version) [font=\sffamily\color{ulgray}, anchor=north, xshift=18cm] at (sky) {
+        \ifdefempty{\showversion}{%
+          v\docversion
+        }{}
       };
 
       % yshift=0.75cm,font=\ttfamily\bfseries\color{white}, anchor=west, right= of social] {
@@ -298,7 +316,7 @@
           \begin{tabular}{rp{5cm}}
             \textbf{\AuthorPrefix}: &
                                       \begin{minipage}[t]{5cm}
-                                        \emph{\@author} %\emph{\ReportAuthors}
+                                        \emph{\theauthor}
                                       \end{minipage}
           \end{tabular}
         \end{center}
@@ -346,7 +364,7 @@
 \newcommand{\Footer}{%
   \begin{tikzpicture}[remember picture,overlay]
     \fill [black!15] ($(current page.south west)+(0,2cm)$) rectangle (current page.south east);
-    \node (logo_ul)[fill=white, rounded corners, anchor=south, xshift=1cm, yshift=2.5cm] at (current page.south west) {
+    \node (logo_ul)[fill=white, rounded corners, anchor=south, xshift=1cm, yshift=2.3cm] at (current page.south west) {
 %(current page marginpar area.south east) {
       \includegraphics[scale=0.2]{logo_UL.pdf}
     };
