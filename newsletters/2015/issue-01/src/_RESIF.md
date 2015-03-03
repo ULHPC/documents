@@ -1,6 +1,6 @@
 # Release of RESIF: New tool to ease the management of software modules on the platform and your machine
 
-RESIF is an internally developped tool that aims at making management of software on the UL HPC platform more accessible. The main features of RESIF are the automitization of the creation of a new software stack and of the addition of software to an existing software stack.
+RESIF is an internally developped tool that aims at making software management on the UL HPC platform more accessible. The main features of RESIF are the automitization of the creation of a new software stack and of the addition of software to an existing software stack.
 
 The workflow becomes simple and using this tool doesn't require the user to have any knowledge of how things work in the background anymore. This following schema summarizes this workflow:
 
