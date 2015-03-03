@@ -2,7 +2,7 @@
 % File:  ulhpc_newsletter1.tex --  Example of usage of the style            
 % Author(s): Sebastien Varrette <Sebastien.Varrette@uni.lu>
 % Creation:  16 Feb 2015
-% Time-stamp: <Lun 2015-02-23 10:57 svarrette>
+% Time-stamp: <Mar 2015-03-03 11:24 svarrette>
 %=============================================================================
 \documentclass[a4paper]{article}
 
@@ -30,12 +30,7 @@
 % Similar to an executive summary of (incoming/passed)
 % milestones (half page)
 
-%=======================================================
-\section{\faBullhorn\ What's new?}
-%=======================================================
-
-New features: services/improvements we've introduced, new software
-available, etc.
+\input{_news.md}  % exemple of usage of Markdown
 
 %=======================================================
 \section{\faBarChart\ Latest Statistics}
@@ -45,6 +40,7 @@ Platform overview (pretty graphs): for the passing \$period (maybe also
 with last year history): \#jobs , data transferred,  new users/projects,
 etc., also reminder of existing services (gitlab, gforge, owncloud, etc.)
 
+\newpage % TODO/ bug fix on the first page: a new page should be manually introduced to ensure coherent tikz rendering. 
 %=======================================================
 \section{\faShare\ Outcomes}
 %=======================================================
@@ -65,6 +61,7 @@ they're doing
 Upcoming events: new tutorials, software we'll introduce in the next
 \$period, upcoming HPC schools etc.
 
+\newpage
 %============================================================================================
 \section{\faCogs\ How to use the \texttt{ulhpc\_newsletter1} style?}
 %============================================================================================
