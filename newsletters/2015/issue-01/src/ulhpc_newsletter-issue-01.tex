@@ -1,17 +1,21 @@
 %=============================================================================
-% File:  ulhpc_newsletter1.tex --  Example of usage of the style            
+% File:  ulhpc_newsletter-issue-01.tex --  Issue 1 of the UL HPC newsletter
+% Time-stamp: <Mar 2015-03-03 09:49 svarrette>
 % Author(s): Sebastien Varrette <Sebastien.Varrette@uni.lu>
-% Creation:  16 Feb 2015
-% Time-stamp: <Sun 2015-02-22 18:02 svarrette>
+% .          
 %=============================================================================
 \documentclass{article}
 
 \usepackage{graphicx}
-\graphicspath{{logos/}}
+\graphicspath{{logos/}{images/}}
 
-
+%%%%%%%%%%%%%%% UL HPC Newsletter Configuration %%%%%%%%%%%%%%%%%%%
+\def\ReleaseDate{February 2015} % Release
+\def\Number{1}                  % Issue Number
+\def\Editorsname{Dr. S. Varrette and Prof. P. Bouvry}
+\def\DocSrcURL{https://github.com/ULHPC/documents/tree/master/newsletters/2015/issue-01/}
+\def\NewsletterURL{http://hpc.uni.lu/newsletters}
 \usepackage{ulhpc_newsletter1}
-
 
 \begin{document}
 
@@ -20,7 +24,55 @@
 
 % Format: \begin{welcome}[<title>] ... \end{welcome}
 \begin{welcome}
-  \lipsum[1]
+\input{_welcome.md}
+   
+
+
+%   As part of our commitment to constantly improve the services offered by the
+% HPC
+% platform, we are announcing that we will proceed with an upgrade of the
+% underlying software running the platform during Q1 2015.
+
+% In effect, we will migrate the OS of the computing nodes from Debian 6
+% (Squeeze)
+% to Debian 7 (Wheezy). The software environment available through the Modules
+% system will also be regenerated, the technical details are described below.
+% The storage on Gaia will be reorganized and migrated for better stability.
+
+% As it is our wish to make the upgrades as seamless as possible for you, we
+% will
+% perform them in several phases, allowing for potential issues to be
+% identified
+% and corrected.
+
+% 1. In a first phase, starting ** Tuesday, Feb 24th 2015 at 09:00 **
+% Part of the Gaia cluster (gaia-83 to gaia-154) will be migrated to Debian 7,
+% during a maintenance which will last until 18:00 on the mentioned date,
+% with
+% Gaia unavailable for the duration.
+% A new property will be set in the OAR scheduler that will allow you to
+% target
+% either the migrated nodes or the old nodes (technical details below).
+% You are strongly encouraged to test that your workflow is working correctly
+% on the migrated nodes or take the appropriate corrective measures
+% (recompile
+% software, etc.) as warranted.
+% This initial testing phase is meant to last 3 weeks.
+
+% 2. Second phase, starting (tentatively) ** Tuesday, Mar 17th 2015 at 09:00
+% **
+% The rest of the Gaia cluster (gaia-1 to gaia-79) and the Chaos cluster
+% nodes
+% will be migrated upon the successful conclusion of the trial Phase-1.
+% Both Gaia and Chaos will be unavailable until 18:00.
+
+% 3. Gaia storage reorganization: ** Tuesday, Mar 24th 2015 at 09:00 **
+% The home directories of Gaia will be moved from the current NFS server to
+% a distributed GPFS [*] setup which will allow for better stability, speed,
+% and future storage extensions. A half-day maintenance will be performed on
+% Gaia, with the cluster unavailable until 14:00.
+
+
 \end{welcome}
 
 % %=======================================================
@@ -30,73 +82,73 @@
 % Similar to an executive summary of (incoming/passed)
 % milestones (half page)
 
-%=======================================================
-\section{\faBullhorn\ What's new?}
-%=======================================================
+% %=======================================================
+% \section{\faBullhorn\ What's new?}
+% %=======================================================
 
-New features: services/improvements we've introduced, new software
-available, etc.
+% New features: services/improvements we've introduced, new software
+% available, etc.
 
-%=======================================================
-\section{\faBarChart\ Latest Statistics}
-%=======================================================
+% %=======================================================
+% \section{\faBarChart\ Latest Statistics}
+% %=======================================================
 
-Platform overview (pretty graphs): for the passing \$period (maybe also
-with last year history): \#jobs , data transferred,  new users/projects,
-etc., also reminder of existing services (gitlab, gforge, owncloud, etc.)
+% Platform overview (pretty graphs): for the passing \$period (maybe also
+% with last year history): \#jobs , data transferred,  new users/projects,
+% etc., also reminder of existing services (gitlab, gforge, owncloud, etc.)
 
-%=======================================================
-\section{\faShare\ Outcomes}
-%=======================================================
+% %=======================================================
+% \section{\faShare\ Outcomes}
+% %=======================================================
 
-Outcomes: projects/groups using the clusters, new articles published
-referencing the platform, etc.
+% Outcomes: projects/groups using the clusters, new articles published
+% referencing the platform, etc.
 
-%=======================================================
-\section{\faUser\ User Focus}
-%=======================================================
+% %=======================================================
+% \section{\faUser\ User Focus}
+% %=======================================================
 
-User stories: 1-2 paragraphs from (1-2) 'big' users, describing what
-they're doing
+% User stories: 1-2 paragraphs from (1-2) 'big' users, describing what
+% they're doing
 
-%=======================================================
-\section{\faCalendar\ Upcoming Events}
-%=======================================================
-Upcoming events: new tutorials, software we'll introduce in the next
-\$period, upcoming HPC schools etc.
+% %=======================================================
+% \section{\faCalendar\ Upcoming Events}
+% %=======================================================
+% Upcoming events: new tutorials, software we'll introduce in the next
+% \$period, upcoming HPC schools etc.
 
-%============================================================================================
-\section{\faCogs\ How to use the \texttt{ulhpc\_newsletter1} style?}
-%============================================================================================
+% %============================================================================================
+% \section{\faCogs\ How to use the \texttt{ulhpc\_newsletter1} style?}
+% %============================================================================================
 
-\faWarningSign\ : You need to compile the newsletters with \texttt{lualatex}! 
+% \faWarningSign\ : You need to compile the newsletters with \texttt{lualatex}! 
 
-If you are using \href{https://github.com/Falkor/Makefiles/blob/devel/latex/Makefile}{my generic Makefile}, simply place a file \texttt{.Makefile.local} at the root of your document having the following content:
+% If you are using \href{https://github.com/Falkor/Makefiles/blob/devel/latex/Makefile}{my generic Makefile}, simply place a file \texttt{.Makefile.local} at the root of your document having the following content:
 
-\lstinputlisting[language=make]{.Makefile.local}
+% \lstinputlisting[language=make]{.Makefile.local}
 
-Then in addition to the addition of the \LaTeX\ style file \texttt{ulhpc\_newsletter1.sty} at the root of your document, you'll need: 
+% Then in addition to the addition of the \LaTeX\ style file \texttt{ulhpc\_newsletter1.sty} at the root of your document, you'll need: 
 
-\begin{itemize}
-  \item a copy of the logos files (in PDF format) \texttt{logo\_UL.pdf} and \texttt{logo\_ULHPC.pdf} in a know path;
-  \item to initiate a certain number of variables / macros used in the style \textbf{prior to} the call to the style package.
-\end{itemize}
+% \begin{itemize}
+%   \item a copy of the logos files (in PDF format) \texttt{logo\_UL.pdf} and \texttt{logo\_ULHPC.pdf} in a know path;
+%   \item to initiate a certain number of variables / macros used in the style \textbf{prior to} the call to the style package.
+% \end{itemize}
 
-They are defined as follows: 
+% They are defined as follows: 
 
-\lstinputlisting[language=TeX,firstline=45,lastline=70]{ulhpc_newsletter1.sty}
+% \lstinputlisting[language=TeX,firstline=45,lastline=70]{ulhpc_newsletter1.sty}
 
 
-% You need first to clone (directly or as a git submodule) the \texttt{ULHPC/documents} repository on \href{https://github.com/ULHPC/documents}{Github}. 
+% % You need first to clone (directly or as a git submodule) the \texttt{ULHPC/documents} repository on \href{https://github.com/ULHPC/documents}{Github}. 
 
-% Then in addition to the addition of the \LaTeX\ style file \texttt{ulhpc\_book.sty} at the root of your document, you'll need: 
+% % Then in addition to the addition of the \LaTeX\ style file \texttt{ulhpc\_book.sty} at the root of your document, you'll need: 
 
-%=======================================================
-\section{\faBeer\ Last but not least}
-%=======================================================
-\leftinfo{Another highlight}{For this page... }
+% %=======================================================
+% \section{\faBeer\ Last but not least}
+% %=======================================================
+% \leftinfo{Another highlight}{For this page... }
 
-\lipsum[2-8]
+% \lipsum[2-8]
 
 \end{document}
 
@@ -109,5 +161,5 @@ They are defined as follows:
 % mode: latex
 % mode: flyspell
 % mode: visual-line
-% TeX-master: "ulhpc_newsletter1"
+% TeX-master: "ulhpc_newsletter-issue-01"
 % End:
