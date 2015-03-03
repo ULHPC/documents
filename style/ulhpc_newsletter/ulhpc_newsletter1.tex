@@ -2,7 +2,7 @@
 % File:  ulhpc_newsletter1.tex --  Example of usage of the style            
 % Author(s): Sebastien Varrette <Sebastien.Varrette@uni.lu>
 % Creation:  16 Feb 2015
-% Time-stamp: <Mar 2015-03-03 11:24 svarrette>
+% Time-stamp: <Mar 2015-03-03 11:26 svarrette>
 %=============================================================================
 \documentclass[a4paper]{article}
 
@@ -66,9 +66,12 @@ Upcoming events: new tutorials, software we'll introduce in the next
 \section{\faCogs\ How to use the \texttt{ulhpc\_newsletter1} style?}
 %============================================================================================
 
-\faWarningSign\ : You need to compile the newsletters with \texttt{lualatex}! 
-
-If you are using \href{https://github.com/Falkor/Makefiles/blob/devel/latex/Makefile}{my generic Makefile}, simply place a file \texttt{.Makefile.local} at the root of your document having the following content:
+\begin{tcolorbox}[colback=red!5!white]
+\faWarningSign\ : You need to compile the articles with the \texttt{lualatex} compiler for \LaTeX!  
+\end{tcolorbox}
+This is required by the \texttt{fontawesome} and some TikZ fonts. 
+If you are using \href{https://github.com/Falkor/Makefiles/blob/devel/latex/Makefile}{my generic Makefile}, 
+simply place a file \texttt{.Makefile.local} at the root of your document having the following content:
 
 \lstinputlisting[language=make]{.Makefile.local}
 
