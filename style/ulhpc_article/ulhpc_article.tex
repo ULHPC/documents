@@ -1,0 +1,85 @@
+%=============================================================================
+% File:  ulhpc_article.tex --  Example of usage of the style
+% Time-stamp: <Lun 2015-03-02 18:22 svarrette>
+%=============================================================================
+\documentclass{article}
+
+\usepackage{graphicx}
+\graphicspath{{logos/}} % add logos/ to the search path for images
+
+\def\draft{} % comment to unset draft mode
+%\def\showversion{no} % uncomment to remove the version printing 
+
+\usepackage{ulhpc_article}
+\def\AuthorPrefix{Management Team}
+\def\frontabstract{
+  This is the abstract to be place on the front-page using the macro \texttt{$\backslash$frontabstract\{...\}}
+}
+
+\title{The Title}
+\def\subtitle{The subtitle}
+\author{%
+  Prof. Pascal Bouvry and\\
+  Dr. S\'ebastien Varrette
+}
+
+% \date{
+%   February 2015
+% }
+
+\begin{document}
+
+\coverpages
+
+\section{Section 1}
+
+\lipsum[1]
+
+\subsection{subsections}
+
+\lipsum[2]
+
+\section{Section 2}
+
+\begin{tcolorbox}
+  \lipsum[3]
+\end{tcolorbox}
+
+\newpage
+%====================
+\section{How to use the \texttt{ulhpc\_article} \LaTeX\ style?}
+
+\begin{tcolorbox}[colback=red!5!white]
+\faWarningSign\ : You need to compile the articles with the \texttt{lualatex} compiler for \LaTeX!  
+\end{tcolorbox}
+This is required by the \texttt{fontawesome} and some TikZ fonts. 
+If you are using \href{https://github.com/Falkor/Makefiles/blob/devel/latex/Makefile}{my generic Makefile}, 
+simply place a file \texttt{.Makefile.local} at the root of your document having the following content:
+
+\lstinputlisting[language=make]{.Makefile.local}
+
+\noindent Then in addition to the addition of the \LaTeX\ style file \texttt{ulhpc\_article.sty} at the root of your document, you'll need: 
+\begin{itemize}
+  \item a copy of the logos files (in PDF format) \texttt{logo\_UL.pdf} and \texttt{logo\_ULHPC.pdf} in a know path;
+  \item to initiate a certain number of variables / macros used in the style \textbf{prior to} the call to the style package.
+\end{itemize}
+
+\noindent They are defined as follows: 
+
+\lstinputlisting[language=TeX,firstline=44,lastline=70]{ulhpc_article.sty}
+
+For instance, this is how this style is used to generate this document: 
+
+\lstinputlisting[language=TeX,firstline=5,lastline=76]{ulhpc_article.tex}
+
+\end{document}
+
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+% eof
+%
+% Local Variables:
+% mode: latex
+% mode: flyspell
+% mode: visual-line
+% TeX-master: "ulhpc_article"
+% End:
