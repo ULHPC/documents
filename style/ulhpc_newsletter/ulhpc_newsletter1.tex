@@ -2,7 +2,7 @@
 % File:  ulhpc_newsletter1.tex --  Example of usage of the style            
 % Author(s): Sebastien Varrette <Sebastien.Varrette@uni.lu>
 % Creation:  16 Feb 2015
-% Time-stamp: <Mar 2015-03-03 11:26 svarrette>
+% Time-stamp: <Mar 2015-03-03 15:00 svarrette>
 %=============================================================================
 \documentclass[a4paper]{article}
 
@@ -66,25 +66,31 @@ Upcoming events: new tutorials, software we'll introduce in the next
 \section{\faCogs\ How to use the \texttt{ulhpc\_newsletter1} style?}
 %============================================================================================
 
-\begin{tcolorbox}[colback=red!5!white]
-\faWarningSign\ : You need to compile the articles with the \texttt{lualatex} compiler for \LaTeX!  
-\end{tcolorbox}
-This is required by the \texttt{fontawesome} and some TikZ fonts. 
-If you are using \href{https://github.com/Falkor/Makefiles/blob/devel/latex/Makefile}{my generic Makefile}, 
-simply place a file \texttt{.Makefile.local} at the root of your document having the following content:
+\input{_howto.md}
 
-\lstinputlisting[language=make]{.Makefile.local}
+% \begin{tcolorbox}[colback=red!5!white]
+% \faWarningSign\ : You need to compile the articles with the \texttt{lualatex} compiler for \LaTeX!  
+% \end{tcolorbox}
 
-Then in addition to the addition of the \LaTeX\ style file \texttt{ulhpc\_newsletter1.sty} at the root of your document, you'll need: 
+% On Debian, you'll need to install the extra-packages:
 
-\begin{itemize}
-  \item a copy of the logos files (in PDF format) \texttt{logo\_UL.pdf} and \texttt{logo\_ULHPC.pdf} in a know path;
-  \item to initiate a certain number of variables / macros used in the style \textbf{prior to} the call to the style package.
-\end{itemize}
+      
 
-They are defined as follows: 
+% If you are using \href{https://github.com/Falkor/Makefiles/blob/devel/latex/Makefile}{my generic Makefile}, 
+% simply place a file \texttt{.Makefile.local} at the root of your document having the following content:
 
-\lstinputlisting[language=TeX,firstline=45,lastline=70]{ulhpc_newsletter1.sty}
+% \lstinputlisting[language=make]{.Makefile.local}
+
+% Then in addition to the addition of the \LaTeX\ style file \texttt{ulhpc\_newsletter1.sty} at the root of your document, you'll need: 
+
+% \begin{itemize}
+%   \item a copy of the logos files (in PDF format) \texttt{logo\_UL.pdf} and \texttt{logo\_ULHPC.pdf} in a know path;
+%   \item to initiate a certain number of variables / macros used in the style \textbf{prior to} the call to the style package.
+% \end{itemize}
+
+% They are defined as follows: 
+
+% \lstinputlisting[language=TeX,firstline=45,lastline=70]{ulhpc_newsletter1.sty}
 
 
 % You need first to clone (directly or as a git submodule) the \texttt{ULHPC/documents} repository on \href{https://github.com/ULHPC/documents}{Github}. 

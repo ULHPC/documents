@@ -2,7 +2,7 @@
 % File:  ulhpc_newsletter1.sty --  LaTeX style configuration for the document
 % Author(s): Sebastien Varrette <Sebastien.Varrette@uni.lu>
 % Creation:  16 Feb 2015
-% Time-stamp: <Lun 2015-02-23 11:48 svarrette>
+% Time-stamp: <Mar 2015-03-03 15:01 svarrette>
 % 
 % Copyright (c) 2015 Sebastien Varrette <Sebastien.Varrette@uni.lu> (see LICENCE)
 % 
@@ -376,6 +376,10 @@
 
   \end{tikzpicture}%
 }
+
+% Reset space for itemize
+\usepackage{enumitem}
+\setitemize{itemsep=0pt}
 
 %\pagestyle{empty}
 \AtBeginShipout{\AtBeginShipoutAddToBox{\Header\Left\Footer}}
