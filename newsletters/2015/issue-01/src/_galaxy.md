@@ -8,6 +8,6 @@
 \end{figure}
 \begin{figure}
 \centering
-\includegraphics[width=14cm{images/Galaxy_workflow.pdf}
+\includegraphics[width=14cm]{images/Galaxy_workflow.pdf}
 \caption{Example of a simple Galaxy workflow}
 \end{figure}
