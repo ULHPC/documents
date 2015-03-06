@@ -1,14 +1,13 @@
-# Release of RESIF: New tool to ease the management of software modules on the platform and your machine
+# RESIF: easy management of software environments
 
-RESIF is an internally developped tool that aims at making software management on the UL HPC platform more accessible. The main features of RESIF are the automitization of the creation of a new software stack and of the addition of software to an existing software stack.
+[RESIF](http://resif-pypi.readthedocs.org/en/latest/) is an internally developed tool that aims to make the software management on the UL HPC platform more accessible to its users. Its main feature is the automation of the deployment of a new software environment, while also making it easy to add software to an existing stack. The tool can be used both on the HPC platform and workstations, making it easy for users to have local installations of the same software they use on the clusters.
 
-The workflow becomes simple and using this tool doesn't require the user to have any knowledge of how things work in the background anymore. It consists in a few readable commands that allow to:
+RESIF builds on the [EasyBuild framework](http://hpcugent.github.io/easybuild/) yet does not require an indepth knowlege of it, and provides users a simple workflow allowing:
 
-- Install and initialize RESIF
-- Create a new software stack
-- Add new software to a software stack
-- Use provided software
+- easy installation and initialization of RESIF and EasyBuild
+- creation of a new software stack
+- addition of new software to an existing software stack
 
-The worklow can be summarized by this simple figure:
+The workflow is outlined in the following figure:
 
 \includegraphics[width=\textwidth]{images/RESIFnewsletter.pdf}
