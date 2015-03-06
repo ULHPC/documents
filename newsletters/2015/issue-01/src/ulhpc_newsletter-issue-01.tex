@@ -10,7 +10,7 @@
 \graphicspath{{logos/}{images/}}
 
 %%%%%%%%%%%%%%% UL HPC Newsletter Configuration %%%%%%%%%%%%%%%%%%%
-\def\ReleaseDate{February 2015} % Release
+\def\ReleaseDate{March 2015} % Release
 \def\Number{1}                  % Issue Number
 \def\Editorsname{Dr. S. Varrette and Prof. P. Bouvry}
 \def\DocSrcURL{https://github.com/ULHPC/documents/tree/master/newsletters/2015/issue-01/}
@@ -28,60 +28,13 @@
 \end{welcome}
 
    
-
-
-%   As part of our commitment to constantly improve the services offered by the
-% HPC
-% platform, we are announcing that we will proceed with an upgrade of the
-% underlying software running the platform during Q1 2015.
-
-% In effect, we will migrate the OS of the computing nodes from Debian 6
-% (Squeeze)
-% to Debian 7 (Wheezy). The software environment available through the Modules
-% system will also be regenerated, the technical details are described below.
-% The storage on Gaia will be reorganized and migrated for better stability.
-
-% As it is our wish to make the upgrades as seamless as possible for you, we
-% will
-% perform them in several phases, allowing for potential issues to be
-% identified
-% and corrected.
-
-% 1. In a first phase, starting ** Tuesday, Feb 24th 2015 at 09:00 **
-% Part of the Gaia cluster (gaia-83 to gaia-154) will be migrated to Debian 7,
-% during a maintenance which will last until 18:00 on the mentioned date,
-% with
-% Gaia unavailable for the duration.
-% A new property will be set in the OAR scheduler that will allow you to
-% target
-% either the migrated nodes or the old nodes (technical details below).
-% You are strongly encouraged to test that your workflow is working correctly
-% on the migrated nodes or take the appropriate corrective measures
-% (recompile
-% software, etc.) as warranted.
-% This initial testing phase is meant to last 3 weeks.
-
-% 2. Second phase, starting (tentatively) ** Tuesday, Mar 17th 2015 at 09:00
-% **
-% The rest of the Gaia cluster (gaia-1 to gaia-79) and the Chaos cluster
-% nodes
-% will be migrated upon the successful conclusion of the trial Phase-1.
-% Both Gaia and Chaos will be unavailable until 18:00.
-
-% 3. Gaia storage reorganization: ** Tuesday, Mar 24th 2015 at 09:00 **
-% The home directories of Gaia will be moved from the current NFS server to
-% a distributed GPFS [*] setup which will allow for better stability, speed,
-% and future storage extensions. A half-day maintenance will be performed on
-% Gaia, with the cluster unavailable until 14:00.
-
-
-
 % %=======================================================
-% \section{\faCommentAlt\ UL HPC Highlights}
+\section{\faCommentAlt\ The UL HPC Platform at a glance}
 % %=======================================================
-
+\input{_ul_hpc.md}
 % Similar to an executive summary of (incoming/passed)
 % milestones (half page)
+
 
 % %=======================================================
 \section{\faBullhorn\ What's new?}
@@ -123,6 +76,13 @@
 % Upcoming events: new tutorials, software we'll introduce in the next
 % \$period, upcoming HPC schools etc.
 \input{_hpc_school.md}
+
+% %=======================================================
+\section{\faUser\ Meet the team}
+% %=======================================================
+% Upcoming events: new tutorials, software we'll introduce in the next
+% \$period, upcoming HPC schools etc.
+\input{_hpc_team.md}
 
 % %============================================================================================
 % \section{\faCogs\ How to use the \texttt{ulhpc\_newsletter1} style?}
