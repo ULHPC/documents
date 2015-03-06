@@ -1,5 +1,5 @@
 \resizebox{0.9\textwidth}{0.6\textwidth}{
- \centering \begin{tikzpicture}
+ \centering \begin{tikzpicture}[mindmap, level 1 concept/.append style={level distance=6cm}]
     \begin{scope}[mindmap, concept color=blue!60, text=white]
     \node[concept,text width=14em] (compute) {\textbf{404 computing nodes: 4316 cores, 49.9 TFlops}}
       [clockwise from=75]
@@ -15,7 +15,7 @@
     \end{scope}
     
     \begin{scope}[mindmap, concept color=red!60, text=white]
-      \node[concept] (sysadmins) at (11,0) {\textbf{5 system \\ administrators}}
+      \node[concept] (sysadmins) at (12,0) {\textbf{5 system \\ administrators}}
       [clockwise from=225]
       child { node[concept,scale=1.1,text width=6em] (sysadmindiv) {\textbf{3 at FSTC \& 2 at LCSB}}};
     \end{scope}
