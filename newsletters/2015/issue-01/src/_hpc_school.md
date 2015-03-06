@@ -1,5 +1,5 @@
 # HPC Schools
-\begin{wrapfigure}{l}{0.3\textwidth}
+\begin{wrapfigure}{r}{0.3\textwidth}
   \includegraphics[width=0.25\textwidth]{logos/logo_hpc-shool2015}
 \end{wrapfigure}
 
