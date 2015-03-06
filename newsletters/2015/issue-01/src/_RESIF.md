@@ -11,4 +11,4 @@ The workflow becomes simple and using this tool doesn't require the user to have
 
 The worklow can be summarized by this simple figure:
 
-\includegraphics[width=\textwidth]{images/RESIFnewsletter.png}
+\includegraphics[width=\textwidth]{images/RESIFnewsletter.pdf}
