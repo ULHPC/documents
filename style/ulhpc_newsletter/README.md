@@ -3,7 +3,7 @@
 
 Copyright (c) 2015 [Sebastien Varrette](mailto:Sebastien.Varrette@uni.lu)
 
-        Time-stamp: <Sun 2015-02-22 21:14 svarrette>
+        Time-stamp: <Mar 2015-03-03 14:39 svarrette>
 
 -------------------
 ->![UL HPC](https://github.com/ULHPC/documents/raw/master/logos/by_size/logo_ULHPC_150_150.png)<-
@@ -17,11 +17,23 @@ A typical (compiled) PDF produced using this style is proposed as [`ulhpc_newsle
 
 To use this style:
 
+* Have a working LaTeX environment (consider [MacTeX](https://tug.org/mactex/) under Mac OS)
 * clone the [Github ULHPC/documents](https://github.com/ULHPC/documents) repository or make it a Git submodule of your own repository;
 * copy (or make a symlink to) the LaTeX style `ulhpc_newsletter1.sty` at the root of your document;
-* Compilation of this style __requires__ the following components:
+* Compilation of this style __requires__ the following _additional_ components:
    - [PGF/TikZ](http://sourceforge.net/projects/pgf/)
    - The [`lualatex`](http://www.luatex.org/) compiler
+   - the [pandoc](http://johnmacfarlane.net/pandoc/installing.html) markdown to LaTeX converter
+   - some additional fonts ([`fontawesome`](https://www.ctan.org/tex-archive/fonts/fontawesome)) and styles (like [`qrcode`](https://www.ctan.org/pkg/qrcode)).
+   Under Debian, running `apt-get install texlive-latex-base texlive-fonts-extra texlive-luatex texlive-pictures` shall be sufficient.
+   Under Ubuntu, for some reason, the [`qrcode`](https://www.ctan.org/pkg/qrcode) package is not included in `texlive-pictures` such that you'll need to setup it by hand as follows:
+
+           # See http://www.ctan.org/tex-archive/macros/latex/contrib/qrcode
+		   $> wget http://mirrors.ctan.org/macros/latex/contrib/qrcode/qrcode.dtx
+		   $> wget http://mirrors.ctan.org/macros/latex/contrib/qrcode/qrcode.ins
+		   $> latex qrcode.ins      # shall produce qrcode.sty
+		   $> rm qrcode.dtx qrcode.ins
+
 * [eventually] prepare a [GNU Makefile](http://www.gnu.org/software/make/manual/make.html) able to compile your document
    - You might want to use [my generic Makefile for LaTeX](https://github.com/Falkor/Makefiles/blob/devel/latex/Makefile), in which case you will need to place a `.Makefile.local` file at the root of your document having (for instance) the following content:
 
@@ -61,6 +73,14 @@ Below is a typical setup:
 [...]
 \end{document}
 ```
+
+Note that at any moment, you can decide to write any content in a markdown file (with the extension `.md`) which will be converted using [pandoc](http://johnmacfarlane.net/pandoc/) in latex (with extension `.md.tex`). Feel free then to include the file using
+
+```latex
+\input{myfile.md}    # will load myfile.md.tex if present
+```
+
+Note that this way, you can mix markdown syntax with LaTeX code, as in [this example](_news.md).
 
 ## Customizations
 

@@ -2,7 +2,7 @@
 
 The main storage system of the Gaia cluster is under reorganization, with a planned change of the underlying filesystem from the current NFS to GPFS.
 
-The main NFS server **Galactus** has been under high load since 2014, with the doubling of the number of computing nodes accessing it. 
+The main NFS server __Galactus__ has been under high load since 2014, with the doubling of the number of computing nodes accessing it. 
 As the limitations of this technology became more pronounced, a distributed setup with IBM's [GPFS](http://www-03.ibm.com/software/products/en/software) was chosen to replace it.
 
 The migration to GPFS will allow for better stability, speed and future storage extensions, thus improving the productivity of the users of this cluster.
