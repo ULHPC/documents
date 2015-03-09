@@ -5,9 +5,8 @@ platform, we will proceed with an upgrade of the underlying software running the
 platform during Q1 and Q2 2015.
 
 In effect, we will migrate the OS of the computing nodes from Debian 6 (Squeeze)
-to Debian 7 (Wheezy). The software environment available through the Modules
-system will also be regenerated (see the section on __RESIF__), and the storage 
-on Gaia will be reorganized and migrated for better stability and performance.
+to Debian 7 (Wheezy). The storage system of Gaia will also be reorganized and 
+migrated for better stability and performance.
 
 As it is our wish to make the upgrades as seamless as possible, we will
 perform them in several phases, allowing for potential issues to be 
@@ -31,8 +30,10 @@ achieving consistency between the two clusters.
 The HPC team will strive to minimize the downtime of the clusters, with access
 always being kept open to either Gaia or Chaos.
 
+<!---
 The operations outlined above will be performed on the following dates:
 
 * Phase 1: March 16th 2015, Gaia under maintenance for 8h
 * Phase 2: April 7th 2015, Gaia under maintenance for 8h
 * Phase 3: April 14th 2015, Chaos under maintenance for 8h
+-->

@@ -1,4 +1,4 @@
-\resizebox{0.9\textwidth}{0.6\textwidth}{
+\resizebox{0.9\textwidth}{0.9\textwidth}{
  \centering 
  \begin{tikzpicture}[mindmap, level 1 concept/.append style={level distance=6cm}]
     \begin{scope}[mindmap, concept color=blue!60, text=white]
@@ -20,6 +20,15 @@
       [clockwise from=225]
       child { node[concept,scale=1.1,text width=6em] (sysadmindiv) {\textbf{3 at FSTC \& 2 at LCSB}}};
     \end{scope}
-    
+
+    \begin{scope}[mindmap, concept color=gray!60, text=white]
+      \node[concept,text width=12em] (services) at (7,-9) {\textbf{Complementary \\ services}}
+      child { node[concept,scale=1.1,text width=8em] (virt) at (-4,8) {\textbf{Virtualization: on demand VMs for R\&D}}}
+      child { node[concept,scale=1.1,text width=8em] (collab) at (-4,3) {\textbf{Collaboration: \\ GForge {\tiny (Git, SVN)} \\ Gitlab \\ Etherpad \\ Jabber}}}
+      child { node[concept,scale=1.1,text width=8em] (bioinf) at (6,9) {\textbf{Bioinformatics: \\ Galaxy}}}
+      child { node[concept,scale=1.1,text width=8em] (cloud) at (4,3) {\textbf{Cloud: \\ OpenStack}}}
+      child { node[concept,scale=1.1,text width=8em] (cloud) at (-2,0) {\textbf{BigData storage \\ OwnCloud}}};
+    \end{scope}
+     
   \end{tikzpicture}
 }
