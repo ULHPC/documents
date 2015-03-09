@@ -1,5 +1,6 @@
 \resizebox{0.9\textwidth}{0.6\textwidth}{
- \centering \begin{tikzpicture}[mindmap, level 1 concept/.append style={level distance=6cm}]
+ \centering 
+ \begin{tikzpicture}[mindmap, level 1 concept/.append style={level distance=6cm}]
     \begin{scope}[mindmap, concept color=blue!60, text=white]
     \node[concept,text width=14em] (compute) {\textbf{404 computing nodes: 4316 cores, 49.9 TFlops}}
       [clockwise from=75]
@@ -9,7 +10,7 @@
     \end{scope}
 
     \begin{scope}[mindmap, concept color=green!50!yellow!70!black, text=white]
-      \node[concept] (storage) at (8.5,5) {\textbf{1656 TB main storage}}
+      \node[concept,text width=8em] (storage) at (8.5,5) {\textbf{3368 TB total storage}}
       [clockwise from=0]
       child { node[concept,scale=1.1] (backup) {\textbf{1712 TB for backup}}};
     \end{scope}
@@ -20,4 +21,5 @@
       child { node[concept,scale=1.1,text width=6em] (sysadmindiv) {\textbf{3 at FSTC \& 2 at LCSB}}};
     \end{scope}
     
-\end{tikzpicture}}
+  \end{tikzpicture}
+}

@@ -1,6 +1,26 @@
 # New computing equipment
 
-New specialized computing systems will be part of the UL HPC platform in early 2015:
+\begin{figure}[!htbp]
+
+  \begin{subfigure}{0.3\textwidth}
+    \centering
+    \includegraphics[width=0.85\textwidth]{images/delta}
+  \end{subfigure}
+  \begin{subfigure}{0.3\textwidth}
+    \centering
+    \includegraphics[width=0.4\textwidth]{images/sgi_uv2000}
+  \end{subfigure}
+  \begin{subfigure}{0.3\textwidth}
+    \centering
+    \includegraphics[width=0.85\textwidth]{images/moonshot}
+  \end{subfigure}
+
+  \centering
+   Delta server (left), SGI UV-2000 (center) and HP Moonshot (right)
+
+\end{figure}
+
+New specialized computing systems will be part of the UL HPC platform in Q2 2015:
 
 * Delta D88x-M8-BI (Gaia cluster: gaia-80) featuring 8 * Intel Xeon E7-8880v2 @ 2.5 GHz (120 cores: 2.4 TFlops) with 3TB of RAM and 12.6TB of local storage;
 * SGI UV 2000 (Gaia cluster: gaia-81) featuring 16 * Intel Xeon E5-4650v2 @ 2.4 GHz (160 cores: 3 TFlops) with 4TB of RAM;
