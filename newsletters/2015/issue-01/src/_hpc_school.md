@@ -1,4 +1,5 @@
-\begin{wrapfigure}{r}{0.3\textwidth}
+\begin{wrapfigure}[6]{r}{0.3\textwidth}
+  \vspace{-1em}
   \includegraphics[width=0.25\textwidth]{logos/logo_hpc-shool2015}
 \end{wrapfigure}
 
