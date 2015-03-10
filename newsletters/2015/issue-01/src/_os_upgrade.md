@@ -1,32 +1,27 @@
-# OS and Software Upgrades during Q1-Q2 2015
+## OS/Software Upgrades
 
+\begin{tcolorbox}
 As part of our commitment to constantly improve the services offered by the HPC
 platform, we will proceed with an upgrade of the underlying software running the 
 platform during Q1 and Q2 2015.
+\end{tcolorbox}
 
-In effect, we will migrate the OS of the computing nodes from Debian 6 (Squeeze)
-to Debian 7 (Wheezy). The storage system of Gaia will also be reorganized and 
-migrated for better stability and performance.
+\noindent
+This includes the following tasks:
 
-As it is our wish to make the upgrades as seamless as possible, we will
-perform them in several phases, allowing for potential issues to be 
-identified and corrected.
+* upgrade of the Operating System (OS) of all components to  [Debian 7 (Wheezy)](https://www.debian.org/releases/wheezy/)
+* upgrade of the software offered via [modules](http://modules.sourceforge.net/)/[Lmod](https://www.tacc.utexas.edu/research-development/tacc-projects/lmod) through the new [RESIF](http://resif-pypi.readthedocs.org/en/latest/) framework. 
 
-1. In a first phase, part of the Gaia cluster (gaia-83 to gaia-154) will be 
-migrated to Debian 7, allowing users to test and adapt their workflows before
-the full platform is upgraded. This phase is intended to last three
-weeks, giving ample time for these tests to be conducted, while leaving sufficient
-resources for time-critical work to be completed without interruption. 
+\noindent
+To be as seamless as possible, these upgrades will be performed in a step-wise approach:
 
-2. A second phase will follow, with the rest of Gaia (nodes gaia-1 to gaia-79) 
-upgraded to Debian 7 upon the successful conclusion of the trial Phase 1.
-At the same time, the home directories of Gaia will be migrated from the current 
-NFS storage server to a distributed GPFS setup (see the section on __GPFS__ for more 
-information).
+1. half of [gaia](https://hpc.uni.lu/systems/gaia/) (`gaia-83` to `gaia-154`) will be migrated to Debian 7.
+This phase is intended to last **three weeks**, giving enough time for everybody to adapt and test their workflow on the future configuration;
+2. the rest of [gaia](https://hpc.uni.lu/systems/gaia/) will be  migrated to Debian 7.
+Also, the home directories of Gaia will be migrated from the current NFS storage server to a distributed GPFS setup -- see below;
+3. the [chaos](https://hpc.uni.lu/systems/chaos/) cluster will be also upgraded. 
 
-3. In the final phase, the Chaos cluster will also be upgraded to Debian 7, thus
-achieving consistency between the two clusters.
-
+\noindent
 The HPC team will strive to minimize the downtime of the clusters, with access
 always being kept open to either Gaia or Chaos.
 

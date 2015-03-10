@@ -1,5 +1,5 @@
 \vspace{-2em}
-\resizebox{0.85\textwidth}{0.55\textwidth}{
+\resizebox{1.0\textwidth}{0.65\textwidth}{
  \centering 
  \begin{tikzpicture}[mindmap, level 1 concept/.append style={level distance=6cm}]
     \begin{scope}[mindmap, concept color=blue!60, text=white]
@@ -29,12 +29,25 @@
 %    \end{scope}
   \end{tikzpicture}
 }
+
+## UL HPC Statistics
+
+The [UL HPC](http://hpc.uni.lu) platform has continuously evolved since the initial computing servers ordered in 2006.
+The HPC equipment is based on both classical Commercial off-the shelf (COTS) and specialized products.
+\begin{tcolorbox}
+  The \ulhpc features as of march 2015, \textbf{49.9 TFlops} for computations
+  (over 4316 computing cores) and \textbf{3 PetaBytes} for storage (incl.
+  1.7 PB for backups).
+\end{tcolorbox}
+
+\noindent
+The evolution of both computing and storage capacity, is depicted in the below figures.
 \begin{figure}[htbp]
-  \begin{subfigure}{0.49\textwidth}
-    \includegraphics[width=\textwidth]{ul_hpc_evolution_computing}
-  \end{subfigure}
-  \begin{subfigure}{0.49\textwidth}
-    \includegraphics[width=\textwidth]{ul_hpc_evolution_storage}
-  \end{subfigure}
+  \centering
+  \includegraphics[width=0.7\textwidth]{ul_hpc_evolution_computing}
+  \includegraphics[width=0.7\textwidth]{ul_hpc_evolution_storage}
+  %\caption{UL HPC computing and storage capacity evolution}
 \end{figure}
-\centerline{UL HPC current status and evolution since 2006}
+
+As of March 2015, **281 users** are registered and active on the platform.
+The used computing effort in 2014 by the registered users is measured as **1407 CPUYears** , thus performed in a single year period.
