@@ -17,7 +17,7 @@
     \vspace{-3ex}
     \includegraphics[width=0.2\textwidth]{{hyacinthe.cartiaux}.jpg}
   \end{wrapfigure} 
-  \textbf{Hyacinthe Cartiaux} joined the HPC team in 2011 to set up the Grid'5000 (grid computing testbed) Luxembourg site and has since been involved with all the HPC infrastructure of the UL. His interests cover IT automation and DevOps techniques, HPC and Grid Computing.
+  \textbf{Hyacinthe Cartiaux} joined the HPC team in 2011 to set up the Grid'5000 Luxembourg site and has since been involved with all the HPC infrastructure of the UL, and other external services such as the Gforge. His interests cover IT automation and devops techniques, HPC & Grid Computing.
   \vspace{2ex}
   \begin{wrapfigure}[5]{r}{0.2\textwidth}
     \vspace{-3ex}
