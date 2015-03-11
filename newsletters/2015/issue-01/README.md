@@ -34,14 +34,16 @@ In particular, the following _additional_ components to a regular LaTeX environm
 * The [`lualatex`](http://www.luatex.org/) compiler
 * the [pandoc](http://johnmacfarlane.net/pandoc/installing.html) markdown to LaTeX converter
 * some additional fonts ([`fontawesome`](https://www.ctan.org/tex-archive/fonts/fontawesome)) and styles (like [`qrcode`](https://www.ctan.org/pkg/qrcode)).
-     - Under Debian, running `apt-get install texlive-latex-base texlive-fonts-extra texlive-luatex texlive-pictures` shall be sufficient.
+     - Under Debian, running the following commands shall be sufficient: 
+     
+                   $> apt-get install texlive-latex-base texlive-fonts-extra texlive-luatex texlive-pictures` shall be sufficient.
      - Under Ubuntu, for some reason, the [`qrcode`](https://www.ctan.org/pkg/qrcode) package is not included in `texlive-pictures` such that you'll need to setup it by hand as follows:
 
-           # See http://www.ctan.org/tex-archive/macros/latex/contrib/qrcode
-		   $> wget http://mirrors.ctan.org/macros/latex/contrib/qrcode/qrcode.dtx
-		   $> wget http://mirrors.ctan.org/macros/latex/contrib/qrcode/qrcode.ins
-		   $> latex qrcode.ins      # shall produce qrcode.sty
-		   $> rm qrcode.dtx qrcode.ins
+                   # See http://www.ctan.org/tex-archive/macros/latex/contrib/qrcode
+                   $> wget http://mirrors.ctan.org/macros/latex/contrib/qrcode/qrcode.dtx
+                   $> wget http://mirrors.ctan.org/macros/latex/contrib/qrcode/qrcode.ins
+                   $> latex qrcode.ins      # shall produce qrcode.sty
+                   $> rm qrcode.dtx qrcode.ins
 
 ### Compilation of the LaTeX sources
 
