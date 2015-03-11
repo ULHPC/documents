@@ -7,10 +7,7 @@ platform during Q1 and Q2 2015.
 \end{tcolorbox}
 
 \noindent
-This includes the following tasks:
-
-* upgrade of the Operating System (OS) of all components to  [Debian 7 (Wheezy)](https://www.debian.org/releases/wheezy/);
-* upgrade of the software offered via [modules](http://modules.sourceforge.net/)/[Lmod](https://www.tacc.utexas.edu/research-development/tacc-projects/lmod) with the new [RESIF](http://resif-pypi.readthedocs.org/en/latest/) framework. 
+This includes the fupgrade of the Operating System (OS) of all components to  [Debian 7 (Wheezy)](https://www.debian.org/releases/wheezy/), but also the upgrade of the software offered via [modules](http://modules.sourceforge.net/)/[Lmod](https://www.tacc.utexas.edu/research-development/tacc-projects/lmod) with the new [RESIF](http://resif-pypi.readthedocs.org/en/latest/) framework. 
 
 \noindent
 To be as seamless as possible, these upgrades will be performed in a step-wise approach:
