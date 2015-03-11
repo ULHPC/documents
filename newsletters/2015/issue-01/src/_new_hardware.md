@@ -26,6 +26,6 @@ New specialized computing systems will be part of the UL HPC platform in Q2 2015
 * HP Moonshot (Nyx cluster: moonshot-1): 30 blades each with an Intel Xeon E3-1284Lv3 @ 1.8 GHz and 32GB of RAM (120 cores: 3.4 TFlops and 960GB of RAM in total).
 
 The Delta system will be used by [RUES](http://wwwfr.uni.lu/research/fstc/research_unit_in_engineering_science_rues) members for Computational Mechanics workloads, 
-while the SGI UV-2000 system will be dedicated for bioinformatics analyses of the LCSB.
+while the SGI UV-2000 system will be dedicated for Bioinformatics analyses of the LCSB.
 The HP Moonshot mini-cluster will be initially used by the HPC team as a testbed for new software solutions
 and for the evaluation of this low-power platform for HPC workloads.
