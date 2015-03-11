@@ -31,3 +31,5 @@
 *.xdy
 *.tdo
 *.texinfo
+*.md.tex
+*.swp
