@@ -4,7 +4,7 @@
     \vspace{-2.75ex}
     \includegraphics[width=0.14\textwidth]{{pascal.bouvry}.jpg}
   \end{wrapfigure}
-\textbf{Pascal Bouvry} is a full professor of the [FSTC](http://fstc.uni.lu) and the head of the  [ILIAS](http://wwwen.uni.lu/recherche/fstc/interdisciplinary_lab_for_intelligent_and_adaptive_systems_ilias/) research unit and the [DS-CSCE](http://wwwen.uni.lu/formations/fstc/doctoral_school_of_computer_science_and_computer_engineering) doctoral school. His team (([PCOG](http://pcog.uni.lu)) is composed of 25 researchers working on Parallel computing and Optimization  applied to Cloud Computing and HPC (scheduling, energy-efficiency, security), Ad-Hoc Networks (Vanets simulation and service optimization) and Biology (gene sequencing, regulatory networks, protein folding). 
+\textbf{Pascal Bouvry} is a full professor of the [FSTC](http://fstc.uni.lu) and the head of the  [ILIAS](http://wwwen.uni.lu/recherche/fstc/interdisciplinary_lab_for_intelligent_and_adaptive_systems_ilias/) research unit and the [DS-CSCE](http://wwwen.uni.lu/formations/fstc/doctoral_school_of_computer_science_and_computer_engineering) doctoral school. His team ([PCOG](http://pcog.uni.lu)) is composed of 25 researchers working on Parallel computing and Optimization  applied to Cloud Computing and HPC (scheduling, energy-efficiency, security), Ad-Hoc Networks (Vanets simulation and service optimization) and Biology (gene sequencing, regulatory networks, protein folding). 
   \vspace{2ex}
   \begin{wrapfigure}[7]{r}{0.13\textwidth}
     \vspace{-2.75ex}
