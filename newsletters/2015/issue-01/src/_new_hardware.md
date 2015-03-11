@@ -1,4 +1,4 @@
-# New computing equipment
+## New computing equipment
 
 \begin{figure}[!htbp]
 

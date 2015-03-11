@@ -1,7 +1,8 @@
-## Lustre, GPFS & Isilon Storage consolidation
+## New GPFS & Isilon Storage
 
 \begin{tcolorbox}
-The main storage system of the Gaia cluster is under reorganization, with a planned change of the underlying filesystem of the home directories from \href{http://en.wikipedia.org/wiki/Network_File_System}{NFS} to \href{http://en.wikipedia.org/wiki/IBM_General_Parallel_File_System}{GPFS}.  
+The main storage system of the Gaia cluster is under reorganization, with a planned change of the underlying filesystem of the home directories from \href{http://en.wikipedia.org/wiki/Network_File_System}{NFS} to \href{http://en.wikipedia.org/wiki/IBM_General_Parallel_File_System}{GPFS}.
+Also, most of th eprojects 
 \end{tcolorbox}
 Indeed, the main NFS server __Galactus__ has been under high load since 2014, with the doubling of the number of computing nodes accessing it. 
 As the limitations of this technology became more pronounced, a distributed setup with IBM's [GPFS](http://www-03.ibm.com/software/products/en/software) was chosen to replace it.
