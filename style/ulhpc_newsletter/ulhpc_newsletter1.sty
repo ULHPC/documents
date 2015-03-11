@@ -1,0 +1,402 @@
+% =============================================================================
+% File:  ulhpc_newsletter1.sty --  LaTeX style configuration for the document
+% Author(s): Sebastien Varrette <Sebastien.Varrette@uni.lu>
+% Creation:  16 Feb 2015
+% Time-stamp: <Mar 2015-03-03 15:01 svarrette>
+% 
+% Copyright (c) 2015 Sebastien Varrette <Sebastien.Varrette@uni.lu> (see LICENCE)
+% 
+% Licence: Creative Commons Attribution-Noncommercial-Share Alike 2.0 France
+% 
+% You are free:
+% - to Share:  to copy, distribute and transmit the work
+% - to Remix: to adapt the work
+% 
+% Under the following conditions:
+% - Attribution : You must attribute the work in the manner specified by the
+% author or licensor (but  not in any way that suggests that
+% they endorse you or your use of the work).
+% - Noncommercial:  You may not use this work for commercial purposes.
+% - Share Alike: If you alter, transform, or build upon this work, you may
+% distribute the resulting work only under the same or similar
+% license to this one.
+% 
+% With the understanding that:
+% - Waiver: Any of the above conditions can be waived if you get permission
+% from the copyright holder.
+% - Other Rights: In no way are any of the following rights affected by the
+% license:
+% * Your fair dealing or fair use rights;
+% * Apart from the remix rights granted under this license,
+% the author's moral rights;
+% * Rights other persons may have either in the work itself
+% or in how the work is used, such as publicity or privacy
+% rights.
+% - Notice:  For any reuse or distribution, you must make clear to others the
+% license terms of this work. The best way to do this is with a
+% link to this web page.
+% =============================================================================
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Configuration for the style %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\providecommand{\Newstitle}{UL HPC Newsletter}    % Title of the newsletter
+\providecommand{\ReleaseDate}{February 2015}      % Release date for newsletter
+\providecommand{\Frequency}{}                     % Frequency ( monthly, quarterly, etc.) 
+\providecommand{\Number}{1}                       % Issue number for the newsletter
+\providecommand{\InstituteURL}{http://hpc.uni.lu} % Reference web site
+\providecommand{\Editorsname}{Dr. S. Varrette and Prof. P. Bouvry} % Editors
+\providecommand{\DocSrcURL}{https://github.com/ULHPC/documents}    % [Git] URL for the document LaTeX sources
+\providecommand{\InstituteAddress}{%
+  University of Luxembourg          \\
+  6, rue Richard Coudenhove-Kalergi \\
+  L-1359 Luxembourg \\
+  Luxembourg\\
+  \textbf{T.} +352 46 66 44 6600
+}
+\providecommand{\Licence}{CC BY-NC-SA 4.0}
+\providecommand{\LicenceURL}{http://creativecommons.org/licenses/by-nc-sa/4.0/}
+\providecommand{\Github}{ULHPC}  % Github account
+\providecommand{\Twitter}{ULHPC} % Twitter account
+\providecommand{\NewsletterURL}{http://hpc.uni.lu/newsletters}
+
+%%%% Current version of the proposal
+\IfFileExists{VERSION}{
+  \providecommand{\docversion}{\input{VERSION}}
+}{
+  \providecommand{\docversion}{0.2}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Let's go now ;) 
+%\renewcommand\familydefault{\sfdefault}
+
+\usepackage[hmargin=2cm,bmargin=3cm,tmargin=5cm,lmargin=6cm,centering]{geometry}
+
+\usepackage{xspace}
+\usepackage{fontawesome} % see http://ftp.oleane.net/pub/CTAN/fonts/fontawesome/fontawesome.pdf for the list of available icons
+\usepackage{tikzpagenodes}
+\usetikzlibrary{calc}
+\usetikzlibrary{positioning}
+\usetikzlibrary{shapes.misc,arrows}
+\usetikzlibrary{mindmap,trees,backgrounds}
+\usepackage{lmodern}
+\usepackage{multicol}
+\usepackage{lipsum}
+\usepackage{atbegshi}
+\usepackage{etoolbox} % better ifthen
+\usepackage{tcolorbox}
+\usepackage{wrapfig}
+\usepackage{subcaption}
+
+\AtBeginShipoutInit
+
+%%%%%%%%%%
+% Colors %
+%%%%%%%%%%
+\usepackage[usenames]{colortbl}
+\definecolor{lightgray}{gray}{0.9}
+\definecolor{bcode}{rgb}{0.91,0.91,0.91}  % color for code extract
+\definecolor{lightblue}{rgb}{0.45,0.76,0.98}  % color for
+\definecolor{lightgray}{rgb}{.9, .9, .9}
+\definecolor{lightgreen}{rgb}{.7, 1, .7}
+\definecolor{darkgray}{rgb}{.4, .4, .4}
+\definecolor{purple}{rgb}{0.65, 0.12, 0.82}
+\definecolor{beamerblue}{rgb}{0.2,0.2,0.7}
+\definecolor{textblue}{rgb}{0.16,0.32,0.85}
+\definecolor{ulgray}{RGB}{92,92,92}
+%\definecolor{ulblue}{red!70!green}
+\definecolor{ulblue}{rgb}{0.0, 0.48, 0.65}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Versionning with day and time %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% months
+\def\ftoday{\number\day\space
+ \ifcase\month\or
+ january\or february\or march\or april\or may\or june\or
+ july\or august\or september\or october\or november\or december\fi
+ \space\number\year}
+% \isodayandtime to get current date and time
+\begingroup
+\count0=\time \divide\count0by60 % Hour
+\count2=\count0 \multiply\count2by-60 \advance\count2by\time% Min
+\def\2#1{\ifnum#1<10 0\fi\the#1}
+\xdef\isodayandtime{\the\year-\2\month-\2\day\space\2{\count0}:%sec
+\2{\count2}}
+\xdef\isoday{\the\year-\2\month-\2\day}
+\endgroup
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+% Code Listings
+% See ftp://ftp.tex.ac.uk/tex-archive/macros/latex/contrib/listings/listings.pdf
+%%%%%%%%%%%%%% 
+\usepackage{listings}
+\lstset{numbers=left,numberstyle=\tiny,stepnumber=10,firstnumber=1,language=Tex,basicstyle=\footnotesize,columns=fixed,backgroundcolor=\color{bcode},showstringspaces=false,emph={uint8_t,uint16_t,uint32_t,size_t,sig_atomic_t,time_t,clock_t,sigset_t,restrict},emphstyle=\bfseries,escapeinside={/*@}{@*/}}
+
+% define some basic styles for lstlisting
+\lstdefinestyle{config}{tabsize=2,numbers=none,basicstyle=\footnotesize,stringstyle=\texttt}
+\lstdefinestyle{codescriptsize}{ tabsize=2,stepnumber=5,caption=\lstname,captionpos=b,aboveskip=12pt,tabsize=2,numbers=left,numberstyle=\tiny,basicstyle=\scriptsize,stringstyle=\texttt,backgroundcolor=\color{lightgray}}
+\lstdefinestyle{codetiny}{stepnumber=5,caption=\lstname,captionpos=b,aboveskip=12pt,tabsize=2,numbers=left,numberstyle=\tiny,basicstyle=\tiny,stringstyle=\texttt,backgroundcolor=\color{lightgray}}
+\lstdefinestyle{output}{stepnumber=5,tabsize=2,numbers=none,breaklines=true,basicstyle=\scriptsize,stringstyle=\texttt}
+
+\lstdefinestyle{verif}{captionpos=b,numbers=none,backgroundcolor=\color{lightgray},columns=flexible,basicstyle=\scriptsize}
+
+\lstdefinestyle{codespdl}{stepnumber=5,caption=\lstname,captionpos=b,aboveskip=12pt,tabsize=2,numbers=left,numberstyle=\tiny,basicstyle=\scriptsize,stringstyle=\texttt,backgroundcolor=\color{lightgray},morekeywords={role,secret,compromised,secret,const,Function,inversekeys,usertype,protocol,var,Nonce,untrusted}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Adapt section / subsection %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[explicit]{titlesec}
+\usepackage{titletoc}
+
+\newcommand\titlebar{%
+\tikz[baseline,trim left=0.5cm,trim right=2.5cm] {%
+    \node [
+        text = red!70!green,
+        anchor= base east,
+        minimum height=3.5ex] (a) at (2.5cm,0.6ex) {%
+    };
+   \path[fill=red!70!blue] (a.east) circle (.5ex);
+   \draw[color=red!70!blue, thick,rounded corners=1ex] (a.east) |- (\textwidth+3cm,-0.75ex);
+ }
+}
+\newcommand\subtitlebar{%
+\tikz[baseline,trim left=1cm,trim right=3.05cm] {%
+    \node[
+        text = red!70!green,
+        anchor= base east,
+        minimum height=3.5ex] (b) at (3.05cm,0.6ex) {%
+    };
+   \path[fill=red!70!blue] (b.east) circle (.5ex);
+   \draw[color=red!70!blue, thick,rounded corners=1ex] (b.east) |- (\textwidth+2cm,-0.75ex);
+ }%
+}
+
+% Format the section
+\titleformat{\section}{\LARGE\sffamily}{}{0cm}{\textcolor{ulblue}{#1\hrule}}
+\titlespacing*{\section}{0cm}{2.5ex}{0ex}
+\titlespacing*{name=\section,numberless}{0cm}{2.5ex}{0ex}
+\renewcommand*{\thesection}{\arabic{section}}
+
+% Format the subsection
+\titleformat{\subsection}{\normalfont\large\sffamily}{}{0cm}{\textcolor{ulblue}{#1}}
+\titlespacing*{\subsection}{0cm}{3.5ex plus 1ex minus .2ex}{2.3ex plus .2ex}
+\titlespacing*{name=\subsection,numberless}{0cm}{3.5ex plus 1ex minus .2ex}{2.3ex plus .2ex}
+\renewcommand*{\thesubsection}{\arabic{subsection}}
+
+% Adapt also the TOC 
+\titlecontents{section}% <section-type>
+  [5pt]% <left>
+  {\addvspace{0.5em}}% <above-code>
+  {\bfseries} %\bfseries\chaptername\ \thecontentslabel\quad}% <numbered-entry-format>
+  {}% <numberless-entry-format>
+  {\bfseries\hfill\contentspage}% <filler-page-format>
+
+\titlecontents{subsection}% <section-type>
+  [15pt]% <left>
+  {\addvspace{0.25em}}% <above-code>
+  {} %\bfseries\chaptername\ \thecontentslabel\quad}% <numbered-entry-format>
+  {}% <numberless-entry-format>
+  {\bfseries\hfill\contentspage}% <filler-page-format>
+
+% No title to the toc
+%\renewcommand\contentsname{}
+\renewcommand\tableofcontents{%
+    \@starttoc{toc}%
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+% hyperref and QR codes %
+%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[plainpages=false]{hyperref}
+%\usepackage{breakurl}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=ulblue,
+  urlcolor=ulblue,
+  citecolor=ulblue,
+  linktocpage=true,
+  bookmarksopen,
+  bookmarksopenlevel=1,
+  bookmarksnumbered}
+
+\usepackage{qrcode}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Document components (in TikZ) %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%__________________
+\newcommand\Header{%
+  \begin{tikzpicture}[remember picture,overlay]
+    \fill[ulgray]
+    (current page.north west) -- (current page.north east) --
+    ([yshift=50pt]current page.north east|-current page text area.north east) --
+    ([yshift=50pt,xshift=-3cm]current page.north|-current page text area.north) --
+    ([yshift=10pt,xshift=-5cm]current page.north|-current page text area.north) --
+    ([yshift=10pt]current page.north west|-current page text area.north west) -- cycle;
+    %
+    % Logo UL HPC
+    \node (logo_hpc)[xshift=0.8cm,yshift=-0.2cm,rounded corners,anchor=north west] at (current page.north west) {\includegraphics[width=4cm]{logo_ULHPC.pdf}};
+    
+    \node (header) [font=\sffamily\bfseries\color{white},anchor=east,xshift=-1.5cm,yshift=-1.5cm] at (current page.north east) {
+      \fontsize{35}{60}\selectfont \Newstitle
+    };
+    
+    \node (date) [font=\sffamily\bfseries\color{ulgray},anchor=east,yshift=1cm] at (current page text area.north east) {
+      Issue \Number\ -- \ReleaseDate\  
+      %-- \href{\NewsletterURL}{online version}
+      
+    };
+    \node (qrcode)[font=\color{ulgray},anchor=south] at ($(current page text area.north east)+(1,0.3)$) { 
+      \qrcode[version=3,height=1cm]{\NewsletterURL}
+    };
+    
+    \node (page) [yshift=-0.4cm,font=\ttfamily\bfseries\color{white}, anchor=east] at (current page.north east) { };
+    %   \thepage~
+    % };
+  \end{tikzpicture}%
+}
+%_________________
+\newcommand\Left{%
+  \begin{tikzpicture}[remember picture,overlay]
+    \coordinate (up)   at   (current page text area.north west);
+    \coordinate (down) at   (current page text area.south west);
+    \coordinate (editors) at ($(current page.north west)+(2.5,-4.75)$);
+    
+
+    \draw [thick,color={ulgray}] ($(up)+(-0.5,0)$) -- ($(down)+(-0.5,0)$);  
+    
+    %fill=lightgray, rounded corners
+    \node (docinfo)[font=\sffamily\color{ulgray},anchor=north, text width=5.1cm] at (editors) {
+      \tiny
+      \begin{tabular}{rp{4cm}}
+        %\hline\\
+        \textbf{Editors:}      & \Editorsname \\
+        \textbf{Authors:}      & \textbf{The UL HPC Management Team} \emph{aka}: \\
+                               & $\hookrightarrow$ S. Varrette                  \hfill (Manager)\\
+                               & $\hookrightarrow$ H. Cartiaux, V. Plugaru      \hfill (FSTC)\\
+                               & $\hookrightarrow$ S. Diehl, J-F. Le Fill\^atre \hfill (LCSB)\\
+        \textbf{Date:}      & \isoday \\ %\ReleaseDate  \\
+        \textbf{Version:}      & v\docversion        \\
+        %Compiled time:         & \isodayandtime \\
+        %\hline
+        \end{tabular}
+        %      \textcolor{ulgray}{\textbf{Editors:} \Editors}
+    };
+
+    \node (logo_ul)[rounded corners, anchor=south,xshift=-3.25cm] at (current page text area.south west) {
+      \includegraphics[width=3cm]{logo_UL.pdf}
+    };
+
+  \end{tikzpicture}%
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% New command to facilitate the placement of content in the left panel
+% Format: \leftinfo{<title>}{<body>}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\leftinfo}[2]{
+  \begin{tikzpicture}[remember picture,overlay]
+    \coordinate (editors) at ($(current page.north west)+(2.5,-4.75)$); % See above
+
+    \node (left_title)[font=\sffamily\color{ulblue},fill=lightgray,rounded rectangle west arc=none,anchor=north, inner sep=1em,text width=4.4cm] at ($(editors)+(0.2,-2)$) {
+      \Large \textbf{#1}
+      %\fontsize{15}{50}\selectfont \textbf{#1}
+    };
+    \node [font=\sffamily\color{ulblue},anchor=west, text width=5cm,below=0.3cm of left_title]  {
+      #2
+    };
+   \end{tikzpicture}
+   \vspace{-2em}
+}
+\newcommand\ulhpctoc{
+  \leftinfo{In this issue...}{\vspace*{-0.25cm}\tableofcontents}
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Welcome box
+% Format: \begin{welcome}[<title>] ... \end{wencome}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newenvironment{welcome}[1][Welcome to issue {\footnotesize\#}\Number\ of the \Newstitle.]
+{%\begin{welcome}
+  \begin{tcolorbox}[colback=lightgray,colframe=ulblue,title=#1]
+    \faRSS\ 
+}{%\end{welcome}
+  \begin{flushright}
+    \textbf{\emph{\Editorsname}}
+  \end{flushright}
+  \end{tcolorbox}
+}
+
+
+% \newcommand\ulhpctoc{
+%   \begin{tikzpicture}[remember picture,overlay]
+%     \node (toc)[font=\sffamily\color{ulblue},anchor=west, text width=5cm] at ($(current page.north west)+(0.1,-7.5)$) {
+%       \tableofcontents
+%     };
+%   \end{tikzpicture}
+% }
+
+%__________________
+\newcommand\Footer{%
+  \begin{tikzpicture}[remember picture,overlay]
+    \fill[ulgray]
+    (current page.south west) -- (current page.south east) --
+    ([yshift=-40pt]current page.south east|-current page text area.south east) --
+    ([yshift=-40pt,xshift=-3cm]current page.south|-current page text area.south) --
+    ([xshift=-5cm,yshift=-10pt]current page.south|-current page text area.south) --
+    ([yshift=-10pt]current page.south west|-current page text area.south west) -- cycle;
+
+    \node (licence_logo) [yshift=0.25cm, anchor=west] at (current page.south west) {
+      \href{\LicenceURL}{\includegraphics[height=0.5cm]{logo_licence.png}}
+    };
+    \node (licence) [yshift=-0.1cm,font=\sffamily\bfseries\color{white}, anchor=west, right=-0.1 of licence_logo] { 
+      \tiny \LaTeX\ template by \href{mailto=Sebastien.Varrette@uni.lu}{\color{white}\underline{S. Varrette}}
+    };
+    
+
+
+    \node (social) [xshift=2.2cm,anchor=west, above=0.4cm of licence_logo]  {
+      \fontsize{22}{24}\selectfont 
+      \href{http://twitter.com/\Twitter}{\color{white}\faTwitter}
+      \href{http://github.com/\Github}{\color{white}\faGithubSign}
+      \href{mailto:hpc-sysadmins@uni.lu}{\color{white}\faEnvelope}
+      %\href{mailto:hpc-users@uni.lu}{\color{white}\faGroup}
+      %\href{https://hpc.uni.lu/users/getting_started.html}{\color{white}\faQuestion}
+    };
+
+    \node (url) [yshift=0.75cm,font=\ttfamily\bfseries\color{white}, anchor=east] at (current page.south east) {
+      \fontsize{17}{24}\selectfont \href{\InstituteURL}{\color{white}{\faSignin\ \InstituteURL}}~~~ 
+    };
+    
+    % \node (page) [yshift=0.25cm,font=\ttfamily\bfseries\color{ulblue}, anchor=east] at (current page.south east) {
+    %   \thepage~~
+    % };
+
+
+  \end{tikzpicture}%
+}
+
+% Reset space for itemize
+\usepackage{enumitem}
+\setitemize{itemsep=0pt}
+
+%\pagestyle{empty}
+\AtBeginShipout{\AtBeginShipoutAddToBox{\Header\Left\Footer}}
+%\AtBeginShipoutFirst{\AtBeginShipoutAddToBox{\Header\Left\Footer}}
+
+
+% Some useful definitions
+\newcommand\ulhpc{\href{http://hpc.uni.lu}{UL HPC}\xspace}
+
+
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+% eof
+% 
+% Local Variables:
+% mode: latex
+% mode: flyspell
+% End:

@@ -1,0 +1,226 @@
+%=============================================================================
+% File:  ulhpc_book.tex --  Example of usage of the ulhpc_book style           
+% Time-stamp: <Sun 2015-02-22 17:37 svarrette>
+%
+% Copyright (c) 2015 Sebastien Varrette <Sebastien.Varrette@uni.lu>
+%               
+% More information on LaTeX: http://www.latex-project.org/
+% LaTeX symbol list: 
+%   http://www.ctan.org/tex-archive/info/symbols/comprehensive/symbols-a4.pdf
+%=============================================================================
+\documentclass[a4paper,11pt,twoside,a4paper]{book}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Input info. for cover, titlepages, pdf properties, version etc. %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\reportsubject{}      % only for pdf properties - doesn't appear on
+                          % printed versions 
+\def\ISBNNUMBER{}         % type \ISBNNUMBER{ISBN: xxx} if available
+\def\DatePublished{2015}  % date of publication
+\def\Category{1 (public)} % project class chosen on the basis of the
+                          % following table: 
+%  +-----------------------------------------+--------------------+
+%  |            Category                     |     Text           |
+%  +-----------------------------------------+--------------------+
+%  |1. The report is accessible for public   | 1 (Public)         |
+%  +-----------------------------------------+--------------------+
+%  |2. The report is confidential and may    | 2 (confidential)   |
+%  |   not be distributed.                   |                    |
+%  +-----------------------------------------+--------------------+
+%  |3. The report may only be distributed    | 3 (after written   |
+%  | after written permission from the Author|    permission)     |
+%  +-----------------------------------------+--------------------+
+
+\def\ReportAuthor{S\'ebastien Varrette, PhD}  
+                             % Ex: \ReportAuthor{MyAuthor1\\MyAuthor2}
+                             % multiple authors separated by "\\" (in this
+                             % case, adjust the \vspace in
+                             % ulhpc_book.sty as necessary  
+\def\ReportAuthorForHyperref{S\'ebastien Varrette, PhD}  % Ex:
+                             % \ReportAuthorForHyperref{MyAuthor1,MyAuthor2}
+                             % list of authors for pdf properties. Multiple
+                             % authors separated by "," 
+\def\ReportTitle{Your Title} % Report title
+\def\Subtitle{Subtitle} % Subtitle - if any
+
+% keywords for the pdf file
+\def\reportkeywords{
+  Activity Report,
+  University of Luxembourg,
+  High Performance Computing,
+  UL,
+  HPC,
+  \LaTeX
+}
+
+\def\Version{0.1} % Version -- use the following command to
+                  % activate svn property Rev:
+                  % svn propset svn:keywords "Id Rev" *.tex
+
+\def\reportversion{Final}  % TODO: choose this for final version (official 
+                           % set of title pages)  
+%\def\reportversion{Draft} % TODO: choose this for draft version (simple 
+                           % title page and no info page
+
+%\def\reportlinks{no}      % TODO: choose this for paper  version 
+\def\reportlinks{yes}      % TODO: choose this for online version 
+
+\def\InstituteAddress{%
+  University of Luxembourg          \\
+  6, rue Richard Coudenhove-Kalergi \\
+  L-1359 Luxembourg \\
+  Luxembourg\\
+  \textbf{T.} +352 46 66 44 6600
+}
+\def\InstituteURL{http://hpc.uni.lu}
+\def\ReportSrcURL{https://github.com/ULHPC/documents}
+\def\InstituteMail{hpc-sysadmins@uni.lu}
+\def\InstituteAdministrativeContact{
+  S\'ebastien Varrette \\
+  Campus Kirchberg \\
+  6, rue Richard Coudenhove-Kalergi \\
+  L-1359 Luxembourg \\
+  Luxembourg\\
+  \textbf{Office:} E-007\\
+  \textbf{T.} +352 46 66 44 6600
+}
+% Editors of the report
+\def\Editorsname{
+\href{http://csc.uni.lu/sebastien.varrette}{S\'{e}bastien Varrette, PhD}
+}
+
+\usepackage{ulhpc_book}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+%%%%%%%%%%%%%%%%
+% FRONT MATTER %
+%%%%%%%%%%%%%%%%
+
+\frontmatter
+
+\ifx\reportversion\printversion
+% for final version include standard UL HPC cover pages
+\pagenumbering{alph} % dummy numbering for pdf-file (numbering set as a
+                     % pdf-property and is NOT visible on the document).
+                     % The hyperref package complains if duplicate numbering
+                     % exists 
+\coverpages          % Generate the first four pages
+\else
+% for draft version use simple title page
+\title{\ReportTitle{} - \Subtitle{}}
+\author{\ReportAuthor}
+\thispagestyle{empty}
+\maketitle
+\newpage
+\thispagestyle{empty}
+\fi
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% PREFACE CHAPTERS INCLUDE %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\pagenumbering{roman}
+
+%=====================
+\chapter*{Preface}
+%=====================
+
+\emph{
+  \begin{flushright}
+    Dr. S\'ebastien Varrette, \\
+    Luxembourg, \DatePublished
+  \end{flushright}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% TOC,LOF,LOT and SETUP HEADER %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newpage
+\tableofcontents 
+\pagestyle{fancyplain}     % enable headers in the main document
+%\chaptermark{Contents}
+%\renewcommand{\sectionmark}[1]{\markright{#1}}
+%\sectionmark{Contents}
+\newpage
+\renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+% MAIN CHAPTERS INCLUDE %
+%%%%%%%%%%%%%%%%%%%%%%%%%
+\mainmatter
+
+\chapter{How to use the \texttt{ulhpc\_book} style}
+
+You need first to clone (directly or as a git submodule) the \texttt{ULHPC/documents} repository on \href{https://github.com/ULHPC/documents}{Github}. 
+
+Then in addition to the addition of the \LaTeX\ style file \texttt{ulhpc\_book.sty} at the root of your document, you'll need: 
+
+\begin{itemize}
+  \item a copy of the logos files (in PDF format) \texttt{logo\_UL.pdf} and \texttt{logo\_ULHPC.pdf} in a know path;
+  \item to initiate a certain number of variables / macros used in the style \textbf{prior to} the call to the style package.
+\end{itemize}
+
+\lstinputlisting[language=TeX,firstline=13,lastline=90]{ulhpc_book.tex}
+
+After these variables, you can call the package as always by 
+
+\lstinputlisting[language=TeX,firstline=92,lastline=92]{ulhpc_book.tex}
+
+\chapter{Acknowledgements}
+
+In general, don't forget the  acknowledgements to the UL HPC platform~\cite{VBCG_HPCS14} as requested in the \href{https://hpc.uni.lu/users/AUP.html}{Acceptable Use Policy (AUP)}: 
+
+\begin{verbatim}
+Acknowledgment: Experiments presented in this paper were carried out 
+using the HPC facilities of University of Luxembourg~\cite{VBCG_HPCS14} 
+{\small -- see \url{http://hpc.uni.lu}}.
+\end{verbatim}
+
+Cite the reference paper of the platform~\cite{VBCG_HPCS14} if you can. Finally (and that's probably more important), remember to attach the paper to the ULHPC in \href{http://publications.uni.lu/}{ORBi.lu} as described in \href{https://hpc.uni.lu/about/publis.html#acknowledgement-banner-and-orbilu-instructions}{these instructions}.
+
+
+% \input{_introduction}
+% \input{_overview}
+
+%%%%%%%%%%%%%%%%
+% BIBLIOGRAPHY %
+%%%%%%%%%%%%%%%%
+
+\newpage
+\addcontentsline{toc}{chapter}{References}
+
+%%%%%%%%%%%%
+% APPENDIX %
+%%%%%%%%%%%%
+
+\newpage
+\appendix
+%\chapter*{Acronyms}
+% \input{_acronyms}
+
+\bibliography{biblio}
+
+%%%%%%%%%%%%%%%
+% BACK MATTER %
+%%%%%%%%%%%%%%%
+
+\backmatter
+\ifx\reportversion\printversion
+  \makebackpage                  % generate the backmatter
+\fi
+
+\end{document}
+
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+% eof
+%
+% Local Variables:
+% mode: latex
+% mode: flyspell
+% mode: visual-line
+% TeX-master: "ulhpc_book"
+% End:

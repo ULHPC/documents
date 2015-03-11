@@ -1,0 +1,438 @@
+% =============================================================================
+% File:  ulhpc_article.sty --  LaTeX style configuration for article / reports
+% Author(s): Sebastien Varrette <Sebastien.Varrette@uni.lu>
+% Creation:  16 Feb 2015
+% Time-stamp: <Lun 2015-03-02 18:26 svarrette>
+% 
+% Copyright (c) 2015 Sebastien Varrette <Sebastien.Varrette@uni.lu> (see LICENCE)
+% 
+% Licence: Creative Commons Attribution-Noncommercial-Share Alike 2.0 France
+% 
+% You are free:
+% - to Share:  to copy, distribute and transmit the work
+% - to Remix: to adapt the work
+% 
+% Under the following conditions:
+% - Attribution : You must attribute the work in the manner specified by the
+% author or licensor (but  not in any way that suggests that
+% they endorse you or your use of the work).
+% - Noncommercial:  You may not use this work for commercial purposes.
+% - Share Alike: If you alter, transform, or build upon this work, you may
+% distribute the resulting work only under the same or similar
+% license to this one.
+% 
+% With the understanding that:
+% - Waiver: Any of the above conditions can be waived if you get permission
+% from the copyright holder.
+% - Other Rights: In no way are any of the following rights affected by the
+% license:
+% * Your fair dealing or fair use rights;
+% * Apart from the remix rights granted under this license,
+% the author's moral rights;
+% * Rights other persons may have either in the work itself
+% or in how the work is used, such as publicity or privacy
+% rights.
+% - Notice:  For any reuse or distribution, you must make clear to others the
+% license terms of this work. The best way to do this is with a
+% link to this web page.
+% =============================================================================
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+% Configuration for the style %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+\providecommand{\subtitle}{The subtitle} % Subtitle - if any
+\providecommand{\AuthorPrefix}{by}
+\providecommand{\keywords}{%
+  University of Luxembourg,
+  High Performance Computing,
+  UL,
+  HPC,
+  \LaTeX
+}
+\providecommand{\frontabstract}{}    % the abstract to place on the front page
+\providecommand{\showversion}{}          % leave blank content to show the version
+\providecommand{\Editorsname}{Dr. S. Varrette and Prof. P. Bouvry} % Editors
+\providecommand{\Mail}{hpc-sysadmins@uni.lu}
+\providecommand{\ReportSrcURL}{https://github.com/ULHPC/documents}    % [Git] URL for the document LaTeX sources
+\providecommand{\InstituteURL}{http://hpc.uni.lu} % Reference web site
+\providecommand{\InstituteAddress}{%
+  University of Luxembourg          \\
+  6, rue Richard Coudenhove-Kalergi \\
+  L-1359 Luxembourg \\
+  Luxembourg\\
+  \textbf{T.} +352 46 66 44 6600
+}
+% \providecommand{\Licence}{CC BY-NC-SA 4.0}
+% \providecommand{\LicenceURL}{http://creativecommons.org/licenses/by-nc-sa/4.0/}
+\providecommand{\Github}{ULHPC}  % Github account
+\providecommand{\Twitter}{ULHPC} % Twitter account
+\providecommand{\NewsletterURL}{http://hpc.uni.lu/newsletters}
+
+%%%% Current version of the proposal
+\def\versionfile{VERSION.txt}
+\IfFileExists{\versionfile}{
+  \providecommand{\docversion}{\input{\versionfile}}
+}{
+  \providecommand{\docversion}{0.2}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+% Let's go now ;)
+% \renewcommand\familydefault{\sfdefault}
+% \usepackage{amsfonts}
+% \usepackage{dsfont}
+% \renewcommand{\familydefault}{mathpa}
+
+\usepackage[bmargin=2cm]{geometry}
+% \usepackage[hmargin=2cm,bmargin=2cm,tmargin=2cm,lmargin=2cm,centering]{geometry}
+
+\usepackage{fontawesome} % see http://ftp.oleane.net/pub/CTAN/fonts/fontawesome/fontawesome.pdf for the list of available icons
+\usepackage{tikzpagenodes}
+\usetikzlibrary{calc}
+\usetikzlibrary{positioning}
+\usetikzlibrary{shapes.misc,arrows}
+\usepackage{lmodern}
+\usepackage{multicol}
+\usepackage{multirow}
+\usepackage{lipsum}
+\usepackage{etoolbox}
+\usepackage{tcolorbox}
+\usepackage{xspace}
+% TODOs
+\usepackage{todonotes}
+\presetkeys{todonotes}{inline}{}
+
+\usepackage[nodayofweek]{datetime}
+\usepackage{titling} % keep \thedate, \theauthor, \thetitle
+
+
+\usepackage{atbegshi}
+\AtBeginShipoutInit
+
+%%%%%%%%%% 
+% Colors %
+%%%%%%%%%% 
+\usepackage[usenames]{colortbl}
+\definecolor{lightgray}{gray}{0.9}
+\definecolor{headgray}{gray}{0.6}
+\definecolor{bcode}{rgb}{0.91,0.91,0.91}  % color for code extract
+\definecolor{lightblue}{rgb}{0.45,0.76,0.98}  % color for
+\definecolor{lightgray}{rgb}{.9, .9, .9}
+\definecolor{lightgreen}{rgb}{.7, 1, .7}
+\definecolor{darkgray}{rgb}{.4, .4, .4}
+\definecolor{purple}{rgb}{0.65, 0.12, 0.82}
+\definecolor{beamerblue}{rgb}{0.2,0.2,0.7}
+\definecolor{textblue}{rgb}{0.16,0.32,0.85}
+\definecolor{ulgray}{RGB}{92,92,92}
+% \definecolor{ulblue}{red!70!green}
+\definecolor{ulblue}{rgb}{0.0, 0.48, 0.65}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+% Versionning with day and time %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+% months
+\def\ftoday{\number\day\space
+  \ifcase\month\or
+  january\or february\or march\or april\or may\or june\or
+  july\or august\or september\or october\or november\or december\fi
+  \space\number\year}
+% \isodayandtime to get current date and time
+\begingroup
+\count0=\time \divide\count0by60 % Hour
+\count2=\count0 \multiply\count2by-60 \advance\count2by\time% Min
+\def\2#1{\ifnum#1<10 0\fi\the#1}
+\xdef\isodayandtime{\the\year-\2\month-\2\day\space\2{\count0}:%sec
+  \2{\count2}}
+\xdef\isoday{\the\year-\2\month-\2\day}
+\endgroup
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+% Code Listings
+% See ftp://ftp.tex.ac.uk/tex-archive/macros/latex/contrib/listings/listings.pdf
+%%%%%%%%%%%%%% 
+\usepackage{listings}
+\lstset{numbers=left,numberstyle=\tiny,stepnumber=10,firstnumber=1,language=Tex,basicstyle=\footnotesize,columns=flexible,backgroundcolor=\color{bcode},showstringspaces=false,emph={uint8_t,uint16_t,uint32_t,size_t,sig_atomic_t,time_t,clock_t,sigset_t,restrict},emphstyle=\bfseries,escapeinside={/*@}{@*/}}
+
+% define some basic styles for lstlisting
+\lstdefinestyle{config}{tabsize=2,numbers=none,basicstyle=\footnotesize,stringstyle=\texttt}
+\lstdefinestyle{codescriptsize}{ tabsize=2,stepnumber=5,caption=\lstname,captionpos=b,aboveskip=12pt,tabsize=2,numbers=left,numberstyle=\tiny,basicstyle=\scriptsize,stringstyle=\texttt,backgroundcolor=\color{lightgray}}
+\lstdefinestyle{codetiny}{stepnumber=5,caption=\lstname,captionpos=b,aboveskip=12pt,tabsize=2,numbers=left,numberstyle=\tiny,basicstyle=\tiny,stringstyle=\texttt,backgroundcolor=\color{lightgray}}
+\lstdefinestyle{output}{stepnumber=5,tabsize=2,numbers=none,breaklines=true,basicstyle=\scriptsize,stringstyle=\texttt}
+
+\lstdefinestyle{verif}{captionpos=b,numbers=none,backgroundcolor=\color{lightgray},columns=flexible,basicstyle=\scriptsize}
+
+\lstdefinestyle{codespdl}{stepnumber=5,caption=\lstname,captionpos=b,aboveskip=12pt,tabsize=2,numbers=left,numberstyle=\tiny,basicstyle=\scriptsize,stringstyle=\texttt,backgroundcolor=\color{lightgray},morekeywords={role,secret,compromised,secret,const,Function,inversekeys,usertype,protocol,var,Nonce,untrusted}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%% 
+% hyperref and QR codes %
+%%%%%%%%%%%%%%%%%%%%%%%%% 
+\usepackage[plainpages=false]{hyperref}
+% \usepackage{breakurl}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=ulblue,
+  urlcolor=ulblue,
+  citecolor=ulblue,
+  linktocpage=true,
+  bookmarksopen,
+  bookmarksopenlevel=1,
+  bookmarksnumbered}
+
+\usepackage{qrcode}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+% Adapt section / subsection %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+\usepackage[explicit]{titlesec}
+
+% Format the section
+\titleformat{\section}{\LARGE\sffamily}{}{0cm}{\textcolor{ulblue}{#1\hrule}}
+\titlespacing*{\section}{0cm}{2.5ex}{0ex}
+\titlespacing*{name=\section,numberless}{0cm}{2.5ex}{0ex}
+\renewcommand*{\thesection}{\arabic{section}}
+
+% Format the subsection
+\titleformat{\subsection}{\normalfont\Large\sffamily}{}{0cm}{\textcolor{ulblue}{\emph{#1}}}
+\titlespacing*{\subsection}{0cm}{3.5ex plus 1ex minus .2ex}{2.3ex plus .2ex}
+\titlespacing*{name=\subsection,numberless}{0cm}{3.5ex plus 1ex minus .2ex}{2.3ex plus .2ex}
+\renewcommand*{\thesubsection}{\arabic{subsection}}
+
+%%%%%%%%%%%%%%%% 
+% Fancy header %
+%%%%%%%%%%%%%%%% 
+
+\usepackage{fancyhdr}
+\setlength\headheight{ 2 cm}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+% \rhead{}\lhead{}\chead{}\lfoot{}\rfoot{}\cfoot{}
+
+
+% \rhead{\sffamily\emph{\textcolor{headgray}{\@title}}}
+% \lhead{\includegraphics[height=1cm]{logo_ULHPC.pdf}}
+% \chead{}\lfoot{}\rfoot{}\cfoot{}
+\pagestyle{fancyplain}
+
+% \usepackage{showframe}
+
+% \lhead[\rm\thepage]{\fancyplain{}{\sl{\rightmark}}}
+% \rhead[\fancyplain{}{\sl{\leftmark}}]{\rm\thepage}
+% \chead{}\lfoot{}\rfoot{}\cfoot{}
+% \pagestyle{fancy}
+
+% \usepackage{setspace}
+% \renewcommand{\@makechapterhead}[1]{%
+% {\singlespacing
+% \parindent \z@ \raggedright \normalfont
+% \rule{\textwidth}{2pt}                           % horizontal line
+%     % \hspace{5pt}%                                  % add some vertical space
+% \vspace{5pt}%                                    % add some vertical space
+%     % \ifnum \c@secnumdepth >\m@ne
+%     % \huge\scshape \@chapapp\space \thechapter    % Chapter followed by number
+%     % \par\nobreak
+%     % \fi
+% \interlinepenalty\@M
+% \huge \scshape \bf #1\par                        % chapter title
+% \vspace{5pt}%                                    % add some vertical space
+% \nobreak
+% \vskip 40\p@
+% }}
+
+%   \renewcommand{\@makeschapterhead}[1]{%
+%   {\singlespacing
+%   \parindent \z@ \raggedright
+%   \normalfont
+%   \rule{\textwidth}{2pt}                           % horizontal line
+%   \vspace{5pt}%                                    % add some vertical space
+%   \interlinepenalty\@M
+%   \huge \scshape \bf #1\par                        % chapter title
+%   \vspace{5pt}%                                    % add some vertical space
+%   \nobreak
+%   \vskip 40\p@
+% }
+% }
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%   
+%   Document components (in TikZ) %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%   
+\newcommand\makefrontpage{%
+  \begin{titlepage}%
+    \newgeometry{left=0.5cm,right=0.5cm,top=1cm,bottom=1cm}
+    \begin{tikzpicture}[remember picture,overlay]
+      \coordinate (topleft)     at (current page.north west);
+      % \coordinate (left)        at (current page text area.north west)
+      \coordinate (topright)    at (current page.north east);
+      % \coordinate (right)       at (current page text area.north east)
+      \coordinate (bottomright) at (current page.south east);
+      \coordinate (bottomleft)  at (current page.south west);
+      \coordinate (origin)      at (0,0);
+      % X-axis components
+      \coordinate (center)      at (0.5\paperwidth,0);
+      \coordinate (logoplace)   at (0.2\paperwidth,0);
+      \coordinate (textplace)   at (0.25\paperwidth,0);
+      % Y-axis components
+      \coordinate (authorplace) at (0,-0.25\paperheight);
+      \coordinate (sky)         at (0,-.80\paperheight);
+      \coordinate (midsky)      at (0,-.81\paperheight);
+      \coordinate (subsky)      at (0,-.82\paperheight);
+
+      % Background colors
+      \draw [fill={rgb:red,92;green,92;blue,92}] (topleft) rectangle (sky -| topright);
+      \fill [black!15] (subsky -| topleft) rectangle (bottomright);
+
+      % Logos
+      \node (logo_ul)[fill=white, rounded corners, anchor=south, inner sep=1em] at (logoplace |- midsky) {
+        \includegraphics[scale=0.4]{logo_UL.pdf}
+      };
+      % rounded corners, fill=white,
+      \node (logo_hpc)[xshift=-1cm, yshift=-1cm,rounded corners,anchor=north east] at (current page.north east) {
+        \includegraphics[width=4cm]{logo_ULHPC.pdf}
+      };
+      \node (draft) [font=\sffamily\color{lightgray}, anchor=north west] at (current page text area.north west) {
+        \ifdef{\draft}{%
+          \footnotesize\emph{DRAFT -- Compiled on \isodayandtime}
+        }{}
+      };
+      \node (version) [font=\sffamily\color{ulgray}, anchor=north, xshift=18cm] at (sky) {
+        \ifdefempty{\showversion}{%
+          v\docversion
+        }{}
+      };
+
+      % yshift=0.75cm,font=\ttfamily\bfseries\color{white}, anchor=west, right= of social] {
+      \node (title) [font=\sffamily\bfseries\color{white}, minimum height=8cm, inner sep=2cm, yshift=-5cm, text width=0.85\textwidth, anchor=north] at (current page.north) {
+
+        % \begin{tcolorbox}[colframe=white]
+        \begin{center}
+          {\Huge \@title}\\[1em]
+          \hrule
+          ~\\[1em]
+          {\LARGE \subtitle}
+        \end{center}
+        % \end{tcolorbox}
+        \hfill\@date\\[1cm]
+        \begin{center}
+          \begin{tabular}{rp{5cm}}
+            \textbf{\AuthorPrefix}: &
+                                      \begin{minipage}[t]{5cm}
+                                        \emph{\theauthor}
+                                      \end{minipage}
+          \end{tabular}
+        \end{center}
+        % \fontsize{30}{24}\selectfont
+        % \centering
+        % \hfill \DatePublished
+      };
+
+      \node (abstract) [font=\sffamily\color{white}, anchor=north, below=of title, text width=0.6\textwidth ] {
+        \ifx\frontabstract\blank%
+        \else%
+        % \centering\rule{0.5\textwidth}{.4pt}\\
+        \centering\textbf{\quad\emph{Abstract:}}
+        \frontabstract
+        \fi
+      };
+
+      \node (social) [xshift=2cm, yshift=2.5cm, anchor=west] at (current page.south west)  {
+        % \fontsize{22}{24}\selectfont
+        \Huge
+        \href{http://twitter.com/\Twitter}{\color{white}\faTwitter}
+        \href{http://github.com/\Github}  {\color{white}\faGithubSign}
+        \href{mailto:\Mail}               {\color{white}\faEnvelope}
+        \href{\InstituteURL}              {\color{white}{\faSignin}}
+      };
+      \node (url) [font=\ttfamily\bfseries\color{white}, anchor=north, below=0.2cm of social] { %at (current page.south west){
+        \Large \href{\InstituteURL}{\color{white}\InstituteURL}
+      };
+
+      \node (address) [anchor=north west,align=left, xshift=1cm, inner sep=2em, text width=0.3\textwidth] at (center |- subsky) {
+        {\sffamily
+          \textcolor{ulgray}{\InstituteAddress}\\
+        }
+      };
+
+
+    \end{tikzpicture}
+    \restoregeometry
+  \end{titlepage}%
+  \setcounter{footnote}{0}
+
+  \clearpage%\thispagestyle{empty}
+}
+
+% _______________________
+\newcommand{\Footer}{%
+  \begin{tikzpicture}[remember picture,overlay]
+    \fill [black!15] ($(current page.south west)+(0,2cm)$) rectangle (current page.south east);
+    \node (logo_ul)[fill=white, rounded corners, anchor=south, xshift=1cm, yshift=2.3cm] at (current page.south west) {%
+      % (current page marginpar area.south east) {
+      \includegraphics[scale=0.2]{logo_UL.pdf}
+    };
+    \node (social) [xshift=2cm, yshift=1cm, anchor=west] at (current page.south west)  {%
+      % \fontsize{22}{24}\selectfont
+      {\LARGE
+        \href{http://twitter.com/\Twitter}{\color{white}\faTwitter}
+        \href{http://github.com/\Github}  {\color{white}\faGithubSign}
+        \href{mailto:\Mail}               {\color{white}\faEnvelope}
+        \href{\InstituteURL}              {\color{white}{\faSignin}}
+      }
+    };
+    \node (url) [font=\ttfamily\bfseries\color{white}, anchor=east, xshift=-1cm, yshift=1cm] at (current page.south east) {
+      {\Large \href{\InstituteURL}{\color{white}\InstituteURL}}
+    };
+    \node (page) [font=\sffamily\color{ulgray}] at (current page footer area.south east) {
+      {\normalsize\thepage}
+    };
+
+
+  \end{tikzpicture}
+}
+
+% _______________________
+\newcommand{\Header}{%
+  \begin{tikzpicture}[remember picture,overlay]
+    % \fill [black!15] ($(current page.north west)+(0,-3cm)$) rectangle (current page.north east);
+    \node (logo_hpc)[anchor=south] at (current page header area.south east) {%
+      \includegraphics[height=2cm]{logo_ULHPC.pdf}
+    };
+    \node (headtitle) [font=\sffamily\color{headgray}, anchor=south west] at (current page header area.south west) {%
+      \quad{\normalsize\underline{\emph{\@title\ -- }{\small \subtitle}}}
+      \ifdef{\draft}{%
+        ~\hfill{\footnotesize\emph{DRAFT} --}
+      }{}
+      \ifdefempty{\showversion}{%
+        {\footnotesize v\docversion}
+      }{}
+    };
+
+  \end{tikzpicture}
+}
+
+
+\newgeometry{bottom=4cm,left=2cm,right=2cm}%,top=1cm,bottom=1cm}
+
+% \pagestyle{empty}
+\AtBeginShipout{\AtBeginShipoutAddToBox{\Header\Footer}}
+
+% \AtBeginShipout{\AtBeginShipoutAddToBox{\Header\Left\Footer}}
+% \AtBeginShipout{\AtBeginShipoutAddToBox{\makefrontpage}}
+
+
+% Reset space for itemize
+\usepackage{enumitem}
+\setitemize{itemsep=0pt}
+
+\newcommand*{\coverpages}{\makefrontpage} %\newpage\vspace*{-0.8em}} % \infopage}
+\newcommand\ulhpc{\href{http://hpc.uni.lu}{UL HPC}\xspace}
+\newcommand\UL{\href{http://www.uni.lu}{UL}\xspace}
+
+
+
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+% eof
+% 
+% Local Variables:
+% mode: latex
+% mode: flyspell
+% End:

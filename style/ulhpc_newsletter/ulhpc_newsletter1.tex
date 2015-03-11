@@ -1,0 +1,119 @@
+%=============================================================================
+% File:  ulhpc_newsletter1.tex --  Example of usage of the style            
+% Author(s): Sebastien Varrette <Sebastien.Varrette@uni.lu>
+% Creation:  16 Feb 2015
+% Time-stamp: <Mar 2015-03-03 15:00 svarrette>
+%=============================================================================
+\documentclass[a4paper]{article}
+
+\usepackage{graphicx}
+\graphicspath{{logos/}}
+
+
+\usepackage{ulhpc_newsletter1}
+
+
+\begin{document}
+
+% Format: \leftinfo{<title>}{<body>}
+\ulhpctoc
+
+% Format: \begin{welcome}[<title>] ... \end{welcome}
+\begin{welcome}
+  \lipsum[1]
+\end{welcome}
+
+% %=======================================================
+% \section{\faCommentAlt\ UL HPC Highlights}
+% %=======================================================
+
+% Similar to an executive summary of (incoming/passed)
+% milestones (half page)
+
+\input{_news.md}  % exemple of usage of Markdown
+
+%=======================================================
+\section{\faBarChart\ Latest Statistics}
+%=======================================================
+
+Platform overview (pretty graphs): for the passing \$period (maybe also
+with last year history): \#jobs , data transferred,  new users/projects,
+etc., also reminder of existing services (gitlab, gforge, owncloud, etc.)
+
+\newpage % TODO/ bug fix on the first page: a new page should be manually introduced to ensure coherent tikz rendering. 
+%=======================================================
+\section{\faShare\ Outcomes}
+%=======================================================
+
+Outcomes: projects/groups using the clusters, new articles published
+referencing the platform, etc.
+
+%=======================================================
+\section{\faUser\ User Focus}
+%=======================================================
+
+User stories: 1-2 paragraphs from (1-2) 'big' users, describing what
+they're doing
+
+%=======================================================
+\section{\faCalendar\ Upcoming Events}
+%=======================================================
+Upcoming events: new tutorials, software we'll introduce in the next
+\$period, upcoming HPC schools etc.
+
+\newpage
+%============================================================================================
+\section{\faCogs\ How to use the \texttt{ulhpc\_newsletter1} style?}
+%============================================================================================
+
+\input{_howto.md}
+
+% \begin{tcolorbox}[colback=red!5!white]
+% \faWarningSign\ : You need to compile the articles with the \texttt{lualatex} compiler for \LaTeX!  
+% \end{tcolorbox}
+
+% On Debian, you'll need to install the extra-packages:
+
+      
+
+% If you are using \href{https://github.com/Falkor/Makefiles/blob/devel/latex/Makefile}{my generic Makefile}, 
+% simply place a file \texttt{.Makefile.local} at the root of your document having the following content:
+
+% \lstinputlisting[language=make]{.Makefile.local}
+
+% Then in addition to the addition of the \LaTeX\ style file \texttt{ulhpc\_newsletter1.sty} at the root of your document, you'll need: 
+
+% \begin{itemize}
+%   \item a copy of the logos files (in PDF format) \texttt{logo\_UL.pdf} and \texttt{logo\_ULHPC.pdf} in a know path;
+%   \item to initiate a certain number of variables / macros used in the style \textbf{prior to} the call to the style package.
+% \end{itemize}
+
+% They are defined as follows: 
+
+% \lstinputlisting[language=TeX,firstline=45,lastline=70]{ulhpc_newsletter1.sty}
+
+
+% You need first to clone (directly or as a git submodule) the \texttt{ULHPC/documents} repository on \href{https://github.com/ULHPC/documents}{Github}. 
+
+% Then in addition to the addition of the \LaTeX\ style file \texttt{ulhpc\_book.sty} at the root of your document, you'll need: 
+
+%=======================================================
+\section{\faBeer\ Last but not least}
+%=======================================================
+\leftinfo{Another highlight}{For this page... }
+
+\lipsum[2-8]
+
+\end{document}
+
+
+
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+% eof
+%
+% Local Variables:
+% mode: latex
+% mode: flyspell
+% mode: visual-line
+% TeX-master: "ulhpc_newsletter1"
+% End:
