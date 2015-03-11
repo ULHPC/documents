@@ -1,8 +1,9 @@
 # Galaxy
-\begin{figure}[!htb]
+\begin{figure}[!htbp]
+  \vspace{-6ex}
   \begin{subfigure}{\textwidth}
     \centering
-    \includegraphics[width=\textwidth]{images/Galaxy.pdf}
+    \includegraphics[width=0.85\textwidth]{images/Galaxy.pdf}
   \end{subfigure}
   \hfill \\
   \centering
@@ -10,7 +11,7 @@
   \hfill \\
   \begin{subfigure}{\textwidth}
     \centering
-    \includegraphics[width=\textwidth]{images/Galaxy_workflow.png}
+    \includegraphics[width=0.85\textwidth]{images/Galaxy_workflow.png}
   \end{subfigure}
   \end{figure}
 
