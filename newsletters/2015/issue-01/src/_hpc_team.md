@@ -6,11 +6,13 @@
   \end{wrapfigure}
 \textbf{Pascal Bouvry} is a full professor of the FSTC. His team is composed of 25 researchers working on Parallel computing and Optimization applied to Cloud Computing (scheduling, energy-efficiency, security), Ad-Hoc Networks (Vanets simulation and service optimization) and Biology (gene sequencing, regulatory networks, protein folding). 
   \vspace{2ex}
-  \begin{wrapfigure}[5]{r}{0.15\textwidth}
+  \begin{wrapfigure}[5]{r}{0.13\textwidth}
     \vspace{-4ex}
-    \includegraphics[width=0.15\textwidth]{{sebastien.varrette}.jpg} 
+    \includegraphics[width=0.13\textwidth]{{sebastien.varrette}.jpg} 
   \end{wrapfigure}
-\textbf{S\'ebastien Varrette} is a Research Associate in Prof. Bouvry's team. Along with Prof. Bouvry, he defined and set up the global HPC initiative of the UL in 2007. His research work is in Security and Evaluation of Distributed Computing Platforms. Currently he is managing the team of 4 engineers that maintain and extend the UL HPC platform.
+  \textbf{S\'ebastien Varrette}, PhD, is a Research Associate in Prof. Bouvry's team since 2007. Along with Prof. Bouvry, he defined and set up the global HPC initiative of the UL in 2007. In this context, he is managing the sysadmin team that maintain and extend the platform.
+In parallel, his research work focus on Distributed Computing Platforms (clusters, grids or clouds), with a particular interest on the security and performance evaluation
+of distributed and/or parallel executions.
 
 ## FSTC
   \begin{wrapfigure}[5]{l}{0.2\textwidth}
