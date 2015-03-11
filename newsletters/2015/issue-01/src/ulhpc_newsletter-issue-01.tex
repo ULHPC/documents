@@ -1,6 +1,6 @@
 %=============================================================================
 % File:  ulhpc_newsletter-issue-01.tex --  Issue 1 of the UL HPC newsletter
-% Time-stamp: <Mer 2015-03-11 22:10 svarrette>
+% Time-stamp: <Mer 2015-03-11 22:34 svarrette>
 % Author(s): Sebastien Varrette <Sebastien.Varrette@uni.lu>
 % .          
 %=============================================================================
@@ -16,6 +16,7 @@
 \def\DocSrcURL{https://github.com/ULHPC/documents/tree/master/newsletters/2015/issue-01/}
 \def\NewsletterURL{http://hpc.uni.lu/newsletters}
 \usepackage{ulhpc_newsletter1}
+\bibliographystyle{plain}
 
 \begin{document}
 
@@ -85,6 +86,14 @@
 % \$period, upcoming HPC schools etc.
 \input{_hpc_school.md}
 
+
+% %=======================================================
+\section{\faFileAlt\ Publications}
+% %=======================================================
+\input{_publis.md}
+
+
+
 % %=======================================================
 \clearpage
 \section{\faUser\ Meet the team}
@@ -125,6 +134,8 @@
 % \leftinfo{Another highlight}{For this page... }
 
 % \lipsum[2-8]
+
+%\bibliography{biblio}
 
 \end{document}
 
