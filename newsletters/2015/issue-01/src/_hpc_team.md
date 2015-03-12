@@ -32,7 +32,7 @@ of distributed or parallel executions.
     \vspace{-3ex}
     \includegraphics[width=0.2\textwidth]{jflf.jpg}
   \end{wrapfigure} 
-   \textbf{Jean-Fran\c{c}ois Le-Fill\^atre} is a Systems Administrator specializing in storage and HPC infrastructure. He has worked in HPC all over the world, including on Australia's \#1 and Canada's \#2 supercomputers. His main interests are pushing systems as fast as they can go and finding new ways of traveling to places he hasn't seen yet.
+   \textbf{Jean-Fran\c{c}ois Le Fill\^atre} is a Systems Administrator specializing in storage and HPC infrastructure. He has worked in HPC all over the world, including on Australia's \#1 and Canada's \#2 supercomputers. His main interests are pushing systems as fast as they can go and finding new ways of traveling to places he hasn't seen yet.
   \vspace{2ex}
   \begin{wrapfigure}[5]{r}{0.2\textwidth}
     \vspace{-3ex}
