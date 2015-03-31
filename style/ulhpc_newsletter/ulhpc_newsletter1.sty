@@ -2,7 +2,7 @@
 % File:  ulhpc_newsletter1.sty --  LaTeX style configuration for the document
 % Author(s): Sebastien Varrette <Sebastien.Varrette@uni.lu>
 % Creation:  16 Feb 2015
-% Time-stamp: <Mar 2015-03-03 15:01 svarrette>
+% Time-stamp: <Mar 2015-03-31 16:40 svarrette>
 % 
 % Copyright (c) 2015 Sebastien Varrette <Sebastien.Varrette@uni.lu> (see LICENCE)
 % 
@@ -63,11 +63,12 @@
 \providecommand{\NewsletterURL}{http://hpc.uni.lu/newsletters}
 
 %%%% Current version of the proposal
-\IfFileExists{VERSION}{
-  \providecommand{\docversion}{\input{VERSION}}
-}{
-  \providecommand{\docversion}{0.2}
-}
+\def\versionfile{VERSION.txt}
+ \IfFileExists{\versionfile}{
+   \providecommand{\docversion}{\input{\versionfile}}
+ }{
+   \providecommand{\docversion}{0.2}
+ }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Let's go now ;) 
 %\renewcommand\familydefault{\sfdefault}
@@ -277,8 +278,8 @@
         \textbf{Authors:}      & \textbf{The UL HPC Management Team} \emph{aka}: \\
                                & $\hookrightarrow$ S. Varrette                  \hfill (Manager)\\
                                & $\hookrightarrow$ H. Cartiaux, V. Plugaru      \hfill (FSTC)\\
-                               & $\hookrightarrow$ S. Diehl, J-F. Le Fill\^atre \hfill (LCSB)\\
-        \textbf{Date:}      & \isoday \\ %\ReleaseDate  \\
+                               & $\hookrightarrow$ S. Diehl \hfill (LCSB)\\
+        \textbf{Date:}         & \isoday \\ %\ReleaseDate  \\
         \textbf{Version:}      & v\docversion        \\
         %Compiled time:         & \isodayandtime \\
         %\hline
@@ -354,7 +355,10 @@
       \href{\LicenceURL}{\includegraphics[height=0.5cm]{logo_licence.png}}
     };
     \node (licence) [yshift=-0.1cm,font=\sffamily\bfseries\color{white}, anchor=west, right=-0.1 of licence_logo] { 
-      \tiny \LaTeX\ template by \href{mailto=Sebastien.Varrette@uni.lu}{\color{white}\underline{S. Varrette}}
+      \tiny \href{\DocSrcURL}{\color{white}\underline{\LaTeX\ sources}}.
+      Template by \href{mailto=Sebastien.Varrette@uni.lu}{\color{white}\underline{S. Varrette}}.
+      
+      
     };
     
 

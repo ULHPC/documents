@@ -28,13 +28,8 @@ of distributed or parallel executions.
    \textbf{Valentin Plugaru} is an HPC engineer part of the HPC team since 2014. Beginning with 2012 he has collaborated with Prof. Bouvry's team on research in Energy Efficiency and Performance Evaluation of HPC/Cloud environments. His general interests span R&D in High Performance Computing, Grid and Cloud Computing.
 
 ## LCSB
-  \begin{wrapfigure}[5]{l}{0.2\textwidth}
-    \vspace{-3ex}
-    \includegraphics[width=0.2\textwidth]{jflf.jpg}
-  \end{wrapfigure} 
-   \textbf{Jean-Fran\c{c}ois Le Fill\^atre} is a Systems Administrator specializing in storage and HPC infrastructure. He has worked in HPC all over the world, including on Australia's \#1 and Canada's \#2 supercomputers. His main interests are pushing systems as fast as they can go and finding new ways of traveling to places he hasn't seen yet.
-  \vspace{2ex}
-  \begin{wrapfigure}[5]{r}{0.2\textwidth}
+
+\begin{wrapfigure}[5]{l}{0.2\textwidth}
     \vspace{-3ex}
     \includegraphics[width=0.2\textwidth]{{sarah.diehl}.jpg}
   \end{wrapfigure} 

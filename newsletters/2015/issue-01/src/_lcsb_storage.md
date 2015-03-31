@@ -3,9 +3,9 @@
 Biomedical research sees ever-increasing data storage requirements as both working datasets and old data (retained for reproducibility and legal reasons) grow.
 Data storage elements bought in the past years at the LCSB are currently being integrated in an uniform storage pool, allowing for easier usage, management and 
 backup automation.
-
-In this context, JF Le Fillâtre is recycling the old [Certon](http://certon.de/index.php/en/) boxes into an unified storage solution merged under the  [GlusterFS](http://www.gluster.org) filesystem according to the below architecture. 
+In this context, Jean-François Le Fillâtre used to recycle before his departure the old [Certon](http://certon.de/index.php/en/) boxes into an unified storage solution merged under the  [GlusterFS](http://www.gluster.org) filesystem according to the below architecture. 
 In particular, the \texttt{highlander} server is designed to expose the storage areas (composed by six separate Certon systems totalling 944 TB raw storage, and the new \texttt{bertha} server featuring 648 TB raw storage) to the LCSB users.
+We need to follow up the setup if this system to make it officially released as soon as possible.
 
 \begin{center}
 \includegraphics[width=0.65\textwidth]{images/certon_arch}
