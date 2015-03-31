@@ -13,7 +13,7 @@ For a better dissemination of the best practices among all UL users (including n
 * training for newcomers, focusing on the basics, provided in half-day practical sessions twice a year (typically in March and October), to cover the arrival of new hires;
 * the regular HPC School (a 2 days event covering all aspects including advanced ones) will be held once a year in June.
 
-The first [Newcomer Training Day](http://hpc.uni.lu/hpc-school/) is scheduled for March 13th, 2015 and will take place in the Limpertsberg campus -- see [the official webpage](https://hpc.uni.lu/hpc-school/2015/03/) for details. 
+The first [Newcomer Training Day](http://hpc.uni.lu/hpc-school/) took place on _March 13th, 2015_ in the Kirchberg campus -- see [the official webpage](https://hpc.uni.lu/hpc-school/2015/03/) for details. 
 
-The second edition of the regular HPC School will take place on June, 18th-19th, and will feature new and updated sessions compared with the previous event, based on its feedback.
+The second edition of the regular HPC School will take place on **June, 18th-19th**, and will feature new and updated sessions compared with the previous event, based on its feedback.
 The full programme of this event will be announced in May.

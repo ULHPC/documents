@@ -4,7 +4,7 @@
 The main storage system of the Gaia cluster is under reorganization, with a planned change of the underlying filesystem of the home directories from \href{http://en.wikipedia.org/wiki/Network_File_System}{NFS} to \href{http://en.wikipedia.org/wiki/IBM_General_Parallel_File_System}{GPFS}.
 Also, most of the projects will be migrated to the newly acquired \href{http://www.emc.com/isilon}{EMC Isilon} 1PB system, based on their size and access requirements.
 
-For users these transitions will be seamless, as their files will be synchronized with the new storage systems on the date of the migration.
+For users these transitions will be seamless, as their files will be synchronized with the new storage systems on the date of the migration (planned on \textbf{April 27th}).
 \end{tcolorbox}
 Indeed, the main NFS server __Galactus__ has been under high load since 2014, with the doubling of the number of computing nodes accessing it. 
 As the limitations of this technology became more pronounced, a distributed setup with IBM's [GPFS](http://www-03.ibm.com/software/products/en/software) was chosen to replace it.
