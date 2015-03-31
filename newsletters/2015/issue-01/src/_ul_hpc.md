@@ -15,9 +15,9 @@
       child { node[concept,scale=1.1] (backup) {\textbf{1712 TB for backup}}};
     \end{scope}
     \begin{scope}[mindmap, concept color=red!60, text=white]
-      \node[concept] (sysadmins) at (12,0) {\textbf{5 system \\ administrators}}
+      \node[concept] (sysadmins) at (12,0) {\textbf{4 system \\ administrators}}
       [clockwise from=225]
-      child { node[concept,scale=1.1,text width=6em] (sysadmindiv) {\textbf{3 at FSTC \& 2 at LCSB}}};
+      child { node[concept,scale=1.1,text width=6em] (sysadmindiv) {\textbf{3 at FSTC \& 1 at LCSB}}};
     \end{scope}
 %    \begin{scope}[mindmap, concept color=gray!60, text=white]
 %      \node[concept,text width=12em] (services) at (7,-9) {\textbf{Complementary \\ services}}

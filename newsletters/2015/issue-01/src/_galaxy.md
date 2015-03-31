@@ -20,5 +20,5 @@
 The Galaxy service has been integrated with the Gaia cluster, enabling many users to work in parallel and use the computing power of this cluster.
 
 \begin{tcolorbox}
-UL users have access to Galaxy at \href{http://galaxy-server.uni.lu}{\texttt{galaxy-server.uni.lu}} with their HPC credentials.
+UL users have access to Galaxy at \href{http://galaxy-server.uni.lu}{\texttt{galaxy-server.uni.lu}} with their HPC credentials. For more information on this service, contact us by \href{mailto:hpc-sysadmins@uni.lu}{mail}.
 \end{tcolorbox}
