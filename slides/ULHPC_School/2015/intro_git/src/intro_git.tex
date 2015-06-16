@@ -1,7 +1,7 @@
 % =============================================================================
 % File:  intro_git.tex -- Introduction to Git 
 % Author(s): Sebastien Varrette (sebastien.varrette@uni.lu)
-% Time-stamp: <Tue 2015-06-16 10:34 svarrette>
+% Time-stamp: <Tue 2015-06-16 14:57 svarrette>
 % 
 % Copyright (c) 2015 Sebastien Varrette<Sebastien.Varrette@uni.lu>
 % 
@@ -20,12 +20,19 @@
 % illustrate the slides is assumed to be images/slides_image.jpg
 \usetheme[image=logos/logo_ULHPC.pdf]{Falkor}
 
-% Not integrated in my theme as not everybody wants that
 \AtBeginSection[]
 {
   \frame{
     \frametitle{Summary}
     {\scriptsize\tableofcontents[currentsection]}
+  }
+}
+
+\AtBeginSubsection[]
+{
+  \frame{
+    \frametitle{Summary}
+    {\scriptsize\tableofcontents[currentsubsection]}
   }
 }
 
@@ -56,13 +63,10 @@
   \titlepage
 \end{frame}
 
-% ......
-\frame{
-  \frametitle{Summary}
-  {\scriptsize
-    \tableofcontents
-  }
-}
+
+%=================
+\input{_intro.md}
+
 
 % ======================== 
 %\input{_content.md} % Markdown content
