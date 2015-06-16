@@ -105,9 +105,6 @@
 	- Short and long-term undo / Tracking changes
 	- Sandboxing
 
-
-### Chronology
-
 ### Taxonomy
 
 \vspace*{-1em}
@@ -127,5 +124,19 @@
 \only<13>{\includegraphics[height=\textheight]{taxonomy.pdf}}
 \end{flushleft}
 
-### Local VCS
+### Local VCS (RCS)
 
+\includegraphics [height=\textheight]{VCS_local.pdf}
+
+### Examples
+
+\includegraphics [height=\textheight]{taxonomy-examples.pdf}
+
+
+### Chronology
+
+\begin{alertblock}{}
+ \alert{Git is \textbf{NOT} (an evolution of) Subversion !!!}
+\end{alertblock}
+
+\includegraphics [width=\textwidth]{what-git-is.pdf}
