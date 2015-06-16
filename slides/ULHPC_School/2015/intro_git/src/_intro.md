@@ -106,6 +106,8 @@
 	- Sandboxing
 
 
+### Chronology
+
 ### Taxonomy
 
 \vspace*{-1em}
@@ -124,3 +126,6 @@
 \only<12>{\includegraphics[height=\textheight]{taxonomy-15.pdf}}
 \only<13>{\includegraphics[height=\textheight]{taxonomy.pdf}}
 \end{flushleft}
+
+### Local VCS
+
