@@ -1,7 +1,5 @@
 
-# Introduction
-
-## A review of the main Git references
+# Introduction : Git around you #
 
 ### Github \hfill \texttt{\href{http://github.com}{github.com}} ###
 
@@ -53,31 +51,76 @@
 * Open-Source Book on Git by S. Chacon and B. Straub
     - [Sources](https://github.com/progit/progit2) (on Github)
     - [Online Reading](http://git-scm.com/book/en/v2) -- [PDF](https://progit2.s3.amazonaws.com/en/2015-05-31-24e8b/progit-en.519.pdf)
+* See also [Git Internal](http://opcode.org/peepcode-git.pdf), also by S. Chacon
+
+\columnsbegin{.3\textwidth}
 
 \hfill\includegraphics[height=0.4\textheight]{cover_progit.png}
 
-. . .
+\column{.7\textwidth}
 
-####
+\blockbegin{}
 
-* _Note_: Most of the material of this talk comes from this book
+* _Note_: Most images of this talk comes from this book
     - more precisely the [first edition](https://github.com/progit/progit/)
 
+\blockend
 
+\columnsend
 
+### So what is Git ?  ###
 
-## What is git? ##
+#### 
 
-### Git Basics  ###
-
-#### Git Keywords  ####
-
-* Decentralized / __Fully Distributed__ Version Control System (VCS)
+* __Fully Distributed__ Version Control System (VCS)
     - (almost) **every is local**
-* Open-Source ([GPL v2](http://opensource.org/licenses/GPL-2.0))
-    - initially designed to sustain Linux Kernel developments 
 * __Ultra Fast and Efficient__
 	- Cheap branching and merging
-* Flexible	
+* Flexible \& Robust
 * Data Insurance
     - cryptographic integrity for every bit of the repository.
+
+
+
+
+
+
+
+# About Version Control System (VCS) #
+
+### Why use Version Control? ###
+
+* Version Control = Revision Control = Source Control
+    - lets you track your files over time.
+* you probably cooked up your own!
+    - ever get files like `main-v2.tex`, `CORE-proposal.doc.old` or `2015-03-cv.pdf`?
+
+. . .
+
+#### Version Control System (VCS)
+
+* Integrated fool-proof framework for:
+    - Backup and Restore
+	- Synchronization / Collaborating
+	- Short and long-term undo / Tracking changes
+	- Sandboxing
+
+
+### Taxonomy
+
+\vspace*{-1em}
+\begin{flushleft}
+\only<1>{\includegraphics [height=\textheight]{taxonomy-00.pdf}}
+\only<2>{\includegraphics [height=\textheight]{taxonomy-01.pdf}}
+\only<3>{\includegraphics [height=\textheight]{taxonomy-02.pdf}}
+\only<4>{\includegraphics [height=\textheight]{taxonomy-03.pdf}}
+\only<5>{\includegraphics [height=\textheight]{taxonomy-04.pdf}}
+\only<6>{\includegraphics [height=\textheight]{taxonomy-05.pdf}}
+\only<7>{\includegraphics [height=\textheight]{taxonomy-10.pdf}}
+\only<8>{\includegraphics [height=\textheight]{taxonomy-11.pdf}}
+\only<9>{\includegraphics [height=\textheight]{taxonomy-12.pdf}}
+\only<10>{\includegraphics[height=\textheight]{taxonomy-13.pdf}}
+\only<11>{\includegraphics[height=\textheight]{taxonomy-14.pdf}}
+\only<12>{\includegraphics[height=\textheight]{taxonomy-15.pdf}}
+\only<13>{\includegraphics[height=\textheight]{taxonomy.pdf}}
+\end{flushleft}
