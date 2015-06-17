@@ -105,7 +105,7 @@
 	- Short and long-term undo / Tracking changes
 	- Sandboxing
 
-### Local VCS -- RCS
+### Local VCS -- RCS, Mac OS Versions
 
 \includegraphics[scale=0.4]{VCS_local.pdf}
 
@@ -152,9 +152,9 @@
 %\only<13>{\includegraphics[height=\textheight]{taxonomy.pdf}}
 \end{flushleft}
 
-### VCS Taxonomy
+### Taxonomy
 
-\vspace*{-2em}
+\vspace*{-1em}
 \centering\includegraphics [height=\textheight]{taxonomy-examples.pdf}
 
 ### File Based Delta Storage: Example 
