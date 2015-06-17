@@ -105,7 +105,35 @@
 	- Short and long-term undo / Tracking changes
 	- Sandboxing
 
-### Taxonomy
+### Local VCS -- RCS
+
+\includegraphics[scale=0.4]{VCS_local.pdf}
+
+### Centralized VCS -- CVS, SVN
+
+\begin{flushleft}
+\only<1>{\includegraphics [scale=0.4]{VCS_centralized-1.pdf}}
+\only<2>{\includegraphics [scale=0.4]{VCS_centralized-2.pdf}}
+\end{flushleft}
+
+
+### Distributed VCS -- **Git**
+
+\includegraphics [scale=0.4]{VCS_distributed.pdf}
+
+### Git vs. Subversion
+
+\includegraphics [width=\textwidth]{what-git-is.pdf}
+
+> Git thinks of its data more like a set of snapshots of a mini filesystem.
+
+####
+
+* Subversion (`svn`) belongs to the _Delta Storage_ class
+* Git relies on _snapshots_ (identified by SHA-1 checksums)
+
+
+### Delta vs. Snapshot (DAG) Storage
 
 \vspace*{-1em}
 \begin{flushleft}
@@ -121,22 +149,30 @@
 \only<10>{\includegraphics[height=\textheight]{taxonomy-13.pdf}}
 \only<11>{\includegraphics[height=\textheight]{taxonomy-14.pdf}}
 \only<12>{\includegraphics[height=\textheight]{taxonomy-15.pdf}}
-\only<13>{\includegraphics[height=\textheight]{taxonomy.pdf}}
+%\only<13>{\includegraphics[height=\textheight]{taxonomy.pdf}}
 \end{flushleft}
 
-### Local VCS (RCS)
+### VCS Taxonomy
 
-\includegraphics [height=\textheight]{VCS_local.pdf}
+\vspace*{-2em}
+\centering\includegraphics [height=\textheight]{taxonomy-examples.pdf}
 
-### Examples
+### File Based Delta Storage: Example 
 
-\includegraphics [height=\textheight]{taxonomy-examples.pdf}
+\vspace*{-1em}
+\begin{flushleft}
+\only<1>{\includegraphics [height=0.95\textheight]{delta_vs_snapshot_example-001.pdf}}
+\only<2>{\includegraphics [height=0.95\textheight]{delta_vs_snapshot_example-002.pdf}}
+\only<3>{\includegraphics [height=0.95\textheight]{delta_vs_snapshot_example-003.pdf}}
+\only<4>{\includegraphics [height=0.95\textheight]{delta_vs_snapshot_example-004.pdf}}
+\only<5>{\includegraphics [height=0.95\textheight]{delta_vs_snapshot_example-005.pdf}}
+\only<6>{\includegraphics [height=0.95\textheight]{delta_vs_snapshot_example-006.pdf}}
+\only<7>{\includegraphics [height=0.95\textheight]{delta_vs_snapshot_example-007.pdf}}
+\only<8>{\includegraphics [height=0.95\textheight]{delta_vs_snapshot_example-008.pdf}}
+\only<9>{\includegraphics [height=0.95\textheight]{delta_vs_snapshot_example-009.pdf}}
+\only<10>{\includegraphics[height=0.95\textheight]{delta_vs_snapshot_example-010.pdf}}
+\only<11>{\includegraphics[height=0.95\textheight]{delta_vs_snapshot_example-011.pdf}}
+\only<12>{\includegraphics[height=0.95\textheight]{delta_vs_snapshot_example-012.pdf}}
+\only<13>{\includegraphics[height=0.95\textheight]{delta_vs_snapshot_example-013.pdf}}
+\end{flushleft}
 
-
-### Chronology
-
-\begin{alertblock}{}
- \alert{Git is \textbf{NOT} (an evolution of) Subversion !!!}
-\end{alertblock}
-
-\includegraphics [width=\textwidth]{what-git-is.pdf}
