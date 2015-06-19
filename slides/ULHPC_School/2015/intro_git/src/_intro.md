@@ -159,7 +159,7 @@
 
 ### File Based Delta Storage: Example 
 
-\vspace*{-1em}
+\vspace*{-2.5em}
 \begin{flushleft}
 \only<1>{\includegraphics [height=0.95\textheight]{delta_vs_snapshot_example-001.pdf}}
 \only<2>{\includegraphics [height=0.95\textheight]{delta_vs_snapshot_example-002.pdf}}
@@ -176,3 +176,55 @@
 \only<13>{\includegraphics[height=0.95\textheight]{delta_vs_snapshot_example-013.pdf}}
 \end{flushleft}
 
+### Git Snapshot (DAG) Storage: Example 
+
+\vspace*{-2.5em}
+\begin{flushleft}
+\only<1>{\includegraphics [height=0.95\textheight]{delta_vs_snapshot_example-101.pdf}}
+\only<2>{\includegraphics [height=0.95\textheight]{delta_vs_snapshot_example-102.pdf}}
+\only<3>{\includegraphics [height=0.95\textheight]{delta_vs_snapshot_example-103.pdf}}
+\only<4>{\includegraphics [height=0.95\textheight]{delta_vs_snapshot_example-104.pdf}}
+\only<5>{\includegraphics [height=0.95\textheight]{delta_vs_snapshot_example-105.pdf}}
+\only<6>{\includegraphics [height=0.95\textheight]{delta_vs_snapshot_example-106.pdf}}
+\only<7>{\includegraphics [height=0.95\textheight]{delta_vs_snapshot_example-107.pdf}}
+\end{flushleft}
+
+### Git Snapshot (DAG) Storage: Example 
+
+\vspace*{-1.25em}
+\begin{flushleft}
+\only<1>{\includegraphics [height=0.95\textheight]{delta_vs_snapshot_example-108.pdf}}
+\only<2>{\includegraphics [height=0.95\textheight]{delta_vs_snapshot_example-109.pdf}}
+\only<3>{\includegraphics[height=0.95\textheight]{delta_vs_snapshot_example-110.pdf}}
+\only<4>{\includegraphics[height=0.95\textheight]{delta_vs_snapshot_example-111.pdf}}
+\only<5>{\includegraphics[height=0.95\textheight]{delta_vs_snapshot_example-112.pdf}}
+\only<6>{\includegraphics[height=0.95\textheight]{delta_vs_snapshot_example-113.pdf}}
+\only<7>{\includegraphics[height=0.95\textheight]{delta_vs_snapshot_example-114.pdf}}
+\only<8>{\includegraphics[height=0.95\textheight]{delta_vs_snapshot_example-115.pdf}}
+\only<9>{\includegraphics[height=0.95\textheight]{delta_vs_snapshot_example-116.pdf}}
+\only<10>{\includegraphics[height=0.95\textheight]{delta_vs_snapshot_example-117.pdf}}
+\only<11>{\includegraphics[height=0.95\textheight]{delta_vs_snapshot_example-118.pdf}}
+\only<12>{\includegraphics[height=0.95\textheight]{delta_vs_snapshot_example-119.pdf}}
+\only<13>{\includegraphics[height=0.95\textheight]{delta_vs_snapshot_example-120.pdf}}
+\only<14>{\includegraphics[height=0.95\textheight]{delta_vs_snapshot_example-121.pdf}}
+\only<15>{\includegraphics[height=0.95\textheight]{delta_vs_snapshot_example-122.pdf}}
+\only<16>{\includegraphics[height=0.95\textheight]{delta_vs_snapshot_example-123.pdf}}
+\only<17>{\includegraphics[height=0.95\textheight]{delta_vs_snapshot_example-124.pdf}}
+\only<18>{\includegraphics[height=0.95\textheight]{delta_vs_snapshot_example-125.pdf}}
+\only<19>{\includegraphics[height=0.95\textheight]{delta_vs_snapshot_example-126.pdf}}
+\only<20>{\includegraphics[height=0.95\textheight]{delta_vs_snapshot_example-127.pdf}}
+\only<21>{\includegraphics[height=0.95\textheight]{delta_vs_snapshot_example-128.pdf}}
+\only<22>{\includegraphics[height=0.95\textheight]{delta_vs_snapshot_example-129.pdf}}
+\only<23>{\includegraphics[height=0.95\textheight]{delta_vs_snapshot_example-130.pdf}}
+\only<24>{\includegraphics[height=0.95\textheight]{delta_vs_snapshot_example-131.pdf}}
+\only<25>{\includegraphics[height=0.95\textheight]{delta_vs_snapshot_example-132.pdf}}
+\only<26>{\includegraphics[height=0.95\textheight]{delta_vs_snapshot_example-133.pdf}}
+\only<27>{\includegraphics[height=0.95\textheight]{delta_vs_snapshot_example-134.pdf}}
+\only<28>{\includegraphics[height=0.95\textheight]{delta_vs_snapshot_example-135.pdf}}
+\end{flushleft}
+
+### Git Snapshot (DAG) Storage: Example 
+
+
+\vspace*{-0.7em}
+\includegraphics[height=0.95\textheight]{delta_vs_snapshot_example-136.pdf}
