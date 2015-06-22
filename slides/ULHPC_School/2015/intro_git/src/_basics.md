@@ -1,27 +1,5 @@
 # Git Basics
 
-## Overview and Properties
-
-### Git Properties ###
-
-#### (almost) Everything is local
-
-* everything is fast
-* every clone is a backup
-    - (almost) __never removes data__
-* you work **mainly offline**
-
-
-#### Ultra Fast, Efficient \& Robust
-
-* Snapshots, not patches (deltas)
-* __Cheap branching and merging__
-    - Strong support for thousands of parallel branches 
-* Cryptographic integrity everywhere
-
-
-
-
 ## Installing Git
 
 ### 
@@ -32,8 +10,7 @@
 \begin{cmdline}
 \cmdlineentry{apt-get install git-core \hfill\textit{\# On Debian-like systems}}\\
 \cmdlineentry{yum install git          \hfill\textit{\# On CentOS-like systems}}\\
-\cmdlineentry{brew install git         \hfill\textit{\# On Mac OS, using \href{http://mxcl.github.com/homebrew/}{Homebrew}}}\\
-\cmdlineentry{port install git         \hfill\textit{\# On Mac OS, using \href{https://www.macports.org/}{MacPort}}}\\
+\cmdlineentry{\{ brew | port \} install git         \hfill\textit{\# Mac OS, using  \href{http://mxcl.github.com/homebrew/}{Homebrew} | \href{https://www.macports.org/}{MacPort}}}\\
 \end{cmdline}
 
 \end{block}
@@ -45,9 +22,10 @@
 \vspace*{-1.1em}
 \blockbegin{Windows \hfill \href{https://msysgit.github.io/}{MsysGit}}
 
-* <https://msysgit.github.io/>
-    - Including Git Bash, Git GUI,
-    - Shell Integration
+* Incl. Git Bash/GUI \& Shell Integration
+    - use PLINk from Putty
+    - install **Git bash** + command prompt
+    - select checkout windows / commit unix
 
 \blockend
 
@@ -64,6 +42,50 @@
 \centering Your turn! Ensure you have git installed
 \end{exampleblock}
 
+###
+
+\frametitle{Git GUI
+\hfill\only<1>{(default) Gitk}%
+\only<2>{(Mac OS) \href{http://rowanj.github.io/gitx/}{GitX-dev}}%
+\only<3>{(Windows/Mac) \href{http://www.sourcetreeapp.com/}{SourceTree}}
+}
+
+\begin{center}
+\only<1>{\includegraphics[width=0.75\textwidth]{screenshot_gitk.pdf}}%
+\only<2>{\includegraphics[width=0.75\textwidth]{screenshot_gitx.pdf}}%
+\only<3>{\includegraphics[width=0.75\textwidth]{screenshot_sourcetree.pdf}}
+\end{center}
+
+\begin{flushleft}
+\only<3>{
+    \begin{itemize}
+	\item Installation notes
+    \begin{itemize}
+	  \item Let it install a default git ignore file
+	  \item make it load your SSH key created with Putty 
+    \end{itemize}
+    \end{itemize}
+}
+\end{flushleft}
 
 
+
+
+
+### What is Git? ###
+
+#### (almost) Everything is local
+
+* everything is fast
+* every clone is a backup
+    - (almost) __never removes data__
+* you work **mainly offline**
+
+
+#### Ultra Fast, Efficient \& Robust
+
+* Snapshots, not patches (deltas)
+* __Cheap branching and merging__
+    - Strong support for thousands of parallel branches 
+* Cryptographic integrity everywhere
 
