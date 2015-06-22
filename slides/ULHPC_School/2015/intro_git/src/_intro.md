@@ -87,45 +87,68 @@
 	- Short and long-term undo / Tracking changes
 	- Sandboxing
 
+
+### Typical VCS Workflow
+
+\begin{columns}[t]
+\only<1>{\includegraphics [scale=0.3]{basic_checkin.png}}
+\only<2>{\includegraphics [scale=0.3]{first_branch.png}}
+\column{.5\textwidth}
+\only<1>{\includegraphics [scale=0.3]{checkout_edit.png}}
+\only<2>{\includegraphics [scale=0.3]{merging.png}}
+\end{columns}
+
 ### Local VCS -- RCS, Mac OS Versions
 
-\includegraphics[scale=0.4]{VCS_local.pdf}
+\centering\includegraphics[scale=0.3]{VCS_local.pdf}
 
 ### Centralized VCS -- CVS, SVN
 
-\begin{flushleft}
-\only<1>{\includegraphics [scale=0.4]{VCS_centralized-1.pdf}}
-\only<2>{\includegraphics [scale=0.4]{VCS_centralized-2.pdf}}
-\end{flushleft}
+\begin{center}
+\only<1>{\includegraphics [scale=0.3]{VCS_centralized-1.pdf}}
+\only<2>{\includegraphics [scale=0.3]{VCS_centralized-2.pdf}}
+\end{center}
 
 
 ### Distributed VCS -- **Git**
 
-\includegraphics [scale=0.4]{VCS_distributed.pdf}
+\begin{center}
+\includegraphics [scale=0.3]{VCS_distributed.pdf}
 
-* everybody has full history
+ Everybody has the full history of commits
+\end{center}
+
+-------------------
+
+\frametitle{Tracking changes \only<1-6>{(most VCS)}\only<7->{(Git)}}
+
+\begin{flushleft}
+\vspace*{-1em}
+\only<1>{\includegraphics [height=\textheight]{tracking_changes-01.pdf}}
+\only<2>{\includegraphics [height=\textheight]{tracking_changes-02.pdf}}
+\only<3>{\includegraphics [height=\textheight]{tracking_changes-03.pdf}}
+\only<4>{\includegraphics [height=\textheight]{tracking_changes-04.pdf}}
+\only<5>{\includegraphics [height=\textheight]{tracking_changes-05.pdf}}
+\only<6>{\includegraphics [height=\textheight]{tracking_changes-06.pdf}}
+\only<7>{\includegraphics [height=\textheight]{tracking_changes-10.pdf}}
+\only<8>{\includegraphics [height=\textheight]{tracking_changes-11.pdf}}
+\only<9>{\includegraphics [height=\textheight]{tracking_changes-12.pdf}}
+\only<10>{\includegraphics [height=\textheight]{tracking_changes-13.pdf}}
+\only<11>{\includegraphics [height=\textheight]{tracking_changes-14.pdf}}
+\only<12>{\includegraphics [height=\textheight]{tracking_changes-15.pdf}}
+\only<13>{\includegraphics [height=\textheight]{tracking_changes-16.pdf}}
+\only<14>{\includegraphics [height=\textheight]{tracking_changes-17.pdf}}
+\only<15>{\includegraphics [height=\textheight]{tracking_changes-18.pdf}}
+\only<16>{\includegraphics [height=\textheight]{tracking_changes-19.pdf}}
+\end{flushleft}
 
 ### VCS Taxonomy
 
 \vspace*{-1em}
 \centering\includegraphics [height=\textheight]{taxonomy-examples.pdf}
 
-### So what is Git ?  ###
 
-#### 
-
-* __Fully Distributed__ Version Control System (VCS)
-    - (almost) **everything is local**
-	- every clone is a backup
-	    * (almost) never removes data
-	- you work **mainly offline**
-* __Ultra Fast and Efficient__
-    - Snapshots, not patches (deltas)
-    - Cheap branching and merging
-* Flexible \& Robust
-* Data Insurance
-    - cryptographic integrity for every bit of the repository.
-
+<!--
 ### Git vs. Subversion
 
 \includegraphics [width=\textwidth]{what-git-is.pdf}
@@ -136,3 +159,4 @@
 
 * Subversion (`svn`) belongs to the _Delta Storage_ class
 * Git relies on _snapshots_ (identified by SHA-1 checksums)
+-->
