@@ -104,6 +104,7 @@
            st = status
            df = diff
            ci = commit -s
+		   co = checkout
            br = branch
            w  = whatchanged --abbrev-commit
            ls = ls-files
@@ -126,6 +127,14 @@
 * The local repository lives in the `.git` directory.
 * The _staging area_ tracks what will go into the next commit
     - AKA "the index" 
+
+
+
+
+
+
+
+
 
 ## Basic Commands
 
@@ -189,7 +198,7 @@ $> git clone --recursive \
 \centering\includegraphics[scale=0.35]{file_lifecycle.pdf}
 -->
 
-### Checking the status of your files
+### Inspecting a Repository
 
 \gitcommand{git status [-s]\hfill\textit{\# -s: short / simplified output}}
 
@@ -305,22 +314,23 @@ On branch master
 nothing to commit, working directory clean
 ~~~
 
-### Removing / Ignoring Files
+### Removing Files
 
 \gitcommand{git rm [-rf] [---cached] <file>}
 
 * `--cached`: remove from Staging area
     - otherwise (default): from index **and** file system 
 
-<!-- -->
 
-. . .
+### Ignoring Files
 
-\vspace*{-1em}
 \bbegin{Ignoring files from staging: `.gitignore`}
 
 * you can create a `.gitignore` file listing patterns to ignore
-     - [Collection of useful `.gitignore` templates](https://github.com/github/gitignore)
+    - Blank lines or lines starting with `\#` are ignored
+	- End pattern with slash (`/`) to specify a directory
+	- Negate pattern with exclamation point (`!`)
+* [Collection of useful `.gitignore` templates](https://github.com/github/gitignore)
 
 \bend
 
@@ -337,6 +347,7 @@ nothing to commit, working directory clean
 *.asv
 *.m~
 *.mex*
+tmp/*
 ~~~
 
 \column{0.6\textwidth}
@@ -404,7 +415,7 @@ $> cd /tmp/firstproject
 $> git log --oneline --graph --decorate    # OR git gr
 * f1f0c27 (HEAD -> master) a first move
 * ee60f53 add README
-$> git log -p -2
+$> git log -p -1        # only the last commit OR git show
 $> tig
 ~~~
 
@@ -421,7 +432,58 @@ $> tig
 \end{cmdline}
 
 
+
 ### Undoing Things
 
+\gitcommand{git commit ---amend \hfill\textit{\# Change the last commit}}
 
+. . .
 
+\gitcommand{git reset HEAD <file> \hfill\textit{\# Unstage staged file}}
+
+. . .
+
+\gitcommand{git checkout --- <file>\hfill\textit{\# DANGER! Un-modify modified file}}
+
+* Restore to the last committed/cloned version: **all** changes are lost!
+
+. . .
+
+\gitcommand{git revert <commit> \hfill\textit{\# revert a <commit>}} 
+
+* Make a new commit that undoes all changes made in `<commit>`
+
+### Summary
+
+#### Basic Workflow
+
+Edit files
+  ~ \hfill _`vim`_ / _`emacs`_ / _`subl`_ ... 
+
+Stage the changes
+  ~  \hfill _`git add`_
+
+Review your changes
+  ~  \hfill _`git status`_
+
+Commit the changes
+  ~  \hfill _`git commit`_
+
+### Summary
+
+#### For cheaters: A Basicerer Workflow
+
+Edit files
+  ~ \hfill _`vim`_ / _`emacs`_ / _`subl`_ ... 
+
+Stage \& commit the changes
+  ~  \hfill _`git commit -a`_
+
+. . .
+
+#### Advices
+
+* __Commit early, commit often!__
+     - Commits = save points
+* Use descriptive commit messages
+     - avoid (if you can): "`up`" 
