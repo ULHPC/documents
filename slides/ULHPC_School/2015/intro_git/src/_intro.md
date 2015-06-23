@@ -188,6 +188,7 @@
 ### Other Git features ###
 
 * __Git doesn't delete__
+    - __Immutable__ objects
     - Git generally only adds data 
     - If you mess up, you can usually recover your stuff 
         * Recovery can be tricky though

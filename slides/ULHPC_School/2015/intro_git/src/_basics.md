@@ -42,6 +42,7 @@
 \centering Your turn! Ensure you have git installed
 \end{exampleblock}
 
+
 ###
 
 \frametitle{Git GUI
@@ -52,8 +53,14 @@
 
 \begin{center}
 \only<1>{\includegraphics[width=0.75\textwidth]{screenshot_gitk.pdf}}%
-\only<2>{\includegraphics[width=0.75\textwidth]{screenshot_gitx.pdf}}%
-\only<3>{\includegraphics[width=0.75\textwidth]{screenshot_sourcetree.pdf}}
+\only<2>{\includegraphics[width=0.75\textwidth]{screenshot_gitx.pdf}
+
+\url{http://rowanj.github.io/gitx/}
+}%
+\only<3>{\includegraphics[width=0.75\textwidth]{screenshot_sourcetree.pdf}
+
+\url{http://www.sourcetreeapp.com/}
+}
 \end{center}
 
 \begin{flushleft}
@@ -68,7 +75,71 @@
 }
 \end{flushleft}
 
+### Preliminary Configurations
+
+* Global Git configuration are stored in `~/.gitconfig`
+     - _Ex_: see my personal [`.gitconfig`](https://github.com/Falkor/dotfiles/blob/master/git/.gitconfig)
+* You **SHOULD** at least configure your name and email to commit
+     - open a terminal (Git bash under windows) for the below commands
+
+\begin{block}{First steps}
+\begin{cmdline}
+  \cmdlineentry{git config ---global user.name  "Firstname LastName"}\\
+  \cmdlineentry{git config ---global user.email "Firstname.LastName@uni.lu"}\\
+  \cmdlineentry{git config ---global color.ui true}\hfill\textit{\# Colors}\\
+  \cmdlineentry{git config ---global color.ui true}
+  
+\end{cmdline}
+\end{block}
+
+. . .
+
+\begin{exampleblock}{}
+~~~Your turn! Then check the changes by running:
+\begin{cmdline}
+  \cmdlineentry{git config -l | grep user}
+\end{cmdline}
+\end{exampleblock}
+
+### Git Commands Aliases
+
+* You can also create git command aliases in `~/.gitconfig`. _Ex_:
+
+~~~ini
+       [alias]
+           up = pull origin
+           pu = push origin
+           st = status
+           df = diff
+           ci = commit -s
+           br = branch
+           w  = whatchanged --abbrev-commit
+           ls = ls-files
+           gr = log --graph --oneline --decorate
+           amend = commit --amend
+~~~
 
 
 
 
+
+
+## Git theory
+
+### The Three States
+
+\includegraphics[scale=0.35]{three_states}
+\vspace*{-2em}
+
+* The local repository lives in the `.git` directory.
+* The _staging area_ tracks what will go into the next commit
+    - AKA "the index" 
+
+### File Status Lifecycle
+
+\centering\includegraphics[scale=0.35]{file_lifecycle.pdf}
+
+* an item 
+
+\only<1>{toto}
+\only<2>{tata}
