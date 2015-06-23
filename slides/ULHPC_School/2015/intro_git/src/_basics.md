@@ -311,7 +311,7 @@ $> git commit -s -m "add README"   # OR git ci -m "add README"
  create mode 100644 README
 $> git status            # OR git st
 On branch master
-nothing to commit, working directory clean
+nothing to commit, working directory cleant
 ~~~
 
 ### Removing Files
@@ -395,7 +395,7 @@ $> git commit -m "a first move"
 
 ### Check the Commit History
 
-\gitcommand{git log [-p] [--stat] [---graph ---oneline ---decorate]}
+\gitcommand{git log [-p] [---stat] [---graph ---oneline ---decorate]}
 
 * `-p` / `--stat`: show the differences introduced in each commit
 * You can also perform some date filtering

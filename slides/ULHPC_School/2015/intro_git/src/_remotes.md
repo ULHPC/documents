@@ -1,5 +1,44 @@
 # Collaborating / Working together
 
+### Working Together
+
+\vspace*{-1.25em}
+\columnsbegin{.7\textwidth}
+
+* Sign-up on [Github](http://github.com)
+    - \url{http://github.com}
+    - Best place to share **public** repository 
+
+\column{0.3\textwidth}
+
+\includegraphics[width=0.4\textwidth]{logos/logo_github.png}
+
+\columnsend
+
+. . .
+
+\vspace{1em}
+
+\bbegin{}
+
+* Alternative for **private** projects:
+    - [Gforge @ UL](https://gforge.uni.lu/) \hfill \myurl{https://gforge.uni.lu/}
+    - (incoming) [Gitlab @ UL](https://gitlab.uni.lu/) \hfill\myurl{https://gitlab.uni.lu/}
+
+\bend
+
+. . .
+
+* Setup your own Git server: [gitolite](https://github.com/sitaramc/gitolite)\hfill\myurl{https://github.com/sitaramc/gitolite}
+    - Management through the `gitolite-admins` Git repository (!)
+	- A single user (`git`) to interact with all repositories
+	     * map users though their (multiple) SSH keys
+		 * fine-grained access control
+
+
+
+
+
 ### Working with remotes
 
 \centering\includegraphics[scale=0.32]{diagrams-lifecycle_remote.pdf}
@@ -30,10 +69,144 @@ origin	https://github.com/ULHPC/tutorials.git (push)
 ### Adding Remotes
 
 \gitcommand{git remote add <name> <url>}
-
+<!--
 * Useful upon a forked repository, to set a new `upstream` remote
 \begin{cmdline}
-\cmdlineentry{git remote add upstream }\\
-\cmdlineentry{git diff HEAD\^}\\
+\cmdlineentry{git remote add upstream <url>}\\
 \end{cmdline}
+-->
 
+. . .
+
+\vspace*{-1em}\toyou
+
+* [Fork]((https://help.github.com/articles/fork-a-repo/)) the [`ULHPC/tutorials`](https://github.com/ULHPC/tutorials) (as `<yourlogin>/tutorials`) 
+* Clone and add the `upstream` remote to the original repository
+
+~~~bash
+$> git clone https://github.com/<yourlogin>/tutorials.git /tmp/fork
+$> cd /tmp/fork
+$> git remote add upstream 	https://github.com/ULHPC/tutorials.git
+$> git remote -v
+origin	    https://github.com/<yourlogin>/tutorials.git (fetch)
+origin	    https://github.com/<yourlogin>/tutorials.git (push)
+upstream	https://github.com/ULHPC/tutorials.git (fetch)
+upstream	https://github.com/ULHPC/tutorials.git (push)
+~~~
+
+### Removing Remotes
+
+\gitcommand{git remote rm <name>}
+
+. . .
+
+\vspace*{-1em}\toyou
+
+~~~bash
+$> cd /tmp/fork
+$> git remote
+origin
+upstream
+$> git remove rm upstream
+~~~
+
+### Remote Branches
+
+* Branches on remotes are represented locally as: \texttt{\footnotesize <remote>/<branch>}
+     - _Ex_: `origin/master`
+
+. . .
+
+\vspace*{-0.5em}
+\bbegin{Tracking Remote Branches}
+
+* You can track a remote branch `<remote>/<branch>`
+     - assuming you have previously `fetch` the remote `origin`
+	 - creates the local branch `<branch>`
+	 
+\bend
+
+\gitcommand{git branch ---track <branch> origin/<branch>}
+
+### Tracking Remote Branches
+
+\gitcommand{git branch ---track <branch> origin/<branch>}
+
+\vspace*{-1em}\toyou
+
+~~~bash
+$> cd /tmp/tutorials
+$> git branch -a
+* devel
+  remotes/origin/HEAD -> origin/devel
+  remotes/origin/devel
+  remotes/origin/production
+$> git branch --track production origin/production
+Branch production set up to track remote branch production from
+origin.
+$> git branch
+* devel
+  production
+~~~
+
+### Pushing to your remote
+
+\gitcommand{git push [<remote>] }
+
+* Transfer local commits of the **current** branch to a remote.
+     - push to `origin` by default, assuming the current branch is tracked
+
+. . .
+
+\vspace*{-0.5em}\toyou
+
+\columnsbegin{.5\textwidth}
+
+~~~bash
+$> cd /tmp/fork
+$> git remote
+origin
+upstream
+$> touch new-file
+$> git add new-file
+$> git commit -m "add new file"
+~~~
+
+\column{.5\textwidth}
+
+~~~bash
+$> git push
+
+
+~~~
+
+\columnsend
+
+
+### Fetching and Pulling from remotes
+
+\gitcommand{git pull [<remote>]}
+
+
+
+
+
+
+
+### Tracking a Remote Branch
+
+* Branches on remotes are represented locally as: `<remote>/<branch>`
+     - _Ex_: `origin/master`
+
+\gitcommand{git branch --track <branch> origin/<branch>}
+
+* Assuming you have previously `fetch` the remote `origin`
+
+. . .
+
+
+
+
+### Publish a (local) branch on a remote
+
+\gitcommand{git push -u origin <branch>}
