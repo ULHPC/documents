@@ -160,7 +160,7 @@ $> git branch
 
 \vspace*{-0.5em}\toyou
 
-\columnsbegin{.5\textwidth}
+\columnsbegin{.37\textwidth}
 
 ~~~bash
 $> cd /tmp/fork
@@ -169,24 +169,48 @@ origin
 upstream
 $> touch new-file
 $> git add new-file
-$> git commit -m "add new file"
+$> git commit -m "add"
 ~~~
 
-\column{.5\textwidth}
+\column{.63\textwidth}
 
 ~~~bash
 $> git push
-
-
+Counting objects: 10, done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (10/10), done.
+Total 10 (delta 4), reused 0 (delta 0)
+To git@github.com:<yourlogin>/documents.git
+   671eb88..c798919  devel -> devel
 ~~~
 
 \columnsend
 
 
-### Fetching and Pulling from remotes
+### Pulling from remotes
 
 \gitcommand{git pull [<remote>]}
 
+* fetch all commits from the remote **and** merge them locally
+    - allows for easy to use, equivalent to the _advanced_ alternative:
+\begin{cmdline}~\\
+\cmdlineentry{git fetch [<remote>]}\\
+\cmdlineentry{git merge <remote>/<branch>}\\[1em]
+\end{cmdline}
+	- `fetch`: allows for inspection and manual merging of remote changes
+
+. . .
+
+\vspace*{-1em}\toyou
+
+~~~bash
+$> cd /tmp/tutorials
+$> git pull       # OR git up
+Updating ae97dae..06576e0
+[...]
+2 files changed, 4 insertions(+), 5 deletions(-)
+~~~
 
 
 
