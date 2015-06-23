@@ -1,7 +1,7 @@
 % =============================================================================
 % File:  intro_git.tex -- Introduction to Git 
 % Author(s): Sebastien Varrette (sebastien.varrette@uni.lu)
-% Time-stamp: <Tue 2015-06-23 12:27 svarrette>
+% Time-stamp: <Tue 2015-06-23 15:48 svarrette>
 % 
 % Copyright (c) 2015 Sebastien Varrette<Sebastien.Varrette@uni.lu>
 % 
@@ -12,7 +12,7 @@
 % http://www.ctan.org/tex-archive/info/symbols/comprehensive/symbols-a4.pdf
 % =============================================================================
 
-\documentclass{beamer}
+\documentclass[t]{beamer}
 % \documentclass[draft]{beamer}
 \usepackage{_style}
 
@@ -37,6 +37,16 @@
 }
 
 \graphicspath{{logos/}{images/}} % Add this directory to the searched paths for graphics
+
+\newcommand{\bbegin}[1]{\begin{block}{#1}}
+\newcommand{\bend}{\end{block}}
+\newcommand{\exbegin}[1]{\begin{exampleblock}{#1}}
+\newcommand{\exend}{\end{exampleblock}}
+\newcommand{\ex}[2]{\begin{exampleblock}{#1}#2\end{exampleblock}}
+\newcommand{\toyou}[1]{\ex{}{\centering Your Turn! #1}}
+\newcommand{\gitcommand}[1]{\begin{tcolorbox}[colback=black!5!white,colframe=white!75!black,leftrule=3mm]\cmdlineentry{\scriptsize #1}\end{tcolorbox}}
+%\newcommand{\just}[2]{\only<#1>{#2}}
+
 
 
 %%%%%%%%%% Header %%%%%%%%%%%%

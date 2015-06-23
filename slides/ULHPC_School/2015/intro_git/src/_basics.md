@@ -8,9 +8,9 @@
 \begin{block}{Linux / Mac OS}
 \vspace*{-0.5em}
 \begin{cmdline}
-\cmdlineentry{apt-get install git-core \hfill\textit{\# On Debian-like systems}}\\
-\cmdlineentry{yum install git          \hfill\textit{\# On CentOS-like systems}}\\
-\cmdlineentry{\{ brew | port \} install git         \hfill\textit{\# Mac OS, using  \href{http://mxcl.github.com/homebrew/}{Homebrew} | \href{https://www.macports.org/}{MacPort}}}\\
+\cmdlineentry{apt-get install git-core git-flow \hfill\textit{\# On Debian-like systems}}\\
+\cmdlineentry{yum install git gitflow        \hfill\textit{\# On CentOS-like systems}}\\
+\cmdlineentry{brew install git git-flow        \hfill\textit{\# On Mac OS, using   \href{http://mxcl.github.com/homebrew/}{Homebrew}}}\\
 \end{cmdline}
 
 \end{block}
@@ -38,10 +38,7 @@
 . . .
 
 \vspace*{-1em}
-\begin{exampleblock}{}
-\centering Your turn! Ensure you have git installed
-\end{exampleblock}
-
+\toyou{Ensure you have git installed}
 
 ###
 
@@ -65,13 +62,10 @@
 
 \begin{flushleft}
 \only<3>{
-    \begin{itemize}
-	\item Installation notes
-    \begin{itemize}
-	  \item Let it install a default git ignore file
-	  \item make it load your SSH key created with Putty 
-    \end{itemize}
-    \end{itemize}
+    \begin{enumerate}
+	\item Let it install a default git ignore file
+    \item make it load your SSH key created with Putty 
+    \end{enumerate}
 }
 \end{flushleft}
 
@@ -82,28 +76,26 @@
 * You **SHOULD** at least configure your name and email to commit
      - open a terminal (Git bash under windows) for the below commands
 
-\begin{block}{First steps}
-\begin{cmdline}
+\begin{block}{}~
+\begin{cmdline} % Obliged to triple '-' for seeing two
   \cmdlineentry{git config ---global user.name  "Firstname LastName"}\\
   \cmdlineentry{git config ---global user.email "Firstname.LastName@uni.lu"}\\
   \cmdlineentry{git config ---global color.ui true}\hfill\textit{\# Colors}\\
-  \cmdlineentry{git config ---global color.ui true}
+  \cmdlineentry{git config ---global core.editor vim}\hfill\textit{\# Editor}
   
 \end{cmdline}
 \end{block}
 
 . . .
 
-\begin{exampleblock}{}
-~~~Your turn! Then check the changes by running:
-\begin{cmdline}
-  \cmdlineentry{git config -l | grep user}
-\end{cmdline}
-\end{exampleblock}
+\toyou
+
+* Then check the changes by: `git config -l | grep user`
 
 ### Git Commands Aliases
 
-* You can also create git command aliases in `~/.gitconfig`. _Ex_:
+* You can also create git command aliases in `~/.gitconfig`. 
+    - _Ex_ copy/paste from my personal [`.gitconfig`](https://github.com/Falkor/dotfiles/blob/master/git/.gitconfig)
 
 ~~~ini
        [alias]
@@ -126,7 +118,7 @@
 
 ## Git theory
 
-### The Three States
+### The Three (local) States
 
 \includegraphics[scale=0.35]{three_states}
 \vspace*{-2em}
@@ -135,11 +127,165 @@
 * The _staging area_ tracks what will go into the next commit
     - AKA "the index" 
 
-### File Status Lifecycle
+## Basic Commands
+
+### Creating a Repository
+
+\gitcommand{git [flow] init}
+
+* Initializes a new git ([flow](https://github.com/nvie/gitflow)) repository in the current directory
+
+. . . 
+
+\toyou
+
+. . .
+
+~~~bash
+$> cd /tmp
+$> mkdir firstproject
+$> cd firstproject
+
+$> git init
+Initialized empty Git repository in /private/tmp/firstproject/.git/
+~~~
+
+
+### Cloning a Repository
+
+\gitcommand{git clone [---recursive] <url> [<path>]}
+
+\footnotesize
+
+| Type  | URL Format / Example                             | Port |
+|-------|----------------------------------------------|------|
+| Local | `/path/to/project.git`                       |  n/a |
+| SSH   | `git+ssh://user@server:port/project.git` |   22 |
+| Git   | `git://server/project.git`                   | 9418 |
+| HTTPS | `https://github.com/Falkor/falkorlib.git`    |  443 |
+|       |                                              |      |
+
+### Cloning a Repository
+
+\gitcommand{git clone [---recursive] <url> [<path>]}
+
+\toyou
+
+~~~bash
+$> cd /tmp
+$> git clone https://github.com/ULHPC/tutorials.git
+Cloning into 'tutorials'...
+remote: Counting objects: 1247, done.
+remote: Compressing objects: 100% (63/63), done.
+remote: Total 1247 (delta 32), reused 0 (delta 0), pack-reused 1181
+Receiving objects: 100% (1247/1247), 15.74 MiB | 3.08 MiB/s, done.
+Resolving deltas: 100% (588/588), done.
+Checking connectivity... done.
+$> git clone --recursive \
+       https://github.com/ULHPC/tutorials.git /tmp/tutorials2
+~~~
+
+### Recording Changes to the Repository
 
 \centering\includegraphics[scale=0.35]{file_lifecycle.pdf}
 
-* an item 
+### Checking the status of your files
 
-\only<1>{toto}
-\only<2>{tata}
+\gitcommand{git status [-s]\hfill\textit{\# -s: short / simplified output}}
+
+. . .
+
+\toyou
+
+\columnsbegin{.4\textwidth}
+
+~~~bash
+$> cd /tmp/firstproject
+$> git status
+On branch master
+
+Initial commit
+
+nothing to commit
+
+# Create an empty file
+$> touch README.md
+~~~
+
+\column{.6\textwidth}
+
+~~~bash
+$> git status
+On branch master
+
+Initial commit
+
+Untracked files:
+	README
+
+nothing added to commit but untracked
+files present
+$> git status -s
+?? README
+~~~
+
+\columnsend
+
+### Add / Tracking [new] file(s) 
+
+\vspace*{-1.25em}
+\columnsbegin{.6\textwidth}
+
+\gitcommand{git add <pattern>}
+
+* Adds changes to the index
+    - Add a specific file: `git add README`
+    - Add a set of files:  `git add *.py`
+	
+\column{0.4\textwidth}
+
+\includegraphics[width=\textwidth]{diagrams_add_commit-02.pdf}
+
+\columnsend
+
+* Beware that empty directory cannot be added _directly_
+    - due to the internal file representation (_blobs_)
+	- _Tips_: add an hidden file `.empty` (or `.gitignore`)
+
+
+. . .
+
+\vspace*{-1em}\toyou
+
+\columnsbegin{.4\textwidth}
+
+~~~bash
+$> cd /tmp/firstproject
+$> git status -s
+?? README
+~~~
+
+\column{.5\textwidth}
+
+~~~bash
+$> git add README
+$> git status -s
+A  README
+~~~
+
+\columnsend
+
+### Committing your changes
+
+\vspace*{-1.25em}
+\columnsbegin{.6\textwidth}
+
+\gitcommand{git commit [-s] [-m "msg"]}
+
+* Commit all changes: `git commit -a`
+
+\column{0.4\textwidth}
+
+\includegraphics[width=\textwidth]{diagrams_add_commit-03.pdf}
+
+\columnsend
