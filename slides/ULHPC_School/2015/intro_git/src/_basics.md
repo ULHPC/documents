@@ -139,8 +139,6 @@
 
 \toyou
 
-. . .
-
 ~~~bash
 $> cd /tmp
 $> mkdir firstproject
@@ -185,9 +183,11 @@ $> git clone --recursive \
        https://github.com/ULHPC/tutorials.git /tmp/tutorials2
 ~~~
 
+<!--
 ### Recording Changes to the Repository
 
 \centering\includegraphics[scale=0.35]{file_lifecycle.pdf}
+-->
 
 ### Checking the status of your files
 
@@ -236,7 +236,7 @@ $> git status -s
 \vspace*{-1.25em}
 \columnsbegin{.6\textwidth}
 
-\gitcommand{git add <pattern>}
+\gitcommand{git add [-f] <pattern>}
 
 * Adds changes to the index
     - Add a specific file: `git add README`
@@ -289,3 +289,127 @@ A  README
 \includegraphics[width=\textwidth]{diagrams_add_commit-03.pdf}
 
 \columnsend
+
+. . .
+
+\toyou
+
+~~~bash
+$> cd /tmp/firstproject
+$> git commit -s -m "add README"   # OR git ci -m "add README"
+[master (root-commit) ee60f53] add README
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 README
+$> git status            # OR git st
+On branch master
+nothing to commit, working directory clean
+~~~
+
+### Removing / Ignoring Files
+
+\gitcommand{git rm [-rf] [---cached] <file>}
+
+* `--cached`: remove from Staging area
+    - otherwise (default): from index **and** file system 
+
+<!-- -->
+
+. . .
+
+\vspace*{-1em}
+\bbegin{Ignoring files from staging: `.gitignore`}
+
+* you can create a `.gitignore` file listing patterns to ignore
+     - [Collection of useful `.gitignore` templates](https://github.com/github/gitignore)
+
+\bend
+
+\columnsbegin{.2\textwidth}
+
+~~~bash
+.DS_Store
+*~
+~~~
+
+\column{0.2\textwidth}
+
+~~~bash
+*.asv
+*.m~
+*.mex*
+~~~
+
+\column{0.6\textwidth}
+\vspace{-0.5em}
+
+* [\LaTeX `.gitignore`](https://github.com/github/gitignore/blob/master/TeX.gitignore)
+* [Python `.gitignore`](https://github.com/github/gitignore/blob/master/Python.gitignore)
+* [Ruby `.gitignore`](https://github.com/github/gitignore/blob/master/Ruby.gitignore)
+
+\columnsend
+
+
+
+### Moving Files
+
+\vspace*{-1.25em}
+\columnsbegin{.6\textwidth}
+
+\gitcommand{git mv <source> <destination>}
+
+\column{0.4\textwidth}
+
+~~~bash
+# Equivalent of:
+mv <source> <destination>
+git rm <source>
+git add <destination>
+~~~
+
+\columnsend
+
+. . .
+
+\toyou
+
+~~~bash
+$> cd /tmp/firstproject
+$> git mv README README.md
+$> git status
+On branch master
+Changes to be committed:
+	renamed:    README -> README.md
+$> git commit -m "a first move"
+~~~
+
+### Check the Commit History
+
+\gitcommand{git log [-p] [--stat] [---graph ---oneline ---decorate]}
+
+* `-p` / `--stat`: show the differences introduced in each commit
+* You can also perform some date filtering
+\begin{cmdline}
+\cmdlineentry{git log ---since=2.weeks}
+\end{cmdline}
+
+* Ncurses-based text-mode interface: [`tig`](https://github.com/jonas/tig)
+
+. . .
+
+\vspace*{-1em}
+\toyou
+
+~~~bash
+$> cd /tmp/firstproject
+$> git log --oneline --graph --decorate    # OR git gr
+* f1f0c27 (HEAD -> master) a first move
+* ee60f53 add README
+$> git log -p -2
+$> tig
+~~~
+
+
+### Undoing Things
+
+
+
