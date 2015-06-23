@@ -408,6 +408,18 @@ $> git log -p -2
 $> tig
 ~~~
 
+### Show differences
+
+\gitcommand{git diff [---cached] [<ref>]}
+
+* Check **un-staged** changes: `git diff`
+     - `--cached`: check **staged** changes
+* Relative to a specific revision: 
+\begin{cmdline}
+\cmdlineentry{git diff 1776f5}\\
+\cmdlineentry{git diff HEAD\^}\\
+\end{cmdline}
+
 
 ### Undoing Things
 
