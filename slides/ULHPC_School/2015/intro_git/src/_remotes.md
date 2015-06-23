@@ -190,13 +190,13 @@ To git@github.com:<yourlogin>/documents.git
 
 ### Pulling from remotes
 
-\gitcommand{git pull [<remote>]}
+\gitcommand{git pull [---rebase] [<remote>] \hfill\textit{\# ---rebase = DANGER!}}
 
-* fetch all commits from the remote **and** merge them locally
+* fetch all commits from the remote **and** merge (or rebase)
     - allows for easy to use, equivalent to the _advanced_ alternative:
 \begin{cmdline}~\\
 \cmdlineentry{git fetch [<remote>]}\\
-\cmdlineentry{git merge <remote>/<branch>}\\[1em]
+\cmdlineentry{git merge <remote>/<branch> \hfill\textit{\# 'git rebase' if ---rebase}}\\[1em]
 \end{cmdline}
 	- `fetch`: allows for inspection and manual merging of remote changes
 
