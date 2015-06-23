@@ -68,6 +68,13 @@
 
 \columnsend
 
+
+
+
+
+
+
+
 # About Version Control System (VCS) #
 
 ### Why use Version Control? ###
@@ -160,3 +167,42 @@
 * Subversion (`svn`) belongs to the _Delta Storage_ class
 * Git relies on _snapshots_ (identified by SHA-1 checksums)
 -->
+
+
+### So what makes Git so useful? ###
+
+#### (almost) Everything is local
+
+* everything is fast
+* every clone is a backup
+* you work **mainly offline**
+
+
+#### Ultra Fast, Efficient \& Robust
+
+* Snapshots, not patches (deltas)
+* __Cheap branching and merging__
+    - Strong support for thousands of parallel branches 
+* Cryptographic integrity everywhere
+
+### Other Git features ###
+
+* __Git doesn't delete__
+    - Git generally only adds data 
+    - If you mess up, you can usually recover your stuff 
+        * Recovery can be tricky though
+
+. . .
+
+#### Git Tools / Extension
+
+* cf. __Git [submodules](https://git-scm.com/book/en/v2/Git-Tools-Submodules)__ or __[subtrees](https://git-scm.com/book/en/v2/Git-Tools-Subtree-Merging)__
+* __Introducing [git-flow](https://github.com/nvie/gitflow)__
+    - workflow with a strict branching model
+    -  offers the `git` commands to follow the workflow
+	
+\begin{cmdline}
+\cmdlineentry{git flow init}\\
+\cmdlineentry{git flow feature \{ start, publish, finish \}  <name>}\\
+\cmdlineentry{git flow release \{ start, publish, finish \}  <version>}\\
+\end{cmdline}

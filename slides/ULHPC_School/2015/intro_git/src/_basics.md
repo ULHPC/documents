@@ -72,20 +72,3 @@
 
 
 
-### What is Git? ###
-
-#### (almost) Everything is local
-
-* everything is fast
-* every clone is a backup
-    - (almost) __never removes data__
-* you work **mainly offline**
-
-
-#### Ultra Fast, Efficient \& Robust
-
-* Snapshots, not patches (deltas)
-* __Cheap branching and merging__
-    - Strong support for thousands of parallel branches 
-* Cryptographic integrity everywhere
-
