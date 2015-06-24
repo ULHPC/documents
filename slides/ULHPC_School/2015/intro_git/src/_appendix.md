@@ -1,3 +1,18 @@
+
+### Stashing
+
+Move changes to a separate "stash".
+
+~~~bash
+$ git stash
+$ git stash pop
+$ git stash list
+$ git stash apply
+$ git stash drop
+$ git stash clear
+~~~
+
+
 ### Delta vs. Snapshot (DAG) Storage
 
 \vspace*{-1em}

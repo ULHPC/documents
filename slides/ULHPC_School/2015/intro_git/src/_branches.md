@@ -378,14 +378,22 @@ $> git gr
 \begin{center}
 \transientimg{+}{width=0.9\textwidth}{branch-development-01.pdf}
 \transientimg{+}{width=0.9\textwidth}{branch-development-02.pdf}
-\transientimg{+}{width=0.0\textwidth}{branch-development-03.pdf}
+\transientimg{+}{width=\textwidth}{branch-development-03.pdf}
 \end{center}
 
-. . .
+### [Git-flow](https://github.com/nvie/gitflow) to the rescue
+
+\hfill\myurl{http://nvie.com/posts/a-successful-git-branching-model/}
+
+\gitcommand{git flow init}
+
+\gitcommand{git flow feature \{ start, publish, finish \}  <name>}
+
+\gitcommand{git flow release \{ start, publish, finish \}  <version>}
 
 * Ensure two long running branches
     - `production` : the stable branch
         * ideally holding _only_ tags of the successive releases
-	- `master` / `devel`: the _main_ branch where the last development occurs
-	    *  the *default* branch you get when your co-worker clone the repository
-* On demand: make a new feature branch, prefixed by `feature/<name>`
+    - `master` / `devel`: the _main_ branch where the developments occurs
+* On demand: make a new feature branch `feature/<name>`
+* From time to time, release your code into `production` and tag 
