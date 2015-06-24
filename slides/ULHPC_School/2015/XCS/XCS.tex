@@ -68,13 +68,15 @@
 %\input{_content.md} % Markdown content
 % ======================== 
 
-\section{Graphical sessions}
+\section{Graphical sessions on UL HPC}
 
+\subsection{Two connection methods}
 \frame{
   \frametitle{Using graphical interfaces on UL HPC}
   \center\includegraphics[width=0.85\textwidth]{graphical_sessions}
 }
 
+\subsection{X11 forwarding}
 \frame{
   \frametitle{X11 forwarding}
   \begin{itemize}
@@ -113,27 +115,48 @@
 
 }
 
-
 \section{The XCS Portal}
-
-
+\subsection{Overview}
 \frame{
   \frametitle{Overview}
   \begin{itemize}
-   \item Web portal for launching/monitoring visualisation sessions: \href{https://xcs.uni.lux}{xcs.uni.lux}
-   \itemhook available from inside the UL network and externally through UL VPN
+  \setlength\itemsep{20pt}
+  \item Web portal dedicated for visualisation sessions: \href{https://xcs.uni.lux}{xcs.uni.lux}
+   \begin{itemize}
+   \item \scriptsize{available from inside the UL network and externally through UL VPN}
+   \end{itemize}
+   \item Portal features:
+   \begin{itemize}
+    \item (limited) \emph{data management} capabilities (browse/upload/download)
+    \item \emph{submission of visualisation sessions} for pre-configured applications
+    \item \emph{accessing} \& \emph{suspending} visualisation sessions
+    \item \emph{sharing sessions} with other users
+   \end{itemize}
   \end{itemize}
+  \pause
+  \begin{exampleblock}{Advantages}
+    \begin{itemize}
+      \setlength\itemsep{0pt}
+      \vspace{-4pt}
+      \item Network connection interrupted $\rightarrow$ session survives
+      \item Rendering on GPU nodes -- \emph{fast} (with 3D acceleration) 
+      \item Fluid on slow networks (intelligent compression)
+      \vspace{-4pt}
+    \end{itemize}
+  \end{exampleblock}
 }
 
+\subsection{Prerequisites}
 \frame{
   \frametitle{Prerequisites}
   \begin{enumerate}
    \item UL HPC account, you need your \emph{password} to login on \href{https://xcs.uni.lux}{xcs.uni.lux}
    \item your account to be in the XCS group (for now, added on request)
    \item \href{http://sourceforge.net/projects/turbovnc}{TurboVNC}: Virtual Network Computing application tuned for maximum performance and compression with 3D applications
+   \item to use a specific application through XCS, its profile needs to be defined by the HPC team
   \end{enumerate}
 }
-
+\subsection{Applications integrated in XCS}
 \begin{frame}
   \frametitle{Current applications integrated in XCS}
   \begin{spacing}{0.8}
@@ -141,34 +164,48 @@
     \setlength\itemsep{0pt}
     \onslide<1,5>{
     \item MATLAB 
-    \itemhook {\tiny High-level technical computing language and interactive environment for algorithm development, data visualization, data analysis, and numerical computation.}
+    \begin{itemize}
+      \item {\tiny High-level technical computing language and interactive environment for algorithm development, data visualization, data analysis, and numerical computation.}
+    \end{itemize}
     \item RStudio 
-    \itemhook {\tiny IDE for R, a programming language for statistical computing and graphics.}
+    \begin{itemize}
+      \item {\tiny IDE for R, a programming language for statistical computing and graphics.}
+    \end{itemize}
   }
   \onslide<2,5>{
     \item SAS (Statistical Analysis System) 
-    \itemhook {\tiny Advanced analytics, business intelligence, data management, and predictive analytics software.}
+    \begin{itemize}
+      \item {\tiny Advanced analytics, business intelligence, data management, and predictive analytics software.}
+    \end{itemize}
     \item STATA 
-    \itemhook {\tiny Complete, integrated statistical software package for data analysis, data management, and graphics.}
+    \begin{itemize}
+      \item {\tiny Complete, integrated statistical software package for data analysis, data management, and graphics.}
+    \end{itemize}
   }
   \onslide<3,5>{
     \item ABAQUS 
-    \itemhook {\tiny Finite Element Analysis software for modeling, visualization and best-in-class implicit and explicit dynamics FEA.}
+    \begin{itemize}
+      \item {\tiny Finite Element Analysis software for modeling, visualization and best-in-class implicit and explicit dynamics FEA.}
+    \end{itemize}
   }
   \onslide<4,5>{
     \item VMD 
-    \itemhook {\tiny Molecular visualization program for displaying, animating, and analyzing large biomolecular systems using 3-D graphics and built-in scripting.}
+    \begin{itemize}
+      \item {\tiny Molecular visualization program for displaying, animating, and analyzing large biomolecular systems using 3-D graphics and built-in scripting.}
+    \end{itemize}
     \item ParaView 
-    \itemhook {\tiny Data analysis and visualization application.}
+    \begin{itemize}
+      \item {\tiny Data analysis and visualization application.}
+    \end{itemize}
   }
   \end{itemize}
   \end{spacing}
 \end{frame}
 
 
-
+\subsection{A look at XCS}
 \frame{
-  \frametitle{Intro page}
+  \frametitle{XCS Intro page}
   \center\includegraphics[width=0.85\textwidth]{xcs_quickstart}
 }
 
@@ -185,6 +222,11 @@
 \frame{
   \frametitle{Connecting to a running session}
   \center\includegraphics[width=0.85\textwidth]{xcs_connect}
+}
+
+\frame{
+  \frametitle{An active remote desktop session}
+  \center\includegraphics[width=0.95\textwidth]{xcs_turbovnc_matlab}
 }
 
 \frame{
