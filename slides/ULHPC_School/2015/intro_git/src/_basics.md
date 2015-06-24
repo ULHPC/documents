@@ -445,13 +445,45 @@ $> tig
 
 \gitcommand{git checkout --- <file>\hfill\textit{\# DANGER! Un-modify modified file}}
 
+\vbegin{3}
+
 * Restore to the last committed/cloned version: **all** changes are lost!
+
+\vend
 
 . . .
 
 \gitcommand{git revert <commit> \hfill\textit{\# revert a <commit>}} 
 
+\vbegin{4}
+
 * Make a new commit that undoes all changes made in `<commit>`
+
+\vend
+
+. . . 
+
+\vspace{-1em}\toyou
+
+\vspace{-0.5em}
+\columnsbegin{.45\textwidth}
+
+~~~bash
+$> cd /tmp/firstproject
+$> git commit --amend
+$> echo 'toto' >> README.md
+~~~
+
+\column{0.5\textwidth}
+
+~~~bash
+$> cat README.md && git status
+$> git checkout -- README
+$> git status
+~~~
+
+\columnsend
+
 
 ### Summary
 
@@ -484,9 +516,7 @@ Stage \& commit the changes
 #### Advices
 
 * __Commit early, commit often!__
-     - Commits = save points
-     - Use descriptive commit messages
-     - avoid (if you can): `git commit -a -m ' '` 
+     - commits = save points
+     - use descriptive commit messages
 * Don't get out of sync with your collaborators
 * Commit the sources, not the derived files
-* Use `.gitignore` to indicate temporary files etc.  to be ignored
