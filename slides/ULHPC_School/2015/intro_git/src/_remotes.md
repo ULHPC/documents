@@ -212,25 +212,48 @@ Updating ae97dae..06576e0
 2 files changed, 4 insertions(+), 5 deletions(-)
 ~~~
 
-
-
-
-
-
-### Tracking a Remote Branch
-
-* Branches on remotes are represented locally as: `<remote>/<branch>`
-     - _Ex_: `origin/master`
-
-\gitcommand{git branch --track <branch> origin/<branch>}
-
-* Assuming you have previously `fetch` the remote `origin`
-
-. . .
-
-
-
-
 ### Publish a (local) branch on a remote
 
 \gitcommand{git push -u origin <branch>}
+
+\gitcommand{git flow feature publish <name>}
+
+. . .
+
+* If you want to **\alert{delete}** a branch, **both locally and remotely**:
+
+\gitcommand{git push origin --delete <branch> \hfill\textit{\# DANGER!}}
+
+. . .
+
+\vspace*{-1em}
+\toyou
+
+\columnsbegin{.5\textwidth}
+
+~~~bash
+$> cd /tmp/fork
+$> git flow feature start toto
+$> git flow feature publish toto
+~~~
+
+\column{.5\textwidth}
+
+~~~bash
+$> git branch -a
+$> git push origin --delete feature/toto
+~~~
+
+\columnsend
+
+
+### Putting it all together
+
+\begin{flushleft}
+\transientimg{+}{scale=0.34}{remote-workflow-01.pdf}
+\transientimg{+}{scale=0.34}{remote-workflow-02.pdf}
+\transientimg{+}{scale=0.34}{remote-workflow-03.pdf}
+\transientimg{+}{scale=0.34}{remote-workflow-04.pdf}
+\transientimg{+}{scale=0.34}{remote-workflow-05.pdf}
+\transientimg{+}{scale=0.34}{remote-workflow-06.pdf}
+\end{flushleft}
