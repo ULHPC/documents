@@ -77,6 +77,26 @@
 * changes commited through `git commit` are committed to `HEAD`
 
 
+### Daily Branch Management Example
+
+\begin{cmdline}% Obliged to triple '-' for seeing two
+  \only<3>{\cmdlineentry{git branch testing \textit{\# create branch testing}}}
+  \only<4>{\cmdlineentry{git checkout testing \textit{\# switch to branch testing}}}
+  \only<5,7>{\cmdlineentry{vim test.rb \textit{\# make some edits}}\\
+  \cmdlineentry{git commit -a -m "made a change"  \textit{\# and commit them}}}
+  \only<6>{\cmdlineentry{git checkout master \textit{\# switch to branch master}}}
+\end{cmdline}
+
+\begin{center}
+  \only<5,7>{\vspace{-0.9em}}
+  \only<1>{\includegraphics [height=0.8\textheight]{branch-00.pdf}}
+  \only<2>{\includegraphics [height=0.8\textheight]{branch-01.pdf}}
+  \only<3>{\includegraphics [height=0.8\textheight]{branch-02.pdf}}
+  \only<4>{\includegraphics [height=0.8\textheight]{branch-03.pdf}}
+  \only<5>{\includegraphics [height=0.8\textheight]{branch-04.pdf}}
+  \only<6>{\includegraphics [height=0.8\textheight]{branch-05.pdf}}
+  \only<7>{\includegraphics [height=0.8\textheight]{branch-06.pdf}}
+\end{center}
 
 
 
