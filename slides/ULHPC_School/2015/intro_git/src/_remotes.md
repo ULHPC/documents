@@ -220,7 +220,7 @@ Updating ae97dae..06576e0
 
 . . .
 
-* If you want to **\alert{delete}** a branch, **both locally and remotely**:
+* If you want to **\alert{delete}** a **remote** branch
 
 \gitcommand{git push origin --delete <branch> \hfill\textit{\# DANGER!}}
 
