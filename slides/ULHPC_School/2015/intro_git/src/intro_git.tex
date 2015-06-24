@@ -1,0 +1,173 @@
+% =============================================================================
+% File:  intro_git.tex -- Introduction to Git 
+% Author(s): Sebastien Varrette (sebastien.varrette@uni.lu)
+% Time-stamp: <Wed 2015-06-24 21:22 svarrette>
+% 
+% Copyright (c) 2015 Sebastien Varrette<Sebastien.Varrette@uni.lu>
+% 
+% For more information:
+% - LaTeX: http://www.latex-project.org/
+% - Beamer: https://bitbucket.org/rivanvx/beamer/
+% - LaTeX symbol list:
+% http://www.ctan.org/tex-archive/info/symbols/comprehensive/symbols-a4.pdf
+% =============================================================================
+
+\documentclass[t]{beamer}
+% \documentclass[draft]{beamer}
+\usepackage{_style}
+
+% The key part to use my theme -- if you precise nothing, the image that
+% illustrate the slides is assumed to be images/slides_image.jpg
+\usetheme[image=logos/logo_ULHPC.pdf]{Falkor}
+
+\AtBeginSection[]
+{
+  \frame{
+    \frametitle{Summary}
+    {\scriptsize\tableofcontents[currentsection]}
+  }
+}
+
+\AtBeginSubsection[]
+{
+  \frame{
+    \frametitle{Summary}
+    {\scriptsize\tableofcontents[currentsection,currentsubsection]}
+  }
+}
+
+\graphicspath{{logos/}{images/}} % Add this directory to the searched paths for graphics
+
+\newcommand{\bbegin}[1]{\begin{block}{#1}}
+\newcommand{\bend}{\end{block}}
+\newcommand{\exbegin}[1]{\begin{exampleblock}{#1}}
+\newcommand{\exend}{\end{exampleblock}}
+\newcommand{\wbegin}[1]{\begin{alertblock}{#1}}
+\newcommand{\wend}{\end{alertblock}}
+\newcommand{\warn}[2]{\begin{alertblock}{#1}#2\end{alertblock}}
+\newcommand{\ex}[2]{\begin{exampleblock}{#1}#2\end{exampleblock}}
+\newcommand{\toyou}[1]{\ex{}{\centering Your Turn! #1}}
+\newcommand{\gitcommand}[1]{\begin{tcolorbox}[colback=black!5!white,colframe=white!75!black,leftrule=3mm]\cmdlineentry{\scriptsize #1}\end{tcolorbox}}
+%\newcommand{\just}[2]{\only<#1>{#2}}
+
+\newcommand{\vbegin}[1]{\begin{onlyenv}<#1>}
+\newcommand{\vend}{\end{onlyenv}}
+\newcommand{\transientimg}[3]{\only<#1>{\includegraphics[#2]{#3}}}
+
+\newcommand{\cbegin}[1]{\columnsbegin{#1}}
+\newcommand{\cend}{\columnsend}
+
+
+%%%%%%%%%% Header %%%%%%%%%%%%
+\title{Introduction to Git}
+\subtitle{}
+
+\author{S\'ebastien Varrette, PhD}
+\institute[UL HPC, PCOG Research Unit]{
+  \href{http://hpc.uni.lu}{UL HPC} Management Team,\\  
+  Parallel Computing and Optimization Group (\href{http://pcog.uni.lu}{PCOG}),
+  University of Luxembourg (\href{http://www.uni.lu}{UL}), Luxembourg
+}
+
+% Mandatory to **declare** a logo to be placed on the bottom right -- normally the
+% university logo. ADAPT ACCORDINGLY:
+\pgfdeclareimage[height=0.8cm]{logo}{logos/logo_UL.pdf}
+
+\date{}
+
+%%%%%%%%%%%%% Body %%%%%%%%%%%%%%%
+\begin{document}
+
+\begin{frame}
+  \vspace{2.5em}
+  \titlepage
+\end{frame}
+
+
+% .......
+\frame{
+  \begin{center}
+    \textbf{Latest version available on
+      \href{https://github.com/ULHPC/documents/tree/master/slides/ULHPC_School/2015/intro_git/}{Github}}:
+    \vfill
+    \begin{description}
+      \item[Beamer theme Falkor:] \hfill
+      \myurl{https://github.com/Falkor/beamerthemeFalkor}
+      \item[Generic Makefiles:] \hfill
+      \myurl{https://github.com/Falkor/Makefiles}
+      \item[\LaTeX\ Sources of the slides (Markdown):] \hfill \myurl{https://github.com/ULHPC/documents}
+      \item[UL HPC School:] \hfill \myurl{https://hpc.uni.lu/hpc-school/} 
+      \item[UL HPC Tutorials:] \hfill \myurl{http://ulhpc-tutorials.readthedocs.org/} 
+    \end{description}
+  \end{center}
+}
+
+%=================
+\input{_intro.md}
+\input{_vcs.md}
+\input{_basics.md}
+\input{_branches.md}
+\input{_remotes.md}
+\input{_advanced.md}
+
+
+% ======================== END =========================
+\section*{Thank you for your attention...}
+\frame{
+  \frametitle{Questions?}
+  % ~~~~~~~~~~~~~~
+  \begin{columns}[b]
+    \column{0.5\textwidth}
+    % \emph{Contact}\\
+    {\tiny
+      \emph{S\'ebastien Varrette, PhD}\\
+      ~~~~ \textit{mail:} \href{mailto:sebastien.varrette@uni.lu}{sebastien.varrette@uni.lu}\\
+      ~~~~ Office E-007\\
+      ~~~~ Campus Kirchberg\\
+      ~~~~ 6, rue Coudenhove-Kalergi\\
+      ~~~~ L-1359 Luxembourg\\[1em]
+
+      \emph{UL HPC Management Team}\\
+      ~~~~ \textit{mail:} \href{mailto:hpc-sysadmins@uni.lu}{hpc-sysadmins@uni.lu}\\
+      
+    }
+    \column{0.5\textwidth}
+    % \scalebox{8}{\emph{?}}
+    \includegraphics[width=1.5in]{question.jpg}
+  \end{columns}
+  % Below is the table of content over 2 columns
+  \vfill
+  \begin{multicols}{2}
+    {\tiny \tableofcontents}
+  \end{multicols}
+
+}
+
+\newcounter{finalframe}
+\setcounter{finalframe}{\value{framenumber}}
+
+% \section*{Appendix}
+% %.......
+% \frame{
+%   \frametitle{}
+%   \vfill
+%   \centering \LARGE Appendix
+%   \vfill
+% }
+
+% \input{_delta_vs_snapshot.tex}
+
+
+\setcounter{framenumber}{\value{finalframe}}
+
+\end{document}
+
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+% eof
+% 
+% Local Variables:
+% mode: latex
+% mode: flyspell
+% mode: visual-line
+% TeX-master: "git.tex"
+% End:
