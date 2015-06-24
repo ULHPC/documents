@@ -67,16 +67,6 @@
 			<string>coded</string>
 			<string>BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU051bWJlcgCEhAdOU1ZhbHVlAISECE5TT2JqZWN0AIWEASqEhAFxlwCG</string>
 		</array>
-		<key>NSPrinter</key>
-		<array>
-			<string>coded</string>
-			<string>BAtzdHJlYW10eXBlZIHoA4QBQISEhAlOU1ByaW50ZXIAhIQITlNPYmplY3QAhZKEhIQITlNTdHJpbmcBlIQBKwVBZGVsZYaG</string>
-		</array>
-		<key>NSPrinterName</key>
-		<array>
-			<string>string</string>
-			<string>Adele</string>
-		</array>
 		<key>NSRightMargin</key>
 		<array>
 			<string>float</string>
@@ -118490,11 +118480,11 @@ public}</string>
 	<key>WindowInfo</key>
 	<dict>
 		<key>CurrentSheet</key>
-		<integer>6</integer>
+		<integer>9</integer>
 		<key>Expanded_Canvases</key>
 		<array/>
 		<key>Frame</key>
-		<string>{{233, 145}, {1313, 698}}</string>
+		<string>{{792, 317}, {1313, 698}}</string>
 		<key>ShowInfo</key>
 		<true/>
 		<key>ShowRuler</key>
@@ -118508,9 +118498,9 @@ public}</string>
 		<key>TopSlabHeight</key>
 		<real>250</real>
 		<key>VisibleRegion</key>
-		<string>{{0, 89.999996423721456}, {659.16664047373774, 450.83331541882694}}</string>
+		<string>{{0, 0}, {791, 541}}</string>
 		<key>Zoom</key>
-		<real>1.2000000476837158</real>
+		<real>1</real>
 		<key>ZoomValues</key>
 		<array>
 			<array>

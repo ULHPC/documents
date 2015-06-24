@@ -1,7 +1,7 @@
 % =============================================================================
 % File:  intro_git.tex -- Introduction to Git 
 % Author(s): Sebastien Varrette (sebastien.varrette@uni.lu)
-% Time-stamp: <Wed 2015-06-24 00:52 svarrette>
+% Time-stamp: <Wed 2015-06-24 14:12 svarrette>
 % 
 % Copyright (c) 2015 Sebastien Varrette<Sebastien.Varrette@uni.lu>
 % 
@@ -42,11 +42,20 @@
 \newcommand{\bend}{\end{block}}
 \newcommand{\exbegin}[1]{\begin{exampleblock}{#1}}
 \newcommand{\exend}{\end{exampleblock}}
+\newcommand{\wbegin}[1]{\begin{alertblock}{#1}}
+\newcommand{\wend}{\end{alertblock}}
+\newcommand{\warn}[2]{\begin{alertblock}{#1}#2\end{alertblock}}
 \newcommand{\ex}[2]{\begin{exampleblock}{#1}#2\end{exampleblock}}
 \newcommand{\toyou}[1]{\ex{}{\centering Your Turn! #1}}
 \newcommand{\gitcommand}[1]{\begin{tcolorbox}[colback=black!5!white,colframe=white!75!black,leftrule=3mm]\cmdlineentry{\scriptsize #1}\end{tcolorbox}}
 %\newcommand{\just}[2]{\only<#1>{#2}}
 
+\newcommand{\vbegin}[1]{\begin{onlyenv}<#1>}
+\newcommand{\vend}{\end{onlyenv}}
+\newcommand{\transientimg}[3]{\only<#1>{\includegraphics[#2]{#3}}}
+
+\newcommand{\cbegin}[1]{\columnsbegin{#1}}
+\newcommand{\cend}{\columnsend}
 
 
 %%%%%%%%%% Header %%%%%%%%%%%%
@@ -96,7 +105,7 @@
 %=================
 % \input{_intro.md}
 % \input{_vcs.md}
-% \input{_basics.md}
+\input{_basics.md}
 \input{_branches.md}
 %\input{_remotes.md}
 
