@@ -485,5 +485,8 @@ Stage \& commit the changes
 
 * __Commit early, commit often!__
      - Commits = save points
-* Use descriptive commit messages
-     - avoid (if you can): "`up`" 
+     - Use descriptive commit messages
+     - avoid (if you can): `git commit -a -m ' '` 
+* Don't get out of sync with your collaborators
+* Commit the sources, not the derived files
+* Use `.gitignore` to indicate temporary files etc.  to be ignored
