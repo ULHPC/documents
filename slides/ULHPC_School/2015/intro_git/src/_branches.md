@@ -304,9 +304,7 @@ $> git gr
 * 72d4d5f master
 * f31c173 (tag: v1.0) a first move with amend
 * ee60f53 add README 
-~~~
 
-~~~bash
 $> git branch -d hotfix
 Deleted branch hotfix (was ac188bd)
 ~~~
