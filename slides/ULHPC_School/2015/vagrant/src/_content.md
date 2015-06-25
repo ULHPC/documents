@@ -144,6 +144,9 @@ $> vagrant up
 $> vagrant ssh
 ~~~
 
+* _Note_: once within the box:
+     - `/vagrant` is the root directory hosting the `Vagrantfile`
+
 ### Configuring Vagrant
 
 * Minimal `Vagrantfile` (Ruby syntax)
@@ -155,6 +158,12 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.box = 'hashicorp/precise32'
 end
 ~~~
+
+* Configure Multiple VMs
+     - See [`ULHPC/puppet-sysadmins`](https://github.com/ULHPC/puppet-sysadmins/blob/devel/Vagrantfile)
+
+
+
 
 ### Using another box
 
@@ -180,6 +189,7 @@ $> vagrant up
 $> vagrant ssh
 ~~~
 
+<!--
 ### Configure Multiple VMs
 
 * See [`ULHPC/puppet-sysadmins`](https://github.com/ULHPC/puppet-sysadmins/blob/devel/Vagrantfile)
@@ -208,3 +218,47 @@ end
 ~~~
 
 \tinye
+
+-->
+
+### Generate your own box
+
+* You might rely on [Falkor/vagrant-vms](https://github.com/Falkor/vagrant-vms)
+     - use it at your own risks
+	 - based on [packer](http://www.packer.io/) and [veewee](https://github.com/jedi4ever/veewee)
+
+~~~bash
+$> git clone https://github.com/Falkor/vagrant-vms.git
+$> cd vagrant-vms
+$> gem install bundler
+$> bundle install
+$> rake setup
+
+# initiate a template for a given Operating System:
+$> rake packer:{Debian,CentOS,openSUSE,scientificlinux,ubuntu}:init
+# Build a Vagrant box
+$> rake packer:{Debian,CentOS,openSUSE,scientificlinux,ubuntu}:build
+# If things goes fine:
+$> vagrant box add packer/<os>-<version>-<arch>/<os>-<version>-<arch>.box
+~~~
+
+### Customize your box
+
+* _Obj_: customize / specialize the configuration of a _running_ box
+* This can be done in two ways: 
+     1. use **provisionning** within the `Vagrantfile`
+	 2. re-package the box via `vagrant package`
+
+~~~bash
+# locate the name of the running VM
+$> VBoxManage list runningvms
+"vagrant-vms_default_1431034026308_70455" {...}
+puppet-sysadmins_debian-7_1433278488158_28667" {...}
+
+# Create the box 
+$> vagrant package \
+    --base vagrant-vms_default_1431034026308_70455 \
+	--output packer/<os>-<version>-<arch>/<os>-<version>-<arch>.box
+~~~
+
+
