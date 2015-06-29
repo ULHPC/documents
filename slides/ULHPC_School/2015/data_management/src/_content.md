@@ -193,6 +193,18 @@ Total **Effective** (split) capacity: __1365 TB__
 
 # Storage Policy
 
+
+### Multi-Tier Environment
+
+#### Tier-structure of storage space
+
+1. _Tier-1_ (GPFS): high performance, high reliability
+    * put there frequently processed data only 
+2. _Tier-2_ (Certons): low performance
+    * storage and backup disks ($\simeq$ archiving) 	
+3. _Tier-0_ (LUSTRE): Scratch
+    * ultra high performance, (potentially) low reliability
+
 ### Storage Policy
 
 * `$HOME` (_NFS_ or _GPFS_) **is** under a regular backup policy.
@@ -214,14 +226,37 @@ Total **Effective** (split) capacity: __1365 TB__
 | `$SCRATCH` | 10 TB    |            | NO     |
 
 
-### Project Management 
+### Project Management
 
-* 
+* In case the regular storage limits **do not** match your expectations
+     - quotas extension for project folders can be granted 
+	 - this comes with additional fees
+	 
+\wbegin{}\centering
+
+[Project Storage Request Form](http://fd10.formdesk.com/universityofluxembourg/disk_space)
+
+\wend
+
+\vfill\hfill Contact: <joanna.smula@uni.lu>
 
 
 
 
 # Last Challenges
 
+## Effective Storage and Memory Management
 
-g
+### Memory bottleneck
+
+\centering\includegraphics[width=0.6\textwidth]{memory_vs_cpu.pdf}
+
+* A regular computing node have at least 2GB/core RAM
+     - Do 12-24 runs fit in the memory?
+     - If your job runs out of memory, it simply crashes
+* Use fewer simultaneous runs if \textbf{really} needed!
+     - **OR** request a big memory machine (1TB RAM)
+          \begin{cmdline}~\\
+              \cmdlineentry{oarsub -t bigmem ...}\\[1em]
+          \end{cmdline}
+     - **OR (better)** explore parallization (MPI, OpenMP, pthreads)

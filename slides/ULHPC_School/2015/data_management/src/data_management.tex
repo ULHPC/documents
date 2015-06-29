@@ -1,7 +1,7 @@
 % =============================================================================
 % File:  data_management.tex -- 
 % Author(s): Sebastien Varrette (sebastien.varrette@uni.lu)
-% Time-stamp: <Fri 2015-06-26 13:50 svarrette>
+% Time-stamp: <Mon 2015-06-29 17:18 svarrette>
 % 
 % Copyright (c) 2015 Sebastien Varrette<Sebastien.Varrette@uni.lu>
 % 
@@ -84,37 +84,7 @@
 \input{_content.md} % Markdown content
 % ======================== 
 
-\frame{
-  \frametitle{Memory bottleneck} %Last Challenges \hfill{\small for a better efficiency}}
 
-\centering\includegraphics[width=0.6\textwidth]{memory_vs_cpu.pdf}
-
-  
-  \begin{itemize}
-    \item A regular computing node have at least 2GB/core RAM
-      \begin{itemize}
-          \itemhook Do 12-24 runs fit in the memory?
-          \itemhook If your job runs out of memory, it simply crashes
-      \end{itemize}
-    \item Use fewer simultaneous runs if \textbf{really} needed!
-      \begin{itemize}
-          \itemhook \textbf{OR} request a big memory machine (1TB RAM)\\
-          \begin{cmdline}
-              \cmdlineentry{oarsub -t bigmem ...}
-          \end{cmdline}
-          \itemhook \textbf{Or} explore parallization (MPI, OpenMP, pthreads)
-      \end{itemize}
-      % \item Use \texttt{\$SCRATCH} directory whenever you can
-      %   \begin{itemize}
-      %       \itemhook \texttt{gaia}: \textbf{shared} between nodes (Lustre FS)
-      %       \itemhook \texttt{chaos}: \textbf{NOT shared}
-      %       (\texttt{/tmp}) and clean at job end.
-      %   \end{itemize}
-  \end{itemize}
-  % \end{block}
-}
-
-\subsection{Effective Storage and Memory Management}
 
 % .......
 \frame{
@@ -125,8 +95,8 @@
         \item \textbf{Shared} storage
           \begin{itemize}
               \itemhook \texttt{NFS} -- \emph{not scalable}  ~$\simeq$ 1.5 GB/s (R) \hfill $\mathcal{O}$(100 TB)
-              \itemhook \texttt{GPFS} -- \emph{scalable}  ~~$\simeq$ 3 GB/s   (R) \hfill $\mathcal{O}$(500 TB)
-              \itemhook \texttt{Lustre} -- \emph{scalable}  ~~$\simeq$ 3 GB/s   (R) \hfill $\mathcal{O}$(400 TB)
+              \itemhook \texttt{GPFS} -- \emph{scalable}  ~~$\simeq$ 6 GB/s   (R) \hfill $\mathcal{O}$(500 TB)
+              \itemhook \texttt{Lustre} -- \emph{scalable}  ~~$\simeq$ 5 GB/s   (R) \hfill $\mathcal{O}$(400 TB)
           \end{itemize}
         \item \textbf{Local} storage
           \begin{itemize}
@@ -222,7 +192,7 @@
       \item<+-> Reliability vs. Crash Faults in Distributed systems
         \only<2>{
           \begin{center}
-              \includegraphics[width=0.65\textwidth]{proba_defaillance}
+              \includegraphics[width=0.5\textwidth]{proba_defaillance}
           \end{center}
         }
       \item<+-> Fault Tolerance general strategy: checkpoint/rollback
