@@ -2,11 +2,6 @@
 
 ## Submodules and Subtrees
 
-### Using sub-projects
-
-* ou need to use another project from within it
-
-
 ### Git Submodules
 
 \gitcommand{git submodule add [-b <branch>] <url> <subdir>}
@@ -121,6 +116,62 @@ $> git submodule foreach \
 \wend
 
 
+
+## Using Git over Subversion Repository
+
+### [Git-svn](http://git-scm.com/docs/git-svn): using Git with Subversion
+
+\gitcommand{git svn clone [-s] <svn-url> \hfill\textit{\# checkout an SVN repository}}
+
+* `-s`: standard SVN layout with `trunk/`, `branches/` and `tags/`
+* clone into `master` -- you **shall** work in another branch \hfill _Ex_: `work`
+  \cmd{git checkout -b work}
+
+      - delegate all interactions with SVN repository with `master`
+	  - thus make all your (local) commits into the `work` branch
+
+. . .
+	  
+\gitcommand{git svn rebase \hfill\textit{\# fetch revisions from SVN and rebase}}
+
+* __Important__: always do that from the `master` branch!
+  \begin{cmdline}
+\promptline{(work)}{git checkout master}\\
+\promptline{(master)}{git svn rebase}\\
+\end{cmdline}
+
+
+### [Git-svn](http://git-scm.com/docs/git-svn): commit to Subversion
+
+\gitcommand{git svn dcommit \hfill\textit{\# create an SVN revision for each commit}}
+\hfill\alert{AFTER you sanitize the 'master' branch!}
+
+\begin{cmdline}
+\only<1>{\promptline{(work)}{git checkout master}\\
+\promptline{(master)}{git svn rebase}}
+\only<2>{\promptline{(master)}{git checkout work}\\
+\promptline{(work)}{git rebase master}
+}
+\only<3>{\promptline{(work)}{git log --graph --oneline --decorate \hfill\textit{\# OR git gr}}}
+\only<4>{\promptline{(work)}{git checkout master} \\
+\promptline{(master)}{git merge --no-ff work}
+}
+\only<5>{\promptline{(master)}{git commit --amend}}
+\only<6>{\promptline{(master)}{git svn dcommit}}
+\only<7>{\promptline{(master)}{git checkout work}}
+\only<3,5-7>{\vspace*{0.9em}}
+
+\end{cmdline}
+
+
+> 1. rebase the master branch with the SVN repository
+> 2. go back to the work branch and rebase with master
+> 3. ensure everything is fine 
+> 4. force 3-ways merge your local commit 
+> 5. edit (`amend`) the last commit for your SVN dudes 
+> 6. **Finally** commit on the SVN server
+> 7. Go back to the 'work' branch! 
+
 ## More Cool stuff
 
 ### Shell Integration
@@ -148,16 +199,10 @@ $> git submodule foreach \
 
 
 
-### Shell Integration
-
-
-
-
-
 ### External Merge and Diff Tools
 
-* Git offers visual diff/merge tools, assuming you configured it
-\cmd{git config ---global merge.tool <tool>}
+* Git offers visual diff/merge tools, assuming you configured it:
+\cmd{git config ---global merge.tool sourcetree}
 
 
 \gitcommand{git difftool [<commit>] \hfill\textit{diff GUI}}
@@ -169,6 +214,7 @@ $> git submodule foreach \
 . . .
 
 * You can set up **another** graphical merge-conflict-resolution tool
+    - List the available tools: \hfill `git mergetool --tool-help`
     - _Mac OS_: \hfill `git config --global merge.tool opendiff`
 	- _Linux_:  \hfill `git config --global merge.tool kdiff3`
     - Cross-platform: [P4Merge](http://www.perforce.com/product/components/perforce-visual-merge-and-diff-tools) ([download](http://www.perforce.com/downloads/helix#product-10))
@@ -181,16 +227,33 @@ $> git submodule foreach \
 
 
 ### Using [P4Merge](http://www.perforce.com/product/components/perforce-visual-merge-and-diff-tools) as diff/merge tool
-
-
-
 	 
 ~~~bash
-$> apt-get install
-$> brew cask install p4merge     # on Mac OS, using \href{http://mxcl.github.com/homebrew/}{Homebrew} and \href{http://caskroom.io/}{Cask}
-
-
+git config --global merge.tool p4mergetool
+git config --global mergetool.p4mergetool.trustexitcode   false
+git config --global mergetool.p4mergetool.keeptemporaries false
+git config --global mergetool.p4mergetool.keepbackup      false 
+git config --global mergetool.p4mergetool.cmd \
+    $BASE $LOCAL $REMOTE $MERGED
 ~~~
+
+\vspace{-0.5em}
+\cbegin{0.4\textwidth}
+
+\includegraphics[width=\textwidth]{screenshot_mergetool}
+
+\column{0.6\textwidth}
+
+* _Alternatives_ (mostly Mac OS)
+     - [Kaleidoscope](http://www.kaleidoscopeapp.com/)
+	 - [Araxis Merge](http://www.araxis.com/merge/)
+	 - [DeltaWalker](http://www.deltawalker.com/)
+	 - [DiffMerge](http://www.sourcegear.com/diffmerge/) (free)
+	 - [SourceTree](https://www.sourcetreeapp.com/) (free)
+
+\cend
+
+
 
 
 

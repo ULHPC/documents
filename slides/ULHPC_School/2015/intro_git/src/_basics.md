@@ -439,7 +439,8 @@ $> tig
 
 . . .
 
-\gitcommand{git reset HEAD <file> \hfill\textit{\# Unstage staged file}}
+<!-- \gitcommand{git reset HEAD <file> \hfill\textit{\# Unstage staged file}} -->
+\gitcommand{git unstage <file> \hfill\textit{\# or  git reset HEAD <file>}}
 
 . . .
 
