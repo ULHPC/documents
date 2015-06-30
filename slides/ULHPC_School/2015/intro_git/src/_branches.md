@@ -395,3 +395,8 @@ $> git gr
     - `master` / `devel`: the _main_ branch where the developments occurs
 * On demand: make a new feature branch `feature/<name>`
 * From time to time, release your code into `production` and tag 
+
+### [Git-flow](https://github.com/nvie/gitflow) illustrated \hfill\tiny\source{\href{http://nvie.com/posts/a-successful-git-branching-model/}{Nvie}}
+
+\centering\includegraphics[height=0.9\textheight]{gitflow-model}
+

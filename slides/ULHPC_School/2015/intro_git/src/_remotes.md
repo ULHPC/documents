@@ -222,7 +222,7 @@ Updating ae97dae..06576e0
 
 * If you want to **\alert{delete}** a **remote** branch
 
-\gitcommand{git push origin --delete <branch> \hfill\textit{\# DANGER!}}
+\gitcommand{git push origin ---delete <branch> \hfill\textit{\# DANGER!}}
 
 . . .
 
@@ -241,7 +241,8 @@ $> git flow feature publish toto
 
 ~~~bash
 $> git branch -a
-$> git push origin --delete feature/toto
+$> git push origin --delete \
+      feature/toto
 ~~~
 
 \columnsend
