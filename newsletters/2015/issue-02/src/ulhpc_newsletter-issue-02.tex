@@ -1,0 +1,147 @@
+%=============================================================================
+% File:  ulhpc_newsletter-issue-02.tex --  Issue 2 of the UL HPC newsletter
+% Time-stamp: <Mer 2015-03-11 22:34 svarrette>
+% Author(s): Sebastien Varrette <Sebastien.Varrette@uni.lu>
+% .          
+%=============================================================================
+\documentclass{article}
+
+\usepackage{graphicx}
+\graphicspath{{logos/}{images/}}
+
+%%%%%%%%%%%%%%% UL HPC Newsletter Configuration %%%%%%%%%%%%%%%%%%%
+\def\ReleaseDate{October 2015} % Release
+\def\Number{2}                  % Issue Number
+\def\Editorsname{Dr. S. Varrette and Prof. P. Bouvry}
+\def\DocSrcURL{https://github.com/ULHPC/documents/tree/master/newsletters/2015/issue-02/}
+\def\NewsletterURL{http://hpc.uni.lu/newsletters}
+\usepackage{ulhpc_newsletter1}
+\bibliographystyle{plain}
+
+\begin{document}
+
+% Format: \leftinfo{<title>}{<body>}
+\ulhpctoc
+
+% Format: \begin{welcome}[<title>] ... \end{welcome}
+\begin{welcome}
+  \input{_welcome.md}
+\end{welcome}
+
+   
+% %=======================================================
+\section{\faCommentAlt\ The UL HPC Platform at a glance}
+% %=======================================================
+\input{_ul_hpc.md}
+\clearpage
+% Similar to an executive summary of (incoming/passed)
+% milestones (half page)
+
+
+%=======================================================
+\section{\faBullhorn\ What's new?}
+\input{_os_upgrade.md}
+\input{_gpfs.md}
+\clearpage
+\input{_new_hardware.md}
+\input{_new_services.md}
+\newpage
+% %=======================================================
+
+% New features: services/improvements we've introduced, new software
+% available, etc.
+
+% %=======================================================
+% \section{\faBarChart\ Latest Statistics}
+% %=======================================================
+
+% Platform overview (pretty graphs): for the passing \$period (maybe also
+% with last year history): \#jobs , data transferred,  new users/projects,
+% etc., also reminder of existing services (gitlab, gforge, owncloud, etc.)
+
+% %=======================================================
+% \section{\faShare\ Outcomes}
+% %=======================================================
+
+% Outcomes: projects/groups using the clusters, new articles published
+% referencing the platform, etc.
+
+% %=======================================================
+% \section{\faUser\ User Focus}
+% %=======================================================
+
+% User stories: 1-2 paragraphs from (1-2) 'big' users, describing what
+% they're doing
+
+\newpage
+% %=======================================================
+\section{\faCalendar\ 2015 HPC Schools}
+% %=======================================================
+% Upcoming events: new tutorials, software we'll introduce in the next
+% \$period, upcoming HPC schools etc.
+\input{_hpc_school.md}
+
+
+% %=======================================================
+\section{\faFileAlt\ Publications}
+% %=======================================================
+\input{_publis.md}
+
+
+
+% %=======================================================
+\clearpage
+\section{\faUser\ Meet the team}
+% %=======================================================
+% Upcoming events: new tutorials, software we'll introduce in the next
+% \$period, upcoming HPC schools etc.
+\input{_hpc_team.md}
+
+% %============================================================================================
+% \section{\faCogs\ How to use the \texttt{ulhpc\_newsletter1} style?}
+% %============================================================================================
+
+% \faWarningSign\ : You need to compile the newsletters with \texttt{lualatex}! 
+
+% If you are using \href{https://github.com/Falkor/Makefiles/blob/devel/latex/Makefile}{my generic Makefile}, simply place a file \texttt{.Makefile.local} at the root of your document having the following content:
+
+% \lstinputlisting[language=make]{.Makefile.local}
+
+% Then in addition to the addition of the \LaTeX\ style file \texttt{ulhpc\_newsletter1.sty} at the root of your document, you'll need: 
+
+% \begin{itemize}
+%   \item a copy of the logos files (in PDF format) \texttt{logo\_UL.pdf} and \texttt{logo\_ULHPC.pdf} in a know path;
+%   \item to initiate a certain number of variables / macros used in the style \textbf{prior to} the call to the style package.
+% \end{itemize}
+
+% They are defined as follows: 
+
+% \lstinputlisting[language=TeX,firstline=45,lastline=70]{ulhpc_newsletter1.sty}
+
+
+% % You need first to clone (directly or as a git submodule) the \texttt{ULHPC/documents} repository on \href{https://github.com/ULHPC/documents}{Github}. 
+
+% % Then in addition to the addition of the \LaTeX\ style file \texttt{ulhpc\_book.sty} at the root of your document, you'll need: 
+
+% %=======================================================
+% \section{\faBeer\ Last but not least}
+% %=======================================================
+% \leftinfo{Another highlight}{For this page... }
+
+% \lipsum[2-8]
+
+%\bibliography{biblio}
+
+\end{document}
+
+
+
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+% eof
+%
+% Local Variables:
+% mode: latex
+% mode: flyspell
+% mode: visual-line
+% TeX-master: "ulhpc_newsletter-issue-02"
+% End:
