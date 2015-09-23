@@ -17,7 +17,7 @@
                    Copyright (c) 2015 UL HPC Management team <hpc-sysadmins@uni.lu>
 
 
-[PDF](ulhpc_newsletter-issue-02.pdf) and [LaTeX sources](src/) for the [UL HPC](http://hpc.uni.lu) newsletter -- issue 1.
+[PDF](ulhpc_newsletter-issue-02.pdf) and [LaTeX sources](src/) for the [UL HPC](http://hpc.uni.lu) newsletter -- issue 2.
 
 ## LaTeX Sources compilation
 
