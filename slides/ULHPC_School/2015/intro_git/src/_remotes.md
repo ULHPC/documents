@@ -1,4 +1,3 @@
-# Collaborating / Working together
 
 ### Working Together
 

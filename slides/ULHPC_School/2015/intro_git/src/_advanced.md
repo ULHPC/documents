@@ -1,6 +1,5 @@
-# Advanced Topics
 
-## Submodules and Subtrees
+## Git Submodules and Subtrees
 
 ### Git Submodules
 

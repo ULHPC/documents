@@ -1,6 +1,4 @@
 
-# Introduction : Git around you #
-
 ### Github \hfill \texttt{\href{http://github.com}{github.com}} ###
 
 #### (Reference) web-based Git repository hosting service ####

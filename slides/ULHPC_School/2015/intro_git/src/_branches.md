@@ -1,4 +1,3 @@
-# Branching and Merging
 
 ### Data Model
 

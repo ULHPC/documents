@@ -1,4 +1,3 @@
-# Git Basics
 
 ## Installing Git
 

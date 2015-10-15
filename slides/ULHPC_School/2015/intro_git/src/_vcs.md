@@ -1,7 +1,4 @@
 
-
-# About Version Control System (VCS) #
-
 ### Why use Version Control? ###
 
 * Version Control = Revision Control = Source Control
