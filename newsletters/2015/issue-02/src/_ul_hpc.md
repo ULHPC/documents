@@ -3,11 +3,11 @@
  \centering
  \begin{tikzpicture}[mindmap, level 1 concept/.append style={level distance=6cm}]
     \begin{scope}[mindmap, concept color=blue!60, text=white]
-    \node[concept,text width=14em] (compute) {\textbf{404 computing nodes: 4316 cores, 49.9 TFlops}}
+    \node[concept,text width=14em] (compute) {\textbf{446 computing nodes: 4788 cores, 70 TFlops}}
       [clockwise from=75]
       child { node[concept,scale=1.1] (rooms) {\textbf{3 server rooms: 2 in Kirchberg, 1 in Belval}}}
       child { node[concept,scale=1.1] (clusters) {\textbf{4 clusters: 2 production, 2 research}}}
-      child { node[concept,scale=1.1] (servers)  {\textbf{147 servers: 37 physical and 110 Virtual Machines}}};
+      child { node[concept,scale=1.1] (servers)  {\textbf{156 servers: 43 physical and 113 Virtual Machines}}};
     \end{scope}
     \begin{scope}[mindmap, concept color=green!50!yellow!70!black, text=white]
       \node[concept,text width=8em] (storage) at (8.5,5) {\textbf{3368 TB total storage}}
