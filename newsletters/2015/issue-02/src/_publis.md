@@ -1,6 +1,6 @@
 \begin{figure}
     \centering \includegraphics[width=0.95\textwidth]{rb_ranking.png}
-    \caption{Example heat map from a CloudCom 2015 conference paper by Shyam Wagele et al. \cite{WGBB_CLOUDCOM15}}
+    \caption{Example heat map from CloudCom'15 conference paper by S. Wagele et al. \cite{WGBB_CLOUDCOM15}}
     \label{fig:cloudcom15}
 \end{figure}
 
