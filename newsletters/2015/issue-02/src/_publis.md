@@ -1,16 +1,25 @@
-In an attempt to promote the management operated on the [UL HPC platform](http://hpc.uni.lu), an article has been published in the [IEEE HPCS'2014](http://hpcs2014.cisedu.info/) \cite{VBCG_HPCS14} -- see [the corresponding ORBilu entry](http://hdl.handle.net/10993/16622).
+\begin{figure}
+    \centering \includegraphics[width=0.95\textwidth]{rb_ranking.png}
+    \caption{Example heat map from a CloudCom 2015 conference paper by Shyam Wagele et al. \cite{WGBB_CLOUDCOM15}}
+    \label{fig:cloudcom15}
+\end{figure}
 
-It is also the occasion to recall that you are asked through the [AUP](https://hpc.uni.lu/users/AUP.html) to **acknowledge** your usage of the UL HPC platform in your research articles, and to cite the above mentioned paper if it is  possible.
+__UL HPC big data ranking records__  
 
-**More importantly**, you should mark your own [ORBilu](http://orbilu.uni.lu/) entries with the `ULHPC` tag using the guidelines proposed on the [UL HPC website](https://hpc.uni.lu/about/publis.html#acknowledgement-banner-and-orbilu-instructions).
+In the context of the ongoing GDRI-Algodec "Algorithmic Decision Theory" supported by the CNRS and The FNR, Prof. R. Bisdorff is developing multicriteria ranking algorithms for large sets of potential decision alternatives: up to several thousand of alternatives evaluated on multiple incommensurable ordinal performance criteria.  
+This research is motivated by the development of a visualization tool - a *heat map* - for performance tables showing the decision alternatives linearly ordered form the best to the worst, and the individual performances colored by quantiles equivalence classes (see Fig.\ref{fig:cloudcom15}).
 
+By using Python3.5 multiprocessing resources and the Digraph3 multicriteria software library \cite{RB_Digraph3}, it is possible, on the gaia-80 machine using 120 single threaded cores and  1.5 TB of memory, to linearly rank (without ties) in less than an hour a huge set of 250000 alternatives evaluated on 21 performance criteria by balancing economic, ecological and societal decision objectives. Data input is, on the one side, a 250000x21 performance tableau of 825 MB, and on the other side, a theoretical outranking space consisting of 62 000 000 000 (billions) of pairwise comparisons. A "small" set of 1000 decision alternatives, in a similar setting, may thus be ranked typically in less than 5 seconds.
 
 \begin{thebibliography}{1}
+\bibitem{WGBB_CLOUDCOM15}
+S.~Wagle, M.~Guzek, P.~Bouvry, R.~Bisdorff.
+\newblock {An Evaluation Model for Selecting Cloud Services from Commercially Available Cloud Providers}.
+\newblock In {\em Proc. of the 7th IEEE International Conference on Cloud Computing Technology and Science (CloudCom 2015)}, Vancouver, Canada, December 2015.
 
-\bibitem{VBCG_HPCS14}
-S.~Varrette, P.~Bouvry, H.~Cartiaux, and F.~Georgatos.
-\newblock {Management of an Academic HPC Cluster: The UL Experience}.
-\newblock In {\em Proc. of the 2014 Intl. Conf. on High Performance Computing
-  \& Simulation (HPCS 2014)}, pages 959--967, Bologna, Italy, July 2014. IEEE.
+\bibitem{RB_Digraph3}
+R.~Bisdorff.
+\newblock {Tutorials and documentation of the Digraph3 resources - \url{http://leopold-loewenheim.uni.lu/docDigraph3/tutorial.html}}
+\newblock {2014 FSTC/ILIAS Decision Systems Group, University of Luxembourg}
 
 \end{thebibliography}
