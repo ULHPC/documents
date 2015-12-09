@@ -12,11 +12,13 @@ The large amount of memory available on these systems enable in-memory processin
 
 Two ultra-dense enclosures with state-of-the-art general purpose computing systems:
 
-* Dell FC430 (gaia-[155..170]): 16 computing nodes each with 2 * Intel Xeon E5-2680v3 @ 2.5 GHz	and 96GB of RAM (384 cores: 15.36 TFlops)
+* Dell FC430 (gaia-[155..178]): 24 computing nodes each with 2 * Intel Xeon E5-2680v3 @ 2.5 GHz	and 128GB of RAM (576 cores: 23.04 TFlops)
 
-A dense, energy efficient enclosure with low power high performance CPUs based on the Haswell architecture featuring the Crystalwell package (large 128MB L4 cache):
+Two dense, energy efficient enclosures with low power high performance CPUs based on the Haswell architecture featuring the Crystalwell package (large 128MB L4 cache):
 
-* HP Moonshot (moonshot1-[1..30]): 30 blades each with an Intel Xeon E3-1284Lv3 @ 1.8 GHz and 32GB of RAM (120 cores: 3.4 TFlops and 960GB of RAM in total).  
+* HP Moonshot (moonshot1-[1..30], moonshot2-[1..45]): 75 nodes, each with an Intel Xeon E3-1284Lv3 @ 1.8 GHz and 32GB of RAM (300 cores: 8.64 TFlops and 2.4TB of RAM in total).  
 
-The moonshot nodes are ideal for a variety of BigData analytics workloads that are loosely coupled. Before the end of the year further expansion of the Gaia cluster is foreseen, with 60 additional moonshot nodes, 8 FC430 nodes and new GPU computing capabilities. Ultra-dense Dell C4130 GPU nodes containing 4 NVIDIA Tesla K80 accelerators with 24 GB of memory each will complement the existing pool of GPGPU capable nodes.
+The moonshot nodes are ideal for a variety of BigData analytics workloads that are loosely coupled. 
+
+Before the end of the year further expansion of the Gaia cluster is foreseen with new GPU computing capabilities. Ultra-dense Dell C4130 GPU nodes containing 4 NVIDIA Tesla K80 accelerators with 24 GB of memory each will complement the existing pool of GPGPU capable nodes.
 Many domain specific (e.g. physics: ABINIT, bioinformatics: GROMACS, engineering: Abaqus FEA) and general purpose (e.g. MATLAB) software present on the UL HPC platform can benefit from the new GPU accelerators, resulting in a shorter time-to-solution improving productivity.
