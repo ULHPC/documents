@@ -1,3 +1,14 @@
+
+The HPC equipment is based on both classical Commercial off-the shelf (COTS) and specialized products. 
+
+The UL HPC features as of Nov. 2015, **68.72 TFlops** for computations (over 4788 cores) and **4.54 PetaBytes** for storage. Today the HPC equipment is distributed in 4 different server rooms, two in Kirchberg and two in Belval.
+
+In details, the facility is composed of 3 main clusters, namely `chaos`, `gaia` and `g5k`, the later being part of the [Grid5000](http://grid5000.fr) project, a scientific instrument distributed in 10 sites (mainly in France) for research in large-scale parallel and distributed systems. A fourth cluster named `nyx` is available for experimental purposes and research on cutting-edge hardware components. From a general perspective, the clusters of the UL HPC facility have the following computing characteristics: 
+
+
+
+
+
 \vspace{-2em}
 \resizebox{1.0\textwidth}{0.65\textwidth}{
  \centering
