@@ -1,14 +1,14 @@
 ## GPFS & Isilon Storage
 
-\begin{wrapfigure}[10]{r}{0.45\textwidth}
-  \vspace{-8ex}
-  \includegraphics[width=0.45\textwidth]{pics/2016/isilon.jpg}
-\end{wrapfigure}
-
 In spring 2015, the main storage infrastructure of the Gaia cluster has been migrated from [NFS](http://en.wikipedia.org/wiki/Network_File_System) to [GPFS](http://www-03.ibm.com/software/products/en/software).
 
 The increase in computing capabilities through the addition of new computing nodes in 2014 had shown the limitations of the NFS technology, with a
 distributed setup with IBM's GPFS being chosen to replace it after consideration of several state of the art distributed filesystem technologies.
+
+\begin{wrapfigure}[10]{r}{0.45\textwidth}
+  \vspace{-5ex}
+  \includegraphics[width=0.45\textwidth]{pics/2016/isilon.jpg}
+\end{wrapfigure}
 
 In technical terms, four NetApp E5400 disk enclosures providing __960 TB__ of raw storage were attached to four pairs of storage nodes that granted redundancy and failover, all connected to Gaia's 40Gbps QDR InfiniBand network.
 
