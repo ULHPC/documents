@@ -5,7 +5,7 @@ This spring, the main storage infrastructure of the Gaia cluster has been migrat
 The increase in computing capabilities through the addition of new computing nodes in 2014 had shown the limitations of the NFS technology, with a
 distributed setup with IBM's GPFS being chosen to replace it after consideration of several state of the art distributed filesystem technologies.
 
-In technical terms, three NetApp E5400 disk enclosures providing __720 TB__ of raw storage were attached to three pairs of storage nodes that granted redundancy and failover, all connected to Gaia's 40Gbps QDR InfiniBand network.
+In technical terms, four NetApp E5400 disk enclosures providing __960 TB__ of raw storage were attached to four pairs of storage nodes that granted redundancy and failover, all connected to Gaia's 40Gbps QDR InfiniBand network.
 
 The transition of user home and work directories (totalling __43 TB__) and group projects (totalling __336 TB__), was successfully performed at the end of April, with no changes required in the user workflows.
 
