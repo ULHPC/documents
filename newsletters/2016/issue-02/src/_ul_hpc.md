@@ -1,42 +1,23 @@
-\vspace{-2em}
-\resizebox{1.0\textwidth}{0.65\textwidth}{
- \centering
- \begin{tikzpicture}[mindmap, level 1 concept/.append style={level distance=6cm}]
-    \begin{scope}[mindmap, concept color=blue!60, text=white]
-    \node[concept,text width=14em] (compute) {\textbf{446 computing nodes: 4788 cores, 70 TFlops}}
-      [clockwise from=75]
-      child { node[concept,scale=1.1] (rooms) {\textbf{3 server rooms: 2 in Kirchberg, 1 in Belval}}}
-      child { node[concept,scale=1.1] (clusters) {\textbf{4 clusters: 2 production, 2 research}}}
-      child { node[concept,scale=1.1] (servers)  {\textbf{156 servers: 43 physical and 113 Virtual Machines}}};
-    \end{scope}
-    \begin{scope}[mindmap, concept color=green!50!yellow!70!black, text=white]
-      \node[concept,text width=8em] (storage) at (8.5,5) {\textbf{3368 TB total storage}}
-      [clockwise from=0]
-      child { node[concept,scale=1.1] (backup) {\textbf{1712 TB for backup}}};
-    \end{scope}
-    \begin{scope}[mindmap, concept color=red!60, text=white]
-      \node[concept] (sysadmins) at (12,0) {\textbf{4 system \\ administrators}}
-      [clockwise from=225]
-      child { node[concept,scale=1.1,text width=6em] (sysadmindiv) {\textbf{3 at FSTC \& 1 at LCSB}}};
-    \end{scope}
-%    \begin{scope}[mindmap, concept color=gray!60, text=white]
-%      \node[concept,text width=12em] (services) at (7,-9) {\textbf{Complementary \\ services}}
-%      child { node[concept,scale=1.1,text width=8em] (virt) at (-4,8) {\textbf{Virtualization: on demand VMs for R\&D}}}
-%      child { node[concept,scale=1.1,text width=8em] (collab) at (-4,3) {\textbf{Collaboration: \\ GForge {\tiny (Git, SVN)} \\ Gitlab \\ Etherpad \\ Jabber}}}
-%      child { node[concept,scale=1.1,text width=8em] (bioinf) at (6,9) {\textbf{Bioinformatics: \\ Galaxy}}}
-%      child { node[concept,scale=1.1,text width=8em] (cloud) at (4,3) {\textbf{Cloud: \\ OpenStack}}}
-%      child { node[concept,scale=1.1,text width=8em] (cloud) at (-2,0) {\textbf{BigData storage \\ OwnCloud}}};
-%    \end{scope}
-  \end{tikzpicture}
-}
+\begin{picture}(0,200)(-25,25)
+   \includegraphics[width=0.95\textwidth]{images/blueclouds}
+   \put(-250,160){\includegraphics[width=0.1\textwidth]{images/computing}}
+   \put(-170,190){\includegraphics[width=0.1\textwidth]{images/storage}}
+   \put(-310,110){\textbf{\textcolor{white}{\LARGE 87 TFlops}}}
+   \put(-310,70){\textbf{\textcolor{white}{\large 518 computing nodes}}}
+   \put(-280,50){\textbf{\textcolor{white}{\large 5316 cores}}}
+   \put(-170,140){\textbf{\textcolor{white}{\LARGE 5114 TB}}}
+   \put(-150,120){\textbf{\textcolor{white}{\large 1596 disks}}}
+\end{picture}
+
+\clearpage
 
 ## UL HPC Statistics
 
 The [UL HPC](http://hpc.uni.lu) platform has continuously evolved since the initial computing servers ordered in 2006.
 The HPC equipment is based on both classical Commercial off-the shelf (COTS) and specialized products.
 \begin{tcolorbox}
-  The \ulhpc features as of November 2015, a computational power of \textbf{70 TFlops}
-  (over 4788 computing cores) and \textbf{4.2 PBytes} for storage (incl.
+  The \ulhpc features as of January 2016, a computational power of \textbf{87 TFlops}
+  (over 5316 computing cores) and \textbf{5.1 PBytes} for storage (incl.
   1.7 PB for backups).
 \end{tcolorbox}
 
@@ -49,5 +30,5 @@ The evolution of both computing and storage capacity, is depicted in the below f
   %\caption{UL HPC computing and storage capacity evolution}
 \end{figure}
 
-As of November 2015, **321 users** are registered and active on the platform.
+As of January 2016, **321 users** are registered and active on the platform.
 The used computing effort so far in 2015 by the registered users is measured at **__???__ CPUYears**, thus performed in a single year period.
