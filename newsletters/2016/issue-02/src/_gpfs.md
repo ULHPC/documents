@@ -1,5 +1,21 @@
 ## GPFS & Isilon Storage
 
+\begin{table}[t]
+  \centering
+  \setlength{\tabcolsep}{0.5em}
+  \renewcommand{\arraystretch}{1.1}
+  \scriptsize
+  \begin{tabular}{|r||c|c|c|c|}
+    \rowcolor{lightgray}
+    \hline
+    \textbf{Filesystem}     & \textbf{Usage}  & \textbf{Number of enclosures} & \textbf{Number of Disks} & \textbf{Storage Capacity} \\ \hline \hline
+    Gaia GPFS               & Home/Work       & 4                             & 240												 & 960 TB                  \\
+    Gaia Lustre             & Scratch         & 4                             & 200												 & 480 TB                  \\
+    Isilon							    & Projects        & 16                            & 768												 & 1944 TB                 \\ \hline
+    \multicolumn{2}{c}{\textbf{Total}} & \multicolumn{1}{c}{\textbf{24}} & \multicolumn{1}{c}{\textbf{1462}} & \multicolumn{1}{c}{\textbf{3384 TB}}       \\ \hline
+  \end{tabular}
+\end{table}
+
 In spring 2015, the main storage infrastructure of the Gaia cluster has been migrated from [NFS](http://en.wikipedia.org/wiki/Network_File_System) to [GPFS](http://www-03.ibm.com/software/products/en/software).
 
 The increase in computing capabilities through the addition of new computing nodes in 2014 had shown the limitations of the NFS technology, with a
