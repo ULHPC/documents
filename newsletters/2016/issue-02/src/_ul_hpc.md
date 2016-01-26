@@ -1,56 +1,37 @@
-
 The HPC equipment is based on both classical Commercial off-the shelf (COTS) and specialized products. 
 
 The UL HPC features as of Nov. 2015, **68.72 TFlops** for computations (over 4788 cores) and **4.54 PetaBytes** for storage. Today the HPC equipment is distributed in 4 different server rooms, two in Kirchberg and two in Belval.
 
 In details, the facility is composed of 3 main clusters, namely `chaos`, `gaia` and `g5k`, the later being part of the [Grid5000](http://grid5000.fr) project, a scientific instrument distributed in 10 sites (mainly in France) for research in large-scale parallel and distributed systems. A fourth cluster named `nyx` is available for experimental purposes and research on cutting-edge hardware components. From a general perspective, the clusters of the UL HPC facility have the following computing characteristics: 
 
+\begin{picture}(0,200)(-25,25)
+   \includegraphics[width=0.95\textwidth]{images/blueclouds}
+   \put(-250,160){\includegraphics[width=0.1\textwidth]{images/computing}}
+   \put(-170,190){\includegraphics[width=0.1\textwidth]{images/storage}}
+   \put(-310,110){\textbf{\textcolor{white}{\LARGE 87 TFlops}}}
+   \put(-310,70){\textbf{\textcolor{white}{\large 518 computing nodes}}}
+   \put(-280,50){\textbf{\textcolor{white}{\large 5316 cores}}}
+   \put(-170,140){\textbf{\textcolor{white}{\LARGE 5114 TB}}}
+   \put(-150,120){\textbf{\textcolor{white}{\large 1596 disks}}}
+\end{picture}
 
-
-
-
-\vspace{-2em}
-\resizebox{1.0\textwidth}{0.65\textwidth}{
- \centering
- \begin{tikzpicture}[mindmap, level 1 concept/.append style={level distance=6cm}]
-    \begin{scope}[mindmap, concept color=blue!60, text=white]
-    \node[concept,text width=14em] (compute) {\textbf{446 computing nodes: 4788 cores, 70 TFlops}}
-      [clockwise from=75]
-      child { node[concept,scale=1.1] (rooms) {\textbf{3 server rooms: 2 in Kirchberg, 1 in Belval}}}
-      child { node[concept,scale=1.1] (clusters) {\textbf{4 clusters: 2 production, 2 research}}}
-      child { node[concept,scale=1.1] (servers)  {\textbf{156 servers: 43 physical and 113 Virtual Machines}}};
-    \end{scope}
-    \begin{scope}[mindmap, concept color=green!50!yellow!70!black, text=white]
-      \node[concept,text width=8em] (storage) at (8.5,5) {\textbf{3368 TB total storage}}
-      [clockwise from=0]
-      child { node[concept,scale=1.1] (backup) {\textbf{1712 TB for backup}}};
-    \end{scope}
-    \begin{scope}[mindmap, concept color=red!60, text=white]
-      \node[concept] (sysadmins) at (12,0) {\textbf{4 system \\ administrators}}
-      [clockwise from=225]
-      child { node[concept,scale=1.1,text width=6em] (sysadmindiv) {\textbf{3 at FSTC \& 1 at LCSB}}};
-    \end{scope}
-%    \begin{scope}[mindmap, concept color=gray!60, text=white]
-%      \node[concept,text width=12em] (services) at (7,-9) {\textbf{Complementary \\ services}}
-%      child { node[concept,scale=1.1,text width=8em] (virt) at (-4,8) {\textbf{Virtualization: on demand VMs for R\&D}}}
-%      child { node[concept,scale=1.1,text width=8em] (collab) at (-4,3) {\textbf{Collaboration: \\ GForge {\tiny (Git, SVN)} \\ Gitlab \\ Etherpad \\ Jabber}}}
-%      child { node[concept,scale=1.1,text width=8em] (bioinf) at (6,9) {\textbf{Bioinformatics: \\ Galaxy}}}
-%      child { node[concept,scale=1.1,text width=8em] (cloud) at (4,3) {\textbf{Cloud: \\ OpenStack}}}
-%      child { node[concept,scale=1.1,text width=8em] (cloud) at (-2,0) {\textbf{BigData storage \\ OwnCloud}}};
-%    \end{scope}
-  \end{tikzpicture}
-}
+\clearpage
 
 ## UL HPC Statistics
+
+\begin{figure}[h]
+    \vspace{-4ex}
+    \centering \includegraphics[width=0.95\textwidth]{pics/2016/bt1-ulhpc.jpg}
+    \caption*{ULHPC datacenter in \href{https://hpc.uni.lu/systems/server_rooms.html\#belval-campus}{Belval Biotech 1}, operating at full capacity}
+\end{figure}
 
 The [UL HPC](http://hpc.uni.lu) platform has continuously evolved since the initial computing servers ordered in 2006.
 The HPC equipment is based on both classical Commercial off-the shelf (COTS) and specialized products.
 \begin{tcolorbox}
-  The \ulhpc features as of November 2015, a computational power of \textbf{70 TFlops}
-  (over 4788 computing cores) and \textbf{4.2 PBytes} for storage (incl.
-  1.7 PB for backups).
+  The \ulhpc features as of January 2016, a computational power of \textbf{87 TFlops}
+  (5316 computing cores) and \textbf{5.1 PBytes} for storage (incl. 1.7 PB for backups).
 \end{tcolorbox}
-
+<!--
 \noindent
 The evolution of both computing and storage capacity, is depicted in the below figures.
 \begin{figure}[htbp]
@@ -59,6 +40,15 @@ The evolution of both computing and storage capacity, is depicted in the below f
   \includegraphics[width=0.7\textwidth]{ul_hpc_evolution_storage}
   %\caption{UL HPC computing and storage capacity evolution}
 \end{figure}
+-->
 
-As of November 2015, **321 users** are registered and active on the platform.
-The used computing effort so far in 2015 by the registered users is measured at **__???__ CPUYears**, thus performed in a single year period.
+<!-- 2015 OAR accounting Gaia+Chaos: 47107252602 + 24161982905 = 71269235507s = 2259.93y --->
+As of January 2016, **335 users** are registered and active on the platform.
+The used computing time in 2015 by the registered users is measured at **__2259__ CPUYears**, thus performed in a single year period.
+
+
+In 2016, a new supercomputing site will be opened at the Belval campus, in the House of Knowledge's Computing Center (Maison du Savoir - Centre de Calcul, shown below). The new site will host the HPC equipment designed to support and advance the next generation science at the UL.
+
+\begin{figure}[h]
+  \centering \includegraphics[width=0.8\textwidth]{pics/2016/msa-cdc.jpg}
+\end{figure}
