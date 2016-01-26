@@ -8,6 +8,6 @@ In particular, we will cover:
 
 * the new collaborating services deployed: [GitLab](https://gitlab.uni.lu) and  [Owncloud](https://owncloud.uni.lu);
 * the two HPC workshops organized this year, with both advanced and introductory sessions for new UL scientific personnel and students;
-* the largest software upgrades performed in the 7 years existence of the UL HPC platform, thanks to the [RESIF](http://resif.readthedocs.org/en/latest/) framework.
-* the computational power increase (__+24,288 TFlops__) of the [Gaia](https://hpc.uni.lu/systems/gaia/) cluster with state of the art hardware;
+* the largest software upgrades performed in the 8 years existence of the UL HPC platform, thanks to the [RESIF](http://resif.readthedocs.org/en/latest/) framework.
+* the computational power increase (__+42,67 TFlops__) of the [Gaia](https://hpc.uni.lu/systems/gaia/) cluster with state of the art hardware;
 * the data storage capacity increase by __1.85__ PB; 

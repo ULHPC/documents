@@ -7,7 +7,7 @@
 \end{figure}
 
 As part of our commitment to constantly improve the services offered by the HPC platform,
-in 2015 we have performed the most comprehensive software upgrades in the 7 years existence of UL HPC.
+in 2015 we have performed the most comprehensive software upgrades in the 8 years existence of UL HPC.
 
 A staged upgrade of the OS on 280 computing systems from Debian 6 (Squeeze) to Debian 7 (Wheezy) has been done on both Chaos and Gaia clusters.
 55 management systems and 101 hosted Virtual Machines have also undergone OS upgrades, allowing for increased stability and uninterrupted security support of these critical systems.
