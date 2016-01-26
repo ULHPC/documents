@@ -1,13 +1,12 @@
 In the information and computational science age, most university research units and centers need to perform complex computations and process very large amounts of data.
-The [UL HPC](http://hpc.uni.lu) facility encompasses a High Performance Computing environment and high density Data storage. The bridge between computing and storage is a specificity of the UL service, with reasons both legal (certain data must not move out of the country) and performance related.
+The [UL HPC](http://hpc.uni.lu) facility encompasses a High Performance Computing environment and high density Data storage.
 
-Currently the provided HPC services are used by people from the 3 Faculties and the 2 Interdisciplinary Centers (ICs). Key research priorities of the [UL](http://www.uni.lu), such as computational sciences, systems biomedicine and security, reliability & trust require access to HPC facilities in order to function and advance.
+This second issue of the [UL HPC](http://hpc.uni.lu) newsletter is the occasion to review some statistics of the platform and its current capacities, while detailing the milestones completed in 2015, whether in terms of hardware or software developments.
+We will also come back to the two [HPC Schools](https://hpc.uni.lu/hpc-school/2015/06/index.html) organized last year, and offer testimonials of achievements performed on our infrastructure.
+Moreover, the planned developments for 2016 will be introduced. As you will see, many exciting challenges are waiting for us ahead (a new data center with cutting-edge cooling technologies, new official missions and mandates from the rectorate, business opportunities around the HPC services we deliver since 2007 etc.)
 
-In this issue, we would like to review the main achievements made since the beginning of the year 2015.
-In particular, we will cover:
+Finally, you probably noticed the recent interest around the HPC and Big Data thematic at the national and international level (through articles in [Wort.lu](http://www.wort.lu/de/business/le-luxembourg-aux-manettes-un-superordinateur-a-six-milliards-d-euros-56a5d8890da165c55dc51d19) around the  [ICPEI](https://ec.europa.eu/commission/2014-2019/oettinger/blog/luxembourg-launches-supercomputing-project_en) initiatves for instance). The UL remains deeply involved at this level and we will keep you updated in the coming months as regards the developments on these topics (including our incoming implication in [PRACE](http://www.prace-ri.eu/)).
 
-* the new collaborating services deployed: [GitLab](https://gitlab.uni.lu) and  [Owncloud](https://owncloud.uni.lu);
-* the two HPC workshops organized this year, with both advanced and introductory sessions for new UL scientific personnel and students;
-* the largest software upgrades performed in the 8 years existence of the UL HPC platform, thanks to the [RESIF](http://resif.readthedocs.org/en/latest/) framework.
-* the computational power increase (__+42,67 TFlops__) of the [Gaia](https://hpc.uni.lu/systems/gaia/) cluster with state of the art hardware;
-* the data storage capacity increase by __1.85__ PB; 
+Enjoy the reading and we welcome your comments and questions [by mail](mailto:hpc-sysadmins@uni.lu), [on Twitter](https://twitter.com/ULHPC) or [GitHub](https://github.com/ULHPC/documents/issues).
+
+
