@@ -1,6 +1,6 @@
 ## New Computing Systems
 
-\begin{table}[t]
+\begin{table}[h]
   \centering
   \setlength{\tabcolsep}{0.5em}
   \renewcommand{\arraystretch}{1.1}

@@ -1,6 +1,6 @@
 %=============================================================================
 % File:  ulhpc_newsletter-issue-02.tex --  Issue 2 of the UL HPC newsletter
-% Time-stamp: <Thu 2015-11-12 22:37 svarrette>
+% Time-stamp: <Wed 2016-01-27 16:40 svarrette>
 % Author(s): Sebastien Varrette <Sebastien.Varrette@uni.lu>
 % .
 %=============================================================================
@@ -16,6 +16,8 @@
 \def\DocSrcURL{https://github.com/ULHPC/documents/tree/master/newsletters/2015/issue-02/}
 \def\NewsletterURL{http://hpc.uni.lu/newsletters}
 \usepackage{ulhpc_newsletter1}
+\usepackage{eurosym}
+
 \bibliographystyle{plain}
 
 \begin{document}
@@ -29,24 +31,47 @@
 \end{welcome}
 
 
-% %=======================================================
-\section{\faCommentAlt\ The UL HPC Platform at a glance}
-% %=======================================================
+%=======================================================
+\section{\faCommentAlt\ UL HPC at a glance}
+%=======================================================
 \input{_ul_hpc.md}
 \clearpage
+
+%=======================================================
+\section{\faBarChart\ Platform Statistics}
+%=======================================================
+\input{_stats.md}
+%\clearpage
+
+
 % Similar to an executive summary of (incoming/passed)
 % milestones (half page)
 
 
 %=======================================================
 \section{\faBullhorn\ What's new?}
+%=======================================================
+
+
+%\clearpage
 \input{_os_upgrade.md}
 \input{_gpfs.md}
 \clearpage
-\input{_new_hardware.md}
 \input{_new_services.md}
+\input{_new_hardware.md}
+
 %\newpage
-% %=======================================================
+
+%=======================================================
+\section{\faTime\ What's next?}
+%=======================================================
+\input{_CDC.md}
+
+\clearpage
+
+
+
+
 
 % New features: services/improvements we've introduced, new software
 % available, etc.
