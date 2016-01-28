@@ -1,4 +1,4 @@
-## New and improved services
+## Complementary services
 
 \begin{wrapfigure}[11]{r}{0.45\textwidth}
   \vspace{-3ex}

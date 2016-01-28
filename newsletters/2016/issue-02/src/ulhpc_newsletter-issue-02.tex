@@ -1,6 +1,6 @@
 %=============================================================================
 % File:  ulhpc_newsletter-issue-02.tex --  Issue 2 of the UL HPC newsletter
-% Time-stamp: <Thu 2016-01-28 11:11 svarrette>
+% Time-stamp: <Thu 2016-01-28 15:49 svarrette>
 % Author(s): Sebastien Varrette <Sebastien.Varrette@uni.lu>
 % .
 %=============================================================================
@@ -13,7 +13,7 @@
 \def\ReleaseDate{January 2016} % Release
 \def\Number{2}                  % Issue Number
 \def\Editorsname{Dr. S. Varrette and Prof. P. Bouvry}
-\def\DocSrcURL{https://github.com/ULHPC/documents/tree/master/newsletters/2015/issue-02/}
+\def\DocSrcURL{https://github.com/ULHPC/documents/tree/master/newsletters/2016/issue-02/}
 \def\NewsletterURL{http://hpc.uni.lu/newsletters}
 \usepackage{ulhpc_newsletter1}
 \usepackage{eurosym}
@@ -26,7 +26,9 @@
 \newcommand{\RUES}{\href{http://wwwfr.uni.lu/research/fstc/research_unit_in_engineering_science_rues}{RUES}}
 \newcommand{\LCSB}{\href{http://lcsb.uni.lu}{LCSB}}
 \newcommand{\PHYMS}{\href{http://wwwen.uni.lu/research/fstc/physics_and_materials_science_research_unit}{PHYMS}}
-
+\newcommand{\SnT}{\href{http://snt.uni.lu}{SnT}}
+\newcommand{\LSF}{\href{http://lsf.uni.lu}{LSF}}
+\newcommand{\Haswell}{\href{https://en.wikipedia.org/wiki/Haswell_(microarchitecture)}{Haswell}}
 \begin{document}
 
 % Format: \leftinfo{<title>}{<body>}
@@ -51,34 +53,27 @@
 \input{_table_HPC_platform_around}
 
 
-%\clearpage
-
-
 % Similar to an executive summary of (incoming/passed)
 % milestones (half page)
 
-
-%=======================================================
-\section{\faBullhorn\ What's new?}
-%=======================================================
-\vspace*{-1em}
+%===========================================================
+\section{\faBullhorn\ What happened in 2015?}
+%===========================================================
+%\vspace*{-1em}
 \input{_structure.md}
 \input{_new_hardware.md}
-
-
-% %\clearpage
-% \input{_os_upgrade.md}
-% \input{_gpfs.md}
-% \clearpage
-% \input{_new_services.md}
+\clearpage
+\input{_gpfs.md}
+\input{_os_upgrade.md}
+\input{_new_services.md}
 
 
 % %\newpage
 
-% %=======================================================
-% \section{\faTime\ What's next?}
-% %=======================================================
-% \input{_CDC.md}
+%=======================================================
+\section{\faTime\ What's next?}
+%=======================================================
+\input{_CDC.md}
 
 % \clearpage
 
