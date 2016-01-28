@@ -2,7 +2,7 @@
 % File:  _table_HPC_platform_around.tex --
 % Author(s): Sebastien Varrette <Sebastien.Varrette@uni.lu>
 % Creation:  27 Jan 2016
-% Time-stamp: <Thu 2016-01-28 10:22 svarrette>
+% Time-stamp: <Thu 2016-01-28 10:47 svarrette>
 % 
 % Copyright (c) 2016 Sebastien Varrette <Sebastien.Varrette@uni.lu>
 % 
@@ -15,43 +15,45 @@
 
 % Reference: see https://docs.google.com/spreadsheets/d/1FhLLoFCNn2G3xuiITl8dYoB3b_X6HDDzxBv0iBDcmns
 
-\newcommand{\UL}{\href{https://hpc.uni.lu/}{UL HPC (Uni.lu)}}
+%== Luxembourg
+\newcommand{\UL}{\href{https://hpc.uni.lu/}{\textbf{UL HPC} (Uni.lu)}}
 \newcommand{\LIST}{\href{http://www.clustervision.com/content/case-studies/CRPGL}{LIST}}
+%== France
+\newcommand{\LORIA}{\href{https://www.grid5000.fr/mediawiki/index.php/Nancy:Hardware\#Clusters}{LORIA (G5K), Nancy}}
+\newcommand{\ROMEO}{\href{https://romeo.univ-reims.fr/pages/presentation_hardware}{ROMEO, Reims}}
+%== Belgium 
+\newcommand{\ULiege}{\href{http://www.ulg.ac.be/cms/c_3826073/en/nic4-detailed-explanation}{NIC4, University of Liège}}
+\newcommand{\UCL}   {\href{http://www.cism.ucl.ac.be/faq/}{Université Catholique de Louvain}}
+\newcommand{\UGent} {\href{https://www.vscentrum.be/infrastructure/hardware/hardware-ugent}{UGent / VSC, Gent}}
+%== Germany
+\newcommand{\bwGrid}      {\href{http://www.urz.uni-heidelberg.de/server/grid/hardware.en.html}{bwGrid, Heidelberg}}
+\newcommand{\bwForCluster}{\href{http://www.bwhpc-c5.de/wiki/index.php/Hardware_and_Architecture_(bwForCluster_Chemistry)}{bwForCluster, Ulm}}
+\newcommand{\bwHPC}       {\href{https://www.bwhpc-c5.de/wiki/index.php/Hardware_and_Architecture_(bwForCluster_MLS\%26WISO)}{bwHPC MLS\&WISO, Mannheim}}
 
+%_______________
 \begin{table}[h]
-  \centering\small
+  \centering\scriptsize
   \begin{tabular}{|l|l||l|l|l|l|l|}
-    \multicolumn{3}{c}{} & \multicolumn{1}{c}{(CPU)} & \multicolumn{1}{c}{TFlops} & \multicolumn{1}{c}{TB} \\
+    \multicolumn{3}{c}{} & \multicolumn{1}{c}{(CPU)} & \multicolumn{1}{c}{TFlops} & \multicolumn{1}{c}{TB (Shared)} \\
     \hline
     \rowcolor{lightgray}
     \textbf{Country} & \textbf{Institute} & \textbf{\#Nodes} & \textbf{\#Cores} & \textbf{R$_{peak}$} & \textbf{Storage} \\\hline
     \hline
     % ___________________________ <Name>        <nodes>   <cores>       <TFlops>      <TB>
-    \multirow{2}{*}{Luxembourg} & \UL          & 518     & 5316        & 87           & 5114              \\
-                         &        \LIST        &  58     &  800        & 6.21         & 144               \\\hline
+    \multirow{2}{*}{Luxembourg} & \UL  & \textbf{518} & \textbf{5316} & \textbf{87} & \textbf{5114} \\
+                         &       \LIST         &  58     &  800        & 6.21         & 144  \\\hline
     \hline
-
-
-    % % cf http://www-hpc.cea.fr/en/complexe/tgcc-curie.htm
-    % \multirow{3}{*}{ France}    & LORIA, Nancy      & 3724        & 29.79         & 82               &  5.05 \\
-    % &   ROMEO (GPU*), Reims    & 5720        & 254,9 TFlops* & 245              &  2  \\\hline
-    % \hline
-    % %                           % cf p81  http://www.rzg.mpg.de/projects/supercomputing/HPCinMPG.pdf
-    % \multirow{3}{*}{Germany}    &  MPI, RZG         & 2556        & 14.1         & n/a               & 5  \\
-    %                      % cf http://www.urz.uni-heidelberg.de/server/grid/hardware.en.html
-    % &              URZ, {\tiny (bwGrid)},Heidelberg & 1140        & 10.125       & 32                & 9 \\
-    % \hline\hline
-    % % cf http://www.ugent.be/hpc/en/infrastructure
-    % \multirow{2}{*}{Belgium} & UGent, VCS           & 4320        & 54.541       & 82                & n/a \\
-    % % cf http://www.ceci-hpc.be/clusters.html - OLD: http://www.uclouvain.be/73258.html
-    % &                          CECI, UMons/UCL      & 2576        & 25.108       & 156               & > 4  \\
-    % \hline\hline
-    % \multirow{2}{*}{UK}  & Darwin, Cambridge Univ   & 9728        & 202.3        & 20                & n/a \\
-    % % Cf http://www.ucl.ac.uk/isd/staff/research_services/research-computing/services/legion-upgrade/overview
-    % &                     Legion, UCLondon          & 5632        & 45.056       & 192               & 6  \\
-    % \hline\hline
-    % Spain & MareNostrum, BCS & 33664 & 700.2  & 1900 & 14  \\
+    \multirow{2}{*}{France} &    \LORIA        & 320     & 2520        & 26.98        & 82   \\   
+                         &       \ROMEO        & 174     & 3136        & 49.26        & 245  \\\hline
     \hline
+    \multirow{3}{*}{Belgium} &   \ULiege       & 128     & 2048        & 32.00        & 20   \\
+                         &       \UCL          & 112     & 1344        & 13.28        & 120  \\
+                         &       \UGent        & 440     & 8768        & 275.30       & 1122 \\\hline
+    \hline
+    \multirow{3}{*}{Germany} &   \bwGrid       & 140     & 1120        & 12.38        & 32   \\
+                         &       \bwForCluster & 444     & 7104        & 266.40       & 400  \\
+                         &       \bwHPC        & 604     & 9728        & 371.60       & 420  \\
+    \hline  
   \end{tabular}
 \end{table}
 
