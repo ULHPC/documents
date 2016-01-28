@@ -1,7 +1,7 @@
 \begin{figure}[h]
     \vspace{-4ex}
     \centering \includegraphics[width=0.95\textwidth]{pics/2016/bt1-ulhpc.jpg}
-    \caption*{ULHPC datacenter in \href{https://hpc.uni.lu/systems/server_rooms.html\#belval-campus}{Belval Biotech 1}, operating at full capacity.}
+    \caption*{\small One of the UL HPC datacenter (in \href{https://hpc.uni.lu/systems/server_rooms.html\#belval-campus}{Belval Biotech 1}), operating at full capacity.}
 \end{figure}
 
 The [UL HPC](http://hpc.uni.lu) platform has continuously evolved since the initial computing servers ordered in 2006.

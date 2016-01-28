@@ -1,6 +1,6 @@
-## New Computing Systems
+## New Computing HW
 
-\begin{table}[h]
+\begin{table}[b]
   \centering
   \setlength{\tabcolsep}{0.5em}
   \renewcommand{\arraystretch}{1.1}
@@ -15,35 +15,39 @@
     Big Data analytics    & HP Moonshot 1500/m710      & 90   & 10.39 TFlops / 2.8 TB RAM     \\
     Accelerator systems   & Dell C4130 (Tesla K80 GPU) & 4 (+16) & 46.56 + 3.84 TFlops (GPU+CPU) \\
     Accelerator upgrade   & NVIDIA Tesla K40m GPU     & 10       & 11.7 TFlops (GPU)          \\\hline
-    \multicolumn{2}{c}{\textbf{Total computing additions}} & \multicolumn{1}{c}{\textbf{120 (+26 GPU)}} & \multicolumn{1}{c}{\textbf{100.93 TFlops}} \\\hline
+    \multicolumn{2}{r}{\textbf{Total computing additions:}} & \multicolumn{1}{c}{\textbf{120 (+26 GPU)}} & \multicolumn{1}{c}{\textbf{100.93 TFlops}} \\\hline
   \end{tabular}
 \end{table}
 
-2015 has seen several increases of the computing capacity of the UL HPC platform with several additions to the Gaia cluster which more than doubled its computing power.
+2015 has seen several increases of the computing capacity of the [UL HPC](http://hpc.uni.lu) platform with several additions to the [Gaia](https://hpc.uni.lu/systems/gaia/) cluster which __more than doubled its computing power__.
+
+\clearpage
 
 \begin{figure}[h]
     \begin{subfigure}[b]{0.5\textwidth}
         \includegraphics[width=\textwidth]{pics/2016/delta.jpg}
-        \caption*{Large memory Delta system (pictured above) and SGI UV 2000 (right) allowing in-memory processing of huge datasets.}
+        \caption*{Large memory (3 and 4 TB RAM) Delta system (above, dedicated to the \RUES\ research unit) and SGI UV 2000 (right, dedicated to \LCSB) allowing in-memory processing of huge datasets.}
         \vspace{1.5ex}
     \end{subfigure}
     ~
-    \begin{subfigure}[b]{0.5\textwidth}
-        \includegraphics[width=\textwidth]{pics/2016/sgi.jpg}
+    \begin{subfigure}[b]{0.49\textwidth}
+    \includegraphics[width=\textwidth]{pics/2016/sgi.jpg}
+	\vspace{0.6ex}
     \end{subfigure}
 \end{figure}
 
-Two big SMP systems from Delta Computer and SGI, dedicated to the [RUES](http://wwwfr.uni.lu/research/fstc/research_unit_in_engineering_science_rues) research unit for Computational Mechanics workloads, and respectively to [LCSB](http://lcsb.uni.lu) interdisciplinary centre, for Bioinformatics research.
-The large amount of memory available on these systems (3 and 4 TB RAM) enable in-memory processing of huge datasets, making possible amazing analyses and simulations.
+<!-- Two big SMP systems from [Delta Computer](https://www.deltacomputer.com/) and [SGI](http://www.sgi.com/), dedicated to the [RUES](http://wwwfr.uni.lu/research/fstc/research_unit_in_engineering_science_rues) research unit for Computational Mechanics workloads, and respectively to [LCSB](http://lcsb.uni.lu) interdisciplinary centre, for Bioinformatics research. -->
+<!-- The large amount of memory available on these systems (3 and 4 TB RAM) enable in-memory processing of huge datasets, making possible amazing analyses and simulations. -->
 
-&nbsp;
-
+\vspace*{-1em}
 \begin{wrapfigure}[11]{l}{0.45\textwidth}
   \vspace{-3ex}
   \includegraphics[width=0.45\textwidth]{pics/2016/fx2.jpg}
 \end{wrapfigure}
 
-Three ultra-dense Dell FX2s enclosures (pictured left) with state-of-the-art HPC computing systems featuring Haswell processors, which double the maximum amount of floating-point operations possible, highly improve the time to solution of tightly coupled calculations of the [PHYMS](http://wwwen.uni.lu/research/fstc/physics_and_materials_science_research_unit) research unit. Scalable software such as CP2K, ABINIT, QuantumESPRESSO, YAMBO, VASP and many others are able to use the performant distributed resources and speed up the computing time.
+Three ultra-dense Dell FX2s enclosures (left) with state-of-the-art HPC computing systems featuring [Haswell](https://en.wikipedia.org/wiki/Haswell_(microarchitecture)) processors, <!-- which double the maximum amount of floating-point operations possible, -->
+highly improve the time to solution of tightly coupled calculations of the \PHYMS\ research unit.
+Scalable software such as CP2K, ABINIT, QuantumESPRESSO, YAMBO, VASP and many others are able to use the performant distributed resources and speed up the computing time.
   
 &nbsp;
 
