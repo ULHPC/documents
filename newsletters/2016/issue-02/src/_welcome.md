@@ -7,6 +7,4 @@ Moreover, the planned developments for 2016 will be introduced. Many exciting ch
 
 Finally, you have probably noticed the recent interest around the HPC and Big Data thematic at the national and international level (through articles in [Wort.lu](http://www.wort.lu/de/business/le-luxembourg-aux-manettes-un-superordinateur-a-six-milliards-d-euros-56a5d8890da165c55dc51d19) around the  [ICPEI](https://ec.europa.eu/commission/2014-2019/oettinger/blog/luxembourg-launches-supercomputing-project_en) initiatives for instance). The UL remains deeply involved at this level and we will keep you updated in the coming months as regards the developments on these topics, including our incoming implication in [PRACE](http://www.prace-ri.eu/).
 
-Enjoy the reading and we welcome your comments and questions [by mail](mailto:hpc-sysadmins@uni.lu), [on Twitter](https://twitter.com/ULHPC) or [GitHub](https://github.com/ULHPC/documents/issues).
-
-
+Enjoy the reading of this issue, we welcome your comments and questions [by mail](mailto:hpc-sysadmins@uni.lu), [on Twitter](https://twitter.com/ULHPC) or [GitHub](https://github.com/ULHPC/documents/issues).
