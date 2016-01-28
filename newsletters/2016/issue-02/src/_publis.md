@@ -48,31 +48,34 @@ The Inverse Folding Problem (IFP) of finding sequences that fold into a defined 
 
 A multi-level UAV swarm simulator is under development at the [SnT](http://snt.uni.lu), with the objective of tackling three real application scenarios: surveillance, acquisition and tracking. The cooperation between levels is a new approach which allows to compensate weaknesses of a single level of swarms by taking advantage of the abilities of each level. The core of this simulator is based on Game Theoretical aspects and  co-evolutionary optimization algorithms.
 
+{ \footnotesize
+  \begin{thebibliography}{1}
+    \bibitem{WGBB_CLOUDCOM15}
+    {\tiny
+    S.~Wagle, M.~Guzek, P.~Bouvry, R.~Bisdorff.
+      \newblock {An Evaluation Model for Selecting Cloud Services from Commercially Available Cloud Providers}.
+      \newblock In {\em Proc. of the 7th IEEE International Conference on Cloud Computing Technology and Science (CloudCom 2015)}, Vancouver, Canada, December 2015.
+    }
 
-\begin{thebibliography}{1}
-\bibitem{WGBB_CLOUDCOM15}
-S.~Wagle, M.~Guzek, P.~Bouvry, R.~Bisdorff.
-\newblock {An Evaluation Model for Selecting Cloud Services from Commercially Available Cloud Providers}.
-\newblock In {\em Proc. of the 7th IEEE International Conference on Cloud Computing Technology and Science (CloudCom 2015)}, Vancouver, Canada, December 2015.
+    \bibitem{bpeters}
+    {\tiny
+    M. Michael, F. Vogel, B.~Peters.
+    \newblock {DEM-FEM coupling simulations of the interactions between a tire tread and granular terrain}
+    \newblock {\em J. Comput. Methods Appl. Mech. Engrg. 2015.}
+    }
 
-\bibitem{RB_Digraph3}
-R.~Bisdorff.
-\newblock {Tutorials and documentation of the Digraph3 resources - \url{http://leopold-loewenheim.uni.lu/docDigraph3/tutorial.html}}
-\newblock {2014 FSTC/ILIAS Decision Systems Group, University of Luxembourg}
+    \bibitem{jberryman}
+    {\tiny
+    J.~Berryman, T.~Schilling.
+      \newblock {A GPS Navigator for the Free Energy Landscape, Used to Find the Chirality-Switching Salt Concentration of DNA}
+      \newblock {\em J. Chem. Theory Comput. 2013.}
+    }
 
-\bibitem{bpeters}
-M. Michael, F. Vogel, B.~Peters.
-\newblock {DEM-FEM coupling simulations of the interactions between a tire tread and granular terrain}
-\newblock {\em J. Comput. Methods Appl. Mech. Engrg. 2015.}
-
-\bibitem{jberryman}
-J.~Berryman, T.~Schilling.
-\newblock {A GPS Navigator for the Free Energy Landscape, Used to Find the Chirality-Switching Salt Concentration of DNA}
-\newblock {\em J. Chem. Theory Comput. 2013.}
-
-\bibitem{snielsen}
-S.~Nielsen, G.~Danoy, W.~Jurkowski, J.~L.~J.~Laredo, R.~Schneider, E.-G.~Talbi, P.~ Bouvry.
-\newblock {A Novel Multi-objectivisation Approach for Optimising the Protein Inverse Folding Problem}
-\newblock In {\em Proc. of the 18th European Conference on Applications of Evolutionary Computation (EvoApplications 2015)}, Springer I.P., 2015.
-
-\end{thebibliography}
+    \bibitem{snielsen}
+    {\tiny
+    S.~Nielsen, G.~Danoy, W.~Jurkowski, J.~L.~J.~Laredo, R.~Schneider, E.-G.~Talbi, P.~ Bouvry.
+      \newblock {A Novel Multi-objectivisation Approach for Optimising the Protein Inverse Folding Problem}
+      \newblock In {\em Proc. of the 18th European Conference on Applications of Evolutionary Computation (EvoApplications 2015)}, Springer I.P., 2015.
+    }
+  \end{thebibliography}
+}
