@@ -1,7 +1,7 @@
 ## 2015 HPC Schools
 
 \begin{wrapfigure}[5]{r}{0.15\textwidth}
-  \vspace{-3ex}
+  \vspace{-5ex}
   \includegraphics[width=0.15\textwidth]{logos/logo_hpc-shool2015.png}
 \end{wrapfigure}
 
@@ -19,13 +19,11 @@ foundation and advanced topics:
 * HPC challenges, especially as regards data and storage management;
 * HPC workflow management for sequential and parallel tasks;
 * HPC programming and usage of the main [software and tools](http://hpc.uni.lu/users/software) available on the platform
-  (Matlab, R, physics, chemistry, bioinformatics tools, MPI implementations) and 
+  (Matlab, R, physics, chemistry, bioinformatics tools, MPI implementations) and
   services (Galaxy) using the platform;
-* scientific visualization;
-* software environment management;
-* virtualization on the clusters linked to the Grid'5000 platform.
+* scientific visualization and software environment management.
 
 48 UL staff and students registered to this summer school, with the participants
-entitled to 1 ECTS credit offered by the 
+entitled to 1 ECTS credit offered by the
 [Doctoral School of Computer Science and Computer Engineering](http://wwwen.uni.lu/formations/fstc/doctoral_school_of_computer_science_and_computer_engineering)
 upon the successful completion of the sessions.
