@@ -66,6 +66,7 @@ In the context of the [GDRI-Algodec](http://www.algodec.org) _Algorithmic Decisi
 This research is motivated by the development of a visualization tool - a *heat map* - for performance tables showing the decision alternatives linearly ordered form the best to the worst, and the individual performances colored by quantiles equivalence classes.
 By using Python3.5 multiprocessing resources and the [Digraph3](http://leopold-loewenheim.uni.lu/docDigraph3/tutorial.html) multicriteria software library, it is possible, on the ULHPC [gaia-80](https://hpc.uni.lu/systems/gaia/#computing-capacity) machine using 120 single threaded cores and 1.5 TB of memory, to linearly rank (without ties) in less than an hour a huge set of 250000 alternatives evaluated on 21 performance criteria by balancing economic, ecological and societal decision objectives. Data input is, on the one side, a 250000x21 performance tableau of 825 MB, and on the other side, a theoretical outranking space consisting of 62 000 000 000 (billions) of pairwise comparisons. A "small" set of 1000 decision alternatives, in a similar setting, may thus be ranked typically in less than 5 seconds.
 
+&nbsp;
 
 \begin{minipage}[t]{\linewidth}
 \renewcommand{\section}[2]{}  % can't remove the header otherwise

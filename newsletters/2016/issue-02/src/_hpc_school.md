@@ -1,6 +1,6 @@
 ## 2015 HPC Schools
 
-\begin{wrapfigure}[5]{r}{0.15\textwidth}
+\begin{wrapfigure}[3]{r}{0.15\textwidth}
   \vspace{-5ex}
   \includegraphics[width=0.15\textwidth]{logos/logo_hpc-shool2015.png}
 \end{wrapfigure}
