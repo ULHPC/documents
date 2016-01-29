@@ -1,4 +1,4 @@
-As part of the UL HPC quality plan, we are proud to announce the release on a quarterly basis of a UL HPC newsletter. 
+As part of the UL HPC quality plan, we are proud to announce the release of a UL HPC newsletter. 
 The objective is to keep you informed of the latest advances and news as regards the [UL HPC](http://hpc.uni.lu) platform.
 
 So you hold the very first issue where we will: 

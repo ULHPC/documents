@@ -1,0 +1,42 @@
+% =============================================================================
+% File:  _table_new_computing.tex --
+% Author(s): Sebastien Varrette <Sebastien.Varrette@uni.lu>
+% Time-stamp: <Thu 2016-01-28 15:34 svarrette>
+% 
+% Copyright (c) 2016 Sebastien Varrette <Sebastien.Varrette@uni.lu>
+% 
+% $Id$
+% 
+% More information on LaTeX: http://www.latex-project.org/
+% LaTeX symbol list:
+% http://www.ctan.org/tex-archive/info/symbols/comprehensive/symbols-a4.pdf
+% =============================================================================
+
+\begin{table}[b]
+  \centering\scriptsize
+  \begin{tabular}{|r||c|c|c|l|l|}
+    \multicolumn{4}{c}{}  & \multicolumn{1}{c}{TFlops} & \multicolumn{1}{c}{GB}\\\hline
+    \rowcolor{lightgray}
+    \textbf{System Type}  & \textbf{Vendor} & \textbf{Model} & \textbf{\#Nodes} & \textbf{R$_{peak}$} & \textbf{RAM} \\\hline
+    \hline
+    Large memory system   & Delta           & D88x-M8-BI             & 1        & 2.4   &  3072 \\
+    Large memory system   & SGI             & UV-2000                & 1        & 3     &  4096 \\
+    General purpose HPC   & Dell            & FX2s/FC430             & 24       & 23.04 &  3072 \\
+    Big Data analytics    & HP              & Moonshot 1500/m710     & 90       & 10.39 &  2880 \\
+    Accelerator systems   & Dell            &  C4130 (Tesla K80 GPU) & 4 (+16)  & 3.84 (+46.56) & n/a \\
+    Accelerator upgrade   & NVIDIA          & Tesla K40m GPU         & (+10)    & (+ 11.7)      & n/a  \\
+    \hline
+    \multicolumn{4}{r}{\textbf{Total computing additions: 120 (+26 GPUs)}} & \multicolumn{1}{c}{\textbf{100.93}} \\%\hline
+  \end{tabular}
+\end{table}
+
+
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+% eof
+% 
+% Local Variables:
+% mode: latex
+% mode: flyspell
+% mode: visual-line
+% TeX-master: "ulhpc_newsletter-issue-02"
+% End:
