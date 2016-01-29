@@ -7,7 +7,7 @@ in 2015 we have performed the most comprehensive software upgrades in the 8 year
   \vspace{-2ex}
   \includegraphics[width=0.05\textwidth]{logos/logo_debian.png}
 \end{wrapfigure}
-\noindent 
+\noindent
 A staged upgrade of the OS on 280 computing systems from [Debian 6](https://www.debian.org/releases/squeeze/) to [Debian 7](https://www.debian.org/releases/wheezy/) has been done on both Chaos and Gaia clusters.
 55 management systems and 101 hosted Virtual Machines have also undergone OS upgrades, allowing for increased stability and uninterrupted security support of these critical systems.
 
@@ -32,8 +32,8 @@ The [software environment](http://hpc.uni.lu/users/software/) available through 
   \includegraphics[width=0.45\textwidth]{pics/2016/xcs-paraview-matlab.png}
 \end{wrapfigure}
 
-\noindent 
-Finally, the [XCS](https://xcs.uni.lux) web portal for visualisation (see left, running remote instances of [ParaView](http://paraview.org) and [Matlab](http://www.mathworks.com/products/matlab) underwent an upgrade to the latest version available, with improved usability and security. Access to the portal, which uses the Gaia cluster's GPGPUs for 3D acceleration, is available to all UL HPC users upon request.
+\noindent
+Finally, the [XCS](https://xcs.uni.lux) web portal for visualisation (see left, running remote instances of [ParaView](http://paraview.org) and [Matlab](http://www.mathworks.com/products/matlab)) underwent an upgrade to the latest version available, with improved usability and security. Access to the portal, which uses the Gaia cluster's GPGPUs for 3D acceleration, is available to all UL HPC users upon request.
 
 <!--
 \begin{figure}[h]
