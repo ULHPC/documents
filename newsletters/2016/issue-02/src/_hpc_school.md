@@ -1,4 +1,4 @@
-Two HPC schools have been organized in 2015 by the HPC team, comprising
+Two [HPC schools](https://hpc.uni.lu/hpc-school) have been organized in 2015 by the HPC team, comprising
 tutorials and practical sessions meant to promote best practices in the
 usage of the platform.
 In March, 35 UL staff and students registered to the newcomer sessions meant to cover
@@ -11,7 +11,7 @@ foundation and advanced topics:
 * access to and interaction with the UL HPC infrastructures;
 * HPC challenges, especially as regards data and storage management;
 * HPC workflow management for sequential and parallel tasks;
-* HPC programming and usage of the main software and tools available on the platform
+* HPC programming and usage of the main [software and tools](http://hpc.uni.lu/users/software) available on the platform
   (Matlab, R, physics, chemistry, bioinformatics tools, MPI implementations) and 
   services (Galaxy) using the platform;
 * scientific visualization;
