@@ -1,5 +1,10 @@
 ## 2015 HPC Schools
 
+\begin{wrapfigure}[5]{r}{0.15\textwidth}
+  \vspace{-3ex}
+  \includegraphics[width=0.15\textwidth]{logos/logo_hpc-shool2015.png}
+\end{wrapfigure}
+
 Two [HPC schools](https://hpc.uni.lu/hpc-school) have been organized in 2015 by the [HPC team](https://hpc.uni.lu/about/team.html), comprising
 tutorials and practical sessions meant to promote best practices in the
 usage of the platform.
