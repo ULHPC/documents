@@ -16,19 +16,19 @@ The __performance__ obtained on the new storage setup __increased by a factor of
 
 &nbsp;
 
-&nbsp;
-
 <!--
 Also, the new [EMC Isilon](http://www.emc.com/isilon) system, commonly funded from SIU, LCSB and HPC budget lines, was put in production.
 On total, the storage capacities  currently available on the [Gaia](https://hpc.uni.lu/systems/gaia/) cluster are available in the table below.
 -->
 
-\input{_table_new_storage}
-
 \begin{wrapfigure}[14]{l}{0.5\textwidth}
-  % \vspace{-1ex}
+  \vspace{-2ex}
   \includegraphics[width=0.5\textwidth]{pics/2016/isilon.jpg}
 \end{wrapfigure}
 
 The new [Dell/EMC Isilon](http://www.emc.com/isilon) system (shown left), commonly funded from SIU, LCSB and HPC budget lines, also came online last spring and now provides a large __1850 TB__ shared storage space for all members of the UL. The [OneFS](http://www.emc.com/en-us/storage/isilon/onefs-operating-system.htm) based system integrates 16 storage nodes in two performance tiers and is designed for scalability, resiliency and operational flexibility.
 Projects requiring BigData storage, currently available on GPFS with redundant copies on the Isilon, can migrate between the two systems based on performance and access requirements.
+
+All in all, the current storage capacities available on the sole [Gaia](https://hpc.uni.lu/systems/gaia/) cluster are summarized in the table below.
+
+\input{_table_new_storage}
