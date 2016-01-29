@@ -2,7 +2,7 @@
 % File:  ulhpc_newsletter1.sty --  LaTeX style configuration for the document
 % Author(s): Sebastien Varrette <Sebastien.Varrette@uni.lu>
 % Creation:  16 Feb 2015
-% Time-stamp: <Mar 2015-03-31 16:40 svarrette>
+% Time-stamp: <Fri 2016-01-29 19:15 svarrette>
 % 
 % Copyright (c) 2015 Sebastien Varrette <Sebastien.Varrette@uni.lu> (see LICENCE)
 % 
@@ -379,8 +379,6 @@
     % \node (page) [yshift=0.25cm,font=\ttfamily\bfseries\color{ulblue}, anchor=east] at (current page.south east) {
     %   \thepage~~
     % };
-
-
   \end{tikzpicture}%
 }
 
@@ -392,6 +390,10 @@
 \AtBeginShipout{\AtBeginShipoutAddToBox{\Header\Left\Footer}}
 %\AtBeginShipoutFirst{\AtBeginShipoutAddToBox{\Header\Left\Footer}}
 
+
+%% FIXME for Linux users of pandoc
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 
 % Some useful definitions
 \newcommand\ulhpc{\href{http://hpc.uni.lu}{UL HPC}\xspace}

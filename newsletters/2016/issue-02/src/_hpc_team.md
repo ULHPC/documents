@@ -21,13 +21,13 @@ of distributed or parallel executions.
     \vspace{-3ex}
     \includegraphics[width=0.2\textwidth]{{hyacinthe.cartiaux}.jpg}
   \end{wrapfigure}
-  \textbf{Hyacinthe Cartiaux} joined the HPC team in 2011 to set up the Grid'5000 Luxembourg site and has since been involved with all the HPC infrastructure of the UL, and other external services such as the Gforge. His interests cover IT automation and devops techniques, HPC & Grid Computing.
+  \textbf{Hyacinthe Cartiaux} joined the [HPC team](https://hpc.uni.lu/about/team.html) in 2011 to set up the Grid'5000 Luxembourg site and has since been involved with all the HPC infrastructure of the UL, and other external services such as the Gforge. His interests cover IT automation and devops techniques, HPC & Grid Computing.
   \vspace{2ex}
   \begin{wrapfigure}[5]{r}{0.2\textwidth}
     \vspace{-3ex}
     \includegraphics[width=0.2\textwidth]{{valentin.plugaru}.jpg}
   \end{wrapfigure}
-   \textbf{Valentin Plugaru} is an HPC engineer part of the HPC team since 2014. Beginning with 2012 he has collaborated with Prof. Bouvry's team on research in Energy Efficiency and Performance Evaluation of HPC/Cloud environments. His general interests span R&D in High Performance Computing, Grid and Cloud Computing.
+   \textbf{Valentin Plugaru} is an HPC engineer part of the [HPC team](https://hpc.uni.lu/about/team.html) since 2014. Beginning with 2012 he has collaborated with Prof. Bouvry's team on research in Energy Efficiency and Performance Evaluation of HPC/Cloud environments. His general interests span R&D in High Performance Computing, Grid and Cloud Computing.
 
 ## LCSB
 
@@ -35,4 +35,4 @@ of distributed or parallel executions.
     \vspace{-3ex}
     \includegraphics[width=0.2\textwidth]{{sarah.diehl}.jpg}
   \end{wrapfigure}
-  \textbf{Sarah Diehl} is a bioinformatician and joined the LCSB BioCore in 2015 as an HPC systems administrator. Her goal is to bridge the gap between researchers and IT specialists. She is experienced in data management, next-generation sequencing analysis and development of analysis pipelines.
+  \textbf{Sarah Diehl} is a bioinformatician and joined the [LCSB](http://lcsb.uni.lu) BioCore in 2015 as an HPC systems administrator. Her goal is to bridge the gap between researchers and IT specialists. She is experienced in data management, next-generation sequencing analysis and development of analysis pipelines.
