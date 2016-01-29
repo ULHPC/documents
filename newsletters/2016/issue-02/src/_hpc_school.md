@@ -1,10 +1,12 @@
-Two [HPC schools](https://hpc.uni.lu/hpc-school) have been organized in 2015 by the HPC team, comprising
+## 2015 HPC Schools
+
+Two [HPC schools](https://hpc.uni.lu/hpc-school) have been organized in 2015 by the [HPC team](https://hpc.uni.lu/about/team.html), comprising
 tutorials and practical sessions meant to promote best practices in the
 usage of the platform.
-In March, 35 UL staff and students registered to the newcomer sessions meant to cover
+In __March__, 35 UL staff and students registered to the newcomer sessions meant to cover
 foundation topics (UL HPC overview, access and basic usage).
 
-In June, the yearly two-day workshop has been organized together with leading computational scientists
+In __June__, the yearly two-day workshop has been organized together with leading computational scientists
 of the UL and HPC technologists. The workshop offered a broad set of sessions focusing on both
 foundation and advanced topics:
 
