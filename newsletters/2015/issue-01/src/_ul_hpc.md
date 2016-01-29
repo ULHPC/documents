@@ -35,8 +35,8 @@
 The [UL HPC](http://hpc.uni.lu) platform has continuously evolved since the initial computing servers ordered in 2006.
 The HPC equipment is based on both classical Commercial off-the shelf (COTS) and specialized products.
 \begin{tcolorbox}
-  The \ulhpc features as of march 2015, \textbf{49.9 TFlops} for computations
-  (over 4316 computing cores) and \textbf{3 PetaBytes} for storage (incl.
+  The \ulhpc features as of march 2015, \underline{\textbf{49.9 TFlops}} for computations
+  (over 4316 computing cores) and \underline{\textbf{3 PetaBytes}} for storage (incl.
   1.7 PB for backups).
 \end{tcolorbox}
 
