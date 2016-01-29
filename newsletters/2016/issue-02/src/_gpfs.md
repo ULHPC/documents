@@ -28,7 +28,6 @@ On total, the storage capacities  currently available on the [Gaia](https://hpc.
 
 The new [Dell/EMC Isilon](http://www.emc.com/isilon) system (shown left), commonly funded from SIU, LCSB and HPC budget lines, also came online last spring and now provides a large __1850 TB__ shared storage space for all members of the UL. The [OneFS](http://www.emc.com/en-us/storage/isilon/onefs-operating-system.htm) based system integrates 16 storage nodes in two performance tiers and is designed for scalability, resiliency and operational flexibility.
 Projects requiring BigData storage, currently available on GPFS with redundant copies on the Isilon, can migrate between the two systems based on performance and access requirements.
-
 All in all, the current storage capacities available on the sole [Gaia](https://hpc.uni.lu/systems/gaia/) cluster are summarized in the table below.
 
 \input{_table_new_storage}
