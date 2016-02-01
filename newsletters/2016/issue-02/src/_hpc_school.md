@@ -27,5 +27,5 @@ foundation and advanced topics:
 
 48 UL staff and students registered to this summer school, with the participants
 entitled to 1 ECTS credit offered by the
-[Doctoral School of Computer Science and Computer Engineering](http://wwwen.uni.lu/formations/fstc/doctoral_school_of_computer_science_and_computer_engineering)
+[Doctoral School of Computer Science and Computer Engineering (DS-CSCE)](http://wwwen.uni.lu/formations/fstc/doctoral_school_of_computer_science_and_computer_engineering)
 upon the successful completion of the sessions.
