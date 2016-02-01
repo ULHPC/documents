@@ -2,7 +2,7 @@
 % File:  ulhpc_newsletter1.sty --  LaTeX style configuration for the document
 % Author(s): Sebastien Varrette <Sebastien.Varrette@uni.lu>
 % Creation:  16 Feb 2015
-% Time-stamp: <Mon 2016-02-01 15:28 svarrette>
+% Time-stamp: <Mon 2016-02-01 15:46 svarrette>
 % 
 % Copyright (c) 2015 Sebastien Varrette <Sebastien.Varrette@uni.lu> (see LICENCE)
 % 
@@ -281,7 +281,9 @@
                                & $\hookrightarrow$ S. Diehl \hfill (LCSB)\\
         \textbf{Date:}         & \isoday \\ %\ReleaseDate  \\
         \textbf{Version:}      & v\docversion        \\
-        \textbf{Contact:}     & \texttt{\href{mailto:hpc-sysadmins@uni.lu}{hpc-sysadmins@uni.lu}}\\
+        \faTwitter             & \url{http://twitter.com/\Twitter} \\
+        \faGithubSign          &  \url{http://github.com/\Github}   \\
+        \faEnvelope            & \texttt{\href{mailto:hpc-sysadmins@uni.lu}{hpc-sysadmins@uni.lu}}\\
         %Compiled time:         & \isodayandtime \\
         %\hline
         \end{tabular}
@@ -303,7 +305,7 @@
   \begin{tikzpicture}[remember picture,overlay]
     \coordinate (editors) at ($(current page.north west)+(2.5,-4.75)$); % See above
 
-    \node (left_title)[font=\sffamily\color{ulblue},fill=lightgray,rounded rectangle west arc=none,anchor=north, inner sep=1em,text width=4.4cm] at ($(editors)+(0.2,-2)$) {
+    \node (left_title)[font=\sffamily\color{ulblue},fill=lightgray,rounded rectangle west arc=none,anchor=north, inner sep=1em,text width=4.4cm] at ($(editors)+(0.2,-2.75)$) {
       \Large \textbf{#1}
       %\fontsize{15}{50}\selectfont \textbf{#1}
     };
