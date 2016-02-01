@@ -33,13 +33,13 @@ Access to GForge is through dedicated accounts, (requested by mail: [`admin@gfor
 
 &nbsp;
 
-\begin{wrapfigure}[5]{r}{0.25\textwidth}
+\begin{wrapfigure}[5]{r}{0.28\textwidth}
   \vspace{-3ex}
-  \includegraphics[width=0.25\textwidth]{images/owncloud.jpg}
+  \includegraphics[width=0.28\textwidth]{images/owncloud.jpg}
 \end{wrapfigure}
 
 \noindent
-For easy, __Dropbox-like__, file sharing (and since we were not convinced by the DropIT system) we have deployed an [OwnCloud](https://owncloud.uni.lu) instance (right). <!--, which provides online access to data through a clean web interface, user file encryption and group content sharing among a multitude of other features. -->
+For easy, __Dropbox-like__, file sharing (and also since we were not convinced by the DropIT system) we have deployed an [OwnCloud.uni.lu](https://owncloud.uni.lu) instance (right). <!--, which provides online access to data through a clean web interface, user file encryption and group content sharing among a multitude of other features. -->
 <!-- From its many capabilities we note: the possibility to connect to external storage (including Dropbox, Google
 Drive, Amazon S3 and others), encrypt user files, group content sharing, integrated real-time collaborative
 document editor, file viewer (for OpenDocument formats, PDF, photos and videos), address book, calendar and
@@ -56,4 +56,4 @@ linking it to the future LCSB dedicated instances. -->
 \end{wrapfigure}
 
 \noindent
-The [Galaxy](http://galaxy-server.uni.lu) portal was also updated (left). This web-based platform provides a simplified interface to many popular __bioinformatics tools and generation of reproducible workflows__. Many more tools are now available, especially for the analysis of ChIP and RNA sequencing and variant data. <!--For a quick start we provide example workflows for these analyses.-->
+The [Galaxy](http://galaxy-server.uni.lu) portal (\url{http://galaxy-server.uni.lu}) was also updated (left). This web-based platform provides a simplified interface to many popular __bioinformatics tools and generation of reproducible workflows__. Many more tools are now available, especially for the analysis of ChIP and RNA sequencing and variant data. <!--For a quick start we provide example workflows for these analyses.-->

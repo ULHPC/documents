@@ -52,10 +52,13 @@ The compilation of this newsletter relies on [GNU Make](http://www.gnu.org/softw
 To compile this document, simply run:
 
     $> cd src/
-	$> make
+    $> make
 
 This shall generate the PDF version of the newsletter `src/ulhpc_newsletter-issue-02.pdf`.
-A reference [PDF](ulhpc_newsletter-issue-02.pdf) is committed within the repository. 
+A reference [PDF](ulhpc_newsletter-issue-02.pdf) is committed within the repository.
+If you wish to release a new version, just run:
+
+    $> make release
 
 ## Licence
 

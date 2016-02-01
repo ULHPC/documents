@@ -30,7 +30,7 @@ Scalable software such as CP2K, ABINIT, QuantumESPRESSO, YAMBO, VASP and many ot
 We also added the following components:
 
 * Two dense, energy efficient enclosures from HP (bottom, left), based on the [Haswell](https://en.wikipedia.org/wiki/Haswell_(microarchitecture)) architecture completed with the Crystalwell package (a large 128MB L4 cache) are ideal for a variety of BigData analytics workloads performed by [LCSB](http://lcsb.uni.lu) or [SnT](http://snt.uni.lu) and economics analyses of the [LSF](http://lsf.uni.lu).
-* new ultra-dense Dell C4130 GPU nodes (bottom, right) containing 16 NVIDIA Tesla K80 accelerators (32 GK210 GPUs), in addition to an upgrade with 10 Tesla K40m cards for the Dell R720 systems.
+* New ultra-dense Dell C4130 GPU nodes (bottom, right) containing 16 NVIDIA Tesla K80 accelerators (32 GK210 GPUs), in addition to an upgrade with 10 Tesla K40m cards for the Dell R720 systems.
 
 
 \begin{figure}[h]
