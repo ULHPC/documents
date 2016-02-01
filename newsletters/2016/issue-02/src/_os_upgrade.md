@@ -18,7 +18,7 @@ The Subnet Manager of [Gaia](https://hpc.uni.lu/systems/gaia/), providing routin
   %\vspace{-2ex}
   \includegraphics[width=0.06\textwidth]{logos/logo_OAR.png}
 \end{wrapfigure}
-\noindent The databases of the OAR Resource and Job Management System on Chaos and Gaia, containing the complete traces of __5 million user jobs__ <!-- (1.45M on Chaos since Feb. 8th, 2008, 3.55M on Gaia - since Dec 21st, 2011)-->, have been migrated from MySQL to PostgreSQL.
+\noindent The databases of the [OAR](https://oar.imag.fr/) Resource and Job Management System on Chaos and Gaia, containing the complete traces of __5 million user jobs__ <!-- (1.45M on Chaos since Feb. 8th, 2008, 3.55M on Gaia - since Dec 21st, 2011)-->, have been migrated from MySQL to PostgreSQL.
 
 \begin{wrapfigure}[3]{r}{0.15\textwidth}
   \vspace{-3ex}
