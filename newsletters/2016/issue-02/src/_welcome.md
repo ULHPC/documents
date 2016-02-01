@@ -1,6 +1,8 @@
 In the information and computational science age, most university research units and centers need to perform complex computations and process very large amounts of data.
 The [UL HPC](http://hpc.uni.lu) facility encompasses a High Performance Computing environment and high density data storage.
 
+&nbsp;
+
 This second issue of the [UL HPC](http://hpc.uni.lu) newsletter is the occasion to review some statistics of the platform and its current capacities, while detailing the milestones completed in 2015, whether in terms of hardware or software developments.
 We will also come back to the two [HPC Schools](https://hpc.uni.lu/hpc-school) organized last year, and offer testimonials of achievements obtained on our infrastructure.
 Moreover, the planned developments for 2016 will be introduced. Many exciting challenges are waiting for us ahead, among which a new data center with cutting-edge cooling technologies, new official missions and mandates from the rectorate and the business opportunities around the HPC services we deliver since 2007.

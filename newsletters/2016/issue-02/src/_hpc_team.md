@@ -1,4 +1,5 @@
-\vspace{-4ex}
+\vspace{-1ex}
+
 ## Management
 
 \begin{wrapfigure}[6]{l}{0.14\textwidth}
