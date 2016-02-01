@@ -1,4 +1,4 @@
-\vspace{-1ex}
+\vspace{-2ex}
 
 ## Management
 
