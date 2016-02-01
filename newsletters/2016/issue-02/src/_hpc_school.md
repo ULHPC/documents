@@ -11,21 +11,21 @@ usage of the platform.
 
 \noindent 
 In __March__, 35 UL staff and students registered to the newcomer sessions meant to cover
-foundation topics (UL HPC overview, access and basic usage).
+foundation topics. <!-- (UL HPC overview, access and basic usage).-->
 In __June__, the yearly two-day workshop has been organized together with leading computational scientists
 of the UL and HPC technologists. The workshop offered a broad set of sessions focusing on both
 foundation and advanced topics:
 
-* access to and interaction with the UL HPC infrastructures;
-* HPC challenges, especially as regards data and storage management;
+* Access to and interaction with the UL HPC infrastructures;
+* HPC challenges, especially as regards (big)data and storage management;
 * HPC workflow management for sequential and parallel tasks;
 * HPC programming and usage of the main [software and tools](http://hpc.uni.lu/users/software) available on the platform
   (Matlab, R, physics, chemistry, bioinformatics tools, MPI implementations) and
-  services (Galaxy) using the platform;
-* scientific visualization and software environment management.
+  services (Galaxy) using the platform.
+* Scientific visualization and software environment management.
 
-\noindent
+
 48 UL staff and students registered to this summer school, with the participants
 entitled to 1 ECTS credit offered by the
-[Doctoral School of Computer Science and Computer Engineering](http://wwwen.uni.lu/formations/fstc/doctoral_school_of_computer_science_and_computer_engineering)
+[Doctoral School of Computer Science and Computer Engineering (DS-CSCE)](http://wwwen.uni.lu/formations/fstc/doctoral_school_of_computer_science_and_computer_engineering)
 upon the successful completion of the sessions.

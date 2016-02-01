@@ -12,16 +12,27 @@ The HPC equipment is based on both classical Commercial off-the shelf (COTS) and
 \end{tcolorbox}
 The bridge between computing and storage is a specificity of the UL service, with reasons both legal (certain data must remain in the country) and performance related.
 
+\begin{wrapfigure}[15]{r}{0.6\textwidth}
+\includegraphics[width=0.6\textwidth]{images/platform_used.pdf}
+\end{wrapfigure}
+
 As of January 2016, **335 users** are registered and active on the platform.
 The used computing time in 2015 by the registered users is measured at **__2255__ CPUYears**, thus __performed in a single year__ period.
 This confirms the increasing usage of the platform over the years (see below) and demonstrates our commitment to excellence and continuous improvement to accelerate scientific discovery and innovation within the University (see also the [list of publications generated thanks to the UL HPC Platform](http://orbilu.uni.lu/simple-search?query=%28%28researchcenter%3AULHPC%29%29&title=Publications+generated+thanks+to+the+UL+HPC+Platform&sort_by0=1&order0=DESC&sort_by1=3&order1=ASC&sort_by2=2&order2=ASC)).
 
+<!--
 \begin{figure}[h]
   \centering \includegraphics[width=0.65\textwidth]{images/platform_used.pdf}
 \end{figure}
+-->
 
-\noindent
-In terms of cumulative hardware investments since 2007 (excluding server rooms costs), we now reach a total of __5.244 M€__. This continuous effort makes the [UL HPC](http://hpc.uni.lu) platform __the largest facility of this type in Luxembourg__ (after GoodYear industrial R&D Center) and is competitive with similar centers in the Grande-Region (see below).
+&nbsp;
+
+In terms of cumulative hardware investments since 2007 (excluding server rooms costs), we now reach a total of __5.244 M€__. This continuous effort makes the [UL HPC](http://hpc.uni.lu) platform __the largest facility of this type in Luxembourg__ (after GoodYear industrial R&D Center) and is competitive with similar centers in the Grande-Region, as shown in the next table.
+
+\clearpage
+\input{_table_HPC_platform_around}
+
 
 <!--
 

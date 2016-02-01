@@ -8,17 +8,18 @@
 
 The [LuXDEM](http://luxdem.uni.lu) research group is developing simulation approaches that can describe the interaction of a tire surface on a snow-covered road. To predict the viscoelastic deformation of the tire when it comes into contact with snow a Finite Element analysis is applied. The coupling between the discrete approach to characterize snow and the FEM approach for the tire represents an accurate model to assess the traction. The predicted results obtained by the simulation tool are compared to experimental data for validation.
 
-\begin{wrapfigure}[13]{r}{0.4\textwidth}
-  \vspace{-2ex}
-  \centering \includegraphics[width=0.33\textwidth]{jberryman_atomistic_dna.png}
+\begin{wrapfigure}[12]{r}{0.4\textwidth}
+  %\vspace{-2ex}
+  \centering \includegraphics[width=0.33\textwidth]{jberryman_dna_balls.jpg}
   \caption*{\footnotesize Atomistic DNA in High Salt - \href{http://wwwen.uni.lu/research/fstc/physics_and_materials_science_research_unit}{PhyMS} \cite{jberryman}}
   \label{fig:jberryman}
 \end{wrapfigure}
 
 &nbsp;
 
-The [Soft Matter Theory](http://softmattertheory.uni.lu) research group is performing calculations of absolute free energies of biomolecules, using a combination of the well-known Einstein Molecule method (for treating the solute) with a conceptually related method of recent genesis for computing free energies of liquids (to treat the solvent and counterions). The approach is based on thermodynamic integration from a detailed atomistic model to one which is simplified but analytically solvable, thereby giving the absolute free energy as that of the tractable model plus a correction term found numerically.
-
+The [Soft Matter Theory](http://softmattertheory.uni.lu) group, part of [PhyMS](http://wwwen.uni.lu/research/fstc/physics_and_materials_science_research_unit) research unit, continues to explore means to understand and control the processes which allow matter of all kinds (incl. biological) to respond to stimuli and provide new material properties.
+For instance, it has been known since the seventies that high salt causes DNA to reverse its twist, from a right-handed spiral (called _B_-form) to a left-handed spiral (called _Z_-form) -- see right picture. However the subtlety of DNA's interaction with the surrounding water and salt is such that a quantitative theory of this transition has remained elusive.
+Thanks to the [UL HPC](http://hpc.uni.lu) resources, it has been possible for the first time to run low-level models with a sufficient level of sampling to give an accurate description of the high-level process of salt-driven untwisting and re-twisting.  
 &nbsp;
 
 \begin{wrapfigure}[9]{l}{0.4\textwidth}
@@ -55,16 +56,15 @@ __Featured research: UL HPC big data ranking records__
 In the context of the [GDRI-Algodec](http://www.algodec.org) _Algorithmic Decision Theory_ supported by the [CNRS](http://www.cnrs.fr) and the [FNR](http://www.fnr.lu), Prof. R. Bisdorff is developing multicriteria ranking algorithms for large sets of potential decision alternatives: up to several thousand of alternatives evaluated on multiple incommensurable ordinal performance criteria.
 
 \begin{wrapfigure}[13]{r}{0.6\textwidth}
-    \vspace{-1ex}
+    \vspace{-2ex}
     \centering \includegraphics[width=0.6\textwidth]{rb_ranking.png}
     \vspace{-5ex}
     \caption*{\footnotesize Heat map example \cite{WGBB_CLOUDCOM15}}
     \label{fig:rbisdorff}
-    \vspace{-4ex}
 \end{wrapfigure}
 	
 This research is motivated by the development of a visualization tool - a *heat map* - for performance tables showing the decision alternatives linearly ordered form the best to the worst, and the individual performances colored by quantiles equivalence classes.
-By using Python3.5 multiprocessing resources and the [Digraph3](http://leopold-loewenheim.uni.lu/docDigraph3/tutorial.html) multicriteria software library, it is possible, on the ULHPC [gaia-80](https://hpc.uni.lu/systems/gaia/#computing-capacity) machine using 120 single threaded cores and 1.5 TB of memory, to linearly rank (without ties) in less than an hour a huge set of 250000 alternatives evaluated on 21 performance criteria by balancing economic, ecological and societal decision objectives. Data input is, on the one side, a 250000x21 performance tableau of 825 MB, and on the other side, a theoretical outranking space consisting of 62 000 000 000 (billions) of pairwise comparisons. A "small" set of 1000 decision alternatives, in a similar setting, may thus be ranked typically in less than 5 seconds.
+By using Python3.5 multiprocessing resources and the [Digraph3](http://leopold-loewenheim.uni.lu/docDigraph3/tutorial.html) multicriteria software library, it is possible, on the ULHPC [`gaia-80`](https://hpc.uni.lu/systems/gaia/#computing-capacity) machine using 120 single threaded cores and 1.5 TB of memory, to linearly rank (without ties) in less than an hour a huge set of 250000 alternatives evaluated on 21 performance criteria by balancing economic, ecological and societal decision objectives. Data input is, on the one side, a 250000x21 performance tableau of 825 MB, and on the other side, a theoretical outranking space consisting of 62 000 000 000 (billions) of pairwise comparisons. A "small" set of 1000 decision alternatives, in a similar setting, may thus be ranked typically in less than 5 seconds.
 
 &nbsp;
 
@@ -81,17 +81,17 @@ By using Python3.5 multiprocessing resources and the [Digraph3](http://leopold-l
 
     \bibitem{bpeters}
     M. Michael, F. Vogel, B.~Peters.
-    \newblock {DEM-FEM coupling simulations of the interactions between a tire tread and granular terrain}
-    \newblock {\em J. Comput. Methods Appl. Mech. Engrg. 2015.}
+    \newblock {DEM-FEM coupling simulations of the interactions between a tire tread and granular terrain.}
+    \newblock {\em \href{http://www.sciencedirect.com/science/article/pii/S0045782515000560}{J. Comput. Methods Appl. Mech. Engrg. 2015}.}
 
     \bibitem{jberryman}
     J.~Berryman, T.~Schilling.
-    \newblock {A GPS Navigator for the Free Energy Landscape, Used to Find the Chirality-Switching Salt Concentration of DNA}
-    \newblock {\em J. Chem. Theory Comput. 2013.}
+    \newblock {Free Energies by Thermodynamic Integration Relative to an Exact Solution, Used to Find the Handedness-Switching Salt Concentration for DNA.}
+    \newblock {\em \href{http://pubs.acs.org/doi/abs/10.1021/ct3005968}{J. Chem. Theory Comput., 2013}.}
 
     \bibitem{snielsen}
     S.~Nielsen, G.~Danoy, W.~Jurkowski, J.~L.~J.~Laredo, R.~Schneider, E.-G.~Talbi, P.~ Bouvry.
-    \newblock {A Novel Multi-objectivisation Approach for Optimising the Protein Inverse Folding Problem}
+    \newblock {A Novel Multi-objectivisation Approach for Optimising the Protein Inverse Folding Problem.}
     \newblock In {\em Proc. of the 18th European Conference on Applications of Evolutionary Computation (EvoApplications 2015)}, Springer.
 
 \end{thebibliography}
