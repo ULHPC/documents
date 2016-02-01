@@ -49,9 +49,10 @@ This repository is organized as follows:
 └── style/       # LaTeX style for UL HPC documents 
 ```
 
-## UL HPC Newsletter
+## UL HPC Newsletters
 
 * [HPC Newsletter -- Issue 1 -- March 2015](newsletters/2015/issue-01)
+* [HPC Newsletter -- Issue 2 -- January 2016](newsletters/2016/issue-02)
 
 ## LaTeX Style
 

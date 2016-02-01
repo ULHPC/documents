@@ -2,7 +2,7 @@
 % File:  ulhpc_newsletter1.sty --  LaTeX style configuration for the document
 % Author(s): Sebastien Varrette <Sebastien.Varrette@uni.lu>
 % Creation:  16 Feb 2015
-% Time-stamp: <Mar 2015-03-31 16:40 svarrette>
+% Time-stamp: <Mon 2016-02-01 15:46 svarrette>
 % 
 % Copyright (c) 2015 Sebastien Varrette <Sebastien.Varrette@uni.lu> (see LICENCE)
 % 
@@ -275,12 +275,15 @@
       \begin{tabular}{rp{4cm}}
         %\hline\\
         \textbf{Editors:}      & \Editorsname \\
-        \textbf{Authors:}      & \textbf{The UL HPC Management Team} \emph{aka}: \\
-                               & $\hookrightarrow$ S. Varrette                  \hfill (Manager)\\
+        \textbf{Authors:}      & \textbf{The UL HPC Team} \emph{aka}: \\
+                               & $\hookrightarrow$ S. Varrette, P. Bouvry       \hfill (Managers)\\
                                & $\hookrightarrow$ H. Cartiaux, V. Plugaru      \hfill (FSTC)\\
                                & $\hookrightarrow$ S. Diehl \hfill (LCSB)\\
         \textbf{Date:}         & \isoday \\ %\ReleaseDate  \\
         \textbf{Version:}      & v\docversion        \\
+        \faTwitter             & \url{http://twitter.com/\Twitter} \\
+        \faGithubSign          &  \url{http://github.com/\Github}   \\
+        \faEnvelope            & \texttt{\href{mailto:hpc-sysadmins@uni.lu}{hpc-sysadmins@uni.lu}}\\
         %Compiled time:         & \isodayandtime \\
         %\hline
         \end{tabular}
@@ -302,7 +305,7 @@
   \begin{tikzpicture}[remember picture,overlay]
     \coordinate (editors) at ($(current page.north west)+(2.5,-4.75)$); % See above
 
-    \node (left_title)[font=\sffamily\color{ulblue},fill=lightgray,rounded rectangle west arc=none,anchor=north, inner sep=1em,text width=4.4cm] at ($(editors)+(0.2,-2)$) {
+    \node (left_title)[font=\sffamily\color{ulblue},fill=lightgray,rounded rectangle west arc=none,anchor=north, inner sep=1em,text width=4.4cm] at ($(editors)+(0.2,-2.75)$) {
       \Large \textbf{#1}
       %\fontsize{15}{50}\selectfont \textbf{#1}
     };
@@ -379,8 +382,6 @@
     % \node (page) [yshift=0.25cm,font=\ttfamily\bfseries\color{ulblue}, anchor=east] at (current page.south east) {
     %   \thepage~~
     % };
-
-
   \end{tikzpicture}%
 }
 
@@ -392,6 +393,10 @@
 \AtBeginShipout{\AtBeginShipoutAddToBox{\Header\Left\Footer}}
 %\AtBeginShipoutFirst{\AtBeginShipoutAddToBox{\Header\Left\Footer}}
 
+
+%% FIXME for Linux users of pandoc
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 
 % Some useful definitions
 \newcommand\ulhpc{\href{http://hpc.uni.lu}{UL HPC}\xspace}

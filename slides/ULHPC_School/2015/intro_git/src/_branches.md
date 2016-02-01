@@ -1,4 +1,3 @@
-# Branching and Merging
 
 ### Data Model
 
@@ -395,3 +394,36 @@ $> git gr
     - `master` / `devel`: the _main_ branch where the developments occurs
 * On demand: make a new feature branch `feature/<name>`
 * From time to time, release your code into `production` and tag 
+
+### [Git-flow](https://github.com/nvie/gitflow) Illustrated \hfill\tiny\source{\href{http://nvie.com/posts/a-successful-git-branching-model/}{Nvie}}
+
+\centering\includegraphics[height=0.9\textheight]{gitflow-model}
+
+### [Git-flow](https://github.com/nvie/gitflow) Setup using [FalkorLib](https://github.com/Falkor/falkorlib)
+
+
+* Initiate a  [Git-flow](https://github.com/nvie/gitflow)-ready repository using [FalkorLib](https://github.com/Falkor/falkorlib)
+       - [Personnal] Ruby Library offering the `falkor` binary
+
+\gitcommand{falkor new repo [---rake] \hfill\textit{\# setup the current directory}}
+
+* The repository is fed with a root `Makefile` (or `Rakefile`)
+     - facilitate repository setup upon cloning
+\begin{cmdline}~\\
+\cmdlineentry{git clone <url> \&\& cd <cloned\_dir>}\\
+\cmdlineentry{make setup}\\
+~\\
+\end{cmdline}
+     - project releasing using [Git-flow](https://github.com/nvie/gitflow) made easy 
+
+\begin{cmdline}
+\cmdlineentry{make start\_bump\_\{major,minor,patch\} \hfill\textit{\# bump version with \href{https://github.com/nvie/gitflow}{git-flow}}}\\
+\cmdlineentry{make release}\\
+
+\end{cmdline}
+
+
+<!--
+* _Note_: you can use [FalkorLib](https://github.com/Falkor/falkorlib) for bootstrap many other stuff
+    - ex: create \LaTeX\ beamer slides \hfill `falkor new slides`
+-->
