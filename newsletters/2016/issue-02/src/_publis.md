@@ -8,17 +8,18 @@
 
 The [LuXDEM](http://luxdem.uni.lu) research group is developing simulation approaches that can describe the interaction of a tire surface on a snow-covered road. To predict the viscoelastic deformation of the tire when it comes into contact with snow a Finite Element analysis is applied. The coupling between the discrete approach to characterize snow and the FEM approach for the tire represents an accurate model to assess the traction. The predicted results obtained by the simulation tool are compared to experimental data for validation.
 
-\begin{wrapfigure}[13]{r}{0.4\textwidth}
-  \vspace{-2ex}
-  \centering \includegraphics[width=0.33\textwidth]{jberryman_atomistic_dna.png}
+\begin{wrapfigure}[12]{r}{0.4\textwidth}
+  %\vspace{-2ex}
+  \centering \includegraphics[width=0.33\textwidth]{jberryman_dna_balls.jpg}
   \caption*{\footnotesize Atomistic DNA in High Salt - \href{http://wwwen.uni.lu/research/fstc/physics_and_materials_science_research_unit}{PhyMS} \cite{jberryman}}
   \label{fig:jberryman}
 \end{wrapfigure}
 
 &nbsp;
 
-The [Soft Matter Theory](http://softmattertheory.uni.lu) research group is performing calculations of absolute free energies of biomolecules, using a combination of the well-known Einstein Molecule method (for treating the solute) with a conceptually related method of recent genesis for computing free energies of liquids (to treat the solvent and counterions). The approach is based on thermodynamic integration from a detailed atomistic model to one which is simplified but analytically solvable, thereby giving the absolute free energy as that of the tractable model plus a correction term found numerically.
-
+The [Soft Matter Theory](http://softmattertheory.uni.lu) group, part of [PhyMS](http://wwwen.uni.lu/research/fstc/physics_and_materials_science_research_unit) research unit, continues to explore means to understand and control the processes which allow matter of all kinds (incl. biological) to respond to stimuli and provide new material properties.
+For instance, it has been known since the seventies that high salt causes DNA to reverse its twist, from a right-handed spiral (called _B_-form) to a left-handed spiral (called _Z_-form) -- see right picture. However the subtlety of DNA's interaction with the surrounding water and salt is such that a quantitative theory of this transition has remained elusive.
+Thanks to the [UL HPC](http://hpc.uni.lu) resources, it has been possible for the first time to run low-level models with a sufficient level of sampling to give an accurate description of the high-level process of salt-driven untwisting and re-twisting.  
 &nbsp;
 
 \begin{wrapfigure}[9]{l}{0.4\textwidth}

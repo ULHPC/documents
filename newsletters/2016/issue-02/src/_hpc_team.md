@@ -13,7 +13,7 @@ His team ([PCOG](http://pcog.uni.lu)) is composed of 25 researchers working on P
     \vspace{-2.75ex}
     \includegraphics[width=0.13\textwidth]{{sebastien.varrette}.jpg}
   \end{wrapfigure}
-  **S\'ebastien Varrette**, PhD, is a Research Associate in Prof. Bouvry's team since 2007. Along with Prof. Bouvry, he defined and set up the global HPC initiative of the [UL](http://www.uni.lu) in 2007. In this context, he is managing the sysadmin team that maintains and extends the platform.
+  **Sébastien Varrette**, PhD, is a Research Associate in Prof. Bouvry's team since 2007. Along with Prof. Bouvry, he defined and set up the global HPC initiative of the [UL](http://www.uni.lu) in 2007. In this context, he is managing the sysadmin team that maintains and extends the platform.
 In parallel, his research work focuses on Distributed Computing Platforms (clusters, grids or clouds), with a particular interest on the security and performance evaluation
 of distributed or parallel executions.
 
