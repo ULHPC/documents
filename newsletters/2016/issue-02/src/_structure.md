@@ -2,7 +2,7 @@
 \vspace*{-1em}
 ## HPC as part of the UL Digital Strategy
 
-Since his arrival at the head of the University, our new president [Rainer Klump](http://www.wort.lu/en/luxembourg/interview-with-rainer-klump-moving-the-university-of-luxembourg-forward-55192b3a0c88b46a8ce5675d) aimed at defining an ambitious Digital Strategy for the university that would make it a model European Research University of the 21st century.
+Since his arrival at the head of the University, our new president [Rainer Klump](http://wwwfr.uni.lu/universite/presentation/organigramme/organigramme_rectorat_administration_centrale/recteur) aimed at defining an ambitious Digital Strategy for the university that would make it a model European Research University of the 21st century.
 In this context, the president confirms the [UL HPC](http://hpc.uni.lu) as a key supporting infrastructure for this strategy. To this end: 
 
 * Prof. Pascal Bouvry has been officially appointed Senior advisor for the president (_Chargé de mission auprès du recteur_) as regards the HPC strategy;
