@@ -1,6 +1,6 @@
 ##################################################################################
 # Makefile - Configuration file for GNU make (http://www.gnu.org/software/make/)
-# Time-stamp: <Mon 2016-02-01 17:42 svarrette>
+# Time-stamp: <Mon 2016-02-01 17:50 svarrette>
 #
 # Copyright (c) 2016 Sebastien Varrette <Sebastien.Varrette@uni.lu>
 #
@@ -37,7 +37,8 @@ test:
 # otherwise, it is just passed to the subdirectory using the generic '%' target
 ifneq ($(SRC),)
 release: clean
-	$(MAKE) -C $(SRCDIR); \
+	@echo "==> release a new PDF version of the newsletter from '$(PDF)' from '`pwd`'"
+	$(MAKE) -C $(SRCDIR)
 	if [ -n "$(GS)" ]; then \
 		echo "==> producing optimized PDF for releasing (thanks Hya for the gs command!) from '`pwd`'"; \
 		$(GS) $(GS_OPTS) -sOutputFile=$(shell basename $(PDF)) $(PDF); \
