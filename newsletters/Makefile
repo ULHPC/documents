@@ -1,6 +1,6 @@
 ##################################################################################
 # Makefile - Configuration file for GNU make (http://www.gnu.org/software/make/)
-# Time-stamp: <Fri 2016-01-29 22:11 svarrette>
+# Time-stamp: <Mon 2016-02-01 14:39 svarrette>
 #
 # Copyright (c) 2016 Sebastien Varrette <Sebastien.Varrette@uni.lu>
 #
@@ -14,18 +14,26 @@
 #
 ############################## Variables Declarations ############################
 
-DIRS = $(sort $(dir $(wildcard */)))
+DIRS       = $(sort $(dir $(wildcard */)))
+SRCDIR     = src
+NEWSLETTER = $(wildcard ulhpc_newsletter*.pdf)
 
 all: $(DIRS)
 
-clean:
-	@for d in $(DIRS); do \
-		echo "==> cleaning in '$$d'"; \
-		$(MAKE) -C $$d $@; \
-	done
+release:
+	@if [ -d "$(SRCDIR)" ]; then \
+		$(MAKE) -C $(SRCDIR); \
+		echo "==> copying the released PDF"; \
+		cp $(SRCDIR)/ulhpc_newsletter*.pdf .; \
+	else \
+		for d in $(DIRS); do \
+			$(MAKE) -C $$d $@; \
+		done; \
+	fi
 
 %:
 	@for d in $(DIRS); do \
 		echo "==> processing '$$d'"; \
 		$(MAKE) -C $$d $@; \
 	done
+
