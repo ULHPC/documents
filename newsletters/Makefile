@@ -1,6 +1,6 @@
 ##################################################################################
 # Makefile - Configuration file for GNU make (http://www.gnu.org/software/make/)
-# Time-stamp: <Mon 2016-02-01 14:39 svarrette>
+# Time-stamp: <Mon 2016-02-01 14:53 svarrette>
 #
 # Copyright (c) 2016 Sebastien Varrette <Sebastien.Varrette@uni.lu>
 #
@@ -20,7 +20,7 @@ NEWSLETTER = $(wildcard ulhpc_newsletter*.pdf)
 
 all: $(DIRS)
 
-release:
+release: clean
 	@if [ -d "$(SRCDIR)" ]; then \
 		$(MAKE) -C $(SRCDIR); \
 		echo "==> copying the released PDF"; \
