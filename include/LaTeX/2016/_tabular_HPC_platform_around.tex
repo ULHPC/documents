@@ -1,0 +1,62 @@
+% =============================================================================
+% File:  _tabular_HPC_platform_around.tex -- HPC Facilities in the Grande Region
+% Time-stamp: <Wed 2016-02-10 15:37 svarrette>
+% 
+% Copyright (c) 2016 Sebastien Varrette <Sebastien.Varrette@uni.lu>
+% 
+% More information on LaTeX: http://www.latex-project.org/
+% LaTeX symbol list:
+% - http://www.ctan.org/tex-archive/info/symbols/comprehensive/symbols-a4.pdf
+% =============================================================================
+
+% Reference: see https://docs.google.com/spreadsheets/d/1FhLLoFCNn2G3xuiITl8dYoB3b_X6HDDzxBv0iBDcmns
+
+% == Luxembourg
+\newcommand{\theULHPC}{\href{https://hpc.uni.lu/}{\textbf{UL HPC} (Uni.lu)}}
+\newcommand{\LIST}{\href{http://www.clustervision.com/content/case-studies/CRPGL}{LIST}}
+% == France
+\newcommand{\LORIA}{\href{https://www.grid5000.fr/mediawiki/index.php/Nancy:Hardware\#Clusters}{LORIA (G5K), Nancy}}
+\newcommand{\ROMEO}{\href{https://romeo.univ-reims.fr/pages/presentation_hardware}{ROMEO, Reims}}
+% == Belgium
+\newcommand{\ULiege}{\href{http://www.ulg.ac.be/cms/c_3826073/en/nic4-detailed-explanation}{NIC4, University of Liège}}
+\newcommand{\UCL}   {\href{http://www.cism.ucl.ac.be/faq/}{Université Catholique de Louvain}}
+\newcommand{\UGent} {\href{https://www.vscentrum.be/infrastructure/hardware/hardware-ugent}{UGent / VSC, Gent}}
+% == Germany
+\newcommand{\bwGrid}      {\href{http://www.urz.uni-heidelberg.de/server/grid/hardware.en.html}{bwGrid, Heidelberg}}
+\newcommand{\bwForCluster}{\href{http://www.bwhpc-c5.de/wiki/index.php/Hardware_and_Architecture_(bwForCluster_Chemistry)}{bwForCluster, Ulm}}
+\newcommand{\bwHPC}       {\href{https://www.bwhpc-c5.de/wiki/index.php/Hardware_and_Architecture_(bwForCluster_MLS\%26WISO)}{bwHPC MLS\&WISO, Mannheim}}
+
+% _______________
+\begin{tabular}{|l|l||l|l|l|l|l|}
+  \multicolumn{3}{c}{} & \multicolumn{1}{c}{(CPU)} & \multicolumn{1}{c}{TFlops} & \multicolumn{1}{c}{TB (Shared)} \\
+  \hline
+  \rowcolor{lightgray}
+  \textbf{Country} & \textbf{Institute} & \textbf{\#Nodes} & \textbf{\#Cores} & \textbf{R$_{peak}$} & \textbf{Storage} \\\hline
+  \hline
+  % ___________________________ <Name>        <nodes>   <cores>       <TFlops>      <TB>
+  \multirow{2}{*}{Luxembourg} & \theULHPC & \textbf{\ulhpcNodes} & \textbf{\ulhpcCores} & \textbf{\ulhpcTFlops} & \textbf{\ulhpcRawStorage} \\
+                       &       \LIST         &  58     &  800        & 6.21         & 144  \\\hline
+  \hline
+  \multirow{2}{*}{France} &    \LORIA        & 320     & 2520        & 26.98        & 82   \\
+                       &       \ROMEO        & 174     & 3136        & 49.26        & 245  \\\hline
+  \hline
+  \multirow{3}{*}{Belgium} &   \ULiege       & 128     & 2048        & 32.00        & 20   \\
+                       &       \UCL          & 112     & 1344        & 13.28        & 120  \\
+                       &       \UGent        & 440     & 8768        & 275.30       & 1122 \\\hline
+  \hline
+  \multirow{3}{*}{Germany} &   \bwGrid       & 140     & 1120        & 12.38        & 32   \\
+                       &       \bwForCluster & 444     & 7104        & 266.40       & 400  \\
+                       &       \bwHPC        & 604     & 9728        & 371.60       & 420  \\
+  \hline
+\end{tabular}
+
+
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+% eof
+% 
+% Local Variables:
+% mode: latex
+% mode: flyspell
+% mode: visual-line
+% TeX-master: "ulhpc_newsletter-issue-02"
+% End:
