@@ -33,3 +33,4 @@
 *.texinfo
 *.md.tex
 *.swp
+.Rproj.user
