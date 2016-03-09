@@ -34,3 +34,4 @@
 *.md.tex
 *.swp
 .Rproj.user
+.Rhistory
