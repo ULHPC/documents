@@ -49,11 +49,12 @@
 
 
 %%% TOTAL
-\FPeval{ulhpcServers}{clip(ulhpcChaosServers + ulhpcGaiaServers + ulhpcGfiveServers + ulhpcNyxServers + ulhpcPyroServers + otherServers)}
-\FPeval{ulhpcNodes}{clip(ulhpcChaosNodes + ulhpcGaiaNodes + ulhpcGfivekNodes + ulhpcNyxNodes + ulhpcPyroNodes)}
-\FPeval{ulhpcCores}{clip(ulhpcChaosCores + ulhpcGaiaCores + ulhpcGfivekCores + ulhpcNyxCores + ulhpcPyroCores)}
-\FPeval{ulhpcTFlops}{round(ulhpcChaosTFlops + ulhpcGaiaTFlops + ulhpcGfivekTFlops + ulhpcNyxTFlops + ulhpcPyroTFlops, 3)}
-\FPeval{ulhpcRawStorage}{clip(ulhpcChaosRawStorage + ulhpcGaiaRawStorage + ulhpcGfivekRawStorage + ulhpcNyxRawStorage + ulhpcPyroRawStorage)}
+\FPeval{ulhpcServers}{clip (ulhpcChaosServers + ulhpcGaiaServers + ulhpcGfiveServers + ulhpcNyxServers + ulhpcPyroServers + otherServers)}
+\FPeval{ulhpcOnlyServers}{clip (ulhpcChaosServers + ulhpcGaiaServers + ulhpcGfiveServers + ulhpcNyxServers + ulhpcPyroServers)}
+\FPeval{ulhpcNodes}{clip (ulhpcChaosNodes + ulhpcGaiaNodes + ulhpcGfivekNodes + ulhpcNyxNodes + ulhpcPyroNodes)}
+\FPeval{ulhpcCores}{clip (ulhpcChaosCores + ulhpcGaiaCores + ulhpcGfivekCores + ulhpcNyxCores + ulhpcPyroCores)}
+\FPeval{ulhpcTFlops}{round (ulhpcChaosTFlops + ulhpcGaiaTFlops + ulhpcGfivekTFlops + ulhpcNyxTFlops + ulhpcPyroTFlops, 3)}
+\FPeval{ulhpcRawStorage}{clip (ulhpcChaosRawStorage + ulhpcGaiaRawStorage + ulhpcGfivekRawStorage + ulhpcNyxRawStorage + ulhpcPyroRawStorage)}
 
 
 
