@@ -1,0 +1,67 @@
+%=============================================================================
+% File:  _ulhpc_capacities.sty --  UL HPC Capacities as macros (2015)
+% Author(s): Sebastien Varrette <Sebastien.Varrette@uni.lu>
+% Time-stamp: <Wed 2016-02-10 15:17 svarrette>
+%=============================================================================
+\usepackage{fp}
+
+\def\ulhpcDate{2015\xspace}
+\def\ulhpcClusters{4\xspace}
+\def\ulhpcDisks{1558}
+\def\ulhpcCumulInvestment{7,506,558}
+\def\ulhpcCumulHWinvestment{5,244,154}
+\def\ulhpcUsers{344}
+\def\ulhpcSysAdmins{4}
+\def\ulhpcGPUNodes{21}
+
+\def\otherServers{80}
+
+%%% Chaos
+\def\ulhpcChaosServers{14}
+\def\ulhpcChaosNodes{81}
+\def\ulhpcChaosCores{1120}
+\def\ulhpcChaosTFlops{14.495}
+\FPeval{ulhpcChaosRawStorage}{180+180}
+%%% Gaia
+\def\ulhpcGaiaServers{35}
+\def\ulhpcGaiaNodes{271}
+\def\ulhpcGaiaCores{3312}
+\def\ulhpcGaiaTFlops{64.18}
+\FPeval{ulhpcGaiaRawStorage}{960+480+1944+1336}
+%%% G5K
+\def\ulhpcGfiveServers{30}
+\def\ulhpcGfivekNodes{38}
+\def\ulhpcGfivekCores{368}
+\def\ulhpcGfivekTFlops{4.48}
+\def\ulhpcGfivekRawStorage{32.4}
+%%% nyx / viridis
+\def\ulhpcNyxServers{17}
+\def\ulhpcNyxNodes{98} % WRONG?: include moonshot
+\def\ulhpcNyxCores{396}
+\def\ulhpcNyxTFlops{0.52}
+\def\ulhpcNyxRawStorage{2}
+%%% Pyro
+\def\ulhpcPyroServers{2}
+\def\ulhpcPyroNodes{4}
+\def\ulhpcPyroCores{104}
+\def\ulhpcPyroTFlops{1.868}
+\def\ulhpcPyroRawStorage{240}
+
+
+%%% TOTAL
+\FPeval{ulhpcServers}{clip (ulhpcChaosServers + ulhpcGaiaServers + ulhpcGfiveServers + ulhpcNyxServers + ulhpcPyroServers + otherServers)}
+\FPeval{ulhpcOnlyServers}{clip (ulhpcChaosServers + ulhpcGaiaServers + ulhpcGfiveServers + ulhpcNyxServers + ulhpcPyroServers)}
+\FPeval{ulhpcNodes}{clip (ulhpcChaosNodes + ulhpcGaiaNodes + ulhpcGfivekNodes + ulhpcNyxNodes + ulhpcPyroNodes)}
+\FPeval{ulhpcCores}{clip (ulhpcChaosCores + ulhpcGaiaCores + ulhpcGfivekCores + ulhpcNyxCores + ulhpcPyroCores)}
+\FPeval{ulhpcTFlops}{round (ulhpcChaosTFlops + ulhpcGaiaTFlops + ulhpcGfivekTFlops + ulhpcNyxTFlops + ulhpcPyroTFlops, 3)}
+\FPeval{ulhpcRawStorage}{clip (ulhpcChaosRawStorage + ulhpcGaiaRawStorage + ulhpcGfivekRawStorage + ulhpcNyxRawStorage + ulhpcPyroRawStorage)}
+
+
+
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+% eof
+%
+% Local Variables:
+% mode: latex
+% mode: flyspell
+% End:
