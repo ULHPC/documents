@@ -1,7 +1,7 @@
 %=============================================================================
 % File:  _ulhpc_capacities.sty --  UL HPC Capacities as macros (2017)
 % Author(s): Sebastien Varrette <Sebastien.Varrette@uni.lu>
-% Time-stamp: <Thu 2017-06-01 22:44 svarrette>
+% Time-stamp: <Fri 2017-06-02 00:01 svarrette>
 %=============================================================================
 \usepackage{fp}
 
@@ -34,7 +34,16 @@
 \def\ulhpcGaiaNodes{273}
 \def\ulhpcGaiaCores{3440}
 \def\ulhpcGaiaTFlops{69.296}
-\FPeval{ulhpcGaiaRawStorage}{960+480}
+\def\ulhpcGaiaGPFS{960}
+\def\ulhpcGaiaLustre{480}
+\def\ulhpcGaiaNFS{0}
+\def\ulhpcGaiaBackup{240}
+\FPeval{ulhpcGaiaRawStorageWithoutBackup}{clip  (ulhpcGaiaGPFS + ulhpcGaiaLustre + ulhpcGaiaNFS)}
+\FPeval{ulhpcGaiaRawStorage}{clip  (ulhpcGaiaRawStorageWithoutBackup + ulhpcGaiaBackup)}
+
+
+
+%\FPeval{ulhpcGaiaRawStorage}{960+480}
 
 %%% Chaos
 \def\ulhpcChaosServers{14}
@@ -49,23 +58,23 @@
 \FPeval{ulhpcChaosRawStorage}{clip  (ulhpcChaosRawStorageWithoutBackup + ulhpcChaosBackup)}
 
 %%% G5K
-\def\ulhpcGfiveServers{30}
+\def\ulhpcGfivekServers{30}
 \def\ulhpcGfivekNodes{38}
 \def\ulhpcGfivekCores{368}
 \def\ulhpcGfivekTFlops{4.48}
-\def\ulhpcGfiveGPFS{0}
-\def\ulhpcGfiveLustre{0}
-\def\ulhpcGfiveNFS{32.4}
-\def\ulhpcGfiveBackup{0}
-\FPeval{ulhpcGfiveRawStorageWithoutBackup}{clip  (ulhpcGfiveGPFS + ulhpcGfiveLustre + ulhpcGfiveNFS)}
-\FPeval{ulhpcGfiveRawStorage}{clip  (ulhpcGfiveRawStorageWithoutBackup + ulhpcGfiveBackup)}
+\def\ulhpcGfivekGPFS{0}
+\def\ulhpcGfivekLustre{0}
+\def\ulhpcGfivekNFS{32.4}
+\def\ulhpcGfivekBackup{0}
+\FPeval{ulhpcGfivekRawStorageWithoutBackup}{clip  (ulhpcGfivekGPFS + ulhpcGfivekLustre + ulhpcGfivekNFS)}
+\FPeval{ulhpcGfivekRawStorage}{clip  (ulhpcGfivekRawStorageWithoutBackup + ulhpcGfivekBackup)}
 
 
 %%% nyx / viridis / pyro
 \def\ulhpcNyxServers{19}
 \def\ulhpcNyxNodes{102}
 \def\ulhpcNyxCores{500}
-\def\ulhpcNyxTFlops{2,381}
+\def\ulhpcNyxTFlops{2.381}
 \def\ulhpcNyxGPFS{0}
 \def\ulhpcNyxLustre{0}
 \def\ulhpcNyxNFS{242}
@@ -77,18 +86,18 @@
 \def\IsilonRawStorage{2496}
 
 %%% TOTAL
-\FPeval{ulhpcServers}{clip     (ulhpcChaosServers + ulhpcGaiaServers + ulhpcIrisServers + ulhpcGfiveServers + ulhpcNyxServers + otherServers)}
-\FPeval{ulhpcOnlyServers}{clip (ulhpcChaosServers + ulhpcGaiaServers + ulhpcIrisServers + ulhpcGfiveServers + ulhpcNyxServers)}
+\FPeval{ulhpcServers}{clip     (ulhpcChaosServers + ulhpcGaiaServers + ulhpcIrisServers + ulhpcGfivekServers + ulhpcNyxServers + otherServers)}
+\FPeval{ulhpcOnlyServers}{clip (ulhpcChaosServers + ulhpcGaiaServers + ulhpcIrisServers + ulhpcGfivekServers + ulhpcNyxServers)}
 \FPeval{ulhpcNodes}{clip       (ulhpcChaosNodes + ulhpcGaiaNodes + ulhpcIrisNodes + ulhpcGfivekNodes + ulhpcNyxNodes)}
 \FPeval{ulhpcCores}{clip       (ulhpcChaosCores + ulhpcGaiaCores + ulhpcIrisCores + ulhpcGfivekCores + ulhpcNyxCores)}
 \FPeval{ulhpcTFlops}{round     (ulhpcChaosTFlops + ulhpcGaiaTFlops + ulhpcIrisTFlops + ulhpcGfivekTFlops + ulhpcNyxTFlops, 3)}
-\FPeval{ulhpcGPFS}{clip  (ulhpcChaosGPFS + ulhpcGaiaGPFS + ulhpcIrisGPFS + ulhpcGfivekGPFS + ulhpcNyxGPFS)}
+\FPeval{ulhpcGPFS}{clip        (ulhpcChaosGPFS + ulhpcGaiaGPFS + ulhpcIrisGPFS + ulhpcGfivekGPFS + ulhpcNyxGPFS)}
 \FPeval{ulhpcLustre}{clip  (ulhpcChaosLustre + ulhpcGaiaLustre + ulhpcIrisLustre + ulhpcGfivekLustre + ulhpcNyxLustre)}
 \FPeval{ulhpcNFS}{clip  (ulhpcChaosNFS + ulhpcGaiaNFS + ulhpcIrisNFS + ulhpcGfivekNFS + ulhpcNyxNFS + IsilonRawStorage)}
 \FPeval{ulhpcBackup}{clip  (ulhpcChaosBackup + ulhpcGaiaBackup + ulhpcIrisBackup + ulhpcGfivekBackup + ulhpcNyxBackup)}
 
 \FPeval{ulhpcRawStorage}{clip  (ulhpcChaosRawStorage + ulhpcGaiaRawStorage + ulhpcIrisRawStorage + ulhpcGfivekRawStorage + ulhpcNyxRawStorage + IsilonRawStorage)}
-\FPeval{ulhpcRawStorageWithoutStorage}{clip  (ulhpcChaosRawStorageWithoutBackup + ulhpcGaiaRawStorageWithoutBackup + ulhpcIrisRawStorageWithoutBackup + ulhpcGfivekRawStorageWithoutBackup + ulhpcNyxRawStorageWithoutBackup + IsilonRawStorageWithoutBackup)}
+\FPeval{ulhpcRawStorageWithoutStorage}{clip  (ulhpcChaosRawStorageWithoutBackup + ulhpcGaiaRawStorageWithoutBackup + ulhpcIrisRawStorageWithoutBackup + ulhpcGfivekRawStorageWithoutBackup + ulhpcNyxRawStorageWithoutBackup + IsilonRawStorage)}
 
 
 

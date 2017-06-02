@@ -1,6 +1,6 @@
 % =============================================================================
 % File:  _tabular_list_all_computing_nodes.tex -- List of the computing nodes
-% Time-stamp: <Thu 2017-06-01 22:58 svarrette>
+% Time-stamp: <Fri 2017-06-02 08:49 svarrette>
 %
 % Copyright (c) 2011-2015 Sebastien Varrette <Sebastien.Varrette@uni.lu>
 %
@@ -20,11 +20,11 @@
   \rowcolor{lightgray}
                           & \textbf{Date} & \textbf{Vendor} & \multicolumn{2}{c|}{\textbf{Proc. Description}} & \textbf{\#N} & \textbf{\#C} & \textbf{R$_{\text{peak}}$}\\\hline
   \hline
-  \multicolumn{8}{l}{NEW in MSA CDC:}\\
-  %___________________________ IRIS __________________________
-  \multirow{1}{*}{\begin{sideways}\textbf{iris}\end{sideways}}
+  % ___________________________ IRIS __________________________
+  \rowcolor{cyan}
+  \multirow{1}{*}{\textbf{iris}}
                           & 2017 & Dell & Intel Xeon E5-2680 v4@2.4GHz & $2\times14$C,128GB & 100 & 2800 & 107,52 TFlops \\\cline{2-8}
-  \multicolumn{5}{r|}{\textbf{TOTAL:}} & \cellcolor{lightgray} \textbf{\ulhpcIriskNodes} & \cellcolor{lightgray} \textbf{\ulhpcIriskCores} & \cellcolor{lightgray} \textbf{\ulhpcIriskTFlops\ TFlops} \\
+  \multicolumn{5}{r|}{\textbf{\texttt{iris} TOTAL:}} & \cellcolor{lightgray} \textbf{\ulhpcIrisNodes} & \cellcolor{lightgray} \textbf{\ulhpcIrisCores} & \cellcolor{lightgray} \textbf{\ulhpcIrisTFlops\ TFlops} \\
   \cline{6-8}
   \multicolumn{8}{c}{}\\
   \hline
@@ -62,13 +62,12 @@
                           & 2012 & Dell & Intel Xeon E5-2630L@2GHz   & $2\times6$C,24GB & 16 & 192 & 3.072 TFlops \\\hline
   \multicolumn{5}{r|}{\textbf{\texttt{granduc/petitprince} TOTAL:}} & \cellcolor{lightgray} \textbf{\ulhpcGfivekNodes} & \cellcolor{lightgray} \textbf{\ulhpcGfivekCores} & \cellcolor{lightgray} \textbf{\ulhpcGfivekTFlops\ TFlops} \\
   \cline{6-8}
-  \multicolumn{8}{l}{Testing cluster:}\\
+  \multicolumn{8}{l}{\textit{Testing cluster}:}\\
   \hline
   %___________________________ Nyx/Viridis/Pyro __________________________
-  \multirow{3}{*}{\begin{sideways}\textbf{nyx}\end{sideways}}
+  \multirow{5}{4em}{\textbf{nyx, viridis, pyro...}     }
                           & 2012 & Dell    & Intel Xeon E5-2420@1.9GHz    & $1\times6$C,32GB  & 2  & 12  & 0.091 TFlops \\\cline{2-8}
-                          & 2013 & Viridis & ARM A9 Cortex@1.1GHz         & $1\times4$C,4GB   & 96 & 384 & 0.422 TFlops \\\hline
-  \multirow{2}{*}{OpenStack IaaS cluster}
+                          & 2013 & Viridis & ARM A9 Cortex@1.1GHz         & $1\times4$C,4GB   & 96 & 384 & 0.422 TFlops \\\cline{2-8}
                           & 2015 & Dell    & Intel Xeon E5-2630Lv2@2.4GHz & $2\times6$C,32GB  & 2  & 24  & 0.460 TFlops \\\cline{2-8}
                           & 2015 & Dell    & Intel Xeon E5-2660v2@2.2GHz  & $2\times10$C,32GB & 4  & 80  & 1.408 TFlops \\\hline
   \multicolumn{5}{r|}{\textbf{\texttt{nyx/viridis} TOTAL:}} & \cellcolor{lightgray} \textbf{\ulhpcNyxNodes} & \cellcolor{lightgray} \textbf{\ulhpcNyxCores} & \cellcolor{lightgray} \textbf{\ulhpcNyxTFlops\ TFlops} \\\cline{6-8}
