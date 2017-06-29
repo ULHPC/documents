@@ -16,7 +16,6 @@
 \def\ulhpcAccelerators{34}
 \def\ulhpcGPUCores{40832}
 \def\ulhpcGPUTFlops{29.66}
-
 \def\otherServers{80}
 
 %%% Chaos
@@ -24,25 +23,53 @@
 \def\ulhpcChaosNodes{81}
 \def\ulhpcChaosCores{1120}
 \def\ulhpcChaosTFlops{14.495}
-\FPeval{ulhpcChaosRawStorage}{180+180}
+\def\ulhpcChaosGPFS{0}
+\def\ulhpcChaosLustre{0}
+\def\ulhpcChaosNFS{180}
+\def\ulhpcChaosBackup{180}
+\FPeval{ulhpcChaosRawStorageWithoutBackup}{clip  (ulhpcChaosGPFS + ulhpcChaosLustre + ulhpcChaosNFS)}
+\FPeval{ulhpcChaosRawStorage}{clip  (ulhpcChaosRawStorageWithoutBackup + ulhpcChaosBackup)}
+%\FPeval{ulhpcChaosRawStorage}{180+180}
+
 %%% Gaia
 \def\ulhpcGaiaServers{35}
 \def\ulhpcGaiaNodes{271}
 \def\ulhpcGaiaCores{3312}
 \def\ulhpcGaiaTFlops{64.18}
-\FPeval{ulhpcGaiaRawStorage}{960+480+1944+1336}
+\def\ulhpcGaiaGPFS{960}
+\def\ulhpcGaiaLustre{480}
+\def\ulhpcGaiaNFS{0}
+\def\ulhpcGaiaBackup{1336}
+\FPeval{ulhpcGaiaRawStorageWithoutBackup}{clip  (ulhpcGaiaGPFS + ulhpcGaiaLustre + ulhpcGaiaNFS)}
+\FPeval{ulhpcGaiaRawStorage}{clip  (ulhpcGaiaRawStorageWithoutBackup + ulhpcGaiaBackup)}
+%\FPeval{ulhpcGaiaRawStorage}{960+480+1944+1336}
+
 %%% G5K
 \def\ulhpcGfiveServers{30}
 \def\ulhpcGfivekNodes{38}
 \def\ulhpcGfivekCores{368}
 \def\ulhpcGfivekTFlops{4.48}
-\def\ulhpcGfivekRawStorage{32.4}
+\def\ulhpcGfivekGPFS{0}
+\def\ulhpcGfivekLustre{0}
+\def\ulhpcGfivekNFS{32.4}
+\def\ulhpcGfivekBackup{0}
+\FPeval{ulhpcGfivekRawStorageWithoutBackup}{clip  (ulhpcGfivekGPFS + ulhpcGfivekLustre + ulhpcGfivekNFS)}
+\FPeval{ulhpcGfivekRawStorage}{clip  (ulhpcGfivekRawStorageWithoutBackup + ulhpcGfivekBackup)}
+%\def\ulhpcGfivekRawStorage{32.4}
+
 %%% nyx / viridis
 \def\ulhpcNyxServers{17}
 \def\ulhpcNyxNodes{128} % WRONG?: include moonshot
 \def\ulhpcNyxCores{516}
 \def\ulhpcNyxTFlops{0.52}
-\def\ulhpcNyxRawStorage{2}
+\def\ulhpcNyxGPFS{0}
+\def\ulhpcNyxLustre{0}
+\def\ulhpcNyxNFS{2}
+\def\ulhpcNyxBackup{0}
+\FPeval{ulhpcNyxRawStorageWithoutBackup}{clip  (ulhpcNyxGPFS + ulhpcNyxLustre + ulhpcNyxNFS)}
+\FPeval{ulhpcNyxRawStorage}{clip  (ulhpcNyxRawStorageWithoutBackup + ulhpcNyxBackup)}
+%\def\ulhpcNyxRawStorage{2}
+
 %%% Pyro
 \def\ulhpcPyroServers{2}
 \def\ulhpcPyroNodes{4}
@@ -50,6 +77,8 @@
 \def\ulhpcPyroTFlops{1.868}
 \def\ulhpcPyroRawStorage{240}
 
+%%% Isilon
+\def\IsilonRawStorage{1944}
 
 %%% TOTAL
 \FPeval{ulhpcServers}{clip (ulhpcChaosServers + ulhpcGaiaServers + ulhpcGfiveServers + ulhpcNyxServers + ulhpcPyroServers + otherServers)}
@@ -57,7 +86,16 @@
 \FPeval{ulhpcNodes}{clip (ulhpcChaosNodes + ulhpcGaiaNodes + ulhpcGfivekNodes + ulhpcNyxNodes + ulhpcPyroNodes)}
 \FPeval{ulhpcCores}{clip (ulhpcChaosCores + ulhpcGaiaCores + ulhpcGfivekCores + ulhpcNyxCores + ulhpcPyroCores)}
 \FPeval{ulhpcTFlops}{round (ulhpcChaosTFlops + ulhpcGaiaTFlops + ulhpcGfivekTFlops + ulhpcNyxTFlops + ulhpcPyroTFlops, 3)}
-\FPeval{ulhpcRawStorage}{clip (ulhpcChaosRawStorage + ulhpcGaiaRawStorage + ulhpcGfivekRawStorage + ulhpcNyxRawStorage + ulhpcPyroRawStorage)}
+
+\FPeval{ulhpcGPFS}{clip    (ulhpcChaosGPFS   + ulhpcGaiaGPFS   + ulhpcGfivekGPFS   + ulhpcNyxGPFS)}
+\FPeval{ulhpcLustre}{clip  (ulhpcChaosLustre + ulhpcGaiaLustre + ulhpcGfivekLustre + ulhpcNyxLustre)}
+\FPeval{ulhpcNFS}{clip     (ulhpcChaosNFS    + ulhpcGaiaNFS    + ulhpcGfivekNFS    + ulhpcNyxNFS + ulhpcPyroRawStorage + IsilonRawStorage)}
+\FPeval{ulhpcBackup}{clip  (ulhpcChaosBackup + ulhpcGaiaBackup + ulhpcGfivekBackup + ulhpcNyxBackup)}
+
+\FPeval{ulhpcRawStorage}{clip  (ulhpcChaosRawStorage + ulhpcGaiaRawStorage + ulhpcGfivekRawStorage + ulhpcNyxRawStorage + ulhpcPyroRawStorage + IsilonRawStorage)}
+\FPeval{ulhpcRawStorageWithoutStorage}{clip  (ulhpcChaosRawStorageWithoutBackup + ulhpcGaiaRawStorageWithoutBackup + ulhpcGfivekRawStorageWithoutBackup + ulhpcNyxRawStorageWithoutBackup + ulhpcPyroRawStorage + IsilonRawStorage)}
+
+%\FPeval{ulhpcRawStorage}{clip (ulhpcChaosRawStorage + ulhpcGaiaRawStorage + ulhpcGfivekRawStorage + ulhpcNyxRawStorage + ulhpcPyroRawStorage)}
 
 
 
