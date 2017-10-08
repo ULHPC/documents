@@ -1,7 +1,7 @@
 %=============================================================================
 % File:  _ulhpc_capacities.sty --  UL HPC Capacities as macros (2017)
 % Author(s): Sebastien Varrette <Sebastien.Varrette@uni.lu>
-% Time-stamp: <Sun 2017-10-08 22:30 svarrette>
+% Time-stamp: <Sun 2017-10-08 22:34 svarrette>
 %=============================================================================
 \usepackage{fp}
 
@@ -138,8 +138,8 @@
 \FPeval{ulhpcLustreEncl}{clip  (ulhpcChaosLustreEncl + ulhpcGaiaLustreEncl + ulhpcIrisLustreEncl)}
 \FPeval{ulhpcLustreDisks}{clip (ulhpcChaosLustreDisks + ulhpcGaiaLustreDisks + ulhpcIrisLustreDisks)}
 \FPeval{ulhpcNFS}{clip  (ulhpcChaosNFS + ulhpcGaiaNFS + ulhpcIrisNFS + ulhpcGfivekNFS + ulhpcNyxNFS + IsilonRawStorage)}
-\FPeval{ulhpcNFSEncl}{clip     (ulhpcChaosNFSEncl + ulhpcGaiaNFSEncl + ulhpcIrisNFSEncl + IsilonRawStorageEncl)}
-\FPeval{ulhpcNFSDisks}{clip    (ulhpcChaosNFSDisks + ulhpcGaiaNFSDisks + ulhpcIrisNFSDisks + IsilonRawStorageDisks)}
+\FPeval{ulhpcNFSEncl}{clip     (ulhpcChaosNFSEncl + ulhpcGaiaNFSEncl + ulhpcIrisNFSEncl + IsilonEncl)}
+\FPeval{ulhpcNFSDisks}{clip    (ulhpcChaosNFSDisks + ulhpcGaiaNFSDisks + ulhpcIrisNFSDisks + IsilonDisks)}
 \FPeval{ulhpcBackup}{clip  (ulhpcChaosBackup + ulhpcGaiaBackup + ulhpcIrisBackup + ulhpcGfivekBackup + ulhpcNyxBackup)}
 \FPeval{ulhpcBackupEncl}{clip  (ulhpcChaosBackupEncl + ulhpcGaiaBackupEncl + ulhpcIrisBackupEncl)}
 \FPeval{ulhpcBackupDisks}{clip (ulhpcChaosBackupDisks + ulhpcGaiaBackupDisks + ulhpcIrisBackupDisks)}
