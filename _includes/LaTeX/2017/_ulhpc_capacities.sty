@@ -1,7 +1,7 @@
 %=============================================================================
 % File:  _ulhpc_capacities.sty --  UL HPC Capacities as macros (2017)
 % Author(s): Sebastien Varrette <Sebastien.Varrette@uni.lu>
-% Time-stamp: <Sun 2017-10-08 22:34 svarrette>
+% Time-stamp: <Sun 2017-10-08 22:39 svarrette>
 %=============================================================================
 \usepackage{fp}
 
@@ -125,9 +125,8 @@
 
 
 %%% TOTAL
-\FPeval{ulhpcClusterServers}{clip     (ulhpcChaosServers + ulhpcGaiaServers + ulhpcIrisServers + ulhpcGfivekServers + ulhpcNyxServers)}
-\FPeval{ulhpcServers}{clip     (ulhpcClusterServers + otherServers)}
-\FPeval{ulhpcOnlyServers}{clip (ulhpcChaosServers + ulhpcGaiaServers + ulhpcIrisServers + ulhpcGfivekServers + ulhpcNyxServers)}
+\FPeval{ulhpcOnlyServers}{clip     (ulhpcChaosServers + ulhpcGaiaServers + ulhpcIrisServers + ulhpcGfivekServers + ulhpcNyxServers)}
+\FPeval{ulhpcServers}{clip     (ulhpcOnlyServers + otherServers)}
 \FPeval{ulhpcNodes}{clip       (ulhpcChaosNodes + ulhpcGaiaNodes + ulhpcIrisNodes + ulhpcGfivekNodes + ulhpcNyxNodes)}
 \FPeval{ulhpcCores}{clip       (ulhpcChaosCores + ulhpcGaiaCores + ulhpcIrisCores + ulhpcGfivekCores + ulhpcNyxCores)}
 \FPeval{ulhpcTFlops}{round     (ulhpcChaosTFlops + ulhpcGaiaTFlops + ulhpcIrisTFlops + ulhpcGfivekTFlops + ulhpcNyxTFlops, 3)}
