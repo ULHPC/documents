@@ -33,12 +33,12 @@
 \def\ulhpcIrisNodes{168}
 \def\ulhpcIrisCores{4704}
 \def\ulhpcIrisTFlops{256}
-\def\ulhpcIrisGPFS{1440}
-\def\ulhpcIrisGPFSEncl{4}
-\def\ulhpcIrisGPFSDisks{248}
+\def\ulhpcIrisGPFS{2284}
+\def\ulhpcIrisGPFSEncl{5}
+\def\ulhpcIrisGPFSDisks{390}
 \def\ulhpcIrisLustre{1280}
 \def\ulhpcIrisLustreEncl{4}
-\def\ulhpcIrisLustreDisks{168}
+\def\ulhpcIrisLustreDisks{186}
 \def\ulhpcIrisNFS{6}
 \def\ulhpcIrisNFSEncl{0}
 \def\ulhpcIrisNFSDisks{5}
@@ -57,15 +57,15 @@
 \def\ulhpcGaiaGPFS{960}
 \def\ulhpcGaiaGPFSEncl{4}
 \def\ulhpcGaiaGPFSDisks{240}
-\def\ulhpcGaiaLustre{480}
+\def\ulhpcGaiaLustre{660}
 \def\ulhpcGaiaLustreEncl{5}
 \def\ulhpcGaiaLustreDisks{260}
 \def\ulhpcGaiaNFS{0}
 \def\ulhpcGaiaNFSEncl{0}
 \def\ulhpcGaiaNFSDisks{0}
-\def\ulhpcGaiaBackup{1336}
-\def\ulhpcGaiaBackupEncl{5}
-\def\ulhpcGaiaBackupDisks{254}
+\def\ulhpcGaiaBackup{240}
+\def\ulhpcGaiaBackupEncl{2}
+\def\ulhpcGaiaBackupDisks{120}
 \FPeval{ulhpcGaiaRawStorageWithoutBackup}{clip  (ulhpcGaiaGPFS + ulhpcGaiaLustre + ulhpcGaiaNFS)}
 \FPeval{ulhpcGaiaRawStorage}{clip  (ulhpcGaiaRawStorageWithoutBackup + ulhpcGaiaBackup)}
 
@@ -119,9 +119,9 @@
 \FPeval{ulhpcNyxRawStorage}{clip  (ulhpcNyxRawStorageWithoutBackup + ulhpcNyxBackup)}
 
 %%% Isilon
-\def\IsilonRawStorage{2496}
-\def\IsilonEncl{23}
-\def\IsilonDisks{828}
+\def\IsilonRawStorage{3188}
+\def\IsilonEncl{29}
+\def\IsilonDisks{1044}
 
 
 %%% TOTAL
