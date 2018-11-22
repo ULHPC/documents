@@ -4,15 +4,20 @@
 %=============================================================================
 \usepackage{fp}
 
-% | Campus    | System/Site    | #servers | #nodes | **TOTAL** | #GPU |
-% |-----------|----------------|----------|--------|-----------|------|
-% | Kirchberg | ULHPC/chaos    |       14 |     81 | **95**    | 0    |
-% | Kirchberg | ULHPC/grid5000 |       31 |     38 | **69**    | 0    |
-% | Belval    | ULHPC/gaia     |       35 |    273 | **308**   | 50   |
-% | Belval    | ULHPC/nyx      |       17 |    102 | **119**   | 0    |
-% | Belval    | ULHPC/iris     |       33 |    190 | **223**   | 72   |
-% | Belval    | Misc.          |       41 |      0 | **41**    | 0    |
-% | Kirchberg | Misc.          |       30 |      0 | **30**    | 0    |
+% | Campus    | System/Site    | Start        |  End | #servers |  #N | **TOTAL** |   #C | #GPU |
+% |-----------+----------------+--------------+------+----------+-----+-----------+------+------|
+% | Kirchberg | ULHPC/chaos    | [2010-2012]  | 2019 |       14 |  81 | **95**    | 1120 |    0 |
+% | Kirchberg | ULHPC/grid5000 | [2008-20012] |      |       31 |  38 | **69**    |  368 |    0 |
+% | Belval    | ULHPC/gaia     | [2011-2016]  | 2019 |       35 | 273 | **308**   | 3440 |   50 |
+% | Belval    | ULHPC/nyx      | [2012-2015]  |      |       17 | 102 | **119**   |  500 |    0 |
+% | Belval    | ULHPC/iris     | 2018-        |      |       33 | 190 | **223**   | 5656 |   72 |
+% | Belval    | Misc.          |              |      |       41 |   0 | **41**    |    0 |    0 |
+% | Kirchberg | Misc.          |              |      |       30 |   0 | **30**    |    0 |    0 |
+%
+% |              |  #N | #C (CPU) | R_peak          |
+% |--------------+-----+----------+-----------------|
+% | UL HPC Total | 684 |    11084 | 1062.142 TFlops |
+% .                           (incl. 637.82 GPU TFlops)
 
 \def\ulhpcDate{2018\xspace}
 \def\ulhpcClusters{5\xspace}
