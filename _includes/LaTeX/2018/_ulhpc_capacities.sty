@@ -1,19 +1,19 @@
 %=============================================================================
 % File:  _ulhpc_capacities.sty --  UL HPC Capacities as macros (2017)
 % Author(s): Sebastien Varrette <Sebastien.Varrette@uni.lu>
-% Time-stamp: <Sun 2017-10-08 22:39 svarrette>
+% Time-stamp: <Thu 2018-11-22 01:16 svarrette>
 %=============================================================================
 \usepackage{fp}
 
-% | Campus    | System/Site    | #servers | #nodes | **TOTAL** |
-% |-----------|----------------|----------|--------|-----------|
-% | Kirchberg | ULHPC/chaos    |       14 |     81 | **95**    |
-% | Kirchberg | ULHPC/grid5000 |       31 |     38 | **69**    |
-% | Belval    | ULHPC/gaia     |       35 |    273 | **308**   |
-% | Belval    | ULHPC/nyx      |       17 |    102 | **119**   |
-% | Belval    | ULHPC/iris     |       33 |    168 | **201**   |
-% | Belval    | Misc.          |       41 |      0 | **41**    |
-% | Kirchberg | Misc.          |       30 |      0 | **30**    |
+% | Campus    | System/Site    | #servers | #nodes | **TOTAL** | #GPU |
+% |-----------|----------------|----------|--------|-----------|------|
+% | Kirchberg | ULHPC/chaos    |       14 |     81 | **95**    | 0    |
+% | Kirchberg | ULHPC/grid5000 |       31 |     38 | **69**    | 0    |
+% | Belval    | ULHPC/gaia     |       35 |    273 | **308**   | 50   |
+% | Belval    | ULHPC/nyx      |       17 |    102 | **119**   | 0    |
+% | Belval    | ULHPC/iris     |       33 |    168 | **201**   | 0    |
+% | Belval    | Misc.          |       41 |      0 | **41**    | 0    |
+% | Kirchberg | Misc.          |       30 |      0 | **30**    | 0    |
 
 \def\ulhpcDate{2018\xspace}
 \def\ulhpcClusters{5\xspace}
@@ -22,10 +22,6 @@
 \def\ulhpcCumulHWinvestment{8,173,747}
 \def\ulhpcUsers{469}
 \def\ulhpcSysAdmins{5}
-\def\ulhpcGPUNodes{21}
-\def\ulhpcAccelerators{50}
-\def\ulhpcGPUCores{120704}
-\def\ulhpcGPUTFlops{76.22}
 \def\otherServers{71}
 
 %%% Iris
@@ -33,6 +29,10 @@
 \def\ulhpcIrisNodes{168}
 \def\ulhpcIrisCores{4704}
 \def\ulhpcIrisTFlops{256}
+\def\ulhpcIrisGPUNodes{0}
+\def\ulhpcIrisAccelerators{0}
+\def\ulhpcIrisGPUCores{0}
+\def\ulhpcIrisGPUTFlops{0}
 \def\ulhpcIrisGPFS{2284}
 \def\ulhpcIrisGPFSEncl{5}
 \def\ulhpcIrisGPFSDisks{390}
@@ -54,6 +54,10 @@
 \def\ulhpcGaiaNodes{273}
 \def\ulhpcGaiaCores{3440}
 \def\ulhpcGaiaTFlops{69.296}
+\def\ulhpcGaiaGPUNodes{21}
+\def\ulhpcGaiaAccelerators{50}
+\def\ulhpcGaiaGPUCores{120704}
+\def\ulhpcGaiaGPUTFlops{76.22}
 \def\ulhpcGaiaGPFS{960}
 \def\ulhpcGaiaGPFSEncl{4}
 \def\ulhpcGaiaGPFSDisks{240}
@@ -130,6 +134,11 @@
 \FPeval{ulhpcNodes}{clip       (ulhpcChaosNodes + ulhpcGaiaNodes + ulhpcIrisNodes + ulhpcGfivekNodes + ulhpcNyxNodes)}
 \FPeval{ulhpcCores}{clip       (ulhpcChaosCores + ulhpcGaiaCores + ulhpcIrisCores + ulhpcGfivekCores + ulhpcNyxCores)}
 \FPeval{ulhpcTFlops}{round     (ulhpcChaosTFlops + ulhpcGaiaTFlops + ulhpcIrisTFlops + ulhpcGfivekTFlops + ulhpcNyxTFlops, 3)}
+\FPeval{ulhpcGPUNodes}{clip    (ulhpcGaiaGPUNodes + ulhpcIrisGPUNodes)}
+\FPeval{ulhpcAccelerators}{clip(ulhpcGaiaAccelerators + ulhpcIrisAccelerators)}
+\FPeval{ulhpcGPUCores}{clip    (ulhpcGaiaGPUCores + ulhpcIrisGPUCores)}
+\FPeval{ulhpcGPUTFlops}{clip   (ulhpcGaiaGPUTFlops + ulhpcIrisGPUTFlops)}
+
 \FPeval{ulhpcGPFS}{clip        (ulhpcChaosGPFS + ulhpcGaiaGPFS + ulhpcIrisGPFS + ulhpcGfivekGPFS + ulhpcNyxGPFS)}
 \FPeval{ulhpcGPFSEncl}{clip    (ulhpcChaosGPFSEncl + ulhpcGaiaGPFSEncl + ulhpcIrisGPFSEncl)}
 \FPeval{ulhpcGPFSDisks}{clip   (ulhpcChaosGPFSDisks + ulhpcGaiaGPFSDisks + ulhpcIrisGPFSDisks)}
