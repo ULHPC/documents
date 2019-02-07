@@ -1,0 +1,85 @@
+% =============================================================================
+% File:  _tabular_list_all_computing_nodes.tex -- List of the computing nodes
+% Time-stamp: <Thu 2018-11-22 00:57 svarrette>
+%
+% Copyright (c) 2011-2018 Sebastien Varrette <Sebastien.Varrette@uni.lu>
+%
+% More information on LaTeX: http://www.latex-project.org/
+% LaTeX symbol list:
+% http://www.ctan.org/tex-archive/info/symbols/comprehensive/symbols-a4.pdf
+% =============================================================================
+
+% /!\ IMPORTANT:
+% To be used in conjunction with the _ulhpc_capacities.tex file (of the appropriate date) which defines
+% properly the \ulhpc* macros
+
+
+\begin{tabular}{|l|c|c||lr|c|c|c|c|}
+  \cline{6-8}
+  \multicolumn{5}{r|}{} & \cellcolor{lightgray}\textbf{\#N} & \cellcolor{lightgray}\textbf{\#C} & \cellcolor{lightgray}\textbf{R$_{\text{peak}}$}\\
+  \hline
+  \rowcolor{orange}\multicolumn{5}{r|}{\textbf{Uni.lu HPC TOTAL:}} & \textbf{\ulhpcNodes} & \textbf{\ulhpcCores} & \textbf{\ulhpcRawComputing\ TFlops}\\\hline
+  \multicolumn{6}{c}{} & \multicolumn{2}{r}{(incl. \ulhpcGPUTFlops\ GPU TFlops)}\\
+  \multicolumn{8}{c}{}\\
+  \hline
+  \rowcolor{lightgray}
+  \textbf{Cluster}        & \textbf{Date} & \textbf{Vendor} & \multicolumn{2}{c|}{\textbf{Proc. Description}} & \textbf{\#N} & \textbf{\#C} & \textbf{R$_{\text{peak}}$}\\\hline
+  \hline
+  %___________________________ IRIS __________________________
+  \multirow{5}{*}{\textbf{iris}}
+                          & 2017 & Dell & Intel Xeon E5-2680 v4@2.4GHz        & $2\times14$C,128GB  & 108 & 3024   & 116,12 TFlops   \\\cline{2-8}
+                          & 2018 & Dell & Intel Xeon Gold 6132 @ 2.6 GHz      & $2\times14$C,128GB  & 60  & 1680   & 139,78 TFlops   \\\cline{2-8}
+                          & 2018 & Dell & Intel Xeon Gold 6132 @ 2.6 GHz      & $2\times14$C,768GB  & 18  & 504    & 41,93  TFlops   \\%\cline{4-5}
+                          &      &      & \multicolumn{2}{r|}{\textit{Per node}: 4x NVIDIA Tesla V100 SXM2 32GB}           & 72 GPUs  & 368640 & 561,6 GPU TFlops \\\cline{2-8}
+                          & 2018 & Dell & Intel Xeon Platinum 8180M @ 2.5 GHz & $4\times28$C,3072GB & 4   & 448    & 35,84  TFlops     \\\hline
+  \multicolumn{5}{r|}{\textbf{\texttt{iris} TOTAL:}} & \cellcolor{lightgray} \textbf{\ulhpcIrisNodes} & \cellcolor{lightgray} \textbf{\ulhpcIrisCores} & \cellcolor{lightgray} \textbf{\ulhpcIrisTFlops\ TFlops} \\
+  \multicolumn{5}{r|}{}   & \cellcolor{lightgray}\textbf{\ulhpcIrisAccelerators\ GPUs} & \ulhpcIrisGPUCores & \cellcolor{lightgray}\textbf{+\ulhpcIrisGPUTFlops\ GPU\ Tflops} \\
+  \cline{6-8}
+  \multicolumn{8}{c}{}\\
+  \hline
+  %___________________________ G5K __________________________
+  \multirow{2}{*}{\textbf{g5k}}
+                          & 2008 & Dell & Intel Xeon L5335@2GHz      & $2\times4$C,16GB & 22 & 176 & 1.408 TFlops \\\cline{2-8}
+                          & 2012 & Dell & Intel Xeon E5-2630L@2GHz   & $2\times6$C,24GB & 16 & 192 & 3.072 TFlops \\\hline
+  \multicolumn{5}{r|}{\textbf{\texttt{granduc/petitprince} TOTAL:}} & \cellcolor{lightgray} \textbf{\ulhpcGfivekNodes} & \cellcolor{lightgray} \textbf{\ulhpcGfivekCores} & \cellcolor{lightgray} \textbf{\ulhpcGfivekTFlops\ TFlops} \\
+  \cline{6-8}
+  \multicolumn{8}{l}{\textit{Testing cluster}:}\\
+  \hline
+  %___________________________ Nyx/Viridis/Pyro __________________________
+  \multirow{5}{4em}{\textbf{nyx, viridis, pyro...}     }
+                          & 2012 & Dell    & Intel Xeon E5-2420@1.9GHz    & $1\times6$C,32GB  & 2  & 12  & 0.091 TFlops \\\cline{2-8}
+                          & 2013 & Viridis & ARM A9 Cortex@1.1GHz         & $1\times4$C,4GB   & 96 & 384 & 0.422 TFlops \\\cline{2-8}
+                          & 2015 & Dell    & Intel Xeon E5-2630Lv2@2.4GHz & $2\times6$C,32GB  & 2  & 24  & 0.460 TFlops \\\cline{2-8}
+                          & 2015 & Dell    & Intel Xeon E5-2660v2@2.2GHz  & $2\times10$C,32GB & 4  & 80  & 1.408 TFlops \\\hline
+  \multicolumn{5}{r|}{\textbf{\texttt{nyx/viridis} TOTAL:}} & \cellcolor{lightgray} \textbf{\ulhpcNyxNodes} & \cellcolor{lightgray} \textbf{\ulhpcNyxCores} & \cellcolor{lightgray} \textbf{\ulhpcNyxTFlops\ TFlops} \\\cline{6-8}
+  \multicolumn{8}{c}{}\\
+  \hline
+  \multicolumn{8}{c}{\textbf{Decommissioned clusters (\alert{Planned MID-2019})}}\\
+  \hline
+  \multicolumn{8}{c}{}\\
+  \hline
+  \rowcolor{lightgray}
+  \textbf{Cluster} & \textbf{Start} & \textbf{End} & \multicolumn{2}{l|}{\textbf{Vendors}} & \textbf{\#N} & \textbf{\#C} & \textbf{R$_{\text{peak}}$}\\\hline
+    \hline
+  \multirow{2}{4em}{\textbf{gaia}}
+                          & [2011-2016] & 2019 & \multicolumn{2}{l|}{Bull/Dell/HPE/SGi/Delta} & \cellcolor{lightgray} \textbf{\ulhpcGaiaNodes} & \cellcolor{lightgray} \textbf{\ulhpcGaiaCores} & \cellcolor{lightgray} \textbf{\ulhpcGaiaTFlops\ TFlops} \\
+                          &             &      & \multicolumn{2}{r|}{Intel architecture (Gulftown, Sandy/Ivy Bridge, Haswell)} &          &                                       &  \\
+                          &             &      & \multicolumn{2}{r|}{incl. \ulhpcGaiaGPUNodes\ GPU nodes (2 to 4 NVidia Tesla per node)} & \ulhpcGaiaAccelerators\ GPUs & \ulhpcGaiaGPUCores & \cellcolor{lightgray} \textbf{+\ulhpcGaiaGPUTFlops\ GPU\ TFlops} \\
+  \hline
+  \textbf{chaos}          & [2010-2012] & 2019 & \multicolumn{2}{l|}{Dell/HPE} & \cellcolor{lightgray} \textbf{\ulhpcChaosNodes} & \cellcolor{lightgray} \textbf{\ulhpcChaosCores} & \cellcolor{lightgray} \textbf{\ulhpcChaosTFlops\ TFlops} \\
+  \hline
+\end{tabular}
+
+
+
+
+
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+% eof
+%
+% Local Variables:
+% mode: latex
+% mode: flyspell
+% mode: visual-line
+% TeX-master: "."
+% End:

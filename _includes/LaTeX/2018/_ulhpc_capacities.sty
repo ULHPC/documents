@@ -1,0 +1,170 @@
+%=============================================================================
+% File:  _ulhpc_capacities.sty --  UL HPC Capacities as macros (2017)
+% Author(s): Sebastien Varrette <Sebastien.Varrette@uni.lu>
+% Time-stamp: <Thu 2018-11-22 01:16 svarrette>
+%=============================================================================
+\usepackage{fp}
+
+% | Campus    | System/Site    | #servers | #nodes | **TOTAL** | #GPU |
+% |-----------|----------------|----------|--------|-----------|------|
+% | Kirchberg | ULHPC/chaos    |       14 |     81 | **95**    | 0    |
+% | Kirchberg | ULHPC/grid5000 |       31 |     38 | **69**    | 0    |
+% | Belval    | ULHPC/gaia     |       35 |    273 | **308**   | 50   |
+% | Belval    | ULHPC/nyx      |       17 |    102 | **119**   | 0    |
+% | Belval    | ULHPC/iris     |       33 |    168 | **201**   | 0    |
+% | Belval    | Misc.          |       41 |      0 | **41**    | 0    |
+% | Kirchberg | Misc.          |       30 |      0 | **30**    | 0    |
+
+\def\ulhpcDate{2018\xspace}
+\def\ulhpcClusters{5\xspace}
+\def\ulhpcDisks{1558}
+\def\ulhpcCumulInvestment{10,436,151}
+\def\ulhpcCumulHWinvestment{8,173,747}
+\def\ulhpcUsers{469}
+\def\ulhpcSysAdmins{5}
+\def\otherServers{71}
+
+%%% Iris
+\def\ulhpcIrisServers{33} %
+\def\ulhpcIrisNodes{168}
+\def\ulhpcIrisCores{4704}
+\def\ulhpcIrisTFlops{256}
+\def\ulhpcIrisGPUNodes{0}
+\def\ulhpcIrisAccelerators{0}
+\def\ulhpcIrisGPUCores{0}
+\def\ulhpcIrisGPUTFlops{0}
+\def\ulhpcIrisGPFS{2284}
+\def\ulhpcIrisGPFSEncl{5}
+\def\ulhpcIrisGPFSDisks{390}
+\def\ulhpcIrisLustre{1280}
+\def\ulhpcIrisLustreEncl{4}
+\def\ulhpcIrisLustreDisks{186}
+\def\ulhpcIrisNFS{6}
+\def\ulhpcIrisNFSEncl{0}
+\def\ulhpcIrisNFSDisks{5}
+\def\ulhpcIrisBackup{600}
+\def\ulhpcIrisBackupEncl{1}
+\def\ulhpcIrisBackupDisks{60}
+\FPeval{ulhpcIrisRawStorageWithoutBackup}{clip  (ulhpcIrisGPFS + ulhpcIrisLustre + ulhpcIrisNFS)}
+\FPeval{ulhpcIrisRawStorage}{clip  (ulhpcIrisRawStorageWithoutBackup + ulhpcIrisBackup)}
+
+
+%%% Gaia
+\def\ulhpcGaiaServers{35}
+\def\ulhpcGaiaNodes{273}
+\def\ulhpcGaiaCores{3440}
+\def\ulhpcGaiaTFlops{69.296}
+\def\ulhpcGaiaGPUNodes{21}
+\def\ulhpcGaiaAccelerators{50}
+\def\ulhpcGaiaGPUCores{120704}
+\def\ulhpcGaiaGPUTFlops{76.22}
+\def\ulhpcGaiaGPFS{960}
+\def\ulhpcGaiaGPFSEncl{4}
+\def\ulhpcGaiaGPFSDisks{240}
+\def\ulhpcGaiaLustre{660}
+\def\ulhpcGaiaLustreEncl{5}
+\def\ulhpcGaiaLustreDisks{260}
+\def\ulhpcGaiaNFS{0}
+\def\ulhpcGaiaNFSEncl{0}
+\def\ulhpcGaiaNFSDisks{0}
+\def\ulhpcGaiaBackup{240}
+\def\ulhpcGaiaBackupEncl{2}
+\def\ulhpcGaiaBackupDisks{120}
+\FPeval{ulhpcGaiaRawStorageWithoutBackup}{clip  (ulhpcGaiaGPFS + ulhpcGaiaLustre + ulhpcGaiaNFS)}
+\FPeval{ulhpcGaiaRawStorage}{clip  (ulhpcGaiaRawStorageWithoutBackup + ulhpcGaiaBackup)}
+
+
+
+%\FPeval{ulhpcGaiaRawStorage}{960+480}
+
+%%% Chaos
+\def\ulhpcChaosServers{14}
+\def\ulhpcChaosNodes{81}
+\def\ulhpcChaosCores{1120}
+\def\ulhpcChaosTFlops{14.495}
+\def\ulhpcChaosGPFS{0}
+\def\ulhpcChaosGPFSEncl{0}
+\def\ulhpcChaosGPFSDisks{0}
+\def\ulhpcChaosLustre{0}
+\def\ulhpcChaosLustreEncl{0}
+\def\ulhpcChaosLustreDisks{0}
+\def\ulhpcChaosNFS{180}
+\def\ulhpcChaosNFSEncl{1}
+\def\ulhpcChaosNFSDisks{60}
+\def\ulhpcChaosBackup{180}
+\def\ulhpcChaosBackupEncl{1}
+\def\ulhpcChaosBackupDisks{60}
+\FPeval{ulhpcChaosRawStorageWithoutBackup}{clip  (ulhpcChaosGPFS + ulhpcChaosLustre + ulhpcChaosNFS)}
+\FPeval{ulhpcChaosRawStorage}{clip  (ulhpcChaosRawStorageWithoutBackup + ulhpcChaosBackup)}
+
+%%% G5K
+\def\ulhpcGfivekServers{31}
+\def\ulhpcGfivekNodes{38}
+\def\ulhpcGfivekCores{368}
+\def\ulhpcGfivekTFlops{4.48}
+\def\ulhpcGfivekGPFS{0}
+\def\ulhpcGfivekLustre{0}
+\def\ulhpcGfivekNFS{32.4}
+\def\ulhpcGfivekBackup{0}
+\FPeval{ulhpcGfivekRawStorageWithoutBackup}{clip  (ulhpcGfivekGPFS + ulhpcGfivekLustre + ulhpcGfivekNFS)}
+\FPeval{ulhpcGfivekRawStorage}{clip  (ulhpcGfivekRawStorageWithoutBackup + ulhpcGfivekBackup)}
+
+
+%%% nyx / viridis / pyro
+\def\ulhpcNyxServers{17}
+\def\ulhpcNyxNodes{102}
+\def\ulhpcNyxCores{500}
+\def\ulhpcNyxTFlops{2.381}
+\def\ulhpcNyxGPFS{0}
+\def\ulhpcNyxLustre{0}
+\def\ulhpcNyxNFS{242}
+\def\ulhpcNyxBackup{0}
+\FPeval{ulhpcNyxRawStorageWithoutBackup}{clip  (ulhpcNyxGPFS + ulhpcNyxLustre + ulhpcNyxNFS)}
+\FPeval{ulhpcNyxRawStorage}{clip  (ulhpcNyxRawStorageWithoutBackup + ulhpcNyxBackup)}
+
+%%% Isilon
+\def\IsilonRawStorage{3188}
+\def\IsilonEncl{29}
+\def\IsilonDisks{1044}
+
+
+%%% TOTAL
+\FPeval{ulhpcOnlyServers}{clip     (ulhpcChaosServers + ulhpcGaiaServers + ulhpcIrisServers + ulhpcGfivekServers + ulhpcNyxServers)}
+\FPeval{ulhpcServers}{clip     (ulhpcOnlyServers + otherServers)}
+\FPeval{ulhpcNodes}{clip       (ulhpcChaosNodes + ulhpcGaiaNodes + ulhpcIrisNodes + ulhpcGfivekNodes + ulhpcNyxNodes)}
+\FPeval{ulhpcCores}{clip       (ulhpcChaosCores + ulhpcGaiaCores + ulhpcIrisCores + ulhpcGfivekCores + ulhpcNyxCores)}
+\FPeval{ulhpcTFlops}{round     (ulhpcChaosTFlops + ulhpcGaiaTFlops + ulhpcIrisTFlops + ulhpcGfivekTFlops + ulhpcNyxTFlops, 3)}
+\FPeval{ulhpcGPUNodes}{clip    (ulhpcGaiaGPUNodes + ulhpcIrisGPUNodes)}
+\FPeval{ulhpcAccelerators}{clip(ulhpcGaiaAccelerators + ulhpcIrisAccelerators)}
+\FPeval{ulhpcGPUCores}{clip    (ulhpcGaiaGPUCores + ulhpcIrisGPUCores)}
+\FPeval{ulhpcGPUTFlops}{clip   (ulhpcGaiaGPUTFlops + ulhpcIrisGPUTFlops)}
+
+\FPeval{ulhpcGPFS}{clip        (ulhpcChaosGPFS + ulhpcGaiaGPFS + ulhpcIrisGPFS + ulhpcGfivekGPFS + ulhpcNyxGPFS)}
+\FPeval{ulhpcGPFSEncl}{clip    (ulhpcChaosGPFSEncl + ulhpcGaiaGPFSEncl + ulhpcIrisGPFSEncl)}
+\FPeval{ulhpcGPFSDisks}{clip   (ulhpcChaosGPFSDisks + ulhpcGaiaGPFSDisks + ulhpcIrisGPFSDisks)}
+\FPeval{ulhpcLustre}{clip      (ulhpcChaosLustre + ulhpcGaiaLustre + ulhpcIrisLustre + ulhpcGfivekLustre + ulhpcNyxLustre)}
+\FPeval{ulhpcLustreEncl}{clip  (ulhpcChaosLustreEncl + ulhpcGaiaLustreEncl + ulhpcIrisLustreEncl)}
+\FPeval{ulhpcLustreDisks}{clip (ulhpcChaosLustreDisks + ulhpcGaiaLustreDisks + ulhpcIrisLustreDisks)}
+\FPeval{ulhpcNFS}{clip  (ulhpcChaosNFS + ulhpcGaiaNFS + ulhpcIrisNFS + ulhpcGfivekNFS + ulhpcNyxNFS + IsilonRawStorage)}
+\FPeval{ulhpcNFSEncl}{clip     (ulhpcChaosNFSEncl + ulhpcGaiaNFSEncl + ulhpcIrisNFSEncl + IsilonEncl)}
+\FPeval{ulhpcNFSDisks}{clip    (ulhpcChaosNFSDisks + ulhpcGaiaNFSDisks + ulhpcIrisNFSDisks + IsilonDisks)}
+\FPeval{ulhpcBackup}{clip  (ulhpcChaosBackup + ulhpcGaiaBackup + ulhpcIrisBackup + ulhpcGfivekBackup + ulhpcNyxBackup)}
+\FPeval{ulhpcBackupEncl}{clip  (ulhpcChaosBackupEncl + ulhpcGaiaBackupEncl + ulhpcIrisBackupEncl)}
+\FPeval{ulhpcBackupDisks}{clip (ulhpcChaosBackupDisks + ulhpcGaiaBackupDisks + ulhpcIrisBackupDisks)}
+
+\FPeval{ulhpcRawComputing}{clip (ulhpcTFlops + ulhpcGPUTFlops)}
+\FPeval{ulhpcRawStorage}{clip  (ulhpcChaosRawStorage + ulhpcGaiaRawStorage + ulhpcIrisRawStorage + ulhpcGfivekRawStorage + ulhpcNyxRawStorage + IsilonRawStorage)}
+\FPeval{ulhpcRawStorageWithoutStorage}{clip  (ulhpcChaosRawStorageWithoutBackup + ulhpcGaiaRawStorageWithoutBackup + ulhpcIrisRawStorageWithoutBackup + ulhpcGfivekRawStorageWithoutBackup + ulhpcNyxRawStorageWithoutBackup + IsilonRawStorage)}
+
+\FPeval{ulhpcEncl}{clip        (ulhpcGPFSEncl + ulhpcLustreEncl + ulhpcNFSEncl + ulhpcBackupEncl)}
+\FPeval{ulhpcDisks}{clip       (ulhpcGPFSDisks + ulhpcLustreDisks + ulhpcNFSDisks + ulhpcBackupDisks)}
+
+
+
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+% eof
+%
+% Local Variables:
+% mode: latex
+% mode: flyspell
+% End:

@@ -1,0 +1,90 @@
+% =============================================================================
+% File:  _tabular_list_all_computing_nodes.tex -- List of the computing nodes
+% Time-stamp: <Fri 2017-06-02 08:49 svarrette>
+%
+% Copyright (c) 2011-2018 Sebastien Varrette <Sebastien.Varrette@uni.lu>
+%
+% More information on LaTeX: http://www.latex-project.org/
+% LaTeX symbol list:
+% http://www.ctan.org/tex-archive/info/symbols/comprehensive/symbols-a4.pdf
+% =============================================================================
+
+% /!\ IMPORTANT:
+% To be used in conjunction with the _ulhpc_capacities.tex file (of the appropriate date) which defines
+% properly the \ulhpc* macros
+
+
+\begin{tabular}{|l|c|c||lr|c|c|c|c|}
+  % \cline{4-8}
+  \hline
+  \rowcolor{lightgray}
+                          & \textbf{Date} & \textbf{Vendor} & \multicolumn{2}{c|}{\textbf{Proc. Description}} & \textbf{\#N} & \textbf{\#C} & \textbf{R$_{\text{peak}}$}\\\hline
+  \hline
+  % ___________________________ IRIS __________________________
+  \multirow{2}{*}{\textbf{iris}}
+                          & 2017 & Dell & Intel Xeon E5-2680 v4@2.4GHz      & $2\times14$C,128GB & 108 & 3024 & 116,12 TFlops \\\cline{2-8}
+                          & 2018 & Dell & Intel Xeon Gold 6132 @ 2.6 GHz 60 & $2\times14$C,128GB & 60  & 1680 & 139,78 TFlops \\\cline{2-8}
+  \multicolumn{5}{r|}{\textbf{\texttt{iris} TOTAL:}} & \cellcolor{lightgray} \textbf{\ulhpcIrisNodes} & \cellcolor{lightgray} \textbf{\ulhpcIrisCores} & \cellcolor{lightgray} \textbf{\ulhpcIrisTFlops\ TFlops} \\
+  \cline{6-8}
+  \multicolumn{8}{c}{}\\
+  \hline
+  %___________________________ GAIA __________________________
+  \multirow{10}{*}{\begin{sideways}\textbf{gaia}\end{sideways}}
+                          & 2011 & Bull & Intel Xeon L5640@2.26GHz   & $2\times6$C,48GB  & 72 & 864 & 7.811 TFlops \\\cline{2-8}
+                          & 2012 & Dell & Intel Xeon E5-4640@2.4GHz  & $4\times8$C, 1TB  & 1  & 32  & 0.614 TFlops \\\cline{2-8}
+                          & 2012 & Bull & Intel Xeon E7-4850@2GHz    & $16\times10$C,1TB & 1  & 160 & 1.280 TFLops \\\cline{2-8}
+                          & 2013 & Dell & Intel Xeon E5-2660@2.2GHz  & $2\times8$C,64GB  & 5  & 80  & 1.408 TFlops \\\cline{2-8}
+                          & 2013 & Bull & Intel Xeon X5670@2.93GHz   & $2\times6C$,48GB  & 40 & 480 & 5.626 TFlops \\\cline{2-8}
+                          & 2013 & Bull & Intel Xeon X5675@3.07GHz   & $2\times6C$,48GB  & 32 & 384 & 4.746 TFlops \\\cline{2-8}
+                          & 2014 & Delta& Intel Xeon E7-8880@2.5 GHz & $8\times15C$,1TB  & 1  & 120 & 2.4 TFlops   \\\cline{2-8}
+                          & 2014 & SGi  & Intel Xeon E5-4650@2.4 GHz & $16\times10C$,4TB & 1  & 160 & 3.072 TFlops \\\cline{2-8}
+                          & 2015 & Dell & Intel Xeon E5-2680@2.5 GHz & $2\times12$C,128GB& 28 & 672 & 26.88 TFlops \\\cline{2-8}
+                          & 2015 & HP   & Intel E3-1284Lv3, 1.8GHz   & $1\times4$C,32GB  & 90 & 360 & 10.368 TFlops \\\cline{2-8}
+                          & 2016 & Dell & Intel Xeon E7-8867@2.5 GHz & $4\times16$C,2TB  & 2  & 128 & 5.12 TFlops \\\hline
+  \multicolumn{5}{r|}{\textbf{\texttt{gaia} TOTAL:}} & \cellcolor{lightgray} \textbf{\ulhpcGaiaNodes} & \cellcolor{lightgray} \textbf{\ulhpcGaiaCores} & \cellcolor{lightgray} \textbf{\ulhpcGaiaTFlops\ TFlops} \\
+  \cline{6-8}
+  \multicolumn{8}{c}{}\\
+  \hline
+  %___________________________ CHAOS __________________________
+  \multirow{5}{*}{\begin{sideways}\textbf{chaos}\end{sideways}}
+                          & 2010 & HP   & Intel Xeon L5640@2.26GHz   & $2\times6$C,24GB & 32 & 384 & 3.472 TFlops \\\cline{2-8}
+                          & 2011 & Dell & Intel Xeon L5640@2.26GHz   & $2\times6$C,24GB & 16 & 192 & 1.736 TFlops \\\cline{2-8}
+                          & 2012 & Dell & Intel Xeon X7560@2,26GHz   & $4\times6$C, 1TB & 1  & 32  & 0.289 TFlops \\\cline{2-8}
+                          & 2012 & Dell & Intel Xeon E5-2660@2.2GHz  & $2\times8$C,32GB & 16 & 256 & 4.506 TFlops \\\cline{2-8}
+                          & 2012 & HP   & Intel Xeon E5-2660@2.2GHz  & $2\times8$C,32GB & 16 & 256 & 4.506 TFlops \\\hline %1.126 TFlops \\\hline
+  \multicolumn{5}{r|}{\textbf{\texttt{chaos} TOTAL:}} & \cellcolor{lightgray} \textbf{\ulhpcChaosNodes} & \cellcolor{lightgray} \textbf{\ulhpcChaosCores} & \cellcolor{lightgray} \textbf{\ulhpcChaosTFlops\ TFlops} \\
+  \cline{6-8}
+  \multicolumn{8}{c}{}\\
+  \hline
+  %___________________________ G5K __________________________
+  \multirow{2}{*}{\begin{sideways}\textbf{g5k}\end{sideways}}
+                          & 2008 & Dell & Intel Xeon L5335@2GHz      & $2\times4$C,16GB & 22 & 176 & 1.408 TFlops \\\cline{2-8}
+                          & 2012 & Dell & Intel Xeon E5-2630L@2GHz   & $2\times6$C,24GB & 16 & 192 & 3.072 TFlops \\\hline
+  \multicolumn{5}{r|}{\textbf{\texttt{granduc/petitprince} TOTAL:}} & \cellcolor{lightgray} \textbf{\ulhpcGfivekNodes} & \cellcolor{lightgray} \textbf{\ulhpcGfivekCores} & \cellcolor{lightgray} \textbf{\ulhpcGfivekTFlops\ TFlops} \\
+  \cline{6-8}
+  \multicolumn{8}{l}{\textit{Testing cluster}:}\\
+  \hline
+  %___________________________ Nyx/Viridis/Pyro __________________________
+  \multirow{5}{4em}{\textbf{nyx, viridis, pyro...}     }
+                          & 2012 & Dell    & Intel Xeon E5-2420@1.9GHz    & $1\times6$C,32GB  & 2  & 12  & 0.091 TFlops \\\cline{2-8}
+                          & 2013 & Viridis & ARM A9 Cortex@1.1GHz         & $1\times4$C,4GB   & 96 & 384 & 0.422 TFlops \\\cline{2-8}
+                          & 2015 & Dell    & Intel Xeon E5-2630Lv2@2.4GHz & $2\times6$C,32GB  & 2  & 24  & 0.460 TFlops \\\cline{2-8}
+                          & 2015 & Dell    & Intel Xeon E5-2660v2@2.2GHz  & $2\times10$C,32GB & 4  & 80  & 1.408 TFlops \\\hline
+  \multicolumn{5}{r|}{\textbf{\texttt{nyx/viridis} TOTAL:}} & \cellcolor{lightgray} \textbf{\ulhpcNyxNodes} & \cellcolor{lightgray} \textbf{\ulhpcNyxCores} & \cellcolor{lightgray} \textbf{\ulhpcNyxTFlops\ TFlops} \\\cline{6-8}
+  \cline{6-8}
+
+\end{tabular}
+
+
+
+
+
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+% eof
+%
+% Local Variables:
+% mode: latex
+% mode: flyspell
+% mode: visual-line
+% TeX-master: "."
+% End:

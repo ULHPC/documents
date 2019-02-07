@@ -1,0 +1,61 @@
+%================================================================================
+% File:  _tabular_HPC_platform_around.tex --  HPC Facilities in the Grande Region           
+% Time-stamp: <Wed 2016-02-10 15:52 svarrette>
+%
+% Copyright (c) 2012-2014 Sebastien Varrette <Sebastien.Varrette@uni.lu>
+%
+% More information on LaTeX: http://www.latex-project.org/
+% LaTeX symbol list: 
+%   http://www.ctan.org/tex-archive/info/symbols/comprehensive/symbols-a4.pdf
+%================================================================================
+
+% /!\ IMPORTANT: 
+% To be used in conjunction with the _ulhpc_capacities.tex file (of the appropriate date) which defines 
+% properly the \ulhpc* macros 
+
+
+\begin{tabular}{|l|l||l|l|l|l|}
+  \multicolumn{3}{c}{} & \multicolumn{1}{c}{TFlops} & \multicolumn{1}{c}{TB} & \multicolumn{1}{c}{FTEs} \\
+  \hline
+  \rowcolor{lightgray}
+  \textbf{Country} & \textbf{Name/Institute} & \textbf{\#Cores} & \textbf{R$_\text{peak}$} & \textbf{Storage} & \textbf{Manpower}\\\hline
+  \hline
+  % \rowcolor{cyan}
+  \multirow{2}{*}{Luxembourg} & UL                & \ulhpcCores & \ulhpcTFlops & \ulhpcRawStorage  & 2 \\
+                       &        CRP GL            & 800         & 6.21         & 144               & 1.5 \\\hline
+  \hline
+  % cf http://www-hpc.cea.fr/en/complexe/tgcc-curie.htm
+  \multirow{3}{*}{ France}    & TGCC Curie, CEA   & 77184       & 1667.2       & 5000              & n/a \\
+                       &        LORIA, Nancy      & 3724        & 29.79        & 82                &  5.05   \\
+                       % ULorraine & Nancy/Metz & 24  & 300 & n/a \\
+                       &        ROMEO, UCR, Reims & 564         & 4.128        & 15                &  2  \\\hline
+  \hline
+  % cf http://www.fz-juelich.de/ias/jsc/EN/Expertise/Supercomputers/JUQUEEN/Configuration/Configuration_node.html
+  \multirow{3}{*}{Germany}    & Juqueen, Juelich  & 393216      & 5033.2       &  448              & n/a \\
+  % cf p81  http://www.rzg.mpg.de/projects/supercomputing/HPCinMPG.pdf
+                       &        MPI, RZG          & 2556        & 14.1         & n/a               & 5  \\
+                       % cf http://www.urz.uni-heidelberg.de/server/grid/hardware.en.html
+                       &        URZ, {\tiny (bwGrid)},Heidelberg & 1140        & 10.125       & 32                & 9 \\
+  \hline\hline
+  % cf http://www.ugent.be/hpc/en/infrastructure
+  \multirow{2}{*}{Belgium} & UGent, VCS           & 4320        & 54.541       & 82                & n/a \\
+  % cf http://www.ceci-hpc.be/clusters.html - OLD: http://www.uclouvain.be/73258.html
+                       &     CECI, UMons/UCL      & 2576        & 25.108       & 156               & > 4  \\
+  \hline\hline
+  \multirow{2}{*}{UK}  & Darwin, Cambridge Univ   & 9728        & 202.3        & 20                & n/a \\
+  % Cf http://www.ucl.ac.uk/isd/staff/research_services/research-computing/services/legion-upgrade/overview
+                       &     Legion, UCLondon     & 5632        & 45.056       & 192               & 6  \\
+  \hline\hline
+  Spain                & MareNostrum, BCS         & 33664       & 700.2        & 1900              & 14  \\
+  \hline
+\end{tabular}
+
+
+
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+% eof
+%
+% Local Variables:
+% mode: latex
+% mode: flyspell
+% End:

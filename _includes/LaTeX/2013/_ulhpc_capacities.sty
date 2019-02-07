@@ -1,0 +1,54 @@
+%=============================================================================
+% File:  _ulhpc_capacities.sty --  UL HPC Capacities as macros (2013)
+% Author(s): Sebastien Varrette <Sebastien.Varrette@uni.lu>
+% Time-stamp: <Wed 2016-02-10 14:22 svarrette>
+%=============================================================================
+\usepackage{fp}
+
+\def\ulhpcDate{2013\xspace}
+\def\ulhpcClusters{4\xspace}
+\def\ulhpcDisks{444}
+\def\ulhpcCumulInvestment{5,445,435}
+\def\ulhpcCumulHWinvestment{3,183,032}
+\def\ulhpcUsers{183}
+
+%%% Chaos
+\def\ulhpcChaosNodes{99}
+\def\ulhpcChaosCores{1336}
+\def\ulhpcChaosTFlops{17.026}
+\FPeval{ulhpcChaosRawStorage}{180+180}
+%%% Gaia
+\def\ulhpcGaiaNodes{151}
+\def\ulhpcGaiaCores{2000}
+\def\ulhpcGaiaTFlops{21.454}
+\FPeval{ulhpcGaiaRawStorage}{816}
+%%% G5K
+\def\ulhpcGfivekNodes{38}
+\def\ulhpcGfivekCores{368}
+\def\ulhpcGfivekTFlops{4.48}
+\def\ulhpcGfivekRawStorage{32.4}
+%%% nyx
+\def\ulhpcNyxNodes{98}
+\def\ulhpcNyxCores{392}
+\def\ulhpcNyxTFlops{0.52}
+\def\ulhpcNyxRawStorage{0}
+
+%%% TOTAL
+\FPeval{ulhpcNodes}{clip(ulhpcChaosNodes + ulhpcGaiaNodes + ulhpcGfivekNodes + ulhpcNyxNodes)}
+\FPeval{ulhpcCores}{clip(ulhpcChaosCores + ulhpcGaiaCores + ulhpcGfivekCores + ulhpcNyxCores)}
+\FPeval{ulhpcTFlops}{round(ulhpcChaosTFlops + ulhpcGaiaTFlops + ulhpcGfivekTFlops + ulhpcNyxTFlops, 3)}
+\FPeval{ulhpcRawStorage}{clip(ulhpcChaosRawStorage + ulhpcGaiaRawStorage + ulhpcGfivekRawStorage + ulhpcNyxRawStorage)}
+
+
+
+
+
+
+
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+% eof
+%
+% Local Variables:
+% mode: latex
+% mode: flyspell
+% End:
