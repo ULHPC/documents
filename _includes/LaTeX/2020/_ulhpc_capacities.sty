@@ -1,6 +1,6 @@
 %=============================================================================
 % File:  _ulhpc_capacities.sty --  UL HPC Capacities as macros (2020)
-% Time-stamp: <Thu 2020-05-21 09:48 svarrette>
+% Time-stamp: <Sat 2020-05-23 16:21 svarrette>
 %=============================================================================
 \usepackage{fp}
 
@@ -193,8 +193,11 @@
 \FPeval{ulhpcBackupDisks}{clip (ulhpcAionBackupDisks  + 0*ulhpcIrisBackupDisks)}
 
 \FPeval{ulhpcRawComputing}{clip (ulhpcTFlops + ulhpcGPUTFlops)}
+\FPeval{ulhpcRawComputingPF}{round (ulhpcRawComputing/1000, 2)}
 \FPeval{ulhpcRawStorage}{clip   (ulhpcAionRawStorage + 0*ulhpcIrisRawStorage + ulhpcGfivekRawStorage + IsilonRawStorage)}
+\FPeval{ulhpcRawStoragePB}{round (ulhpcRawStorage/1000, 2)}
 \FPeval{ulhpcRawStorageWithoutBackup}{clip(ulhpcAionRawStorageWithoutBackup + 0*ulhpcIrisRawStorageWithoutBackup + ulhpcGfivekRawStorageWithoutBackup + IsilonRawStorage)}
+\FPeval{ulhpcRawStorageWithoutBackupPB}{round (ulhpcRawStorageWithoutBackup/1000, 2)}
 
 \FPeval{ulhpcEncl}{clip        (ulhpcGPFSEncl + ulhpcLustreEncl + ulhpcNFSEncl + ulhpcBackupEncl)}
 \FPeval{ulhpcDisks}{clip       (ulhpcGPFSDisks + ulhpcLustreDisks + ulhpcNFSDisks + ulhpcBackupDisks)}

@@ -1,0 +1,151 @@
+% =============================================================================
+% File:  _tabular_HPC_platform_around.tex -- HPC Facilities in the Grande Region and around
+% Time-stamp: <Mon 2020-05-25 17:23 svarrette>
+%
+% Copyright (c) 2016 Sebastien Varrette <Sebastien.Varrette@uni.lu>
+%
+% More information on LaTeX: http://www.latex-project.org/
+% LaTeX symbol list:
+% - http://www.ctan.org/tex-archive/info/symbols/comprehensive/symbols-a4.pdf
+% =============================================================================
+
+% Reference: see https://docs.google.com/spreadsheets/d/1FhLLoFCNn2G3xuiITl8dYoB3b_X6HDDzxBv0iBDcmns
+
+% /!\ IMPORTANT:
+%   To be used in conjunction with the _ulhpc_capacities.tex file (of the appropriate date) which defines
+%   properly the \ulhpc* macros
+
+\definecolor{clcolor}{rgb}{0.96, 0.96, 0.96}
+\newcommand{\cl}[1]{\cellcolor{clcolor}#1}
+
+%   == HPC Tier
+\newcommand{\HPCTier}[2]{\textit{\tiny Tier #1 (#2)}}
+\newcommand{\HPCTierEU}{\HPCTier{0}{EU}}     % European centres
+\newcommand{\HPCTierEUNat}{\HPCTier{0/1}{EU,Nat}} % European and National centres
+\newcommand{\HPCTierNat}{\HPCTier{1}{Nat.}}  % National centres
+\newcommand{\HPCTierReg} {\cellcolor{lightgray}\HPCTier{2}{Reg.}}  % Regional / University centres
+\newcommand{\HPCTierUniv}{\cellcolor{lightgray}\HPCTier{2}{Univ}} % Regional / University centres
+\newcommand{\HPCTierLoc} {\cellcolor{lightgray}\HPCTier{2}{local}} % Regional / University centres
+% == Luxembourg
+\newcommand{\LuxProvide}{LuxProvide}
+\newcommand{\MeluXina}{MeluXina}
+\newcommand{\theULHPC}{\textbf{\href{https://hpc.uni.lu/}{Uni.lu HPC}}}
+\newcommand{\LIST}{\href{https://www.list.lu/fr/institut/infrastructures-rd/hpc/}{LIST}}
+% == France
+\newcommand{\LORIA}{\href{https://www.grid5000.fr/mediawiki/index.php/Nancy:Hardware\#Clusters}{LORIA (G5K), Nancy}}
+\newcommand{\GENCI}{\href{http://www.genci.fr/}{GENCI}}
+\newcommand{\Idris}{\href{http://www.idris.fr/}{Idris}}
+\newcommand{\JeanZay}{\href{http://www.idris.fr/jean-zay/cpu/jean-zay-cpu-hw.html}{JeanZay}}
+\newcommand{\TGCC}{\href{http://www-hpc.cea.fr/fr/complexe/tgcc.htm}{TGCC}\textit{\tiny(Joliot-Curie)}}
+\newcommand{\CEA}{\href{http://www-hpc.cea.fr/fr/complexe/tgcc.htm}{CEA}}
+\newcommand{\ROMEO}{\href{https://romeo.univ-reims.fr/pages/presentation_hardware}{ROMEO}}
+% == Belgium
+\newcommand{\Vlaams}{\href{https://www.vscentrum.be/tier1}{Vlaams}}
+\newcommand{\VSC}{\href{https://www.vscentrum.be/}{VSC}}
+\newcommand{\ULiege}{\href{http://www.ulg.ac.be/cms/c_3826073/en/nic4-detailed-explanation}{NIC4, University of Li\`ege}}
+\newcommand{\UGent} {\href{https://www.ugent.be/hpc/en}{Gent Univ.}}
+\newcommand{\CECI}  {\href{http://www.ceci-hpc.be/clusters.html}{CECI}}
+\newcommand{\Cenaero}{\href{http://www.cenaero.be/}{Cenaero}}
+\newcommand{\zenobe}{\href{https://tier1.cenaero.be/en/faq-page}{zenobe}}
+\newcommand{\UCL}   {\href{http://www.cism.ucl.ac.be/faq/}{Universit\'e Catholique de Louvain}}
+
+% == Germany
+\newcommand{\JSC}{\href{https://www.fz-juelich.de/ias/jsc/EN/Home/home_node.html}{JSC}}
+\newcommand{\JUWELS}{\href{https://www.fz-juelich.de/ias/jsc/EN/Expertise/Supercomputers/JUWELS/Configuration/Configuration_node.html}{JUWELS}}
+\newcommand{\JURECA}{\href{https://www.fz-juelich.de/ias/jsc/EN/Expertise/Supercomputers/JURECA/Configuration/Configuration_node.html}{JURECA}}
+\newcommand{\HLRS}{\href{https://www.hlrs.de/home/}{HLRS, Univ. Stuttgart}}
+\newcommand{\hawk}{\href{https://www.hlrs.de/systems/hpe-apollo-hawk/}{Hawk}}
+\newcommand{\LRZ}{\href{}{LRZ, Munich}}
+\newcommand{\SuperMUC}{\href{https://doku.lrz.de/display/PUBLIC/Access+and+Overview+of+HPC+Systems}{SuperMUC-NG}}
+% cf Gauss Alianz: https://gauss-allianz.de/en/hpc-ecosystem?ct[]=70000080002
+\newcommand{\GoetherHLR}{\href{https://csc.uni-frankfurt.de/wiki/doku.php?id=public:usage:goethe-hlr}{Goether-HLR}}
+\newcommand{\CLAIXRWTH}{\href{https://www.itc.rwth-aachen.de/go/id/eucm}{CLAIX-2018}}
+% \newcommand{\}{\href{}{}}
+% \newcommand{\bwGrid}      {\href{http://www.urz.uni-heidelberg.de/server/grid/hardware.en.html}{bwGrid, Heidelberg}}
+% \newcommand{\bwForCluster}{\href{http://www.bwhpc-c5.de/wiki/index.php/Hardware_and_Architecture_(bwForCluster_Chemistry)}{bwForCluster, Ulm}}
+% \newcommand{\bwHPC}       {\href{https://www.bwhpc-c5.de/wiki/index.php/Hardware_and_Architecture_(bwForCluster_MLS\%26WISO)}{bwHPC MLS\&WISO, Mannheim}}
+
+% == Switzerland
+\newcommand{\CSCS}{\href{https://www.cscs.ch/computers/overview/}{CSCS}}
+\newcommand{\PizDaint}{\href{https://www.cscs.ch/computers/piz-daint/}{Piz-Daint}}
+
+% == Czech Republic
+\newcommand{\ITForInnov}{\href{https://www.it4i.cz/it4i-among-supercomputers/?lang=en}{IT4Innovation}}
+\newcommand{\Barbora}{\href{https://docs.it4i.cz/barbora/hardware-overview/}{Barbora}}
+
+% == Italy
+\newcommand{\Cineca}{\href{http://www.hpc.cineca.it/}{Cineca}}
+
+% == Spain
+\newcommand{\BSC}{\href{https://www.bsc.es/marenostrum/marenostrum}{BSC}}
+
+% == Finland
+\newcommand{\LUMI}{\href{https://www.lumi-supercomputer.eu/}{LUMI}}
+
+% _______________
+\begin{tabular}{|l|l|l|l||c|l|r|r|r|}
+  \multicolumn{4}{c}{} & \multicolumn{1}{c}{(CPU)} & \multicolumn{3}{c}{}  \\
+  \hline
+  \rowcolor{lightgray}
+  \textbf{Country} & \textbf{System(s)} & \textbf{Type}  & \textbf{Institute} &  \textbf{\#Nodes} & \textbf{\#Cores} & \textbf{\#[GPU]Accelerators} & \textbf{R$_{peak}$} & \textbf{Shared Storage} \\\hline
+  \hline
+  % ___________________________ <system>     <type>            <org>          <nodes>   <cores>          <accel/gpus>       <PFlops>      <PB>
+  \multirow{2}{*}{}
+                       & \MeluXina          & \HPCTierEUNat  & \LuxProvide    &  824   & $\simeq$ 88 000  & 764 NVidia A100               & 17,57 PF    & $\simeq$ 20 PB\\
+  \rowcolor{cyan}
+  Luxembourg           & \texttt{aion,iris} & \HPCTierUniv & \theULHPC & \textbf{\ulhpcNodes} & \ulhpcCores & \textbf{\ulhpcAccelerators} NVidia V100 & \textbf{\ulhpcRawComputingPF\ PF} & \textbf{\ulhpcRawStoragePB\ PB} \\
+  \rowcolor{lightgray}   &                    & \HPCTierLoc  & \LIST          & 40      & 1280            & 8 Nvidia V100                 & 0.126 PF    & 0.58 PB\\
+  \hline
+  \hline
+  \multirow{3}{*}{France}
+                       & \TGCC              & \HPCTierEU   & \GENCI/\CEA      & 4808    & 430 448         & 828 Xeon Phi, 128 NVidia V100 & 22.26 PF & 35PB\\
+                       & \JeanZay           & \HPCTierNat  & \GENCI/\Idris    & 1 528   & 61 120          & 1292 NVidia V100              & 14.97 PF  & 31.2 PB \\
+  \rowcolor{lightgray}   & \ROMEO             & \HPCTierReg  & Univ. Reims    & 115     & 3 220            & 280  NVidia P100              & 1.75 PF   & 0.634  \\
+  \hline
+  \multirow{3}{*}{Belgium}
+                       % &   \ULiege       & 128     & 2048        & 32.00        & 20   \\
+                       % &       \UCL          & 112     & 1344        & 13.28        & 120  \\
+                       & \Vlaams            & \HPCTierNat  & \VSC             & 988     & 27 664           & n/a                           & 1.63 PF   & 1.3PB\\
+                       & \zenobe            & \HPCTierNat  & \Cenaero         & 584     & 14 016           & 4 NVidia K40                  & 0.41 PF   & 0.356PB\\
+  \rowcolor{lightgray}   & Stevin             & \HPCTierReg  & \UGent         & 522     & 14 112           & 40 NVidia V100                & 1.10 PF   & 3.79PB\\
+  \rowcolor{lightgray}   & (7 clusters/5 univ.)& \HPCTierReg & \CECI          & 372     & 9 616            & 4 Nvidia V100, 4 Nvidia C2075 & 0.36 PF   & 0.25PB \\
+  \hline
+  \multirow{6}{*}{Germany}
+                       & \JUWELS            & \HPCTierEU   & \JSC             & 2571    & 122 768         & 224 Nvidia V100               & 12.3 PF   & 130.3PB\\
+                       & \JURECA            & \HPCTierEU   & \JSC             & 3524    & 156 736         & 1640 Xeon Phi                 & 7.24 PF   & (as above)\\
+                       & \hawk              & \HPCTierEU   & \HLRS            & 5632    & 720 896         & n/a                           & 26 PF     & $\simeq$25PB \\
+                       & \SuperMUC          & \HPCTierEU   & \LRZ             & 6480    & 311 040         & n/a                           & 26.9 PF   & 70.16PB  \\
+  \rowcolor{lightgray}   & \CLAIXRWTH         & \HPCTierUniv & Univ. Aachen   & 1307    & 61 200          & 108 Nvidia V100               & 4.11 PF   & 3PB \\
+  \rowcolor{lightgray}   & \GoetherHLR        & \HPCTierUniv & Univ. Frankfurt& 623     & 22 140          & n/a                           & 1.59 PF   & 2.4PB \\
+  \hline
+  \hline
+  Switzerland          & \PizDaint          & \HPCTierEU   & \CSCS, ETH Zürich & 7517   & 387 872         & 5704 NVidia P100              & 29.34 PF  & 8.8PB \\
+  \hline
+  Czech Republic       & \Barbora            & \HPCTierNat & \ITForInnov    &  201      & 7232            & 32 NVidia V100                & 0.85 PF   & $\simeq$ 1PB\\
+  \hline
+  \multirow{3}{*}{Italy}
+                       & Marconi-A3         & \HPCTierEU   & \Cineca        & 3216    & 154 368         & n/a                           & 10.37 PF   & 10PB\\
+  %                     & Marconi100/Pre-Leonardo& \HPCTierEU & \Cineca      & 980     & 31360           & 3920 Nvidia V100              & 31.23 PF   & (as above)\\
+                       & Galileo            & \HPCTierNat  & \Cineca        & 1022    & 36792           & n/a                           & 1.35 PF    & 1.92PB\\
+                       & Leonardo           & Pre-exa \HPCTierEU & \Cineca  & ?     & ?                & ?                              & \textbf{$\simeq$ 200 PF} & ?\\
+
+ \hline
+  \multirow{2}{*}{Spain}
+                       & MareNostrum 4      & \HPCTierEU   & \BSC           & 3456    & 165 888         & n/a                           & 11.15 PF   & 14PB \\
+                       & MareNostrum 5      & Pre-exa \HPCTierEU & \BSC     & ?     & ?                & ?                           & \textbf{$\simeq$ 200 PF} & ?\\
+
+  \hline
+  Finland              & \LUMI        & Pre-exa \HPCTierEU  & CSC           & ?     & ?                & ?                           & \textbf{$\simeq$ 200 PF} & 60PB\\
+  \hline
+\end{tabular}
+
+
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+% eof
+%
+% Local Variables:
+% mode: latex
+% mode: flyspell
+% mode: visual-line
+% TeX-master: "ulhpc_newsletter-issue-02"
+% End:
