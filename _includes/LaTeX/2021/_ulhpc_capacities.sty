@@ -1,6 +1,6 @@
 %=============================================================================
 % File:  _ulhpc_capacities.sty --  UL HPC Capacities as macros (2020)
-% Time-stamp: <Sat 2020-05-23 16:21 svarrette>
+% Time-stamp: <Thu 2021-11-11 11:22 svarrette>
 %=============================================================================
 \usepackage{fp}
 
@@ -15,10 +15,10 @@
 %
 % |              |  #N | #C (CPU) | R_peak          |
 % |--------------|-----|----------|-----------------|
-% | UL HPC Total | 514 | 46528    | 2764 TFlops |
-% .                           (incl. 748.8 GPU TFlops)
+% | UL HPC Total | 514 | 46528    | 2764 TFlops     |
+% .                         (incl. 748.8 GPU TFlops)
 
-\def\ulhpcDate{2020\xspace}
+\def\ulhpcDate{2021\xspace}
 \def\ulhpcClusters{2\xspace}
 \def\ulhpcDisks{1558}
 \def\ulhpcCumulInvestment{23,586,151}
@@ -28,7 +28,7 @@
 \def\otherServers{22} % 9 + 13
 
 %%% Isilon Storage (OneFS, shared with IT Departement)
-\def\IsilonRawStorage{3360}
+\def\IsilonRawStorage{6400}
 \def\IsilonEncl{31}
 \def\IsilonDisks{1044}
 
@@ -43,9 +43,9 @@
 \def\ulhpcAionGPUCores{0}
 \def\ulhpcAionGPUTFlops{0}
 % [GPFS,Lustre] storage common to both aion and iris clusters
-\def\ulhpcAionGPFS{4411}
+\def\ulhpcAionGPFS{4260}
 \def\ulhpcAionGPFSEncl{10}
-\def\ulhpcAionGPFSDisks{767}
+\def\ulhpcAionGPFSDisks{748}
 \def\ulhpcAionLustre{1302}
 \def\ulhpcAionLustreEncl{4}
 \def\ulhpcAionLustreDisks{186}
@@ -62,12 +62,13 @@
 \def\ulhpcIrisServers{39} % 7 + 26 + 6 (shared)
 \def\ulhpcIrisNodes{196}
 \def\ulhpcIrisCores{5824}
-\def\ulhpcIrisTFlops{347.65}
+\def\ulhpcIrisTFlops{322.20}
 \def\ulhpcIrisGPUNodes{24}
 % NVIDIA Volta V100 accelerators
 \def\ulhpcIrisAccelerators{96}
 \def\ulhpcIrisGPUCores{491520}
 \def\ulhpcIrisGPUTFlops{748.8}
+
 % [GPFS,Lustre] storage common to both aion and iris clusters
 \def\ulhpcIrisGPFS{\ulhpcAionGPFS}
 \def\ulhpcIrisGPFSEncl{\ulhpcAionGPFSEncl}
@@ -169,26 +170,26 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \FPeval{ulhpcOnlyServers}{clip (ulhpcAionServers + ulhpcIrisServers + ulhpcGfivekServers)}
 \FPeval{ulhpcServers}{clip     (ulhpcOnlyServers + otherServers)}
-% Compute capacity
-\FPeval{ulhpcNodes}{clip       (ulhpcAionNodes   + ulhpcIrisNodes  + ulhpcGfivekNodes)}
-\FPeval{ulhpcCores}{clip       (ulhpcAionCores   + ulhpcIrisCores  + ulhpcGfivekCores)}
-\FPeval{ulhpcTFlops}{round     (ulhpcAionTFlops  + ulhpcIrisTFlops + ulhpcGfivekTFlops, 3)}
+% Compute capacity - restricted to production clusters
+\FPeval{ulhpcNodes}{clip       (ulhpcAionNodes   + ulhpcIrisNodes)}%  + ulhpcGfivekNodes)}
+\FPeval{ulhpcCores}{clip       (ulhpcAionCores   + ulhpcIrisCores)}%  + ulhpcGfivekCores)}
+\FPeval{ulhpcTFlops}{round     (ulhpcAionTFlops  + ulhpcIrisTFlops, 3)}% + ulhpcGfivekTFlops, 3)}
 \FPeval{ulhpcGPUNodes}{clip    (ulhpcAionGPUNodes     + ulhpcIrisGPUNodes)}
 \FPeval{ulhpcAccelerators}{clip(ulhpcAionAccelerators + ulhpcIrisAccelerators)}
 \FPeval{ulhpcGPUCores}{clip    (ulhpcAionGPUCores     + ulhpcIrisGPUCores)}
 \FPeval{ulhpcGPUTFlops}{clip   (ulhpcAionGPUTFlops    + ulhpcIrisGPUTFlops)}
 
 % [GPFS,Lustre] storage common to both aion and iris clusters
-\FPeval{ulhpcGPFS}{clip        (ulhpcAionGPFS        + 0*ulhpcIrisGPFS + ulhpcGfivekGPFS)}
+\FPeval{ulhpcGPFS}{clip        (ulhpcAionGPFS        + 0*ulhpcIrisGPFS)}% + ulhpcGfivekGPFS)}
 \FPeval{ulhpcGPFSEncl}{clip    (ulhpcAionGPFSEncl    + 0*ulhpcIrisGPFSEncl)}
 \FPeval{ulhpcGPFSDisks}{clip   (ulhpcAionGPFSDisks   + 0*ulhpcIrisGPFSDisks)}
-\FPeval{ulhpcLustre}{clip      (ulhpcAionLustre      + 0*ulhpcIrisLustre + ulhpcGfivekLustre )}
+\FPeval{ulhpcLustre}{clip      (ulhpcAionLustre      + 0*ulhpcIrisLustre)}% + ulhpcGfivekLustre )}
 \FPeval{ulhpcLustreEncl}{clip  (ulhpcAionLustreEncl  + 0*ulhpcIrisLustreEncl)}
 \FPeval{ulhpcLustreDisks}{clip (ulhpcAionLustreDisks + 0*ulhpcIrisLustreDisks)}
-\FPeval{ulhpcNFS}{clip         (ulhpcAionNFS       + ulhpcIrisNFS      + ulhpcGfivekNFS + IsilonRawStorage)}
+\FPeval{ulhpcNFS}{clip         (ulhpcAionNFS       + ulhpcIrisNFS      + IsilonRawStorage)}% + ulhpcGfivekNFS)}
 \FPeval{ulhpcNFSEncl}{clip     (ulhpcAionNFSEncl   + ulhpcIrisNFSEncl  + IsilonEncl)}
 \FPeval{ulhpcNFSDisks}{clip    (ulhpcAionNFSDisks  + ulhpcIrisNFSDisks + IsilonDisks)}
-\FPeval{ulhpcBackup}{clip      (ulhpcAionBackup       + 0*ulhpcIrisBackup + ulhpcGfivekBackup)}
+\FPeval{ulhpcBackup}{clip      (ulhpcAionBackup       + 0*ulhpcIrisBackup)} % + ulhpcGfivekBackup)}
 \FPeval{ulhpcBackupEncl}{clip  (ulhpcAionBackupEncl   + 0*ulhpcIrisBackupEncl)}
 \FPeval{ulhpcBackupDisks}{clip (ulhpcAionBackupDisks  + 0*ulhpcIrisBackupDisks)}
 
