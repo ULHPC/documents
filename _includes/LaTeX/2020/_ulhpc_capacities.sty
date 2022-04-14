@@ -1,0 +1,213 @@
+%=============================================================================
+% File:  _ulhpc_capacities.sty --  UL HPC Capacities as macros (2020)
+% Time-stamp: <Thu 2021-11-11 10:34 svarrette>
+%=============================================================================
+\usepackage{fp}
+
+% | State         | Campus    | System/Site    | Start        |  End | #servers |  #N | **TOTAL** |    #C | #GPU |
+% |---------------|-----------|----------------|--------------|------|----------|-----|-----------|-------|------|
+% | prod          | Belval    | ULHPC/aion     | 2020-        |      |       18 | 318 | **330**   | 40704 |    0 |
+% | prod          | Belval    | ULHPC/iris     | 2017-        |      |       39 | 196 | **229**   |  5824 |   96 |
+% | DECOMISSIONED | Belval    | ULHPC/gaia     | [2011-2016]  | 2019 |       35 | 273 | **308**   |  3440 |   50 |
+% | DECOMISSIONED | Kirchberg | ULHPC/grid5000 | [2008-20012] |      |       31 |  38 | **69**    |   368 |    0 |
+% | DECOMISSIONED | Kirchberg | ULHPC/chaos    | [2010-2012]  | 2019 |       14 |  81 | **95**    |  1120 |    0 |
+% | DECOMISSIONED | Belval    | ULHPC/nyx      | [2012-2015]  |      |       17 | 102 | **119**   |   500 |    0 |
+%
+% |              |  #N | #C (CPU) | R_peak          |
+% |--------------|-----|----------|-----------------|
+% | UL HPC Total | 514 | 46528    | 2764 TFlops |
+% .                           (incl. 748.8 GPU TFlops)
+
+\def\ulhpcDate{2020\xspace}
+\def\ulhpcClusters{2\xspace}
+\def\ulhpcDisks{1558}
+\def\ulhpcCumulInvestment{23,586,151}
+\def\ulhpcCumulHWinvestment{12,822,747}
+\def\ulhpcUsers{1518}
+\def\ulhpcSysAdmins{7}
+\def\otherServers{22} % 9 + 13
+
+%%% Isilon Storage (OneFS, shared with IT Departement)
+\def\IsilonRawStorage{3360}
+\def\IsilonEncl{31}
+\def\IsilonDisks{1044}
+
+%%% Aion
+\def\ulhpcAionServers{18} % 8 + 4 + 6 (shared)
+\def\ulhpcAionNodes{318}
+\def\ulhpcAionCores{40704}
+\def\ulhpcAionTFlops{1693.3}
+% No accelerators
+\def\ulhpcAionGPUNodes{0}
+\def\ulhpcAionAccelerators{0}
+\def\ulhpcAionGPUCores{0}
+\def\ulhpcAionGPUTFlops{0}
+% [GPFS,Lustre] storage common to both aion and iris clusters
+\def\ulhpcAionGPFS{4411}
+\def\ulhpcAionGPFSEncl{10}
+\def\ulhpcAionGPFSDisks{767}
+\def\ulhpcAionLustre{1302}
+\def\ulhpcAionLustreEncl{4}
+\def\ulhpcAionLustreDisks{186}
+\def\ulhpcAionNFS{0}
+\def\ulhpcAionNFSEncl{0}
+\def\ulhpcAionNFSDisks{0}
+\def\ulhpcAionBackup{1608}
+\def\ulhpcAionBackupEncl{2}
+\def\ulhpcAionBackupDisks{60}
+\FPeval{ulhpcAionRawStorageWithoutBackup}{clip  (ulhpcAionGPFS + ulhpcAionLustre + ulhpcAionNFS)}
+\FPeval{ulhpcAionRawStorage}{clip               (ulhpcAionRawStorageWithoutBackup + ulhpcAionBackup)}
+
+%%% Iris
+\def\ulhpcIrisServers{39} % 7 + 26 + 6 (shared)
+\def\ulhpcIrisNodes{196}
+\def\ulhpcIrisCores{5824}
+\def\ulhpcIrisTFlops{322.20}
+\def\ulhpcIrisGPUNodes{24}
+% NVIDIA Volta V100 accelerators
+\def\ulhpcIrisAccelerators{96}
+\def\ulhpcIrisGPUCores{491520}
+\def\ulhpcIrisGPUTFlops{748.8}
+% [GPFS,Lustre] storage common to both aion and iris clusters
+\def\ulhpcIrisGPFS{\ulhpcAionGPFS}
+\def\ulhpcIrisGPFSEncl{\ulhpcAionGPFSEncl}
+\def\ulhpcIrisGPFSDisks{\ulhpcAionGPFSDisks}
+\def\ulhpcIrisLustre{\ulhpcAionLustre}
+\def\ulhpcIrisLustreEncl{\ulhpcAionLustreEncl}
+\def\ulhpcIrisLustreDisks{\ulhpcAionLustreDisks}
+\def\ulhpcIrisNFS{6}
+\def\ulhpcIrisNFSEncl{0}
+\def\ulhpcIrisNFSDisks{5}
+\def\ulhpcIrisBackup{\ulhpcAionBackup}
+\def\ulhpcIrisBackupEncl{\ulhpcAionBackupEncl}
+\def\ulhpcIrisBackupDisks{\ulhpcAionBackupDisks}
+\FPeval{ulhpcIrisRawStorageWithoutBackup}{clip  (ulhpcIrisGPFS + ulhpcIrisLustre + ulhpcIrisNFS)}
+\FPeval{ulhpcIrisRawStorage}{clip  (ulhpcIrisRawStorageWithoutBackup + ulhpcIrisBackup)}
+
+%%% G5K
+\def\ulhpcGfivekServers{31}
+\def\ulhpcGfivekNodes{38}
+\def\ulhpcGfivekCores{368}
+\def\ulhpcGfivekTFlops{4.48}
+\def\ulhpcGfivekGPFS{0}
+\def\ulhpcGfivekLustre{0}
+\def\ulhpcGfivekNFS{32.4}
+\def\ulhpcGfivekBackup{0}
+\FPeval{ulhpcGfivekRawStorageWithoutBackup}{clip  (ulhpcGfivekGPFS + ulhpcGfivekLustre + ulhpcGfivekNFS)}
+\FPeval{ulhpcGfivekRawStorage}{clip  (ulhpcGfivekRawStorageWithoutBackup + ulhpcGfivekBackup)}
+
+
+%%%%%%%%%%%%% DECOMISSIONNED CLUSTER %%%%%%%%%%%%%
+%%% KEPT only for backward compatibility
+%%% Gaia
+\def\ulhpcGaiaServers{35}
+\def\ulhpcGaiaNodes{273}
+\def\ulhpcGaiaCores{3440}
+\def\ulhpcGaiaTFlops{69.296}
+\def\ulhpcGaiaGPUNodes{21}
+\def\ulhpcGaiaAccelerators{50}
+\def\ulhpcGaiaGPUCores{120704}
+\def\ulhpcGaiaGPUTFlops{76.22}
+\def\ulhpcGaiaGPFS{960}
+\def\ulhpcGaiaGPFSEncl{4}
+\def\ulhpcGaiaGPFSDisks{240}
+\def\ulhpcGaiaLustre{660}
+\def\ulhpcGaiaLustreEncl{5}
+\def\ulhpcGaiaLustreDisks{260}
+\def\ulhpcGaiaNFS{0}
+\def\ulhpcGaiaNFSEncl{0}
+\def\ulhpcGaiaNFSDisks{0}
+\def\ulhpcGaiaBackup{240}
+\def\ulhpcGaiaBackupEncl{2}
+\def\ulhpcGaiaBackupDisks{120}
+\FPeval{ulhpcGaiaRawStorageWithoutBackup}{clip  (ulhpcGaiaGPFS + ulhpcGaiaLustre + ulhpcGaiaNFS)}
+\FPeval{ulhpcGaiaRawStorage}{clip  (ulhpcGaiaRawStorageWithoutBackup + ulhpcGaiaBackup)}
+
+%\FPeval{ulhpcGaiaRawStorage}{960+480}
+
+%%%%%%%%%%%%% DECOMISSIONNED CLUSTER %%%%%%%%%%%%%
+%%% KEPT only for backward compatibility
+%%% Chaos
+\def\ulhpcChaosServers{14}
+\def\ulhpcChaosNodes{81}
+\def\ulhpcChaosCores{1120}
+\def\ulhpcChaosTFlops{14.495}
+\def\ulhpcChaosGPFS{0}
+\def\ulhpcChaosGPFSEncl{0}
+\def\ulhpcChaosGPFSDisks{0}
+\def\ulhpcChaosLustre{0}
+\def\ulhpcChaosLustreEncl{0}
+\def\ulhpcChaosLustreDisks{0}
+\def\ulhpcChaosNFS{180}
+\def\ulhpcChaosNFSEncl{1}
+\def\ulhpcChaosNFSDisks{60}
+\def\ulhpcChaosBackup{180}
+\def\ulhpcChaosBackupEncl{1}
+\def\ulhpcChaosBackupDisks{60}
+\FPeval{ulhpcChaosRawStorageWithoutBackup}{clip  (ulhpcChaosGPFS + ulhpcChaosLustre + ulhpcChaosNFS)}
+\FPeval{ulhpcChaosRawStorage}{clip  (ulhpcChaosRawStorageWithoutBackup + ulhpcChaosBackup)}
+
+
+%%%%%%%%%%%%% DECOMISSIONNED CLUSTER %%%%%%%%%%%%%
+%%% KEPT only for backward compatibility
+%%% nyx / viridis / pyro
+\def\ulhpcNyxServers{17}
+\def\ulhpcNyxNodes{102}
+\def\ulhpcNyxCores{500}
+\def\ulhpcNyxTFlops{2.381}
+\def\ulhpcNyxGPFS{0}
+\def\ulhpcNyxLustre{0}
+\def\ulhpcNyxNFS{242}
+\def\ulhpcNyxBackup{0}
+\FPeval{ulhpcNyxRawStorageWithoutBackup}{clip  (ulhpcNyxGPFS + ulhpcNyxLustre + ulhpcNyxNFS)}
+\FPeval{ulhpcNyxRawStorage}{clip  (ulhpcNyxRawStorageWithoutBackup + ulhpcNyxBackup)}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%      TOTAL
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\FPeval{ulhpcOnlyServers}{clip (ulhpcAionServers + ulhpcIrisServers + ulhpcGfivekServers)}
+\FPeval{ulhpcServers}{clip     (ulhpcOnlyServers + otherServers)}
+% Compute capacity
+\FPeval{ulhpcNodes}{clip       (ulhpcAionNodes   + ulhpcIrisNodes  + ulhpcGfivekNodes)}
+\FPeval{ulhpcCores}{clip       (ulhpcAionCores   + ulhpcIrisCores  + ulhpcGfivekCores)}
+\FPeval{ulhpcTFlops}{round     (ulhpcAionTFlops  + ulhpcIrisTFlops + ulhpcGfivekTFlops, 3)}
+\FPeval{ulhpcGPUNodes}{clip    (ulhpcAionGPUNodes     + ulhpcIrisGPUNodes)}
+\FPeval{ulhpcAccelerators}{clip(ulhpcAionAccelerators + ulhpcIrisAccelerators)}
+\FPeval{ulhpcGPUCores}{clip    (ulhpcAionGPUCores     + ulhpcIrisGPUCores)}
+\FPeval{ulhpcGPUTFlops}{clip   (ulhpcAionGPUTFlops    + ulhpcIrisGPUTFlops)}
+
+% [GPFS,Lustre] storage common to both aion and iris clusters
+\FPeval{ulhpcGPFS}{clip        (ulhpcAionGPFS        + 0*ulhpcIrisGPFS + ulhpcGfivekGPFS)}
+\FPeval{ulhpcGPFSEncl}{clip    (ulhpcAionGPFSEncl    + 0*ulhpcIrisGPFSEncl)}
+\FPeval{ulhpcGPFSDisks}{clip   (ulhpcAionGPFSDisks   + 0*ulhpcIrisGPFSDisks)}
+\FPeval{ulhpcLustre}{clip      (ulhpcAionLustre      + 0*ulhpcIrisLustre + ulhpcGfivekLustre )}
+\FPeval{ulhpcLustreEncl}{clip  (ulhpcAionLustreEncl  + 0*ulhpcIrisLustreEncl)}
+\FPeval{ulhpcLustreDisks}{clip (ulhpcAionLustreDisks + 0*ulhpcIrisLustreDisks)}
+\FPeval{ulhpcNFS}{clip         (ulhpcAionNFS       + ulhpcIrisNFS      + ulhpcGfivekNFS + IsilonRawStorage)}
+\FPeval{ulhpcNFSEncl}{clip     (ulhpcAionNFSEncl   + ulhpcIrisNFSEncl  + IsilonEncl)}
+\FPeval{ulhpcNFSDisks}{clip    (ulhpcAionNFSDisks  + ulhpcIrisNFSDisks + IsilonDisks)}
+\FPeval{ulhpcBackup}{clip      (ulhpcAionBackup       + 0*ulhpcIrisBackup + ulhpcGfivekBackup)}
+\FPeval{ulhpcBackupEncl}{clip  (ulhpcAionBackupEncl   + 0*ulhpcIrisBackupEncl)}
+\FPeval{ulhpcBackupDisks}{clip (ulhpcAionBackupDisks  + 0*ulhpcIrisBackupDisks)}
+
+\FPeval{ulhpcRawComputing}{clip (ulhpcTFlops + ulhpcGPUTFlops)}
+\FPeval{ulhpcRawComputingPF}{round (ulhpcRawComputing/1000, 2)}
+\FPeval{ulhpcRawStorage}{clip   (ulhpcAionRawStorage + 0*ulhpcIrisRawStorage + ulhpcGfivekRawStorage + IsilonRawStorage)}
+\FPeval{ulhpcRawStoragePB}{round (ulhpcRawStorage/1000, 2)}
+\FPeval{ulhpcRawStorageWithoutBackup}{clip(ulhpcAionRawStorageWithoutBackup + 0*ulhpcIrisRawStorageWithoutBackup + ulhpcGfivekRawStorageWithoutBackup + IsilonRawStorage)}
+\FPeval{ulhpcRawStorageWithoutBackupPB}{round (ulhpcRawStorageWithoutBackup/1000, 2)}
+
+\FPeval{ulhpcEncl}{clip        (ulhpcGPFSEncl + ulhpcLustreEncl + ulhpcNFSEncl + ulhpcBackupEncl)}
+\FPeval{ulhpcDisks}{clip       (ulhpcGPFSDisks + ulhpcLustreDisks + ulhpcNFSDisks + ulhpcBackupDisks)}
+
+
+
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+% eof
+%
+% Local Variables:
+% mode: latex
+% mode: flyspell
+% End:

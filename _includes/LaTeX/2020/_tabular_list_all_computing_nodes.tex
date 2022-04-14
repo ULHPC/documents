@@ -1,0 +1,69 @@
+% =============================================================================
+% File:  _tabular_list_all_computing_nodes.tex -- List of the computing nodes
+% Time-stamp: <Sun 2020-11-29 23:20 svarrette>
+%
+% Copyright (c) 2011-2018 Sebastien Varrette <Sebastien.Varrette@uni.lu>
+%
+% More information on LaTeX: http://www.latex-project.org/
+% LaTeX symbol list:
+% http://www.ctan.org/tex-archive/info/symbols/comprehensive/symbols-a4.pdf
+% =============================================================================
+
+% /!\ IMPORTANT:
+% To be used in conjunction with the _ulhpc_capacities.tex file (of the appropriate date) which defines
+% properly the \ulhpc* macros
+
+
+\begin{tabular}{|l|c|c||lr|c|c|c|c|}
+  \cline{6-8}
+  \multicolumn{5}{r|}{} & \cellcolor{lightgray}\textbf{\#N} & \cellcolor{lightgray}\textbf{\#C} & \cellcolor{lightgray}\textbf{R$_{\text{peak}}$}\\
+  \hline
+  \rowcolor{orange}\multicolumn{5}{r|}{\textbf{Uni.lu HPC TOTAL:}} & \textbf{\ulhpcNodes} & \textbf{\ulhpcCores} & \textbf{\ulhpcRawComputing\ TFlops}\\\hline
+  \multicolumn{6}{c}{} & \multicolumn{2}{r}{(incl. \ulhpcGPUTFlops\ GPU TFlops)}\\
+  \multicolumn{8}{c}{}\\
+  \hline
+  \rowcolor{lightgray}
+  \textbf{Cluster}        & \textbf{Date} & \textbf{Vendor} & \multicolumn{2}{c|}{\textbf{Proc. Description}} & \textbf{\#N} & \textbf{\#C} & \textbf{R$_{\text{peak}}$}\\\hline
+  \hline
+  % ___________________________ AION __________________________
+  \textbf{aion}           & 2020* & Atos & AMD EPYC 7H12 @2.6 GHz              & $2\times64c$, 256GB & 318 & 40704  & 1693,29 TFlops \\\hline
+  \multicolumn{5}{r|}{\textbf{\texttt{aion} TOTAL:}} & \cellcolor{lightgray} \textbf{\ulhpcAionNodes} & \cellcolor{lightgray} \textbf{\ulhpcAionCores} & \cellcolor{lightgray} \textbf{\ulhpcAionTFlops\ TFlops} \\
+  \cline{6-8}
+  \multicolumn{5}{l}{\textit{\small * installation delayed due to global COVID crisis}}\\
+  \multicolumn{8}{c}{}\\
+  \hline
+  %___________________________ IRIS __________________________
+  \multirow{5}{*}{\textbf{iris}}
+                          & 2017 & Dell & Intel Xeon E5-2680 v4@2.4GHz        & $2\times14$C,128GB  & 108 & 3024   & 116,12 TFlops   \\\cline{2-8}
+                          & 2018 & Dell & Intel Xeon Gold 6132 @ 2.6 GHz      & $2\times14$C,128GB  & 60  & 1680   & 123,65 TFlops   \\\cline{2-8}
+                          & 2018 & Dell & Intel Xeon Gold 6132 @ 2.6 GHz      & $2\times14$C,768GB  & 24  & 672    & 49,45  TFlops   \\%\cline{4-5}
+                          & 2019 &      & \multicolumn{2}{r|}{\textit{Per node}: 4x NVIDIA Tesla V100 SXM2 16/32GB}           & 96 GPUs  & 491520 & 748,8 GPU TFlops \\\cline{2-8}
+                          & 2018 & Dell & Intel Xeon Platinum 8180M @ 2.5 GHz & $4\times28$C,3072GB & 4   & 448    & 32.97  TFlops     \\\hline
+  \multicolumn{5}{r|}{\textbf{\texttt{iris} TOTAL:}} & \cellcolor{lightgray} \textbf{\ulhpcIrisNodes} & \cellcolor{lightgray} \textbf{\ulhpcIrisCores} & \cellcolor{lightgray} \textbf{\ulhpcIrisTFlops\ TFlops} \\
+  \multicolumn{5}{r|}{}   & \cellcolor{lightgray}\textbf{\ulhpcIrisAccelerators\ GPUs} & \ulhpcIrisGPUCores & \cellcolor{lightgray}\textbf{+\ulhpcIrisGPUTFlops\ GPU\ Tflops} \\
+  \cline{6-8}
+  \multicolumn{8}{c}{}\\
+  \hline
+  %___________________________ G5K __________________________
+  \multirow{2}{*}{\textbf{g5k}}
+                          & 2008 & Dell & Intel Xeon L5335@2GHz      & $2\times4$C,16GB & 22 & 176 & 1.408 TFlops \\\cline{2-8}
+                          & 2012 & Dell & Intel Xeon E5-2630L@2GHz   & $2\times6$C,24GB & 16 & 192 & 3.072 TFlops \\\hline
+  \multicolumn{5}{r|}{\textbf{\texttt{granduc/petitprince} TOTAL:}} & \cellcolor{lightgray} \textbf{\ulhpcGfivekNodes} & \cellcolor{lightgray} \textbf{\ulhpcGfivekCores} & \cellcolor{lightgray} \textbf{\ulhpcGfivekTFlops\ TFlops} \\
+  \cline{6-8}
+\end{tabular}
+
+
+
+
+
+
+
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+% eof
+%
+% Local Variables:
+% mode: latex
+% mode: flyspell
+% mode: visual-line
+% TeX-master: "."
+% End:

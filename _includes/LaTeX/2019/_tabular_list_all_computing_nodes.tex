@@ -28,10 +28,10 @@
   %___________________________ IRIS __________________________
   \multirow{5}{*}{\textbf{iris}}
                           & 2017 & Dell & Intel Xeon E5-2680 v4@2.4GHz        & $2\times14$C,128GB  & 108 & 3024   & 116,12 TFlops   \\\cline{2-8}
-                          & 2018 & Dell & Intel Xeon Gold 6132 @ 2.6 GHz      & $2\times14$C,128GB  & 60  & 1680   & 139,78 TFlops   \\\cline{2-8}
-                          & 2018 & Dell & Intel Xeon Gold 6132 @ 2.6 GHz      & $2\times14$C,768GB  & 18  & 504    & 41,93  TFlops   \\%\cline{4-5}
-                          &      &      & \multicolumn{2}{r|}{\textit{Per node}: 4x NVIDIA Tesla V100 SXM2 32GB}           & 72 GPUs  & 368640 & 561,6 GPU TFlops \\\cline{2-8}
-                          & 2018 & Dell & Intel Xeon Platinum 8180M @ 2.5 GHz & $4\times28$C,3072GB & 4   & 448    & 35,84  TFlops     \\\hline
+                          & 2018 & Dell & Intel Xeon Gold 6132 @ 2.6 GHz      & $2\times14$C,128GB  & 60  & 1680   & 123,65 TFlops   \\\cline{2-8}
+                          & 2018 & Dell & Intel Xeon Gold 6132 @ 2.6 GHz      & $2\times14$C,768GB  & 24  & 672    & 49,45  TFlops   \\%\cline{4-5}
+                          & 2019 &      & \multicolumn{2}{r|}{\textit{Per node}: 4x NVIDIA Tesla V100 SXM2 16/32GB}           & 96 GPUs  & 491520 & 748,8 GPU TFlops \\\cline{2-8}
+                          & 2018 & Dell & Intel Xeon Platinum 8180M @ 2.5 GHz & $4\times28$C,3072GB & 4   & 448    & 32.97  TFlops     \\\hline
   \multicolumn{5}{r|}{\textbf{\texttt{iris} TOTAL:}} & \cellcolor{lightgray} \textbf{\ulhpcIrisNodes} & \cellcolor{lightgray} \textbf{\ulhpcIrisCores} & \cellcolor{lightgray} \textbf{\ulhpcIrisTFlops\ TFlops} \\
   \multicolumn{5}{r|}{}   & \cellcolor{lightgray}\textbf{\ulhpcIrisAccelerators\ GPUs} & \ulhpcIrisGPUCores & \cellcolor{lightgray}\textbf{+\ulhpcIrisGPUTFlops\ GPU\ Tflops} \\
   \cline{6-8}
@@ -43,18 +43,9 @@
                           & 2012 & Dell & Intel Xeon E5-2630L@2GHz   & $2\times6$C,24GB & 16 & 192 & 3.072 TFlops \\\hline
   \multicolumn{5}{r|}{\textbf{\texttt{granduc/petitprince} TOTAL:}} & \cellcolor{lightgray} \textbf{\ulhpcGfivekNodes} & \cellcolor{lightgray} \textbf{\ulhpcGfivekCores} & \cellcolor{lightgray} \textbf{\ulhpcGfivekTFlops\ TFlops} \\
   \cline{6-8}
-  \multicolumn{8}{l}{\textit{Testing cluster}:}\\
-  \hline
-  %___________________________ Nyx/Viridis/Pyro __________________________
-  \multirow{5}{4em}{\textbf{nyx, viridis, pyro...}     }
-                          & 2012 & Dell    & Intel Xeon E5-2420@1.9GHz    & $1\times6$C,32GB  & 2  & 12  & 0.091 TFlops \\\cline{2-8}
-                          & 2013 & Viridis & ARM A9 Cortex@1.1GHz         & $1\times4$C,4GB   & 96 & 384 & 0.422 TFlops \\\cline{2-8}
-                          & 2015 & Dell    & Intel Xeon E5-2630Lv2@2.4GHz & $2\times6$C,32GB  & 2  & 24  & 0.460 TFlops \\\cline{2-8}
-                          & 2015 & Dell    & Intel Xeon E5-2660v2@2.2GHz  & $2\times10$C,32GB & 4  & 80  & 1.408 TFlops \\\hline
-  \multicolumn{5}{r|}{\textbf{\texttt{nyx/viridis} TOTAL:}} & \cellcolor{lightgray} \textbf{\ulhpcNyxNodes} & \cellcolor{lightgray} \textbf{\ulhpcNyxCores} & \cellcolor{lightgray} \textbf{\ulhpcNyxTFlops\ TFlops} \\\cline{6-8}
   \multicolumn{8}{c}{}\\
   \hline
-  \multicolumn{8}{c}{\textbf{Decommissioned clusters (\alert{Planned MID-2019})}}\\
+  \multicolumn{8}{c}{\textbf{Decommissioned clusters (\alert{Planned End-2019})}}\\
   \hline
   \multicolumn{8}{c}{}\\
   \hline
@@ -68,6 +59,17 @@
   \hline
   \textbf{chaos}          & [2010-2012] & 2019 & \multicolumn{2}{l|}{Dell/HPE} & \cellcolor{lightgray} \textbf{\ulhpcChaosNodes} & \cellcolor{lightgray} \textbf{\ulhpcChaosCores} & \cellcolor{lightgray} \textbf{\ulhpcChaosTFlops\ TFlops} \\
   \hline
+  \multicolumn{8}{c}{}\\
+  \multicolumn{8}{l}{\textit{Testing clusters}:}\\
+  \hline
+  %___________________________ Nyx/Viridis/Pyro __________________________
+  \multirow{5}{4em}{\textbf{nyx, viridis, pyro...}     }
+                          & 2012 &  2019 & Dell, Intel Xeon E5-2420@1.9GHz & $1\times6$C,32GB  & 2  & 12  & 0.091 TFlops \\\cline{2-8}
+                          & 2013 & 2019  & Viridis, ARM A9 Cortex@1.1GHz   & $1\times4$C,4GB   & 96 & 384 & 0.422 TFlops \\\cline{2-8}
+                          & 2015 & 2019  & Dell, Intel Xeon E5-2630Lv2@2.4GHz & $2\times6$C,32GB  & 2  & 24  & 0.460 TFlops \\\cline{2-8}
+                          & 2015 & 2019  & Dell, Intel Xeon E5-2660v2@2.2GHz  & $2\times10$C,32GB & 4  & 80  & 1.408 TFlops \\\hline
+  \multicolumn{5}{r|}{\textbf{Testing clusters TOTAL:}} & \cellcolor{lightgray} \textbf{\ulhpcNyxNodes} & \cellcolor{lightgray} \textbf{\ulhpcNyxCores} & \cellcolor{lightgray} \textbf{\ulhpcNyxTFlops\ TFlops} \\
+  \cline{6-8}
 \end{tabular}
 
 
